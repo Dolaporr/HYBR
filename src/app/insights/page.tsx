@@ -28,7 +28,7 @@ export default function InsightsPage() {
         <div className="mx-auto grid max-w-[1200px] gap-6 lg:grid-cols-[1fr_486px]">
           <article
             id="articles"
-            className="overflow-hidden rounded-3xl bg-black p-10 text-white"
+            className="overflow-hidden rounded-[20px] bg-black p-8 text-white md:p-10"
             style={{
               backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.72)), url(${figmaAssets.article})`,
               backgroundPosition: "center",
@@ -36,10 +36,10 @@ export default function InsightsPage() {
             }}
           >
             <Label>Article</Label>
-            <h2 className="mt-64 font-display text-5xl font-medium">
+            <h2 className="mt-48 font-display text-4xl font-medium md:mt-64 md:text-5xl">
               One Liner For Specific Article
             </h2>
-            <p className="mt-4 text-xl">
+            <p className="mt-4 max-w-[440px] text-lg md:text-xl">
               Short captivating blurb covering what this article is about.
             </p>
             <div className="mt-8">
@@ -51,7 +51,7 @@ export default function InsightsPage() {
           <div className="space-y-6">
             <article
               id="webinars"
-              className="rounded-3xl bg-black p-8 text-white"
+              className="rounded-[20px] bg-black p-8 text-white"
               style={{
                 backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.68)), url(${figmaAssets.webinar})`,
                 backgroundPosition: "center",
@@ -59,7 +59,7 @@ export default function InsightsPage() {
               }}
             >
               <Label>Webinar</Label>
-              <h3 className="mt-32 font-display text-4xl font-medium">
+              <h3 className="mt-28 font-display text-3xl font-medium leading-tight md:mt-32 md:text-4xl">
                 One Liner For Specific Webinar
               </h3>
               <p className="mt-4">Jedidiah Akpata & Charles Ojei</p>
@@ -78,12 +78,13 @@ export default function InsightsPage() {
       <section id="news" className="px-6 py-24">
         <div className="mx-auto grid max-w-[1200px] gap-12 lg:grid-cols-2 lg:items-center">
           <ImagePanel
-            className="h-[260px] rounded-[32px] sm:h-[336px] sm:rounded-full"
+            className="h-[260px] rounded-[32px] sm:h-[336px]"
+            overlay="linear-gradient(90deg, rgba(25,106,180,.22), rgba(0,0,0,.1))"
             src={figmaAssets.people}
           />
           <div>
             <Label>Our Insights</Label>
-            <h2 className="mt-3 font-display text-5xl font-medium">
+            <h2 className="mt-3 font-display text-4xl font-medium md:text-5xl">
               Connect with our latest thinking.
             </h2>
             <p className="mt-5 text-xl leading-relaxed">

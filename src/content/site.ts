@@ -1,35 +1,21 @@
 export const figmaAssets = {
-  logoBlue:
-    "https://www.figma.com/api/mcp/asset/a26cc075-62ac-4cd8-8253-a20930553d73",
-  logoWhite:
-    "https://www.figma.com/api/mcp/asset/8a8b4e5d-1e28-4ce2-992b-22d56c3ff03e",
-  footerPattern:
-    "https://www.figma.com/api/mcp/asset/7adca3e0-18c5-4818-bad1-f96b19cc6daa",
-  heroHome:
-    "https://www.figma.com/api/mcp/asset/95ed038c-dc61-43d7-bcca-fabdfe9d9264",
-  video:
-    "https://www.figma.com/api/mcp/asset/f44f734a-7019-4532-a28a-137a9824172a",
-  play:
-    "https://www.figma.com/api/mcp/asset/124322ca-2bc8-4620-9f59-7c3d59ecaea3",
-  people:
-    "https://www.figma.com/api/mcp/asset/72160259-5bd6-4fa5-93b6-9b5e49e2203e",
-  risk:
-    "https://www.figma.com/api/mcp/asset/9d3d7dbf-17f8-47eb-a97c-51ba20fc7236",
-  testimonial:
-    "https://www.figma.com/api/mcp/asset/23f7e594-6b2a-46cb-a2b3-3f7613073f60",
-  testimonialRing:
-    "https://www.figma.com/api/mcp/asset/8429c3de-4ca4-4b2b-ac9f-7f7af39e7f53",
-  news:
-    "https://www.figma.com/api/mcp/asset/c1b3d5e5-5a6a-4b39-bcda-911fa26c8a6d",
-  contact:
-    "https://www.figma.com/api/mcp/asset/e5edcada-e35b-42c2-82f7-9b6a9088e237",
-  caseStudy:
-    "https://www.figma.com/api/mcp/asset/2877131b-9065-458e-a13d-38f968a2becc",
-  article:
-    "https://www.figma.com/api/mcp/asset/be1ccff6-0457-4474-a409-4817f5ce47be",
-  webinar:
-    "https://www.figma.com/api/mcp/asset/379c66fb-c0d7-435d-8be1-ebda8b41e054",
-};
+  logoBlue: "/home/logo-blue.svg",
+  logoWhite: "/home/footer-logo.svg",
+  footerPattern: "/home/footer-pattern.svg",
+  heroHome: "/home/hero.png",
+  video: "/Webinar Card - horizontal tab.svg",
+  play: "/home/play.svg",
+  people: "/home/people.png",
+  risk: "/home/risk-image.png",
+  testimonial: "/home/testimonial.png",
+  testimonialRing: "/home/testimonial-ring.png",
+  news: "/home/news.png",
+  contact: "/home/contact.png",
+  caseStudy: "/home/case-study-remote.png",
+  article: "/home/article.png",
+  webinar: "/home/webinar.png",
+  whoHero: "/home/who-hero.png",
+} as const;
 
 export const navigation = [
   { label: "Who We Are", href: "/who-we-are", key: "who" },
@@ -71,11 +57,11 @@ export const footerGroups = [
       { label: "Email Address", href: "/contact" },
     ],
   },
-];
+] as const;
 
 export const siteContent = {
   brand: "HYBR",
-  footerCopyright: "© 2025 HYBR Group",
+  footerCopyright: "Copyright 2025 HYBR Group",
   socialLinks: ["Instagram", "X", "YouTube", "LinkedIn", "Medium"],
   wordpressEditable: [
     "Pages and section copy",
@@ -85,4 +71,4 @@ export const siteContent = {
     "Team members, careers, testimonials, and contact details",
     "Images and downloadable resources",
   ],
-};
+} as const;

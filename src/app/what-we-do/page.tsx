@@ -60,9 +60,9 @@ export default function WhatWeDoPage() {
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {services.map((service) => (
-              <article className="rounded-3xl border border-white/20 bg-black/70 p-8 text-white backdrop-blur-sm" key={service.title}>
-                <h3 className="font-display text-5xl font-medium">{service.title}</h3>
-                <p className="mt-20 text-xl leading-relaxed">{service.body}</p>
+              <article className="rounded-[20px] border border-white/20 bg-black/72 p-8 text-white backdrop-blur-sm" key={service.title}>
+                <h3 className="font-display text-4xl font-medium md:text-5xl">{service.title}</h3>
+                <p className="mt-16 text-lg leading-relaxed md:text-xl">{service.body}</p>
               </article>
             ))}
           </div>
@@ -75,21 +75,21 @@ export default function WhatWeDoPage() {
       <section id="impact" className="px-6 py-24 text-center">
         <div className="mx-auto max-w-[1200px]">
           <Label>Our Impact</Label>
-          <h2 className="mt-3 font-display text-5xl font-medium">
+          <h2 className="mt-3 font-display text-4xl font-medium md:text-5xl">
             We counted because it matters to us.
           </h2>
-          <p className="mt-4 text-2xl">
+          <p className="mt-4 text-xl md:text-2xl">
             Every data point represents a life improved and a business transformed.
           </p>
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
             {[
               ["35+", "Countries Reached"],
               ["300K+", "Jobs Created"],
               ["4000+", "Ventures Impacted"],
             ].map(([value, label]) => (
               <div key={label}>
-                <p className="font-display text-7xl font-medium">{value}</p>
-                <p className="mt-3 text-sm font-bold uppercase">{label}</p>
+                <p className="font-display text-6xl font-extrabold text-hybr-blue md:text-7xl">{value}</p>
+                <p className="mt-3 text-xs font-bold uppercase tracking-[0.12em]">{label}</p>
               </div>
             ))}
           </div>
@@ -104,17 +104,17 @@ export default function WhatWeDoPage() {
       <section id="products" className="px-6 py-24">
         <div className="mx-auto max-w-[1200px]">
           <Label>Our Products</Label>
-          <h2 className="mt-3 max-w-[820px] font-display text-5xl font-medium leading-tight">
+          <h2 className="mt-3 max-w-[820px] font-display text-4xl font-medium leading-tight md:text-5xl">
             Tools designed to make innovation feel effortless.
           </h2>
-          <p className="mt-4 text-2xl">
+          <p className="mt-4 text-xl md:text-2xl">
             Helping you turn your best ideas into meaningful results.
           </p>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {products.map((product) => (
-              <article className="rounded-3xl bg-[#f1f1f1] p-8" key={product}>
-                <h3 className="font-display text-5xl font-medium">{product}</h3>
-                <p className="mt-8 text-lg leading-relaxed">
+              <article className="rounded-[20px] bg-[#f1f1f1] p-8 shadow-[0_18px_42px_rgba(0,0,0,0.06)]" key={product}>
+                <h3 className="font-display text-4xl font-medium md:text-5xl">{product}</h3>
+                <p className="mt-8 text-base leading-relaxed md:text-lg">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                   tempus dolor id metus auctor tincidunt.
                 </p>
@@ -130,13 +130,13 @@ export default function WhatWeDoPage() {
       </section>
 
       <section id="work" className="px-6 py-24">
-        <div className="mx-auto grid max-w-[1200px] gap-8 lg:grid-cols-[1fr_486px]">
+        <div className="mx-auto grid max-w-[1200px] gap-8 lg:grid-cols-[1fr_486px] lg:items-end">
           <div>
             <Label>Our Work</Label>
-            <h2 className="mt-3 font-display text-5xl font-medium">
+            <h2 className="mt-3 font-display text-4xl font-medium md:text-5xl">
               One Liner To Lead User To Case Studies Page
             </h2>
-            <p className="mt-4 text-2xl">
+            <p className="mt-4 text-xl md:text-2xl">
               A continuation of the one-liner above to drive users to visit Case
               Studies.
             </p>
@@ -151,12 +151,13 @@ export default function WhatWeDoPage() {
       <section id="team" className="px-6 py-24">
         <div className="mx-auto grid max-w-[1200px] items-center gap-12 lg:grid-cols-2">
           <ImagePanel
-            className="h-[260px] rounded-[32px] sm:h-[336px] sm:rounded-full"
+            className="h-[260px] rounded-[32px] sm:h-[336px]"
+            overlay="linear-gradient(90deg, rgba(25,106,180,.22), rgba(0,0,0,.1))"
             src={figmaAssets.people}
           />
           <div>
             <Label>Our Team</Label>
-            <h2 className="mt-3 font-display text-5xl font-medium">
+            <h2 className="mt-3 font-display text-4xl font-medium md:text-5xl">
               We are powered by a team that blends strategy, creativity, and
               execution.
             </h2>

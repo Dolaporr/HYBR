@@ -1,7 +1,7 @@
 import Link from "next/link";
+import { figmaAssets, siteContent } from "@/content/site";
 
-const imageUrl =
-  "https://www.figma.com/api/mcp/asset/e037b24c-53d2-4cd7-865d-4252e16bd27c";
+const imageUrl = figmaAssets.whoHero ?? figmaAssets.people;
 
 const timeline = [
   {
@@ -98,17 +98,17 @@ function Header() {
   return (
     <header className="absolute left-0 right-0 top-0 z-20 px-6">
       <div className="mx-auto flex min-h-28 max-w-[1200px] flex-col items-start justify-center gap-5 py-6 md:h-[152px] md:flex-row md:items-center md:justify-between md:py-0">
-        <Link className="font-display text-2xl font-semibold text-hybr-blue" href="/">
-          HYBR
+        <Link className="block h-10 w-[128px] overflow-hidden md:h-14 md:w-[179px]" href="/">
+          <img alt={siteContent.brand} className="h-full w-full object-contain" src={figmaAssets.logoBlue} />
         </Link>
-        <nav className="flex flex-wrap items-center gap-3 text-xs font-bold uppercase sm:gap-5 md:gap-8 md:text-sm">
+        <nav className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase sm:gap-5 md:gap-8 md:text-sm">
           <Link className="text-hybr-blue" href="/who-we-are">
             Who We Are
           </Link>
           <Link href="/what-we-do">What We Do</Link>
           <Link href="/insights">Insights</Link>
           <Link
-            className="rounded-full border-2 border-hybr-blue bg-hybr-blue px-4 py-2 text-white md:px-6 md:py-3"
+            className="inline-flex min-h-12 items-center justify-center rounded-full border border-hybr-blue bg-hybr-blue px-5 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(25,106,180,0.18)] md:min-h-[48px] md:px-7 md:text-base"
             href="/contact"
           >
             Let&apos;s Talk
