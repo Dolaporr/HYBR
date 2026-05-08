@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { figmaAssets, siteContent } from "@/content/site";
+import { Footer } from "../_components/marketing";
 
 const imageUrl = figmaAssets.whoHero ?? figmaAssets.people;
 
@@ -58,41 +59,6 @@ const contentLinks = [
   { label: "Careers", href: "#careers" },
 ];
 
-const footer = [
-  {
-    title: "Who We Are",
-    links: [
-      { label: "About Us", href: "/who-we-are/about-us" },
-      { label: "Our Team", href: "/who-we-are/our-team" },
-      { label: "Careers", href: "/who-we-are/careers" },
-    ],
-  },
-  {
-    title: "What We Do",
-    links: [
-      { label: "Our Services", href: "/what-we-do/services" },
-      { label: "Our Products", href: "/what-we-do/products" },
-      { label: "Our Work", href: "/what-we-do/our-work" },
-      { label: "Our Impact", href: "/what-we-do/our-impact" },
-    ],
-  },
-  {
-    title: "Insights",
-    links: [
-      { label: "Articles & Posts", href: "/insights/articles" },
-      { label: "Webinars", href: "/insights/webinars" },
-      { label: "News & Updates", href: "/insights/news" },
-    ],
-  },
-  {
-    title: "Contact us",
-    links: [
-      { label: "Address 1", href: "/contact" },
-      { label: "Phone Number", href: "/contact" },
-      { label: "Email Address", href: "/contact" },
-    ],
-  },
-];
 
 function Header() {
   return (
@@ -328,44 +294,7 @@ export default function WhoWeArePage() {
         </div>
       </section>
 
-      <footer className="bg-black px-6 py-14 text-white md:py-20">
-        <div className="mx-auto max-w-[1200px]">
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
-            {footer.map((group) => (
-              <div key={group.title}>
-                <h3 className="font-bold uppercase">{group.title}</h3>
-                <ul className="mt-4 space-y-3 text-sm">
-                  {group.links.map((link) => (
-                    <li key={`${group.title}-${link.label}-${link.href}`}>
-                      <Link href={link.href}>{link.label}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-            <div>
-              <h3 className="font-bold uppercase">Follow us</h3>
-              <p className="mt-4 text-sm">Instagram X YouTube LinkedIn Medium</p>
-              <div className="mt-8">
-                <Link
-                  className="inline-flex rounded-full border-2 border-white bg-white px-6 py-3 text-sm font-bold uppercase text-black"
-                  href="/contact"
-                >
-                  Let&apos;s Talk
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="mt-14 flex flex-col gap-6 text-sm uppercase md:mt-20 md:flex-row md:items-center md:justify-between">
-            <div className="flex flex-wrap gap-5 md:gap-8">
-              <span>Privacy Policy</span>
-              <span>Terms & Conditions</span>
-            </div>
-            <span className="font-display text-xl font-semibold">HYBR</span>
-            <span>© 2025 HYBR Group</span>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 }

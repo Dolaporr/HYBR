@@ -1,4 +1,8 @@
 export const figmaAssets = {
+  figmaBusinessPartners: "/figma-assets/image-fills/1958cc39abc0ad658a9c5454fb531e80c31f464e.png",
+  figmaBuilding: "/figma-assets/image-fills/49ea5afcd08e354d2128485561e0136b723e384e.png",
+  figmaFieldHero: "/figma-assets/image-fills/d50005e607480723ef80c8b7ba3864acdbcd1a39.png",
+  figmaTeamPortrait: "/figma-assets/image-fills/3575adb86737d96194fbaf002a8bc285b11fb790.png",
   logoBlue: "/home/logo-blue.svg",
   logoWhite: "/home/footer-logo.svg",
   footerPattern: "/home/footer-pattern.svg",
@@ -61,8 +65,8 @@ export const footerGroups = [
 
 export const siteContent = {
   brand: "HYBR",
-  footerCopyright: "Copyright 2025 HYBR Group",
-  socialLinks: ["Instagram", "X", "YouTube", "LinkedIn", "Medium"],
+  footerCopyright: "\u00A9 2025 HYBR GROUP",
+  socialLinks: ["Instagram", "Facebook", "TikTok", "LinkedIn", "X", "YouTube", "Medium"],
   wordpressEditable: [
     "Pages and section copy",
     "Navigation and footer labels",

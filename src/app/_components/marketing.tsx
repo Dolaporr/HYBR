@@ -13,9 +13,16 @@ function BrandMark({ className = "" }: { className?: string }) {
       viewBox="0 0 56 56"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="28" cy="28" r="10.5" stroke="currentColor" strokeWidth="4.5" />
-      <circle cx="28" cy="28" r="18.75" stroke="currentColor" strokeWidth="4.5" />
-      <circle cx="28" cy="28" r="25.75" stroke="currentColor" strokeWidth="4.5" />
+      <g clipPath="url(#bm-clip)">
+        <path d="M27.8778 53.5091C33.5537 53.5091 38.1549 48.9079 38.1549 43.2321C38.1549 37.5563 33.5537 32.9551 27.8778 32.9551C22.202 32.9551 17.6008 37.5563 17.6008 43.2321C17.6008 48.9079 22.202 53.5091 27.8778 53.5091Z" stroke="currentColor" strokeMiterlimit="10" strokeWidth="4.53704" />
+        <path d="M27.8779 53.4284C37.9997 53.4284 46.205 45.2231 46.205 35.1014C46.205 24.9797 37.9997 16.7744 27.8779 16.7744C17.7562 16.7744 9.55084 24.9797 9.55084 35.1014C9.55084 45.2231 17.7562 53.4284 27.8779 53.4284Z" stroke="currentColor" strokeMiterlimit="10" strokeWidth="4.53704" />
+        <path d="M27.8782 53.423C41.9863 53.423 53.4231 41.9862 53.4231 27.8782C53.4231 13.7703 41.9863 2.3335 27.8782 2.3335C13.7702 2.3335 2.33331 13.7703 2.33331 27.8782C2.33331 41.9862 13.7702 53.423 27.8782 53.423Z" stroke="currentColor" strokeMiterlimit="10" strokeWidth="4.53704" />
+      </g>
+      <defs>
+        <clipPath id="bm-clip">
+          <rect fill="white" height="56" width="56" />
+        </clipPath>
+      </defs>
     </svg>
   );
 }
@@ -48,6 +55,34 @@ export function Header({ active }: { active?: "who" | "what" | "insights" }) {
   );
 }
 
+function FooterSocialIcon({ kind }: { kind: string }) {
+  if (kind === "Instagram") {
+    return <svg aria-label="Instagram" className="size-7" fill="none" viewBox="0 0 32 32"><rect x="6" y="6" width="20" height="20" rx="6" stroke="currentColor" strokeWidth="2.4" /><circle cx="16" cy="16" r="5" stroke="currentColor" strokeWidth="2.4" /><circle cx="22.4" cy="9.6" r="1.6" fill="currentColor" /></svg>;
+  }
+
+  if (kind === "Facebook") {
+    return <svg aria-label="Facebook" className="size-7" fill="none" viewBox="0 0 32 32"><circle cx="16" cy="16" r="10" stroke="currentColor" strokeWidth="2.2" /><path d="M17.5 26V16.8H20.4L20.9 13.4H17.5V11.2C17.5 10.2 17.8 9.5 19.2 9.5H21V6.5C20.1 6.4 19.4 6.4 18.6 6.4C16.1 6.4 14.4 7.9 14.4 10.7V13.4H11.6V16.8H14.4V26" fill="currentColor" /></svg>;
+  }
+
+  if (kind === "TikTok") {
+    return <svg aria-label="TikTok" className="size-7" fill="none" viewBox="0 0 32 32"><path d="M18.5 6C19 9.1 20.8 11 24 11.4V14.7C21.9 14.7 20.1 14.1 18.5 12.9V20.2C18.5 23.8 16.2 26 12.9 26C9.9 26 7.7 24 7.7 21.1C7.7 18.1 10.1 16 13.5 16C14.1 16 14.6 16.1 15.1 16.2V19.6C14.6 19.4 14.1 19.3 13.5 19.3C12.1 19.3 11.1 20 11.1 21.1C11.1 22.2 11.9 22.9 13.1 22.9C14.4 22.9 15.2 22.1 15.2 20.5V6H18.5Z" fill="currentColor" /></svg>;
+  }
+
+  if (kind === "LinkedIn") {
+    return <svg aria-label="LinkedIn" className="size-7" fill="none" viewBox="0 0 32 32"><rect x="6" y="6" width="20" height="20" rx="3" stroke="currentColor" strokeWidth="2.2" /><path d="M11 14V22" stroke="currentColor" strokeWidth="2.4" /><path d="M16 22V17.5C16 15.8431 17.3431 14.5 19 14.5C20.6569 14.5 22 15.8431 22 17.5V22" stroke="currentColor" strokeWidth="2.4" /><circle cx="11" cy="10.5" r="1.5" fill="currentColor" /></svg>;
+  }
+
+  if (kind === "X") {
+    return <svg aria-label="X" className="size-7" fill="none" viewBox="0 0 32 32"><path d="M7 7L25 25" stroke="currentColor" strokeWidth="2.8" /><path d="M25 7L7 25" stroke="currentColor" strokeWidth="2.8" /></svg>;
+  }
+
+  if (kind === "YouTube") {
+    return <svg aria-label="YouTube" className="size-7" fill="none" viewBox="0 0 32 32"><rect x="4.5" y="8" width="23" height="16" rx="5" stroke="currentColor" strokeWidth="2.2" /><path d="M14 12.8L20.4 16L14 19.2V12.8Z" fill="currentColor" /></svg>;
+  }
+
+  return <svg aria-label="Medium" className="size-7" fill="none" viewBox="0 0 32 32"><circle cx="10" cy="16" r="4" fill="currentColor" /><ellipse cx="18.5" cy="16" rx="3.5" ry="8" fill="currentColor" opacity="0.85" /><ellipse cx="24.5" cy="16" rx="2.5" ry="6" fill="currentColor" opacity="0.72" /></svg>;
+}
+
 export function Footer() {
   return (
     <footer className="bg-black px-6 py-14 text-white md:py-20">
@@ -73,11 +108,9 @@ export function Footer() {
           <div>
             <h3 className="font-bold uppercase">Follow us</h3>
             <div className="mt-4 flex flex-wrap gap-4 text-white">
-              <svg aria-label="Instagram" className="size-7" fill="none" viewBox="0 0 32 32"><rect x="6" y="6" width="20" height="20" rx="6" stroke="currentColor" strokeWidth="2.4" /><circle cx="16" cy="16" r="5" stroke="currentColor" strokeWidth="2.4" /><circle cx="22.4" cy="9.6" r="1.6" fill="currentColor" /></svg>
-              <svg aria-label="X" className="size-7" fill="none" viewBox="0 0 32 32"><path d="M7 7L25 25" stroke="currentColor" strokeWidth="2.8" /><path d="M25 7L7 25" stroke="currentColor" strokeWidth="2.8" /></svg>
-              <svg aria-label="LinkedIn" className="size-7" fill="none" viewBox="0 0 32 32"><rect x="6" y="6" width="20" height="20" rx="3" stroke="currentColor" strokeWidth="2.2" /><path d="M11 14V22" stroke="currentColor" strokeWidth="2.4" /><path d="M16 22V17.5C16 15.8431 17.3431 14.5 19 14.5C20.6569 14.5 22 15.8431 22 17.5V22" stroke="currentColor" strokeWidth="2.4" /><circle cx="11" cy="10.5" r="1.5" fill="currentColor" /></svg>
-              <svg aria-label="YouTube" className="size-7" fill="none" viewBox="0 0 32 32"><rect x="4.5" y="8" width="23" height="16" rx="5" stroke="currentColor" strokeWidth="2.2" /><path d="M14 12.8L20.4 16L14 19.2V12.8Z" fill="currentColor" /></svg>
-              <svg aria-label="Medium" className="size-7" fill="none" viewBox="0 0 32 32"><circle cx="10" cy="16" r="4" fill="currentColor" /><ellipse cx="18.5" cy="16" rx="3.5" ry="8" fill="currentColor" opacity="0.85" /><ellipse cx="24.5" cy="16" rx="2.5" ry="6" fill="currentColor" opacity="0.72" /></svg>
+              {siteContent.socialLinks.map((link) => (
+                <FooterSocialIcon key={link} kind={link} />
+              ))}
             </div>
             <div className="mt-8">
               <Button href="/contact" variant="white">
@@ -117,7 +150,7 @@ export function Button({
 
   return (
     <Link
-      className={`inline-flex min-h-12 items-center justify-center rounded-full border px-5 text-sm font-semibold uppercase tracking-[0.04em] shadow-[0_8px_18px_rgba(0,0,0,0.06)] transition duration-200 hover:-translate-y-0.5 md:min-h-[46px] md:px-7 md:text-[13px] ${variants[variant]}`}
+      className={`inline-flex min-h-12 items-center justify-center rounded-full border px-5 text-sm font-medium shadow-[0_8px_18px_rgba(0,0,0,0.06)] transition duration-200 hover:-translate-y-0.5 md:min-h-[46px] md:px-7 md:text-[20px] ${variants[variant]}`}
       href={href}
     >
       {children}
@@ -200,13 +233,15 @@ export function PageHero({
 export function CaseCard({
   dark = false,
   imageSrc = figmaAssets.caseStudy,
+  className = "",
 }: {
   dark?: boolean;
   imageSrc?: string;
+  className?: string;
 }) {
   return (
     <article
-      className={`relative overflow-hidden rounded-[20px] p-6 md:p-8 ${dark ? "text-white" : "bg-[#f1f1f1] text-black"}`}
+      className={`relative overflow-hidden rounded-[20px] p-6 md:p-8 ${dark ? "text-white" : "bg-[#f1f1f1] text-black"} ${className}`}
       style={
         dark
           ? {
@@ -224,7 +259,8 @@ export function CaseCard({
       </h3>
       <p className="mt-4 max-w-[480px] text-base leading-relaxed md:text-lg">
         A captivating statement about what service was offered to the company.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dignissim
+        fringilla feugiat.
       </p>
       <div className="mt-10 flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between md:mt-14">
         <span className="text-xs font-bold uppercase tracking-[0.12em]">Company Name</span>
@@ -241,7 +277,7 @@ export function ListingControls() {
     <div className="flex flex-wrap gap-3 md:gap-4">
       {["Search", "Sort by", "Topic", "Duration"].map((item) => (
         <button
-          className="min-h-11 rounded-full border border-black/15 px-5 text-sm font-semibold uppercase tracking-[0.04em] md:min-h-[46px] md:px-7 md:text-[13px]"
+          className="min-h-11 rounded-full border border-black/15 px-5 text-sm font-semibold md:min-h-[56px] md:px-7 md:text-[20px]"
           key={item}
           type="button"
         >
@@ -257,15 +293,19 @@ export function InsightCard({
   title,
   body,
   imageSrc = figmaAssets.news,
+  className = "",
+  compact = false,
 }: {
   kind: string;
   title: string;
   body?: string;
   imageSrc?: string;
+  className?: string;
+  compact?: boolean;
 }) {
   return (
     <article
-      className="rounded-[20px] bg-black p-6 text-white md:p-8"
+      className={`rounded-[20px] bg-black p-6 text-white md:p-8 ${className}`}
       style={{
         backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.68)), url(${imageSrc})`,
         backgroundPosition: "center",
@@ -273,9 +313,16 @@ export function InsightCard({
       }}
     >
       <Label>{kind}</Label>
-      <h3 className="mt-24 font-display text-3xl font-medium leading-tight md:mt-36 md:text-4xl">
+      <h3 className={`font-display text-3xl font-medium leading-tight md:text-4xl ${compact ? "mt-8 md:mt-12" : "mt-24 md:mt-36"}`}>
         {title}
       </h3>
+      {kind.toLowerCase() === "webinar" ? (
+        <div className="mt-3 space-y-1 text-sm font-semibold md:text-base">
+          <p>Jedidiah Akpata &amp; Charles Ojei</p>
+          <p>November 2023</p>
+          <p>01:40:35</p>
+        </div>
+      ) : null}
       {body ? <p className="mt-4 max-w-[320px] text-base leading-relaxed">{body}</p> : null}
       <div className="mt-8">
         <Button href="/insights/articles/specific-article" variant="white">

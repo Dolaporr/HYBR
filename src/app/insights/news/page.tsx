@@ -65,7 +65,16 @@ export default function NewsPage() {
       <section id="more" className="px-6 py-24">
         <div className="mx-auto grid max-w-[1200px] gap-6 lg:grid-cols-2">
           <InsightCard kind="Webinar" title="One Liner For Specific Webinar" />
-          <InsightCard kind="Insights" title="Understand what's changing, and what to do about it." />
+          <InsightCard kind="Article" title="One Liner For Specific Article" />
+        </div>
+        <div className="mx-auto mt-10 max-w-[1200px]">
+          <p className="font-bold uppercase">Our Insights</p>
+          <h2 className="mt-3 font-display text-4xl font-medium md:text-5xl">
+            Catch up on what matters and stay prepared for what&apos;s next.
+          </h2>
+          <p className="mt-4 text-xl leading-relaxed">
+            Understand what&apos;s changing, and what to do about it.
+          </p>
         </div>
       </section>
       <div id="what-we-do">

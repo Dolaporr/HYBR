@@ -23,13 +23,10 @@ export default function OurWorkPage() {
 
       <section id="spotlight" className="px-6 pb-24">
         <div className="mx-auto max-w-[1200px]">
-          <div className="mb-8 flex items-center justify-between">
-            <p className="font-bold uppercase">Spotlight</p>
+          <p className="mb-8 font-bold uppercase">Spotlight</p>
+          <CaseCard dark />
+          <div className="mt-10 flex items-center justify-between gap-4">
             <ListingControls />
-          </div>
-          <div className="grid gap-6 lg:grid-cols-2">
-            <CaseCard dark />
-            <CaseCard />
           </div>
         </div>
       </section>
@@ -37,9 +34,8 @@ export default function OurWorkPage() {
       <section id="recent" className="px-6 py-24">
         <div className="mx-auto max-w-[1200px]">
           <p className="font-bold uppercase">Case Studies</p>
-          <div className="mt-8 grid gap-6 lg:grid-cols-3">
-            <CaseCard />
-            <CaseCard />
+          <div className="mt-8 grid gap-6 lg:grid-cols-2">
+            <CaseCard dark />
             <CaseCard />
           </div>
           <div className="mt-10 text-center">

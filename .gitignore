@@ -35,6 +35,9 @@ dev-server.*.log
 # generated design exports
 figma-*.json
 figma-*.csv
+figma_*.json
+figma_*.csv
+.codex-screenshots/
 
 # local tooling
 /.tools/

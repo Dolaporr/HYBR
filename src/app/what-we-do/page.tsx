@@ -8,22 +8,20 @@ import {
 } from "../_components/marketing";
 import { figmaAssets } from "@/content/site";
 
-const services = [
+const products = [
   {
-    title: "Discover",
-    body: "We help you understand the problem, surface the opportunity, and make confident decisions with evidence.",
+    name: "FLYWHEEL",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus dolor id metus auctor tincidunt. Cras et gravida dolor. Morbi auctor nibh lacus. Nulla luctus, risus nec lobortis iaculis, ante est imperdiet augue, id mattis tellus sapien quis purus. Nullam faucibus, sapien id condimentum sagittis, justo urna rhoncus lacus, viverra lacinia nibh ex in neque.",
   },
   {
-    title: "Develop",
-    body: "We turn insight into action through prototyping, product and service design, experiments, and validation.",
+    name: "INDX",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus dolor id metus auctor tincidunt. Cras et gravida dolor. Morbi auctor nibh lacus. Nulla luctus, risus nec lobortis iaculis, ante est imperdiet augue, id mattis tellus sapien quis purus. Nullam faucibus, sapien id condimentum sagittis, justo urna rhoncus lacus, viverra lacinia nibh ex in neque.",
   },
   {
-    title: "Deploy",
-    body: "We help you move solutions into market with strategy, venture building, scaling execution, and impact measurement.",
+    name: "ALPHA",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus dolor id metus auctor tincidunt. Cras et gravida dolor. Morbi auctor nibh lacus. Nulla luctus, risus nec lobortis iaculis, ante est imperdiet augue, id mattis tellus sapien quis purus. Nullam faucibus, sapien id condimentum sagittis, justo urna rhoncus lacus, viverra lacinia nibh ex in neque.",
   },
 ];
-
-const products = ["INDX", "FLYWHEEL", "ALPHA"];
 
 export default function WhatWeDoPage() {
   return (
@@ -43,31 +41,110 @@ export default function WhatWeDoPage() {
 
       <section
         id="services"
-        className="bg-black px-6 py-20 text-white md:py-28"
+        className="relative overflow-hidden"
         style={{
           backgroundImage: `linear-gradient(90deg, rgba(0,0,0,.78), rgba(0,0,0,.52)), url(${figmaAssets.people})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
       >
-        <div className="mx-auto max-w-[1200px]">
-          <div className="max-w-[930px]">
-            <Label>Our Services</Label>
-            <h2 className="mt-3 font-display text-5xl font-medium leading-tight">
-              We take you from understanding the problem to owning the market,
-              all in one innovation pipeline.
-            </h2>
+        <div className="mx-auto max-w-[1200px] px-6 py-20 md:py-28">
+          <div className="grid gap-16 lg:grid-cols-[588px_1fr] lg:items-center">
+            <div className="text-white">
+              <Label>Our Services</Label>
+              <h2 className="mt-3 font-display text-4xl font-medium leading-tight md:text-5xl">
+                We take you from understanding the problem to owning the market, all in one innovation pipeline.
+              </h2>
+              <div className="mt-8">
+                <Button href="/what-we-do/services" variant="white">Explore Services</Button>
+              </div>
+            </div>
+            <div className="flex flex-col gap-4 text-white lg:items-end">
+              {["Discover", "Develop", "Deploy"].map((word, i) => (
+                <p
+                  className="font-display font-medium leading-none"
+                  key={word}
+                  style={{ fontSize: `${5 + i * 0.5}rem`, opacity: 0.85 - i * 0.1 }}
+                >
+                  {word}
+                </p>
+              ))}
+            </div>
           </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {services.map((service) => (
-              <article className="rounded-[20px] border border-white/20 bg-black/72 p-8 text-white backdrop-blur-sm" key={service.title}>
-                <h3 className="font-display text-4xl font-medium md:text-5xl">{service.title}</h3>
-                <p className="mt-16 text-lg leading-relaxed md:text-xl">{service.body}</p>
-              </article>
+        </div>
+      </section>
+
+      <section id="work" className="px-6 py-24">
+        <div className="mx-auto max-w-[1200px]">
+          <div className="grid gap-6 lg:grid-cols-[486px_690px] lg:items-start">
+            <div className="overflow-hidden rounded-[20px] lg:h-[712px]">
+              <CaseCard className="h-full" dark />
+            </div>
+            <div className="flex flex-col gap-6">
+              <div className="overflow-hidden rounded-[20px] lg:h-[386px]">
+                <CaseCard className="h-full" dark />
+              </div>
+              <div className="flex flex-col justify-between py-4 lg:flex-1">
+                <div>
+                  <Label>Our Work</Label>
+                  <h2 className="mt-3 font-display text-4xl font-medium leading-tight md:text-5xl">
+                    One Liner To Lead User To Case Studies Page
+                  </h2>
+                  <p className="mt-4 text-xl leading-relaxed">
+                    A short, captivating statement about what this case study is about.
+                    A continuation of the one-liner above to drive users to visit
+                    &ldquo;Case Studies&rdquo;.
+                  </p>
+                </div>
+                <div className="mt-8">
+                  <Button href="/what-we-do/our-work">View Case Studies</Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="products" className="px-6 pb-24">
+        <div className="mx-auto max-w-[1200px]">
+          <Label>Our Products</Label>
+          <h2 className="mt-3 font-display text-4xl font-medium leading-tight md:text-5xl">
+            Tools designed to make innovation feel effortless.
+          </h2>
+          <p className="mt-4 text-xl">
+            Helping you turn your best ideas into meaningful results.
+          </p>
+          <div className="mt-10 space-y-6">
+            {products.map((product) => (
+              <div
+                className="grid gap-8 rounded-[20px] bg-[#f1f1f1] p-8 md:p-10 lg:grid-cols-[340px_1fr] lg:items-center"
+                key={product.name}
+              >
+                <div>
+                  <h3 className="font-display text-5xl font-medium">{product.name}</h3>
+                  <div className="mt-6">
+                    <Button href="/what-we-do/products" variant="dark">Learn More</Button>
+                  </div>
+                </div>
+                <div className="lg:border-l lg:border-black/10 lg:pl-8">
+                  <p className="text-lg leading-relaxed">{product.body}</p>
+                  <div className="mt-6 flex items-center gap-4">
+                    <input
+                      aria-label="Email address"
+                      className="min-h-12 flex-1 rounded-full border border-black/15 bg-white px-5 text-sm outline-none focus:border-black/30 md:min-h-[46px]"
+                      placeholder="Your email address"
+                      type="email"
+                    />
+                    <Button href="/what-we-do/products" variant="dark">
+                      Access {product.name}
+                    </Button>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
           <div className="mt-10 text-center">
-            <Button href="/what-we-do/services">Explore Services</Button>
+            <Button href="/what-we-do/products" variant="dark">Explore All Products</Button>
           </div>
         </div>
       </section>
@@ -94,83 +171,24 @@ export default function WhatWeDoPage() {
             ))}
           </div>
           <div className="mt-10">
-            <Button href="/what-we-do/our-impact" variant="dark">
-              Learn More
-            </Button>
+            <Button href="/what-we-do/our-impact" variant="dark">Learn More</Button>
           </div>
         </div>
       </section>
 
-      <section id="products" className="px-6 py-24">
+      <section id="team" className="px-6 pb-24">
         <div className="mx-auto max-w-[1200px]">
-          <Label>Our Products</Label>
-          <h2 className="mt-3 max-w-[820px] font-display text-4xl font-medium leading-tight md:text-5xl">
-            Tools designed to make innovation feel effortless.
+          <Label>Our Team</Label>
+          <h2 className="mt-3 font-display text-4xl font-medium leading-tight md:max-w-[1104px] md:text-5xl">
+            We are powered by a team that blends strategy, creativity, and execution.
           </h2>
-          <p className="mt-4 text-xl md:text-2xl">
-            Helping you turn your best ideas into meaningful results.
+          <p className="mt-4 max-w-[1104px] text-xl leading-relaxed">
+            If you&apos;re passionate about growth, creativity, and solving challenges that matter, this is the place for you—learn more about the team you could be a part of.
           </p>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {products.map((product) => (
-              <article className="rounded-[20px] bg-[#f1f1f1] p-8 shadow-[0_18px_42px_rgba(0,0,0,0.06)]" key={product}>
-                <h3 className="font-display text-4xl font-medium md:text-5xl">{product}</h3>
-                <p className="mt-8 text-base leading-relaxed md:text-lg">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  tempus dolor id metus auctor tincidunt.
-                </p>
-                <div className="mt-10">
-                  <Button href="/what-we-do/products" variant="dark">
-                    Access {product}
-                  </Button>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="work" className="px-6 py-24">
-        <div className="mx-auto grid max-w-[1200px] gap-8 lg:grid-cols-[1fr_486px] lg:items-end">
-          <div>
-            <Label>Our Work</Label>
-            <h2 className="mt-3 font-display text-4xl font-medium md:text-5xl">
-              One Liner To Lead User To Case Studies Page
-            </h2>
-            <p className="mt-4 text-xl md:text-2xl">
-              A continuation of the one-liner above to drive users to visit Case
-              Studies.
-            </p>
-            <div className="mt-8">
-              <Button href="/what-we-do/our-work">View Case Studies</Button>
-            </div>
-          </div>
-          <CaseCard dark />
-        </div>
-      </section>
-
-      <section id="team" className="px-6 py-24">
-        <div className="mx-auto grid max-w-[1200px] items-center gap-12 lg:grid-cols-2">
-          <ImagePanel
-            className="h-[260px] rounded-[32px] sm:h-[336px]"
-            overlay="linear-gradient(90deg, rgba(25,106,180,.22), rgba(0,0,0,.1))"
-            src={figmaAssets.people}
-          />
-          <div>
-            <Label>Our Team</Label>
-            <h2 className="mt-3 font-display text-4xl font-medium md:text-5xl">
-              We are powered by a team that blends strategy, creativity, and
-              execution.
-            </h2>
-            <p className="mt-5 text-xl leading-relaxed">
-              If you&apos;re passionate about growth, creativity, and solving
-              challenges that matter, this is the place for you.
-            </p>
-            <div className="mt-8 flex gap-4">
-              <Button href="/who-we-are/our-team">Our Team</Button>
-              <Button href="/who-we-are/careers" variant="dark">
-                Join Us
-              </Button>
-            </div>
+          <ImagePanel className="mt-10 h-[260px] rounded-2xl md:h-[344px]" />
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Button href="/who-we-are/our-team">Our Team</Button>
+            <Button href="/who-we-are/careers" variant="dark">Join Us</Button>
           </div>
         </div>
       </section>

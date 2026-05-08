@@ -53,24 +53,33 @@ export default function ServicesPage() {
         title="Our Services"
       />
 
-      <section className="px-6 pb-20">
-        <div className="mx-auto space-y-12 max-w-[1200px]">
+      <section className="px-6 pb-20 md:pb-32">
+        <div className="mx-auto max-w-[1200px]">
           {services.map((service, index) => (
-            <article
-              className="grid gap-8 rounded-3xl bg-black p-10 text-white lg:grid-cols-[1fr_420px]"
+            <div
+              className={`grid gap-6 lg:grid-cols-[690px_486px] lg:items-center${index > 0 ? " mt-24 md:mt-40 lg:mt-[280px]" : ""}`}
               key={service.title}
             >
-              <div>
-                <h2 className="font-display text-6xl font-medium">{service.title}</h2>
-                <p className="mt-6 text-xl leading-relaxed">{service.body}</p>
-                <ul className="mt-8 grid gap-3 text-xl md:grid-cols-2">
+              <div className="flex flex-col justify-between py-2 lg:h-[340px] lg:py-0">
+                <div>
+                  <h2 className="font-display text-5xl font-medium leading-none md:text-6xl">{service.title}</h2>
+                  <p className="mt-5 text-base leading-relaxed md:text-lg lg:text-xl">{service.body}</p>
+                </div>
+                <div className="mt-6 flex flex-wrap gap-3 lg:mt-0">
                   {service.list.map((item) => (
-                    <li key={item}>✓ {item}</li>
+                    <span
+                      className="rounded-full bg-black px-4 py-2 text-sm font-medium text-white"
+                      key={item}
+                    >
+                      {item}
+                    </span>
                   ))}
-                </ul>
+                </div>
               </div>
-              <CaseCard dark={index % 2 === 0} />
-            </article>
+              <div className="overflow-hidden rounded-[20px] lg:h-[321px]">
+                <CaseCard dark />
+              </div>
+            </div>
           ))}
         </div>
       </section>
@@ -87,6 +96,27 @@ export default function ServicesPage() {
                 <p className="mt-3 font-bold uppercase">{item}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-24">
+        <div className="mx-auto max-w-[1200px] text-center">
+          <Label>Testimonials</Label>
+          <h2 className="mt-3 font-display text-4xl font-medium md:text-5xl">
+            What our clients say about working with us.
+          </h2>
+          <p className="mx-auto mt-4 max-w-[792px] text-xl leading-relaxed">
+            These testimonials reflect the trust and confidence that come from
+            our partnerships.
+          </p>
+          <div className="mx-auto mt-10 max-w-[996px] rounded-[24px] bg-black p-8 text-left text-white md:p-12">
+            <p className="font-display text-3xl font-medium leading-snug md:text-4xl">
+              &ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Mauris dignissim fringilla feugiat. Praesent sed condimentum
+              nulla. Praesent lacinia eleifend turpis, sit amet dignissim massa
+              accumsan in.&rdquo;
+            </p>
           </div>
         </div>
       </section>

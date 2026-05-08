@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { figmaAssets, footerGroups, navigation } from "@/content/site";
+import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 
 const assets = {
   hero: figmaAssets.heroHome,
@@ -13,6 +14,9 @@ const assets = {
   news: figmaAssets.news,
   contact: figmaAssets.contact,
   caseStudy: "/home/case-study.png",
+  caseStudyLogo: "/home/logo-case-study.svg",
+  ourWorkFeature: "/home/our-work-feature-source.png",
+  ourWorkTall: "/home/our-work-tall-source.png",
   footerLogo: figmaAssets.logoWhite,
   footerPattern: figmaAssets.footerPattern,
 };
@@ -22,10 +26,10 @@ const trustedLogoStrip = "/logos/sliding-animation.svg";
 const rotatingWords = ["ideas", "services", "markets", "products", "teams"];
 
 const risks = [
-  "Wasting time and budget on ideas customers don't want",
+  "Wasting time and budget on ideas customers don’t want",
   "Slow, fragmented decision-making",
   "Products that fail to scale",
-  "Losing momentum - and market relevance",
+  "Losing momentum — and market relevance",
 ];
 
 const services = [
@@ -73,13 +77,15 @@ function Button({
   children,
   href = "/contact",
   variant = "primary",
+  className = "",
 }: {
   children: ReactNode;
   href?: string;
   variant?: "primary" | "outline" | "dark" | "white" | "glass";
+  className?: string;
 }) {
   return (
-    <a className={`hybr-button hybr-button--${variant}`} href={href}>
+    <a className={`hybr-button hybr-button--${variant} ${className}`} href={href}>
       {children}
     </a>
   );
@@ -93,7 +99,7 @@ function SectionLabel({
   className?: string;
 }) {
   return (
-    <p className={`text-sm font-bold uppercase tracking-normal text-current md:text-base ${className}`}>
+    <p className={`home-section-label text-sm font-semibold uppercase tracking-normal text-current md:text-[20px] ${className}`}>
       {children}
     </p>
   );
@@ -122,17 +128,12 @@ function ImagePanel({
 
 function BrandMark({ className = "" }: { className?: string }) {
   return (
-    <svg
+    <img
+      alt=""
       aria-hidden="true"
       className={className}
-      fill="none"
-      viewBox="0 0 56 56"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <circle cx="28" cy="28" r="10.5" stroke="currentColor" strokeWidth="4.5" />
-      <circle cx="28" cy="28" r="18.75" stroke="currentColor" strokeWidth="4.5" />
-      <circle cx="28" cy="28" r="25.75" stroke="currentColor" strokeWidth="4.5" />
-    </svg>
+      src={assets.caseStudyLogo}
+    />
   );
 }
 
@@ -144,7 +145,11 @@ function InfoBadge() {
   );
 }
 
-function SocialIcon({ kind }: { kind: "instagram" | "x" | "linkedin" | "youtube" | "medium" }) {
+function SocialIcon({
+  kind,
+}: {
+  kind: "instagram" | "x" | "linkedin" | "youtube" | "facebook" | "medium" | "tiktok";
+}) {
   if (kind === "instagram") {
     return (
       <svg aria-hidden="true" className="size-8" fill="none" viewBox="0 0 32 32">
@@ -180,6 +185,23 @@ function SocialIcon({ kind }: { kind: "instagram" | "x" | "linkedin" | "youtube"
       <svg aria-hidden="true" className="size-8" fill="none" viewBox="0 0 32 32">
         <rect x="4.5" y="8" width="23" height="16" rx="5" stroke="currentColor" strokeWidth="2.2" />
         <path d="M14 12.8L20.4 16L14 19.2V12.8Z" fill="currentColor" />
+      </svg>
+    );
+  }
+
+  if (kind === "facebook") {
+    return (
+      <svg aria-hidden="true" className="size-8" fill="none" viewBox="0 0 32 32">
+        <circle cx="16" cy="16" r="10" stroke="currentColor" strokeWidth="2.2" />
+        <path d="M17.5 26V16.8H20.4L20.9 13.4H17.5V11.2C17.5 10.2 17.8 9.5 19.2 9.5H21V6.5C20.1 6.4 19.4 6.4 18.6 6.4C16.1 6.4 14.4 7.9 14.4 10.7V13.4H11.6V16.8H14.4V26" fill="currentColor" />
+      </svg>
+    );
+  }
+
+  if (kind === "tiktok") {
+    return (
+      <svg aria-hidden="true" className="size-8" fill="none" viewBox="0 0 32 32">
+        <path d="M18.5 6C19 9.1 20.8 11 24 11.4V14.7C21.9 14.7 20.1 14.1 18.5 12.9V20.2C18.5 23.8 16.2 26 12.9 26C9.9 26 7.7 24 7.7 21.1C7.7 18.1 10.1 16 13.5 16C14.1 16 14.6 16.1 15.1 16.2V19.6C14.6 19.4 14.1 19.3 13.5 19.3C12.1 19.3 11.1 20 11.1 21.1C11.1 22.2 11.9 22.9 13.1 22.9C14.4 22.9 15.2 22.1 15.2 20.5V6H18.5Z" fill="currentColor" />
       </svg>
     );
   }
@@ -346,7 +368,11 @@ export default function Home() {
                 Innovation Is Slowed By Guesswork
               </h2>
               <p className="mt-4 text-xl leading-relaxed md:text-2xl">
-                As a leader, you face one common enemy: innovation by guesswork.
+                As a leader, you face one common enemy:{" "}
+                <a className="home-risk-link" href="/resources/innovation-guide">
+                  innovation by guesswork
+                </a>
+                .
                 Fragmented insights, slow decisions, siloed teams, and no clear
                 direction. Yet you&apos;re still expected to deliver the next big win,
                 without a roadmap.
@@ -399,7 +425,7 @@ export default function Home() {
                 <h3 className="font-display text-2xl font-medium md:text-[30px]">
                   With HYBR, you get:
                 </h3>
-                <ul className="mt-5 space-y-3 text-[15px] leading-[1.4] md:text-[18px]">
+                <ul className="mt-5 space-y-3 text-[15px] leading-[1.4] md:text-[20px]">
                   <li>
                     <span className="mr-2 text-[#8dc540]">&#10003;</span>
                     A trusted guide who understands your innovation challenges
@@ -440,21 +466,19 @@ export default function Home() {
               {services.map((service) => (
                 <article
                   key={service.title}
-                  className="home-service-card rounded-[14px] text-white"
+                  className="home-service-card rounded-3xl text-white"
                   style={{
                     backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.74) 76%), url(${assets.whoImage})`,
                     backgroundPosition: service.bgPosition,
                     backgroundSize: "cover",
                   }}
                 >
-                  <div className="flex items-start justify-between gap-4">
-                    <span className="home-service-glyph">
-                      <ServiceGlyph kind={service.icon} />
-                    </span>
-                    <InfoBadge />
-                  </div>
+                  <InfoBadge />
+                  <span className="home-service-glyph">
+                    <ServiceGlyph kind={service.icon} />
+                  </span>
                   <div className="home-service-body">
-                    <h3 className="font-display text-[26px] font-semibold leading-none">
+                    <h3 className="font-display text-[32px] font-medium leading-none">
                       {service.title}
                     </h3>
                     <p className="home-service-pill">{service.tag}</p>
@@ -462,16 +486,17 @@ export default function Home() {
                 </article>
               ))}
             </div>
-            <div className="mt-8 text-center">
+            <div className="home-services-cta mt-8 text-center">
               <Button href="/what-we-do/services" variant="outline">
-                Explore Our Services
+                <span className="home-services-cta-full">Explore Our Services</span>
+                <span className="home-services-cta-mobile">Explore Services</span>
               </Button>
             </div>
           </div>
         </section>
       </div>
 
-      <section className="home-band px-6 py-24 text-center">
+      <section className="home-band home-impact-section px-6 py-24 text-center">
         <div className="home-impact-wrap mx-auto">
           <SectionLabel>Our Impact</SectionLabel>
           <h2 className="home-impact-headline mx-auto mt-2 font-display font-medium leading-tight">
@@ -481,8 +506,8 @@ export default function Home() {
           <div className="home-impact-grid mt-12 grid gap-6 md:grid-cols-3">
             {impact.map((item) => (
               <div key={item.label} className="home-impact-stat">
-                <p className="home-impact-value font-display font-extrabold">{item.value}</p>
-                <p className="home-impact-label mt-2 text-sm font-bold uppercase">
+                <p className="home-impact-value font-extrabold">{item.value}</p>
+                <p className="home-impact-label mt-2 text-sm font-semibold uppercase">
                   {item.label}
                 </p>
               </div>
@@ -496,73 +521,63 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-band px-6 py-28">
-        <div className="home-work-wrap mx-auto grid gap-8 lg:grid-cols-[408px_286px] lg:justify-center lg:gap-x-8">
-          <div className="grid gap-5">
-            <div className="home-work-copy">
-              <SectionLabel>Our Work</SectionLabel>
-              <h2 className="home-work-title mt-2 font-display font-medium leading-tight">
-                Trusted by Innovators Across Industries
-              </h2>
-              <p className="home-work-body mt-4 text-base leading-relaxed md:text-lg">
-                We&apos;ve helped governments, corporations, startups, and ecosystem
-                builders move from insight to impact - faster and more confidently.
-              </p>
-              <div className="mt-5">
-                <Button href="/what-we-do/our-work" variant="outline">
-                  More Case Studies
-                </Button>
-              </div>
-            </div>
-            <article
-              className="home-case-feature overflow-hidden rounded-[14px] text-white"
-              style={{
-                backgroundImage: `linear-gradient(180deg, rgba(10,33,55,.06), rgba(0,0,0,.84) 74%), url(${assets.whoImage})`,
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-              }}
-            >
-              <BrandMark className="home-case-mark text-white" />
-              <div className="home-case-content">
-                <p className="home-case-kicker">CASE STUDY</p>
-                <h3 className="font-display text-[21px] leading-[1.1]">
-                  One Liner For Specific Case Study
-                </h3>
-                <p className="mt-3 max-w-[305px] text-[11px] leading-[1.45] text-white/82">
-                  A captivating statement about what service was offered to the
-                  company. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-                <div className="mt-5 flex items-end justify-between gap-4">
-                  <span className="text-[10px] font-bold uppercase tracking-[0.12em]">
-                    Company Name
-                  </span>
-                  <a className="home-inline-cta" href="/case-studies/one-liner">
-                    Read More
-                  </a>
-                </div>
-              </div>
-            </article>
+      <section className="home-band home-work-section px-6 py-28">
+        <div className="home-work-wrap mx-auto grid">
+          <div className="home-work-copy">
+            <SectionLabel>Our Work</SectionLabel>
+            <h2 className="home-work-title mt-2 font-display font-medium leading-tight">
+              Trusted by Innovators Across Industries
+            </h2>
+            <p className="home-work-body mt-4 text-base leading-relaxed md:text-lg">
+              We&apos;ve helped governments, corporations, startups, and ecosystem
+              builders move from insight to impact - faster and more confidently.
+            </p>
+          </div>
+          <div className="home-work-cta">
+            <Button href="/what-we-do/our-work" variant="outline">
+              More Case Studies
+            </Button>
           </div>
           <article
-            className="home-case-tall overflow-hidden rounded-[14px] text-white"
-            style={{
-              backgroundImage: `linear-gradient(180deg, rgba(80,26,0,.08), rgba(101,48,17,.24) 28%, rgba(0,0,0,.74)), url(${assets.caseStudy})`,
-              backgroundPosition: "64% center",
-              backgroundSize: "cover",
-            }}
+            className="home-case-feature overflow-hidden rounded-[14px] text-white"
           >
+            <img alt="" aria-hidden="true" className="home-case-bg home-case-bg--feature" src={assets.ourWorkFeature} />
+            <BrandMark className="home-case-mark" />
+            <div className="home-case-content">
+              <p className="home-case-kicker">CASE STUDY</p>
+              <h3 className="text-[21px] font-medium leading-[1.1]">
+                One Liner For Specific Case Study
+              </h3>
+              <p className="mt-3 max-w-[305px] text-[11px] font-semibold leading-[1.45] text-white/82">
+                A captivating statement about what service was offered to the
+                company. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+              <div className="mt-5 flex items-end justify-between gap-4">
+                <span className="text-xs font-semibold uppercase tracking-[0.12em] md:text-[20px]">
+                  Company Name
+                </span>
+                <a className="home-inline-cta" href="/case-studies/one-liner">
+                  Read More
+                </a>
+              </div>
+            </div>
+          </article>
+          <article
+            className="home-case-tall overflow-hidden rounded-[14px] text-white"
+          >
+            <img alt="" aria-hidden="true" className="home-case-bg home-case-bg--tall" src={assets.ourWorkTall} />
             <div className="home-case-tall-top">
-              <BrandMark className="home-case-mark home-case-mark--small text-white" />
+              <BrandMark className="home-case-mark home-case-mark--small" />
               <a className="home-inline-cta home-inline-cta--light" href="/case-studies/one-liner">
                 Read More
               </a>
             </div>
             <div className="home-case-tall-copy">
               <p className="home-case-kicker">CASE STUDY</p>
-              <h3 className="font-display text-[20px] leading-[1.12]">
+              <h3 className="text-[20px] font-medium leading-[1.12]">
                 One Liner For Specific Case Study
               </h3>
-              <p className="mt-3 max-w-[190px] text-[11px] leading-[1.4] text-white/82">
+              <p className="mt-3 max-w-[190px] text-[11px] font-semibold leading-[1.4] text-white/82">
                 A captivating statement about what service was offered to the
                 company. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </p>
@@ -571,7 +586,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-band px-6 py-24">
+      <section className="home-band home-testimonials-section px-6 py-24">
         <div className="home-testimonials-wrap mx-auto text-center">
           <SectionLabel>Testimonials</SectionLabel>
           <h2 className="home-testimonials-title mt-2 font-display font-medium">
@@ -582,41 +597,7 @@ export default function Home() {
             &quot;testimonial&quot; section, with text or video reviews from HYBR&apos;s
             clientele.
           </p>
-          <div className="home-testimonial-shell mt-10">
-            <button className="home-testimonial-arrow home-testimonial-arrow--left" type="button">
-              &#8249;
-            </button>
-            <div className="home-testimonial-card grid gap-10 text-left text-white md:grid-cols-[116px_1fr]">
-              <div className="relative flex size-[116px] items-center justify-center rounded-full">
-                <span className="absolute inset-0 rounded-full border-[1.5px] border-[#8dc540] opacity-60" />
-                <img
-                  alt="Ayo Balogun"
-                  className="size-[88px] rounded-full border-[3px] border-[#8dc540] object-cover"
-                  src={assets.testimonial}
-                />
-              </div>
-              <div>
-                <blockquote className="home-testimonial-quote font-display">
-                  &quot;The curated innovation retreat for AFEX&apos;s 40-exco team was
-                  truly world class and highly impactful, shaping our strategic
-                  plans going forward.&quot;
-                </blockquote>
-                <p className="mt-8 text-[13px] font-semibold">Ayo Balogun</p>
-                <p className="text-[12px] text-white/86">
-                  CEO, AFEX Commodities | 2022 Financial Times Fastest Growing Venture
-                  in Africa
-                </p>
-              </div>
-            </div>
-            <button className="home-testimonial-arrow home-testimonial-arrow--right" type="button">
-              &#8250;
-            </button>
-          </div>
-          <div className="home-testimonial-dots mt-5">
-            <span className="is-active" />
-            <span />
-            <span />
-          </div>
+          <TestimonialsCarousel />
           <div className="mt-5">
             <Button href="/contact" variant="outline">
               Book A Strategy Call
@@ -625,7 +606,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="insights" className="home-band px-6 py-24">
+      <section id="insights" className="home-band home-insights-section px-6 py-24">
         <div className="home-insights-wrap mx-auto grid gap-4 lg:grid-cols-[289px_406px] lg:justify-center">
           <article
             className="home-news-card relative overflow-hidden rounded-[14px] bg-black p-5 text-white"
@@ -642,7 +623,7 @@ export default function Home() {
             </div>
             <div className="absolute bottom-5 left-5 right-5">
               <SectionLabel>News</SectionLabel>
-              <h3 className="mt-3 font-display text-[22px] font-medium leading-[1.05]">
+              <h3 className="mt-3 text-[22px] font-medium leading-[1.05]">
                 One Liner For Specific News Update
               </h3>
               <p className="mt-3 max-w-[215px] text-[11px] leading-[1.4]">
@@ -650,7 +631,7 @@ export default function Home() {
               </p>
             </div>
           </article>
-          <div className="space-y-5">
+          <div className="home-insights-stack">
             <article
               className="home-webinar-card relative overflow-hidden rounded-[14px] bg-black p-5 text-white"
               style={{
@@ -661,12 +642,12 @@ export default function Home() {
             >
               <SectionLabel>Webinar</SectionLabel>
               <img alt="" className="absolute right-5 top-5 size-8 rotate-90" src={assets.play} />
-              <h3 className="mt-18 max-w-[300px] font-display text-[22px] font-medium leading-[1.06]">
+              <h3 className="mt-18 max-w-[300px] text-[22px] font-medium leading-[1.06]">
                 One Liner For Specific Webinar
               </h3>
-              <p className="mt-3 text-[11px]">Jedidiah Akpata & Charles Ojei</p>
-              <p className="text-[11px]">November 2023</p>
-              <p className="absolute bottom-5 right-5 text-[11px] font-bold">01:40:35</p>
+              <p className="mt-3 text-[11px] font-semibold">Jedidiah Akpata & Charles Ojei</p>
+              <p className="text-[11px] font-semibold">November 2023</p>
+              <p className="absolute bottom-5 right-5 text-[11px] font-semibold">01:40:35</p>
             </article>
             <div className="home-insights-copy">
               <SectionLabel>Insights</SectionLabel>
@@ -683,7 +664,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-band px-6 py-24">
+      <section className="home-band home-gain-section px-6 py-24">
         <div className="home-gain-wrap mx-auto grid gap-10 lg:grid-cols-[384px_1fr] lg:items-center">
           <ImagePanel
             className="home-droplet-left home-gain-image h-[260px] sm:h-[336px]"
@@ -700,7 +681,7 @@ export default function Home() {
                   <svg aria-hidden="true" className="mt-1 size-5 shrink-0 text-black" fill="none" viewBox="0 0 20 20">
                     <path d="M4 10L8.5 14.5L16 6" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  <span>{item}</span>
+                  <span className="font-medium">{item}</span>
                 </li>
               ))}
             </ul>
@@ -713,7 +694,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-band px-6 py-16 text-center">
+      <section className="home-band home-cta-section px-6 py-16 text-center">
         <div className="home-cta-wrap mx-auto">
           <h2 className="font-display text-[26px] font-medium md:text-[28px]">
             Ready to Build What&apos;s Next?
@@ -730,7 +711,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="home-band px-6 py-24">
+      <section id="contact" className="home-band home-contact-section px-6 py-24">
         <div className="home-contact-shell mx-auto grid max-w-[1200px] overflow-hidden rounded-3xl bg-black text-white lg:grid-cols-2">
           <div
             className="min-h-[380px] bg-cover bg-center p-6 md:p-16 lg:min-h-0"
@@ -741,7 +722,7 @@ export default function Home() {
             <h2 className="font-display text-4xl font-medium md:text-5xl">
               Build Innovation that Works, with Us
             </h2>
-            <p className="mt-6 max-w-[461px] text-xl leading-relaxed">
+            <p className="mt-6 max-w-[461px] font-medium text-xl leading-relaxed">
               Supporting lead generator body text to encourage users to book a strategy
               call.
             </p>
@@ -753,14 +734,14 @@ export default function Home() {
               className="field min-h-40 resize-none"
               placeholder="What would you like us to know?"
             />
-            <button className="home-submit-button min-h-14 w-full rounded-full bg-white px-8 text-lg font-semibold uppercase text-black transition hover:-translate-y-0.5">
+            <button className="home-submit-button min-h-14 w-full rounded-full bg-white px-8 text-lg font-medium text-black transition hover:-translate-y-0.5">
               Submit
             </button>
           </form>
         </div>
       </section>
 
-      <footer className="bg-black px-6 py-14 text-white md:py-20">
+      <footer className="home-footer bg-black px-6 py-14 text-white md:py-20">
         <div className="mx-auto max-w-[1200px]">
           <div className="relative grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
             <img
@@ -784,10 +765,12 @@ export default function Home() {
               <h3 className="font-bold uppercase">Follow us</h3>
               <div className="mt-4 flex flex-wrap gap-4 text-white">
                 <SocialIcon kind="instagram" />
-                <SocialIcon kind="x" />
                 <SocialIcon kind="linkedin" />
+                <SocialIcon kind="x" />
                 <SocialIcon kind="youtube" />
+                <SocialIcon kind="facebook" />
                 <SocialIcon kind="medium" />
+                <SocialIcon kind="tiktok" />
               </div>
               <div className="mt-8">
                 <Button variant="white">Let&apos;s Talk</Button>
@@ -800,7 +783,7 @@ export default function Home() {
               <span>Terms & Conditions</span>
             </div>
             <img alt="HYBR" className="h-10 w-[128px] object-contain" src={assets.footerLogo} />
-            <span>Copyright 2025 HYBR Group</span>
+            <span>&copy; 2025 HYBR GROUP</span>
           </div>
         </div>
       </footer>

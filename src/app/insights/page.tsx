@@ -1,13 +1,14 @@
 import {
   Button,
   Footer,
-  ImagePanel,
   InsightCard,
   Label,
+  ListingControls,
   PageHero,
-  WhatWeDoCta,
 } from "../_components/marketing";
 import { figmaAssets } from "@/content/site";
+
+const newsletterCategories = ["Webinars", "Articles", "News", "Newsletter"];
 
 export default function InsightsPage() {
   return (
@@ -15,96 +16,206 @@ export default function InsightsPage() {
       <PageHero
         active="insights"
         menu={[
-          { label: "Articles", href: "#articles" },
+          { label: "Spotlight", href: "#spotlight" },
           { label: "Webinars", href: "#webinars" },
+          { label: "Articles", href: "#articles" },
           { label: "News", href: "#news" },
-          { label: "What We Do", href: "#what-we-do" },
+          { label: "Newsletter", href: "#newsletter" },
         ]}
         subtitle="Understand what's changing, and what to do about it."
-        title="Insights"
+        title="Our Insights"
       />
 
-      <section className="px-6 pb-24">
-        <div className="mx-auto grid max-w-[1200px] gap-6 lg:grid-cols-[1fr_486px]">
-          <article
-            id="articles"
-            className="overflow-hidden rounded-[20px] bg-black p-8 text-white md:p-10"
+      <section className="px-6 pb-8">
+        <div className="mx-auto max-w-[1200px]">
+          <ListingControls />
+        </div>
+      </section>
+
+      <section id="spotlight" className="px-6 pb-16">
+        <div className="mx-auto max-w-[1200px]">
+          <p className="mb-6 font-bold uppercase">Spotlight</p>
+          <div className="overflow-hidden rounded-[20px] lg:h-[408px]">
+            <InsightCard
+              className="h-full"
+              imageSrc={figmaAssets.webinar}
+              kind="Webinar"
+              title="Title of Specific Webinar"
+            />
+          </div>
+          <div className="mt-6 grid gap-6 lg:grid-cols-2">
+            <div className="overflow-hidden rounded-[20px] lg:h-[386px]">
+              <InsightCard
+                className="h-full"
+                imageSrc={figmaAssets.article}
+                kind="Article"
+                title="One Liner For Specific Article"
+                body="A short, captivating statement about what this article is about."
+              />
+            </div>
+            <div className="overflow-hidden rounded-[20px] lg:h-[386px]">
+              <InsightCard
+                className="h-full"
+                imageSrc={figmaAssets.news}
+                kind="News"
+                title="One Liner For Specific News Update"
+                body="A short, captivating statement about what this news update covers."
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="webinars" className="px-6 py-16">
+        <div className="mx-auto max-w-[1200px]">
+          <div className="max-w-[792px]">
+            <Label>Webinars</Label>
+            <h2 className="mt-4 font-display text-4xl font-medium leading-tight md:text-5xl">
+              Understand what&apos;s changing, and how leaders are responding&mdash;live.
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed">
+              Join the next session or watch past conversations.
+            </p>
+            <p className="mt-3 text-lg leading-relaxed">
+              Understand what&apos;s changing, and how leaders are responding&mdash;live.
+              Join the next session or watch past conversations.
+            </p>
+            <p className="mt-3 text-lg leading-relaxed">
+              Learn how leaders are navigating today&apos;s toughest challenges.
+            </p>
+            <div className="mt-8">
+              <Button href="/insights/webinars" variant="dark">View Webinars</Button>
+            </div>
+          </div>
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            <div className="overflow-hidden rounded-[20px] lg:h-[386px]">
+              <InsightCard className="h-full" imageSrc={figmaAssets.webinar} kind="Webinar" title="One Liner For Specific Webinar" />
+            </div>
+            <div className="overflow-hidden rounded-[20px] lg:h-[386px]">
+              <InsightCard className="h-full" imageSrc={figmaAssets.webinar} kind="Webinar" title="One Liner For Specific Webinar" />
+            </div>
+          </div>
+          <div className="mt-10 text-center">
+            <Button href="/insights/webinars" variant="dark">View All Webinars</Button>
+          </div>
+        </div>
+      </section>
+
+      <section id="articles" className="px-6 py-16">
+        <div className="mx-auto max-w-[1200px]">
+          <div className="grid gap-6 lg:grid-cols-[690px_486px] lg:items-start">
+            <div className="flex flex-col">
+              <div className="max-w-[588px]">
+                <Label>Article</Label>
+                <h2 className="mt-4 font-display text-4xl font-medium leading-tight md:text-5xl">
+                  Still unsure about what&apos;s next? Start reading and feel confident in your next move.
+                </h2>
+                <p className="mt-4 text-lg leading-relaxed">
+                  Insights from our team to help you make better decisions faster.
+                </p>
+                <p className="mt-3 text-lg leading-relaxed">
+                  Learn what works before you decide what&apos;s next.
+                </p>
+                <div className="mt-8">
+                  <Button href="/insights/articles" variant="dark">View All Articles</Button>
+                </div>
+              </div>
+              <div className="mt-8 overflow-hidden rounded-[20px] lg:mt-[142px] lg:h-[386px]">
+                <InsightCard className="h-full" imageSrc={figmaAssets.article} kind="Article" title="One Liner For Specific Article" />
+              </div>
+            </div>
+            <div className="overflow-hidden rounded-[20px] lg:h-[712px]">
+              <InsightCard className="h-full" imageSrc={figmaAssets.article} kind="Article" title="One Liner For Specific Article" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="news" className="px-6 py-16">
+        <div className="mx-auto max-w-[1200px]">
+          <div className="max-w-[690px]">
+            <Label>News</Label>
+            <h2 className="mt-4 font-display text-4xl font-medium leading-tight md:text-5xl">
+              Stay current on what&apos;s shaping innovation.
+            </h2>
+          </div>
+          <div className="mt-10 grid gap-6 lg:grid-cols-[486px_690px]">
+            <div className="overflow-hidden rounded-[20px] lg:h-[299px]">
+              <InsightCard className="h-full" compact imageSrc={figmaAssets.news} kind="News" title="One Liner For Specific News Update" />
+            </div>
+            <div className="overflow-hidden rounded-[20px] lg:h-[299px]">
+              <InsightCard className="h-full" compact imageSrc={figmaAssets.news} kind="News" title="One Liner For Specific News Update" />
+            </div>
+          </div>
+          <div className="mt-10 text-center">
+            <Button href="/insights/news" variant="dark">View All News</Button>
+          </div>
+        </div>
+      </section>
+
+      <section id="newsletter" className="px-6 py-16">
+        <div className="mx-auto max-w-[1200px]">
+          <div
+            className="relative overflow-hidden rounded-[20px] lg:h-[596px]"
             style={{
-              backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.72)), url(${figmaAssets.article})`,
+              backgroundImage: `linear-gradient(90deg, rgba(0,0,0,.72), rgba(0,0,0,.28)), url(${figmaAssets.people})`,
               backgroundPosition: "center",
               backgroundSize: "cover",
             }}
           >
-            <Label>Article</Label>
-            <h2 className="mt-48 font-display text-4xl font-medium md:mt-64 md:text-5xl">
-              One Liner For Specific Article
-            </h2>
-            <p className="mt-4 max-w-[440px] text-lg md:text-xl">
-              Short captivating blurb covering what this article is about.
-            </p>
-            <div className="mt-8">
-              <Button href="/insights/articles/specific-article" variant="white">
-                Read More
-              </Button>
+            <div className="p-8 text-white md:p-12 lg:absolute lg:left-10 lg:top-1/2 lg:max-w-[480px] lg:-translate-y-1/2 lg:p-0">
+              <h2 className="font-display text-4xl font-medium leading-tight md:text-5xl">
+                Unveil more industry secrets.
+              </h2>
+              <p className="mt-4 text-lg leading-relaxed">
+                Subscribe to get our latest thinking delivered to your inbox.
+              </p>
+              <p className="mt-3 text-lg leading-relaxed">
+                Catch up on what matters and stay prepared for what&apos;s next.
+                Stay updated with innovation news currently shaping the future
+                of business.
+              </p>
+              <div className="mt-8">
+                <Button href="/contact" variant="white">Subscribe</Button>
+              </div>
             </div>
-          </article>
-          <div className="space-y-6">
-            <article
-              id="webinars"
-              className="rounded-[20px] bg-black p-8 text-white"
-              style={{
-                backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.68)), url(${figmaAssets.webinar})`,
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-              }}
-            >
-              <Label>Webinar</Label>
-              <h3 className="mt-28 font-display text-3xl font-medium leading-tight md:mt-32 md:text-4xl">
-                One Liner For Specific Webinar
-              </h3>
-              <p className="mt-4">Jedidiah Akpata & Charles Ojei</p>
-              <p>November 2023</p>
-              <p className="mt-6 text-right font-bold">01:40:35</p>
-            </article>
-            <InsightCard
-              body="A short, captivating statement about what this news update covers."
-              kind="News"
-              title="One Liner For Specific News Update"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section id="news" className="px-6 py-24">
-        <div className="mx-auto grid max-w-[1200px] gap-12 lg:grid-cols-2 lg:items-center">
-          <ImagePanel
-            className="h-[260px] rounded-[32px] sm:h-[336px]"
-            overlay="linear-gradient(90deg, rgba(25,106,180,.22), rgba(0,0,0,.1))"
-            src={figmaAssets.people}
-          />
-          <div>
-            <Label>Our Insights</Label>
-            <h2 className="mt-3 font-display text-4xl font-medium md:text-5xl">
-              Connect with our latest thinking.
-            </h2>
-            <p className="mt-5 text-xl leading-relaxed">
-              Explore ideas and perspectives designed to help organisations
-              understand what is changing and what it means for the decisions
-              they make next.
-            </p>
-            <div className="mt-8 flex gap-4">
-              <Button href="/insights/articles">Articles</Button>
-              <Button href="/insights/news" variant="dark">
-                News
-              </Button>
+            <div className="flex flex-col gap-3 p-8 md:p-12 lg:absolute lg:right-10 lg:top-1/2 lg:-translate-y-1/2 lg:p-0">
+              <input
+                className="w-full rounded-full border border-white/30 bg-white/10 px-8 py-4 text-sm font-semibold text-white placeholder:text-white/75 backdrop-blur-sm lg:w-[430px]"
+                placeholder="Insert Your First Name"
+              />
+              <input
+                className="w-full rounded-full border border-white/30 bg-white/10 px-8 py-4 text-sm font-semibold text-white placeholder:text-white/75 backdrop-blur-sm lg:w-[430px]"
+                placeholder="Insert Your Last Name"
+              />
+              <input
+                className="w-full rounded-full border border-white/30 bg-white/10 px-8 py-4 text-sm font-semibold text-white placeholder:text-white/75 backdrop-blur-sm lg:w-[430px]"
+                placeholder="Insert Your Email"
+                type="email"
+              />
+              <p className="max-w-[430px] text-sm text-white/80">
+                Encouragement for user to subscribe to HYBR&apos;s newsletter for more perks.
+              </p>
+              {newsletterCategories.map((cat) => (
+                <button
+                  className="w-full rounded-full border border-white/30 bg-white/10 px-8 py-4 text-left text-sm font-semibold uppercase tracking-[0.04em] text-white backdrop-blur-sm lg:w-[430px]"
+                  key={cat}
+                  type="button"
+                >
+                  {cat}
+                </button>
+              ))}
+              <button
+                className="w-full rounded-full bg-white px-8 py-4 text-sm font-semibold text-black lg:w-[430px]"
+                type="button"
+              >
+                Submit
+              </button>
             </div>
           </div>
         </div>
       </section>
 
-      <div id="what-we-do">
-        <WhatWeDoCta />
-      </div>
       <Footer />
     </main>
   );
