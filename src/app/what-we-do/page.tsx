@@ -43,7 +43,7 @@ export default function WhatWeDoPage() {
         id="services"
         className="relative overflow-hidden"
         style={{
-          backgroundImage: `linear-gradient(90deg, rgba(0,0,0,.78), rgba(0,0,0,.52)), url(${figmaAssets.people})`,
+          backgroundImage: `linear-gradient(90deg, rgba(0,0,0,.78), rgba(0,0,0,.52)), url(${figmaAssets.figmaBusinessPartners})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
@@ -78,11 +78,11 @@ export default function WhatWeDoPage() {
         <div className="mx-auto max-w-[1200px]">
           <div className="grid gap-6 lg:grid-cols-[486px_690px] lg:items-start">
             <div className="overflow-hidden rounded-[20px] lg:h-[712px]">
-              <CaseCard className="h-full" dark />
+              <CaseCard className="h-full" dark imageSrc={figmaAssets.figmaBuilding} />
             </div>
             <div className="flex flex-col gap-6">
               <div className="overflow-hidden rounded-[20px] lg:h-[386px]">
-                <CaseCard className="h-full" dark />
+                <CaseCard className="h-full" dark imageSrc={figmaAssets.figmaBuilding} />
               </div>
               <div className="flex flex-col justify-between py-4 lg:flex-1">
                 <div>
@@ -149,7 +149,7 @@ export default function WhatWeDoPage() {
         </div>
       </section>
 
-      <section id="impact" className="px-6 py-24 text-center">
+      <section id="impact" className="bg-black px-6 py-24 text-center text-white md:py-36">
         <div className="mx-auto max-w-[1200px]">
           <Label>Our Impact</Label>
           <h2 className="mt-3 font-display text-4xl font-medium md:text-5xl">
@@ -185,7 +185,10 @@ export default function WhatWeDoPage() {
           <p className="mt-4 max-w-[1104px] text-xl leading-relaxed">
             If you&apos;re passionate about growth, creativity, and solving challenges that matter, this is the place for you—learn more about the team you could be a part of.
           </p>
-          <ImagePanel className="mt-10 h-[260px] rounded-2xl md:h-[344px]" />
+          <ImagePanel
+            className="mt-10 h-[260px] rounded-l-full rounded-r-[20px] md:h-[344px]"
+            src={figmaAssets.figmaBusinessPartners}
+          />
           <div className="mt-8 flex flex-wrap gap-4">
             <Button href="/who-we-are/our-team">Our Team</Button>
             <Button href="/who-we-are/careers" variant="dark">Join Us</Button>

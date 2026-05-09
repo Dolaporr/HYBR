@@ -2,7 +2,7 @@ import Link from "next/link";
 import { figmaAssets, siteContent } from "@/content/site";
 import { Footer } from "../_components/marketing";
 
-const imageUrl = figmaAssets.whoHero ?? figmaAssets.people;
+const imageUrl = figmaAssets.figmaBusinessPartners;
 
 const timeline = [
   {

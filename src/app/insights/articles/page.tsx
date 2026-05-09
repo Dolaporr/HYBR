@@ -4,8 +4,8 @@ import {
   ImagePanel,
   InsightCard,
   Label,
-  ListingControls,
   PageHero,
+  SearchBar,
 } from "../../_components/marketing";
 import { figmaAssets } from "@/content/site";
 
@@ -25,7 +25,7 @@ export default function ArticlesPage() {
 
       <section className="px-6 pb-6">
         <div className="mx-auto max-w-[1200px]">
-          <ListingControls />
+          <SearchBar />
         </div>
       </section>
 
@@ -35,7 +35,7 @@ export default function ArticlesPage() {
           <div className="overflow-hidden rounded-[20px] lg:h-[408px]">
             <InsightCard
               className="h-full"
-              imageSrc={figmaAssets.article}
+              imageSrc={figmaAssets.figmaBuilding}
               kind="Article"
               title="Article Headline"
               body="Short captivating blurb covering what this article is about."
@@ -53,7 +53,7 @@ export default function ArticlesPage() {
                 <InsightCard
                   className="h-full"
                   compact
-                  imageSrc={figmaAssets.article}
+                  imageSrc={figmaAssets.figmaBuilding}
                   kind="Article"
                   title="One Liner For Specific Article"
                 />
@@ -70,7 +70,7 @@ export default function ArticlesPage() {
         <div className="mx-auto max-w-[1200px]">
           <div className="grid gap-6 lg:grid-cols-[486px_690px] lg:items-start">
             <div className="overflow-hidden rounded-[20px] lg:h-[712px]">
-              <InsightCard className="h-full" imageSrc={figmaAssets.article} kind="Article" title="One Liner For Specific Article" />
+              <InsightCard className="h-full" imageSrc={figmaAssets.figmaBuilding} kind="Article" title="One Liner For Specific Article" />
             </div>
             <div className="flex flex-col gap-6">
               <div>
@@ -83,13 +83,13 @@ export default function ArticlesPage() {
                 </div>
               </div>
               <div className="overflow-hidden rounded-[20px] lg:h-[386px]">
-                <InsightCard className="h-full" imageSrc={figmaAssets.webinar} kind="Webinar" title="One Liner For Specific Webinar" />
+                <InsightCard className="h-full" imageSrc={figmaAssets.figmaBusinessPartners} kind="Webinar" title="One Liner For Specific Webinar" />
               </div>
               <div className="overflow-hidden rounded-[20px] lg:h-[386px]">
                 <InsightCard
                   body="A short, captivating statement about what this news update covers."
                   className="h-full"
-                  imageSrc={figmaAssets.news}
+                  imageSrc={figmaAssets.figmaBuilding}
                   kind="News"
                   title="One Liner For Specific News Update"
                 />
@@ -118,7 +118,7 @@ export default function ArticlesPage() {
             <ImagePanel
               className="h-[260px] rounded-[32px] sm:h-[336px]"
               overlay="linear-gradient(90deg, rgba(25,106,180,.22), rgba(0,0,0,.1))"
-              src={figmaAssets.people}
+              src={figmaAssets.figmaBusinessPartners}
             />
           </div>
         </div>

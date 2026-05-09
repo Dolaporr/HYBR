@@ -24,7 +24,7 @@ export default function OurWorkPage() {
       <section id="spotlight" className="px-6 pb-24">
         <div className="mx-auto max-w-[1200px]">
           <p className="mb-8 font-bold uppercase">Spotlight</p>
-          <CaseCard dark />
+          <CaseCard className="min-h-[352px]" dark />
           <div className="mt-10 flex items-center justify-between gap-4">
             <ListingControls />
           </div>
@@ -35,8 +35,8 @@ export default function OurWorkPage() {
         <div className="mx-auto max-w-[1200px]">
           <p className="font-bold uppercase">Case Studies</p>
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
-            <CaseCard dark />
-            <CaseCard />
+            <CaseCard className="min-h-[372px]" dark />
+            <CaseCard className="min-h-[372px]" dark />
           </div>
           <div className="mt-10 text-center">
             <Button href="/case-studies/one-liner" variant="dark">

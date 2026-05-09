@@ -8,6 +8,15 @@ import {
 } from "../../_components/marketing";
 import { figmaAssets } from "@/content/site";
 
+const webinarImages = [
+  figmaAssets.figmaBusinessPartners,
+  figmaAssets.figmaBuilding,
+  figmaAssets.figmaFieldHero,
+  figmaAssets.figmaBuilding,
+  figmaAssets.figmaFieldHero,
+  figmaAssets.figmaBusinessPartners,
+];
+
 export default function WebinarsPage() {
   return (
     <main className="overflow-hidden bg-white text-black">
@@ -18,15 +27,9 @@ export default function WebinarsPage() {
           { label: "Recent Webinars", href: "#recent" },
           { label: "More Insights", href: "#more" },
         ]}
-        subtitle="Conversations and sessions for leaders building what's next."
+        subtitle="Learn how leaders are navigating today's toughest challenges."
         title="Webinars"
       />
-
-      <section className="px-6 pb-6">
-        <div className="mx-auto max-w-[1200px]">
-          <ListingControls />
-        </div>
-      </section>
 
       <section id="spotlight" className="px-6 pb-16">
         <div className="mx-auto max-w-[1200px]">
@@ -34,10 +37,13 @@ export default function WebinarsPage() {
           <div className="overflow-hidden rounded-[20px] lg:h-[408px]">
             <InsightCard
               className="h-full"
-              imageSrc={figmaAssets.webinar}
+              imageSrc={figmaAssets.figmaBuilding}
               kind="Webinar"
               title="Title of Specific Webinar"
             />
+          </div>
+          <div className="mt-12">
+            <ListingControls />
           </div>
         </div>
       </section>
@@ -53,7 +59,7 @@ export default function WebinarsPage() {
               <div className="overflow-hidden rounded-[20px] lg:h-[357px]" key={i}>
                 <InsightCard
                   className="h-full"
-                  imageSrc={figmaAssets.webinar}
+                  imageSrc={webinarImages[i % webinarImages.length]}
                   kind="Webinar"
                   title="Title of Specific Webinar"
                   body="Speaker 1 & Speaker 2 Date/Period Added"
@@ -71,7 +77,7 @@ export default function WebinarsPage() {
         <div className="mx-auto max-w-[1200px]">
           <div className="grid gap-6 lg:grid-cols-[486px_690px] lg:items-start">
             <div className="overflow-hidden rounded-[20px] lg:h-[712px]">
-              <InsightCard className="h-full" imageSrc={figmaAssets.article} kind="Article" title="One Liner For Specific Article" />
+              <InsightCard className="h-full" imageSrc={figmaAssets.figmaBuilding} kind="Article" title="One Liner For Specific Article" />
             </div>
             <div className="flex flex-col gap-6">
               <div>
@@ -90,7 +96,7 @@ export default function WebinarsPage() {
                 <InsightCard
                   body="A short, captivating statement about what this news update covers."
                   className="h-full"
-                  imageSrc={figmaAssets.news}
+                  imageSrc={figmaAssets.figmaBuilding}
                   kind="News"
                   title="One Liner For Specific News Update"
                 />

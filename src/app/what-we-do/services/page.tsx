@@ -1,10 +1,11 @@
 import {
   Button,
-  CaseCard,
   Footer,
+  ImagePanel,
   Label,
   PageHero,
 } from "../../_components/marketing";
+import { figmaAssets } from "@/content/site";
 
 const services = [
   {
@@ -53,6 +54,24 @@ export default function ServicesPage() {
         title="Our Services"
       />
 
+      <section className="px-6 pb-24">
+        <div className="mx-auto max-w-[1200px]">
+          <ImagePanel
+            className="flex min-h-[488px] items-center justify-center rounded-[20px]"
+            overlay="linear-gradient(90deg, rgba(0,0,0,.5), rgba(0,0,0,.18))"
+            src={figmaAssets.figmaBusinessPartners}
+          >
+            <div className="grid w-full gap-6 px-8 text-center text-white md:grid-cols-3 md:px-12">
+              {services.map((service) => (
+                <p className="font-display text-5xl font-medium md:text-6xl" key={service.title}>
+                  {service.title}
+                </p>
+              ))}
+            </div>
+          </ImagePanel>
+        </div>
+      </section>
+
       <section className="px-6 pb-20 md:pb-32">
         <div className="mx-auto max-w-[1200px]">
           {services.map((service, index) => (
@@ -76,11 +95,16 @@ export default function ServicesPage() {
                   ))}
                 </div>
               </div>
-              <div className="overflow-hidden rounded-[20px] lg:h-[321px]">
-                <CaseCard dark />
-              </div>
+              <ImagePanel
+                className="min-h-[260px] rounded-[20px] lg:h-[321px]"
+                overlay="linear-gradient(90deg, rgba(0,0,0,.16), rgba(0,0,0,.04))"
+                src={figmaAssets.figmaFieldHero}
+              />
             </div>
           ))}
+          <div className="mt-20 flex justify-center">
+            <Button href="/contact">Book A Meeting</Button>
+          </div>
         </div>
       </section>
 
@@ -110,7 +134,14 @@ export default function ServicesPage() {
             These testimonials reflect the trust and confidence that come from
             our partnerships.
           </p>
-          <div className="mx-auto mt-10 max-w-[996px] rounded-[24px] bg-black p-8 text-left text-white md:p-12">
+          <div
+            className="mx-auto mt-10 max-w-[1200px] rounded-[24px] bg-black p-8 text-left text-white md:p-12"
+            style={{
+              backgroundImage: `linear-gradient(90deg, rgba(0,0,0,.7), rgba(0,0,0,.25)), url(${figmaAssets.figmaBuilding})`,
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+            }}
+          >
             <p className="font-display text-3xl font-medium leading-snug md:text-4xl">
               &ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Mauris dignissim fringilla feugiat. Praesent sed condimentum

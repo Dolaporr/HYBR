@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { figmaAssets, footerGroups, navigation, siteContent } from "@/content/site";
 
-export const imageUrl = figmaAssets.people;
+export const imageUrl = figmaAssets.figmaBusinessPartners;
 
 function BrandMark({ className = "" }: { className?: string }) {
   return (
@@ -201,18 +201,18 @@ export function PageHero({
   return (
     <>
       <Header active={active} />
-      <section className="relative min-h-[540px] px-6 pt-48 md:min-h-[705px] md:pt-[232px]">
+      <section className="inner-page-hero relative min-h-[540px] px-6 pt-48 md:min-h-[705px] md:pt-[232px]">
         <div className="mx-auto max-w-[1200px]">
-          <h1 className="font-display text-[56px] font-medium leading-none sm:text-[76px] md:text-[112px] lg:text-[150px]">
+          <h1 className="inner-page-title font-display text-[56px] font-medium leading-none sm:text-[76px] md:text-[112px] lg:text-[150px]">
             {title}
           </h1>
-          <p className="mt-4 max-w-[760px] text-lg font-medium leading-relaxed md:text-2xl">
+          <p className="inner-page-subtitle mt-4 max-w-[760px] text-lg font-medium leading-relaxed md:text-2xl">
             {subtitle}
           </p>
         </div>
         {menu ? (
-          <aside className="mx-auto mt-10 max-w-[1200px] rounded-[30px] bg-black p-6 text-white xl:absolute xl:right-[-259px] xl:top-[238px] xl:mt-0 xl:block xl:h-[197px] xl:w-[337px] xl:overflow-hidden xl:rounded-bl-[1000px] xl:rounded-br-[800px] xl:rounded-tl-[1000px] xl:p-0">
-            <ImagePanel className="absolute inset-0 opacity-70" src={figmaAssets.whoHero ?? figmaAssets.people} />
+          <aside className="figma-content-drop mx-auto mt-10 max-w-[1200px] rounded-[30px] bg-black p-6 text-white xl:absolute xl:right-[-259px] xl:top-[238px] xl:mt-0 xl:block xl:h-[197px] xl:w-[337px] xl:overflow-hidden xl:rounded-bl-[1000px] xl:rounded-br-[800px] xl:rounded-tl-[1000px] xl:p-0">
+            <ImagePanel className="absolute inset-0 opacity-70" src={figmaAssets.figmaBusinessPartners} />
             <p className="relative z-10 mb-4 font-display text-base font-bold xl:absolute xl:left-8 xl:top-1/2 xl:mb-0 xl:-translate-y-1/2 xl:-rotate-90">
               CONTENT
             </p>
@@ -232,7 +232,7 @@ export function PageHero({
 
 export function CaseCard({
   dark = false,
-  imageSrc = figmaAssets.caseStudy,
+  imageSrc = figmaAssets.figmaFieldHero,
   className = "",
 }: {
   dark?: boolean;
@@ -241,7 +241,7 @@ export function CaseCard({
 }) {
   return (
     <article
-      className={`relative overflow-hidden rounded-[20px] p-6 md:p-8 ${dark ? "text-white" : "bg-[#f1f1f1] text-black"} ${className}`}
+      className={`figma-motion-card relative overflow-hidden rounded-[20px] p-6 md:p-8 ${dark ? "text-white" : "bg-[#f1f1f1] text-black"} ${className}`}
       style={
         dark
           ? {
@@ -274,7 +274,7 @@ export function CaseCard({
 
 export function ListingControls() {
   return (
-    <div className="flex flex-wrap gap-3 md:gap-4">
+    <div className="listing-controls flex flex-wrap gap-3 md:gap-4">
       {["Search", "Sort by", "Topic", "Duration"].map((item) => (
         <button
           className="min-h-11 rounded-full border border-black/15 px-5 text-sm font-semibold md:min-h-[56px] md:px-7 md:text-[20px]"
@@ -288,11 +288,23 @@ export function ListingControls() {
   );
 }
 
+export function SearchBar({ placeholder = "Search" }: { placeholder?: string }) {
+  return (
+    <div className="search-bar flex h-14 items-center justify-center gap-3 rounded-full border border-black/60 bg-white px-6 text-sm font-medium text-black/70 shadow-[0_8px_18px_rgba(0,0,0,0.04)] md:px-8">
+      <svg aria-hidden="true" className="h-4 w-4" fill="none" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="6.5" stroke="currentColor" strokeWidth="2" />
+        <path d="M16 16L21 21" stroke="currentColor" strokeLinecap="round" strokeWidth="2" />
+      </svg>
+      <span>{placeholder}</span>
+    </div>
+  );
+}
+
 export function InsightCard({
   kind,
   title,
   body,
-  imageSrc = figmaAssets.news,
+  imageSrc = figmaAssets.figmaBuilding,
   className = "",
   compact = false,
 }: {
@@ -305,7 +317,7 @@ export function InsightCard({
 }) {
   return (
     <article
-      className={`rounded-[20px] bg-black p-6 text-white md:p-8 ${className}`}
+      className={`figma-motion-card rounded-[20px] bg-black p-6 text-white md:p-8 ${className}`}
       style={{
         backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.68)), url(${imageSrc})`,
         backgroundPosition: "center",
@@ -336,20 +348,26 @@ export function InsightCard({
 export function WhatWeDoCta() {
   return (
     <section className="px-6 py-16 md:py-24">
-      <div className="mx-auto grid max-w-[1200px] gap-8 rounded-[28px] bg-black p-6 text-white md:p-12 lg:grid-cols-[1fr_320px] lg:items-end">
+      <div className="mx-auto grid max-w-[1200px] gap-10 lg:grid-cols-[588px_1fr] lg:items-center">
         <div>
           <Label>What We Do</Label>
           <h2 className="mt-3 font-display text-4xl font-medium leading-tight md:text-5xl">
-            Discover the right opportunities, develop the right solutions, and
-            deploy them with confidence.
+            Discover the right opportunities, develop the right solutions, and deploy them with confidence.
           </h2>
-          <p className="mt-5 max-w-[780px] text-xl leading-relaxed">
+          <p className="mt-5 text-xl leading-relaxed">
             Helping organisations replace guesswork with evidence, clarity, and smarter strategy.
           </p>
+          <div className="mt-8">
+            <Button href="/contact">
+              Let&apos;s Help
+            </Button>
+          </div>
         </div>
-        <Button href="/contact" variant="white">
-          Let&apos;s Help
-        </Button>
+        <ImagePanel
+          className="min-h-[280px] rounded-l-full rounded-r-[20px] md:min-h-[336px]"
+          overlay="linear-gradient(90deg, rgba(0,0,0,.12), rgba(0,0,0,.04))"
+          src={figmaAssets.figmaBusinessPartners}
+        />
       </div>
     </section>
   );

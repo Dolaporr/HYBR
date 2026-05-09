@@ -10,8 +10,11 @@ const teamGroups = [
 
 const teamMembers = Array.from({ length: 10 }, (_, i) => ({
   id: i + 1,
-  name: "Team Member Name",
-  role: i === 0 ? "Marketing & Communications Analyst" : "Role Title",
+  name: i === 0 ? "Oluwatobi Agbana" : "Team Member Name",
+  role:
+    i === 0
+      ? "Marketing & Communications Analyst"
+      : ["Growth Strategy", "Business Development", "Corporate Systems", "Research", "Product Innovation"][i % 5],
 }));
 
 export default function OurTeamPage() {
@@ -30,45 +33,38 @@ export default function OurTeamPage() {
 
       <section id="network" className="px-6 pb-24">
         <div className="mx-auto max-w-[1200px]">
-          <div
-            className="relative overflow-hidden rounded-[20px] lg:h-[344px]"
-            style={{
-              backgroundImage: `linear-gradient(90deg, rgba(25,106,180,.18), rgba(0,0,0,.08)), url(${figmaAssets.people})`,
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-            }}
-          >
-            <div className="flex min-h-[220px] items-end p-8 md:p-12 lg:min-h-0">
-              <p className="font-bold uppercase text-white lg:absolute lg:left-10 lg:top-10">
-                Our Network
-              </p>
+          <div className="team-network-map relative overflow-hidden rounded-[20px] bg-black p-6 text-white md:p-12 lg:min-h-[1027px]">
+            <div className="relative z-10 grid gap-6 md:grid-cols-2 lg:absolute lg:inset-x-16 lg:top-24 lg:grid-cols-1">
+              {teamGroups.map((group, index) => (
+                <div
+                  className={`team-network-tier rounded-[20px] p-6 text-center ${
+                    index === 0 || index === 2 ? "bg-white text-black" : "bg-black text-white"
+                  }`}
+                  key={group.label}
+                >
+                  <h3 className="font-display text-2xl font-medium">{group.label}</h3>
+                  <p className="mx-auto mt-3 max-w-[520px] text-sm leading-relaxed">{group.description}</p>
+                </div>
+              ))}
             </div>
           </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {teamGroups.map((group) => (
-              <div className="rounded-[20px] bg-[#f1f1f1] p-8" key={group.label}>
-                <h3 className="font-display text-3xl font-medium">{group.label}</h3>
-                <p className="mt-4 text-base leading-relaxed">{group.description}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-10">
-            <p className="max-w-[894px] text-xl leading-relaxed">
+          <div className="mx-auto mt-20 max-w-[894px] text-center">
+            <Label>Meet the Team</Label>
+            <p className="mt-4 text-xl leading-relaxed">
               Our network model enables us to go further faster, be radically
               original, achieve greater lasting impact, and do so with ruthless
               efficiency.
             </p>
-          </div>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Button href="#team">View as Single Page</Button>
-            <Button href="/who-we-are/about-us" variant="dark">Learn More About Us</Button>
+            <div className="mt-8 flex justify-center">
+              <Button href="#team">View as Single Page</Button>
+            </div>
           </div>
         </div>
       </section>
 
       <section id="team" className="px-6 pb-24">
         <div className="mx-auto max-w-[1200px]">
-          <Label>Core Team</Label>
+          <Label>Core</Label>
           <p className="mt-2 text-xl leading-relaxed">
             Oversees strategy, operations, commercial, finance, and
             communications, supported by expert specialists and project managers.
@@ -79,14 +75,22 @@ export default function OurTeamPage() {
                 className="relative overflow-hidden rounded-[20px] lg:h-[425px]"
                 key={member.id}
                 style={{
-                  backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.62)), url(${figmaAssets.people})`,
-                  backgroundPosition: "center",
+                  backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.68)), url(${figmaAssets.figmaTeamPortrait})`,
+                  backgroundPosition: "center top",
                   backgroundSize: "cover",
                 }}
               >
                 <div className="absolute bottom-8 left-8 right-8 text-white">
                   <p className="font-display text-2xl font-medium">{member.name}</p>
                   <p className="mt-1 text-sm font-semibold uppercase tracking-[0.08em] opacity-75">{member.role}</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold uppercase text-black">
+                      Learn More
+                    </span>
+                    <span className="rounded-full border border-white/55 px-3 py-1 text-xs font-semibold uppercase">
+                      {member.role}
+                    </span>
+                  </div>
                 </div>
               </article>
             ))}

@@ -3,8 +3,8 @@ import {
   Footer,
   InsightCard,
   Label,
-  ListingControls,
   PageHero,
+  SearchBar,
 } from "../_components/marketing";
 import { figmaAssets } from "@/content/site";
 
@@ -28,7 +28,7 @@ export default function InsightsPage() {
 
       <section className="px-6 pb-8">
         <div className="mx-auto max-w-[1200px]">
-          <ListingControls />
+          <SearchBar />
         </div>
       </section>
 
@@ -38,7 +38,7 @@ export default function InsightsPage() {
           <div className="overflow-hidden rounded-[20px] lg:h-[408px]">
             <InsightCard
               className="h-full"
-              imageSrc={figmaAssets.webinar}
+              imageSrc={figmaAssets.figmaBuilding}
               kind="Webinar"
               title="Title of Specific Webinar"
             />
@@ -47,7 +47,7 @@ export default function InsightsPage() {
             <div className="overflow-hidden rounded-[20px] lg:h-[386px]">
               <InsightCard
                 className="h-full"
-                imageSrc={figmaAssets.article}
+                imageSrc={figmaAssets.figmaBuilding}
                 kind="Article"
                 title="One Liner For Specific Article"
                 body="A short, captivating statement about what this article is about."
@@ -56,7 +56,7 @@ export default function InsightsPage() {
             <div className="overflow-hidden rounded-[20px] lg:h-[386px]">
               <InsightCard
                 className="h-full"
-                imageSrc={figmaAssets.news}
+                imageSrc={figmaAssets.figmaBuilding}
                 kind="News"
                 title="One Liner For Specific News Update"
                 body="A short, captivating statement about what this news update covers."
@@ -89,10 +89,10 @@ export default function InsightsPage() {
           </div>
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
             <div className="overflow-hidden rounded-[20px] lg:h-[386px]">
-              <InsightCard className="h-full" imageSrc={figmaAssets.webinar} kind="Webinar" title="One Liner For Specific Webinar" />
+              <InsightCard className="h-full" imageSrc={figmaAssets.figmaBusinessPartners} kind="Webinar" title="One Liner For Specific Webinar" />
             </div>
             <div className="overflow-hidden rounded-[20px] lg:h-[386px]">
-              <InsightCard className="h-full" imageSrc={figmaAssets.webinar} kind="Webinar" title="One Liner For Specific Webinar" />
+              <InsightCard className="h-full" imageSrc={figmaAssets.figmaBusinessPartners} kind="Webinar" title="One Liner For Specific Webinar" />
             </div>
           </div>
           <div className="mt-10 text-center">
@@ -121,11 +121,11 @@ export default function InsightsPage() {
                 </div>
               </div>
               <div className="mt-8 overflow-hidden rounded-[20px] lg:mt-[142px] lg:h-[386px]">
-                <InsightCard className="h-full" imageSrc={figmaAssets.article} kind="Article" title="One Liner For Specific Article" />
+                <InsightCard className="h-full" imageSrc={figmaAssets.figmaBuilding} kind="Article" title="One Liner For Specific Article" />
               </div>
             </div>
             <div className="overflow-hidden rounded-[20px] lg:h-[712px]">
-              <InsightCard className="h-full" imageSrc={figmaAssets.article} kind="Article" title="One Liner For Specific Article" />
+              <InsightCard className="h-full" imageSrc={figmaAssets.figmaBuilding} kind="Article" title="One Liner For Specific Article" />
             </div>
           </div>
         </div>
@@ -141,10 +141,10 @@ export default function InsightsPage() {
           </div>
           <div className="mt-10 grid gap-6 lg:grid-cols-[486px_690px]">
             <div className="overflow-hidden rounded-[20px] lg:h-[299px]">
-              <InsightCard className="h-full" compact imageSrc={figmaAssets.news} kind="News" title="One Liner For Specific News Update" />
+              <InsightCard className="h-full" compact imageSrc={figmaAssets.figmaBuilding} kind="News" title="One Liner For Specific News Update" />
             </div>
             <div className="overflow-hidden rounded-[20px] lg:h-[299px]">
-              <InsightCard className="h-full" compact imageSrc={figmaAssets.news} kind="News" title="One Liner For Specific News Update" />
+              <InsightCard className="h-full" compact imageSrc={figmaAssets.figmaBuilding} kind="News" title="One Liner For Specific News Update" />
             </div>
           </div>
           <div className="mt-10 text-center">
@@ -158,7 +158,7 @@ export default function InsightsPage() {
           <div
             className="relative overflow-hidden rounded-[20px] lg:h-[596px]"
             style={{
-              backgroundImage: `linear-gradient(90deg, rgba(0,0,0,.72), rgba(0,0,0,.28)), url(${figmaAssets.people})`,
+              backgroundImage: `linear-gradient(90deg, rgba(0,0,0,.72), rgba(0,0,0,.28)), url(${figmaAssets.figmaBusinessPartners})`,
               backgroundPosition: "center",
               backgroundSize: "cover",
             }}

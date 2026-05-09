@@ -111,6 +111,137 @@ a {
   color: rgba(255, 255, 255, 0.86);
 }
 
+.figma-motion-card {
+  transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
+}
+
+.figma-motion-card:hover {
+  filter: saturate(1.04);
+  transform: translateY(-4px);
+}
+
+.figma-content-drop {
+  animation: content-drop-in 0.55s ease both;
+}
+
+.search-bar {
+  width: 100%;
+}
+
+.team-network-map::before,
+.team-network-map::after {
+  border-radius: 9999px;
+  content: "";
+  left: 50%;
+  pointer-events: none;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.team-network-map::before {
+  background:
+    radial-gradient(circle at center, #ffffff 0 13%, #000000 13.4% 28%, #ffffff 28.4% 45%, #000000 45.4% 64%, transparent 64.4%);
+  height: 980px;
+  top: -380px;
+  width: 980px;
+}
+
+.team-network-map::after {
+  background:
+    radial-gradient(circle at center, transparent 0 42%, #ffffff 42.4% 56%, #000000 56.4% 72%, transparent 72.4%);
+  bottom: -500px;
+  height: 1100px;
+  width: 1100px;
+}
+
+.team-network-tier {
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18);
+}
+
+.figma-case-cover nav a,
+.listing-controls button,
+.search-bar {
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.figma-case-cover nav a:hover,
+.listing-controls button:hover,
+.search-bar:hover {
+  transform: translateY(-1px);
+}
+
+@keyframes content-drop-in {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (min-width: 1360px) {
+  .inner-page-hero {
+    min-height: 662px !important;
+    padding-top: 243px !important;
+  }
+
+  .inner-page-title {
+    font-size: 160px !important;
+    line-height: 176px !important;
+  }
+
+  .inner-page-subtitle {
+    font-size: 20px !important;
+    line-height: 24.38px !important;
+    margin-top: 8px !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .inner-page-hero {
+    min-height: 662px !important;
+    padding-left: 120px !important;
+    padding-right: 120px !important;
+    padding-top: 243px !important;
+  }
+
+  .inner-page-title {
+    font-size: 112px !important;
+    line-height: 1 !important;
+  }
+
+  .figma-content-drop {
+    margin-left: 0 !important;
+    max-width: 520px !important;
+  }
+}
+
+@media (max-width: 559px) {
+  .inner-page-hero {
+    min-height: 620px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    padding-top: 184px !important;
+  }
+
+  .inner-page-title {
+    font-size: 56px !important;
+    line-height: 1 !important;
+  }
+
+  .inner-page-subtitle {
+    font-size: 16px !important;
+    line-height: 19.504px !important;
+  }
+
+  .figma-content-drop {
+    border-radius: 24px !important;
+  }
+}
+
 .homepage-hero-subtitle__tablet {
   display: none;
 }
