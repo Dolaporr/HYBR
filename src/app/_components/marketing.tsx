@@ -4,6 +4,13 @@ import { figmaAssets, footerGroups, navigation, siteContent } from "@/content/si
 
 export const imageUrl = figmaAssets.figmaBusinessPartners;
 
+export const figmaFrameTargets = {
+  desktop: 1440,
+  tabletHorizontal: 1280,
+  tabletVertical: 800,
+  mobile: 390,
+} as const;
+
 function BrandMark({ className = "" }: { className?: string }) {
   return (
     <svg
@@ -27,29 +34,59 @@ function BrandMark({ className = "" }: { className?: string }) {
   );
 }
 
-export function Header({ active }: { active?: "who" | "what" | "insights" }) {
+export function Header({
+  active,
+  tone = "default",
+}: {
+  active?: "who" | "what" | "insights";
+  tone?: "default" | "dark";
+}) {
   const linkClass = (key: "who" | "what" | "insights") =>
-    active === key ? "text-hybr-blue" : "text-black";
+    active === key ? "site-nav-link is-active" : "site-nav-link";
+  const logoSrc = tone === "dark" ? figmaAssets.logoWhite : figmaAssets.logoBlue;
 
   return (
-    <header className="absolute left-0 right-0 top-0 z-20 px-6">
-      <div className="mx-auto flex min-h-28 max-w-[1200px] flex-col items-start justify-center gap-5 py-6 md:h-[152px] md:flex-row md:items-center md:justify-between md:py-0">
-        <Link className="block h-10 w-[128px] overflow-hidden md:h-14 md:w-[179px]" href="/">
-          <img alt={siteContent.brand} className="h-full w-full object-contain" src={figmaAssets.logoBlue} />
+    <header className={`site-header absolute left-0 right-0 top-0 z-20${tone === "dark" ? " site-header--dark" : ""}`}>
+      <div className="site-header-inner mx-auto flex items-center justify-between">
+        <Link className="site-logo block overflow-hidden" href="/">
+          <img alt={siteContent.brand} className="h-full w-full object-contain" src={logoSrc} />
         </Link>
-        <nav className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase sm:gap-5 md:gap-8 md:text-sm">
+        <nav className="site-nav flex items-center">
           {navigation.map((item) => (
             <Link className={linkClass(item.key)} href={item.href} key={item.key}>
               {item.label}
             </Link>
           ))}
           <Link
-            className="inline-flex min-h-12 items-center justify-center rounded-full border border-hybr-blue bg-hybr-blue px-5 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(25,106,180,0.18)] md:min-h-[48px] md:px-7 md:text-base"
+            className="site-talk-button inline-flex items-center justify-center"
             href="/contact"
           >
             Let&apos;s Talk
           </Link>
         </nav>
+        <details className="site-mobile-menu">
+          <summary aria-label="Toggle navigation" className="site-menu-button">
+            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+              <path d="M3 6H21M3 12H21M3 18H21" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
+            </svg>
+          </summary>
+          <div className="site-mobile-panel">
+            <nav aria-label="Mobile navigation" className="site-mobile-nav">
+              {navigation.map((item) => (
+                <Link
+                  className={active === item.key ? "site-mobile-nav-link is-active" : "site-mobile-nav-link"}
+                  href={item.href}
+                  key={`mobile-${item.key}`}
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <Link className="site-mobile-talk-button" href="/contact">
+                Let&apos;s Talk
+              </Link>
+            </nav>
+          </div>
+        </details>
       </div>
     </header>
   );
@@ -85,8 +122,8 @@ function FooterSocialIcon({ kind }: { kind: string }) {
 
 export function Footer() {
   return (
-    <footer className="bg-black px-6 py-14 text-white md:py-20">
-      <div className="mx-auto max-w-[1200px]">
+    <footer className="site-footer bg-black px-6 py-14 text-white md:py-20">
+      <div className="site-footer-inner mx-auto max-w-[1200px]">
         <div className="relative grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           <img
             alt=""
@@ -307,6 +344,7 @@ export function InsightCard({
   imageSrc = figmaAssets.figmaBuilding,
   className = "",
   compact = false,
+  href,
 }: {
   kind: string;
   title: string;
@@ -314,7 +352,15 @@ export function InsightCard({
   imageSrc?: string;
   className?: string;
   compact?: boolean;
+  href?: string;
 }) {
+  const fallbackHref =
+    kind.toLowerCase() === "webinar"
+      ? "/insights/webinars/specific-webinar"
+      : kind.toLowerCase() === "news"
+        ? "/insights/news/specific-news"
+        : "/insights/articles/specific-article";
+
   return (
     <article
       className={`figma-motion-card rounded-[20px] bg-black p-6 text-white md:p-8 ${className}`}
@@ -337,7 +383,7 @@ export function InsightCard({
       ) : null}
       {body ? <p className="mt-4 max-w-[320px] text-base leading-relaxed">{body}</p> : null}
       <div className="mt-8">
-        <Button href="/insights/articles/specific-article" variant="white">
+        <Button href={href ?? fallbackHref} variant="white">
           Read More
         </Button>
       </div>

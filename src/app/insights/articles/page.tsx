@@ -1,126 +1,213 @@
-import {
-  Button,
-  Footer,
-  ImagePanel,
-  InsightCard,
-  Label,
-  PageHero,
-  SearchBar,
-} from "../../_components/marketing";
+import Link from "next/link";
+import { Footer, Header } from "../../_components/marketing";
 import { figmaAssets } from "@/content/site";
+
+const articleHref = "/insights/articles/specific-article";
+
+function SearchIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 40 40">
+      <path
+        d="m28.7 27.1-6.1-6.1a8.5 8.5 0 1 0-1.6 1.6l6.1 6.1 1.6-1.6Zm-18.1-11a5.9 5.9 0 1 1 11.8 0 5.9 5.9 0 0 1-11.8 0Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+function ChevronDownIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 40 40">
+      <path d="m12 16 8 8 8-8" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
+    </svg>
+  );
+}
+
+function FilterIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 40 40">
+      <path d="M7 11h26M12 20h16M17 29h6" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="2.6" />
+    </svg>
+  );
+}
+
+function PlayIcon() {
+  return (
+    <span className="articles-play" aria-hidden="true">
+      <svg viewBox="0 0 40 40">
+        <path d="M12 6v28l22-14L12 6Z" fill="currentColor" />
+      </svg>
+    </span>
+  );
+}
+
+function FilterControls() {
+  return (
+    <div className="articles-controls" aria-label="Article filters">
+      <button className="articles-control articles-control--search" type="button">
+        <SearchIcon />
+        <span>Search</span>
+      </button>
+      <button className="articles-control articles-control--desktop" type="button">
+        <span>Sort by</span>
+        <ChevronDownIcon />
+      </button>
+      <button className="articles-control articles-control--desktop" type="button">
+        <span>Topic</span>
+        <ChevronDownIcon />
+      </button>
+      <button className="articles-control articles-control--desktop" type="button">
+        <span>Duration</span>
+        <ChevronDownIcon />
+      </button>
+      <button className="articles-control articles-control--filters" type="button">
+        <span>Filters</span>
+        <FilterIcon />
+      </button>
+    </div>
+  );
+}
+
+function ContentDrop() {
+  return (
+    <nav className="articles-content-drop" aria-label="Articles page sections">
+      <img alt="" src={figmaAssets.figmaBusinessPartners} />
+      <span className="articles-content-drop-label">CONTENT</span>
+      <div>
+        <a href="#spotlight">Spotlight</a>
+        <a href="#recent">Recent Articles</a>
+        <a href="#more">More Insights</a>
+        <a href="#what-we-do">What We Do</a>
+      </div>
+    </nav>
+  );
+}
+
+function ArticleCard({ className = "" }: { className?: string }) {
+  return (
+    <Link className={`articles-card figma-motion-card ${className}`} href={articleHref}>
+      <img alt="" src={figmaAssets.figmaBuilding} />
+      <span className="articles-card-kind">ARTICLE</span>
+      <span className="articles-card-title">One Liner For Specific Article</span>
+      <span className="articles-read-button">Read More</span>
+    </Link>
+  );
+}
+
+function SpotlightCard() {
+  return (
+    <Link className="articles-spotlight figma-motion-card" href={articleHref} id="spotlight">
+      <span className="articles-spotlight-image">
+        <img alt="" src={figmaAssets.figmaBuilding} />
+      </span>
+      <span className="articles-spotlight-copy">
+        <span>Article Headline</span>
+        <span>Short captivating blurb covering what this article is about.</span>
+      </span>
+      <span className="articles-spotlight-button">Read More</span>
+    </Link>
+  );
+}
+
+function WebinarCard() {
+  return (
+    <Link className="articles-webinar-card figma-motion-card" href="/insights/webinars/specific-webinar">
+      <img alt="" src={figmaAssets.figmaBusinessPartners} />
+      <span className="articles-webinar-kind">WEBINAR</span>
+      <PlayIcon />
+      <span className="articles-webinar-duration">01:40:35</span>
+      <span className="articles-webinar-copy">
+        <span>One Liner For Specific Webinar</span>
+        <span>Jedidiah Akpata & Charles Ojei</span>
+        <span>November 2023</span>
+      </span>
+    </Link>
+  );
+}
+
+function NewsCard() {
+  return (
+    <Link className="articles-news-card figma-motion-card" href="/insights/news/specific-news">
+      <img alt="" src={figmaAssets.figmaBuilding} />
+      <span className="articles-news-button">Read More</span>
+      <span className="articles-news-copy">
+        <span>NEWS</span>
+        <span>One Liner For Specific News Update</span>
+        <span>A short, captivating statement about what this news update covers.</span>
+      </span>
+    </Link>
+  );
+}
 
 export default function ArticlesPage() {
   return (
-    <main className="overflow-hidden bg-white text-black">
-      <PageHero
-        active="insights"
-        menu={[
-          { label: "Spotlight", href: "#spotlight" },
-          { label: "Recent Articles", href: "#recent" },
-          { label: "More Insights", href: "#more" },
-        ]}
-        subtitle="Learn what works before you decide what's next."
-        title="Articles"
-      />
+    <main className="articles-page">
+      <Header active="insights" />
 
-      <section className="px-6 pb-6">
-        <div className="mx-auto max-w-[1200px]">
-          <SearchBar />
-        </div>
-      </section>
+      <section className="articles-frame" aria-labelledby="articles-title">
+        <div className="figma-container articles-shell">
+          <ContentDrop />
 
-      <section id="spotlight" className="px-6 pb-16">
-        <div className="mx-auto max-w-[1200px]">
-          <p className="mb-6 font-bold uppercase">Spotlight</p>
-          <div className="overflow-hidden rounded-[20px] lg:h-[408px]">
-            <InsightCard
-              className="h-full"
-              imageSrc={figmaAssets.figmaBuilding}
-              kind="Article"
-              title="Article Headline"
-              body="Short captivating blurb covering what this article is about."
-            />
-          </div>
-        </div>
-      </section>
+          <header className="articles-hero">
+            <h1 id="articles-title">Articles</h1>
+            <p>Learn what works before you decide what&apos;s next.</p>
+          </header>
 
-      <section id="recent" className="px-6 pb-24">
-        <div className="mx-auto max-w-[1200px]">
-          <Label>Recent Articles</Label>
-          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {Array.from({ length: 8 }, (_, i) => (
-              <div className="overflow-hidden rounded-[20px]" key={i}>
-                <InsightCard
-                  className="h-full"
-                  compact
-                  imageSrc={figmaAssets.figmaBuilding}
-                  kind="Article"
-                  title="One Liner For Specific Article"
-                />
-              </div>
-            ))}
-          </div>
-          <div className="mt-10 text-center">
-            <Button href="/insights/articles/specific-article" variant="dark">View All Articles</Button>
-          </div>
-        </div>
-      </section>
+          <button className="articles-hero-search" type="button">
+            <SearchIcon />
+            <span>Search</span>
+          </button>
 
-      <section id="more" className="px-6 pb-24">
-        <div className="mx-auto max-w-[1200px]">
-          <div className="grid gap-6 lg:grid-cols-[486px_690px] lg:items-start">
-            <div className="overflow-hidden rounded-[20px] lg:h-[712px]">
-              <InsightCard className="h-full" imageSrc={figmaAssets.figmaBuilding} kind="Article" title="One Liner For Specific Article" />
+          <p className="articles-section-label articles-section-label--spotlight">SPOTLIGHT</p>
+          <SpotlightCard />
+
+          <FilterControls />
+
+          <section className="articles-recent" id="recent" aria-labelledby="recent-articles-title">
+            <p className="articles-section-label" id="recent-articles-title">
+              RECENT ARTICLES
+            </p>
+            <div className="articles-grid">
+              <ArticleCard className="articles-card--a" />
+              <ArticleCard className="articles-card--b" />
+              <ArticleCard className="articles-card--c" />
+              <ArticleCard className="articles-card--d" />
             </div>
-            <div className="flex flex-col gap-6">
-              <div>
-                <Label>More Insights</Label>
-                <h2 className="mt-3 font-display text-4xl font-medium leading-tight md:text-5xl">
-                  Understand what&apos;s changing, and what to do about it.
-                </h2>
-                <div className="mt-6">
-                  <Button href="/insights" variant="dark">All Insights</Button>
-                </div>
-              </div>
-              <div className="overflow-hidden rounded-[20px] lg:h-[386px]">
-                <InsightCard className="h-full" imageSrc={figmaAssets.figmaBusinessPartners} kind="Webinar" title="One Liner For Specific Webinar" />
-              </div>
-              <div className="overflow-hidden rounded-[20px] lg:h-[386px]">
-                <InsightCard
-                  body="A short, captivating statement about what this news update covers."
-                  className="h-full"
-                  imageSrc={figmaAssets.figmaBuilding}
-                  kind="News"
-                  title="One Liner For Specific News Update"
-                />
-              </div>
+            <div className="articles-view-all">
+              <Link className="articles-pill-button" href="/insights/articles">
+                View All Articles
+              </Link>
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      <section className="px-6 pb-24">
-        <div className="mx-auto max-w-[1200px]">
-          <div className="grid gap-8 lg:grid-cols-[588px_1fr] lg:items-center">
-            <div>
-              <Label>Our Insights</Label>
-              <h2 className="mt-3 font-display text-4xl font-medium leading-tight md:text-5xl">
-                Connect with our latest thinking.
-              </h2>
-              <p className="mt-5 text-xl leading-relaxed">
-                Explore ideas and perspectives designed to help organisations understand what is changing and what it means for the decisions they make next.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <Button href="/insights/webinars">Webinars</Button>
-                <Button href="/insights/news" variant="dark">News</Button>
-              </div>
+          <section className="articles-more" id="more" aria-label="More insights">
+            <div className="articles-more-intro">
+              <p>INSIGHTS</p>
+              <h2>Understand what&apos;s changing, and what to do about it.</h2>
+              <Link className="articles-pill-button articles-more-action" href="/insights">
+                Our Insights
+              </Link>
             </div>
-            <ImagePanel
-              className="h-[260px] rounded-[32px] sm:h-[336px]"
-              overlay="linear-gradient(90deg, rgba(25,106,180,.22), rgba(0,0,0,.1))"
-              src={figmaAssets.figmaBusinessPartners}
-            />
-          </div>
+            <WebinarCard />
+            <NewsCard />
+            <Link className="articles-pill-button articles-more-mobile-action" href="/insights/webinars">
+              View Webinars
+            </Link>
+          </section>
+
+          <section className="articles-what" id="what-we-do" aria-label="What we do">
+            <div className="articles-what-image">
+              <img alt="" src={figmaAssets.figmaBusinessPartners} />
+            </div>
+            <div className="articles-what-copy">
+              <p>WHAT WE DO</p>
+              <h2>Discover the right opportunities, develop the right solutions, and deploy them with confidence.</h2>
+              <span>Helping organisations replace guesswork with evidence, clarity, and smarter strategy.</span>
+              <Link className="articles-pill-button articles-help-button" href="/what-we-do">
+                Let&apos;s Help
+              </Link>
+            </div>
+          </section>
         </div>
       </section>
 

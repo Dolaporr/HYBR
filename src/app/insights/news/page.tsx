@@ -1,91 +1,219 @@
-import {
-  Button,
-  Footer,
-  InsightCard,
-  ListingControls,
-  PageHero,
-  SearchBar,
-  WhatWeDoCta,
-} from "../../_components/marketing";
+import Link from "next/link";
+import { Footer, Header } from "../../_components/marketing";
 import { figmaAssets } from "@/content/site";
+
+const newsHref = "/insights/news/specific-news";
+
+function SearchIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 40 40">
+      <path
+        d="m28.7 27.1-6.1-6.1a8.5 8.5 0 1 0-1.6 1.6l6.1 6.1 1.6-1.6Zm-18.1-11a5.9 5.9 0 1 1 11.8 0 5.9 5.9 0 0 1-11.8 0Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+function ChevronDownIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 40 40">
+      <path d="m12 16 8 8 8-8" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
+    </svg>
+  );
+}
+
+function FilterIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 40 40">
+      <path d="M7 11h26M12 20h16M17 29h6" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="2.6" />
+    </svg>
+  );
+}
+
+function PlayIcon() {
+  return (
+    <span className="news-play" aria-hidden="true">
+      <svg viewBox="0 0 40 40">
+        <path d="M12 6v28l22-14L12 6Z" fill="currentColor" />
+      </svg>
+    </span>
+  );
+}
+
+function FilterControls() {
+  return (
+    <div className="news-controls" aria-label="News filters">
+      <button className="news-control news-control--search" type="button">
+        <SearchIcon />
+        <span>Search</span>
+      </button>
+      <button className="news-control news-control--desktop" type="button">
+        <span>Sort by</span>
+        <ChevronDownIcon />
+      </button>
+      <button className="news-control news-control--desktop" type="button">
+        <span>Topic</span>
+        <ChevronDownIcon />
+      </button>
+      <button className="news-control news-control--desktop" type="button">
+        <span>Duration</span>
+        <ChevronDownIcon />
+      </button>
+      <button className="news-control news-control--filters" type="button">
+        <span>Filters</span>
+        <FilterIcon />
+      </button>
+    </div>
+  );
+}
+
+function ContentDrop() {
+  return (
+    <nav className="news-content-drop" aria-label="News page sections">
+      <img alt="" src={figmaAssets.figmaBusinessPartners} />
+      <span className="news-content-drop-label">CONTENT</span>
+      <div>
+        <a href="#spotlight">Spotlight</a>
+        <a href="#latest">Latest Updates</a>
+        <a href="#more">More Insights</a>
+        <a href="#what-we-do">What We Do</a>
+      </div>
+    </nav>
+  );
+}
+
+function NewsCard({ className = "" }: { className?: string }) {
+  return (
+    <Link className={`news-card figma-motion-card ${className}`} href={newsHref}>
+      <img alt="" src={figmaAssets.figmaBuilding} />
+      <span className="news-card-copy">
+        <span>NEWS</span>
+        <span>One Liner For Specific News Update</span>
+        <span>A short, captivating statement about what this news update covers.</span>
+      </span>
+      <span className="news-read-button">Read More</span>
+    </Link>
+  );
+}
+
+function SpotlightCard() {
+  return (
+    <Link className="news-spotlight figma-motion-card" href={newsHref} id="spotlight">
+      <span className="news-spotlight-copy">
+        <span>Headline for News Update</span>
+        <span>Short summary of what this news update/article covers.</span>
+      </span>
+      <span className="news-spotlight-image">
+        <img alt="" src={figmaAssets.figmaBuilding} />
+      </span>
+      <span className="news-spotlight-button">Read More</span>
+    </Link>
+  );
+}
+
+function WebinarCard() {
+  return (
+    <Link className="news-webinar-card figma-motion-card" href="/insights/webinars/specific-webinar">
+      <img alt="" src={figmaAssets.figmaBusinessPartners} />
+      <span className="news-webinar-kind">WEBINAR</span>
+      <PlayIcon />
+      <span className="news-webinar-duration">01:40:35</span>
+      <span className="news-webinar-copy">
+        <span>One Liner For Specific Webinar</span>
+        <span>Jedidiah Akpata & Charles Ojei</span>
+        <span>November 2023</span>
+      </span>
+    </Link>
+  );
+}
+
+function ArticleCard() {
+  return (
+    <Link className="news-article-card figma-motion-card" href="/insights/articles/specific-article">
+      <img alt="" src={figmaAssets.figmaBuilding} />
+      <span className="news-article-button">Read More</span>
+      <span className="news-article-copy">
+        <span>ARTICLE</span>
+        <span>One Liner For Specific Article</span>
+      </span>
+    </Link>
+  );
+}
 
 export default function NewsPage() {
   return (
-    <main className="overflow-hidden bg-white text-black">
-      <PageHero
-        active="insights"
-        menu={[
-          { label: "Spotlight", href: "#spotlight" },
-          { label: "Latest Updates", href: "#latest" },
-          { label: "More Insights", href: "#more" },
-          { label: "What We Do", href: "#what-we-do" },
-        ]}
-        subtitle="Updates from HYBR's work, partnerships, and ecosystem activity."
-        title="News"
-      />
-      <section className="px-6 pb-16">
-        <div className="mx-auto max-w-[1200px]">
-          <SearchBar />
+    <main className="news-page">
+      <Header active="insights" />
+
+      <section className="news-frame" aria-labelledby="news-title">
+        <div className="figma-container news-shell">
+          <ContentDrop />
+
+          <header className="news-hero">
+            <h1 id="news-title">News</h1>
+            <p>Catch up on what matters and stay prepared for what&apos;s next.</p>
+          </header>
+
+          <button className="news-hero-search" type="button">
+            <SearchIcon />
+            <span>Search</span>
+          </button>
+
+          <p className="news-section-label news-section-label--spotlight">SPOTLIGHT</p>
+          <SpotlightCard />
+
+          <FilterControls />
+
+          <section className="news-latest" id="latest" aria-labelledby="latest-updates-title">
+            <p className="news-section-label" id="latest-updates-title">
+              LATEST UPDATES
+            </p>
+            <div className="news-grid">
+              <NewsCard className="news-card--a" />
+              <NewsCard className="news-card--b" />
+              <NewsCard className="news-card--c" />
+              <NewsCard className="news-card--d" />
+            </div>
+            <div className="news-view-all">
+              <Link className="news-pill-button" href="/insights/news">
+                View All News
+              </Link>
+            </div>
+          </section>
+
+          <section className="news-more" id="more" aria-label="More insights">
+            <div className="news-more-intro">
+              <p>INSIGHTS</p>
+              <h2>Understand what&apos;s changing, and what to do about it.</h2>
+              <span>A continuation of the one-liner above to drive users to check out more insights.</span>
+              <Link className="news-pill-button news-more-action" href="/insights">
+                Our Insights
+              </Link>
+            </div>
+            <WebinarCard />
+            <ArticleCard />
+            <Link className="news-pill-button news-more-mobile-action" href="/insights/webinars">
+              View Webinars
+            </Link>
+          </section>
+
+          <section className="news-what" id="what-we-do" aria-label="What we do">
+            <div className="news-what-image">
+              <img alt="" src={figmaAssets.figmaBusinessPartners} />
+            </div>
+            <div className="news-what-copy">
+              <p>WHAT WE DO</p>
+              <h2>Discover the right opportunities, develop the right solutions, and deploy them with confidence.</h2>
+              <span>Helping organisations replace guesswork with evidence, clarity, and smarter strategy.</span>
+              <Link className="news-pill-button news-help-button" href="/what-we-do">
+                Let&apos;s Help
+              </Link>
+            </div>
+          </section>
         </div>
       </section>
-      <section id="spotlight" className="px-6 pb-24">
-        <div className="mx-auto max-w-[1200px]">
-          <p className="mb-8 font-bold uppercase">Spotlight</p>
-          <div className="overflow-hidden rounded-[20px] lg:h-[408px]">
-            <InsightCard
-              body="Short summary of what this news update/article covers."
-              className="h-full"
-              imageSrc={figmaAssets.figmaBuilding}
-              kind="News"
-              title="Headline for News Update"
-            />
-          </div>
-          <div className="mt-12">
-            <ListingControls />
-          </div>
-        </div>
-      </section>
-      <section id="latest" className="px-6 py-24">
-        <div className="mx-auto max-w-[1200px]">
-          <p className="font-bold uppercase">Latest Updates</p>
-          <div className="mt-8 grid gap-6 lg:grid-cols-[487px_1fr]">
-            {[1, 2, 3, 4].map((item) => (
-              <div className={`${item === 2 || item === 3 ? "lg:col-span-1" : ""} overflow-hidden rounded-[20px] lg:h-[296px]`} key={item}>
-                <InsightCard
-                  body="A short, captivating statement about what this news update covers."
-                  className="h-full"
-                  imageSrc={figmaAssets.figmaBuilding}
-                  kind="News"
-                  title="One Liner For Specific News Update"
-                />
-              </div>
-            ))}
-          </div>
-          <div className="mt-10 text-center">
-            <Button href="/insights/news/specific-news" variant="dark">
-              View All News
-            </Button>
-          </div>
-        </div>
-      </section>
-      <section id="more" className="px-6 py-24">
-        <div className="mx-auto grid max-w-[1200px] gap-6 lg:grid-cols-2">
-          <InsightCard imageSrc={figmaAssets.figmaBusinessPartners} kind="Webinar" title="One Liner For Specific Webinar" />
-          <InsightCard imageSrc={figmaAssets.figmaBuilding} kind="Article" title="One Liner For Specific Article" />
-        </div>
-        <div className="mx-auto mt-10 max-w-[1200px]">
-          <p className="font-bold uppercase">Our Insights</p>
-          <h2 className="mt-3 font-display text-4xl font-medium md:text-5xl">
-            Catch up on what matters and stay prepared for what&apos;s next.
-          </h2>
-          <p className="mt-4 text-xl leading-relaxed">
-            Understand what&apos;s changing, and what to do about it.
-          </p>
-        </div>
-      </section>
-      <div id="what-we-do">
-        <WhatWeDoCta />
-      </div>
+
       <Footer />
     </main>
   );

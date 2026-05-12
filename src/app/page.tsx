@@ -275,20 +275,30 @@ export default function Home() {
               Let&apos;s Talk
             </a>
           </nav>
-          <button
-            aria-label="Open navigation"
-            className="homepage-menu-button"
-            type="button"
-          >
-            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
-              <path
-                d="M3 6H21M3 12H21M3 18H21"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeWidth="2.4"
-              />
-            </svg>
-          </button>
+          <details className="homepage-mobile-menu">
+            <summary aria-label="Toggle navigation" className="homepage-menu-button">
+              <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+                <path
+                  d="M3 6H21M3 12H21M3 18H21"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeWidth="2.4"
+                />
+              </svg>
+            </summary>
+            <div className="homepage-mobile-panel">
+              <nav aria-label="Mobile navigation" className="homepage-mobile-nav">
+                {navigation.map((item) => (
+                  <a href={item.href} key={`home-mobile-${item.key}`}>
+                    {item.label}
+                  </a>
+                ))}
+                <a className="homepage-mobile-talk-button" href="/contact">
+                  Let&apos;s Talk
+                </a>
+              </nav>
+            </div>
+          </details>
         </div>
       </header>
 

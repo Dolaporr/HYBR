@@ -1,35 +1,164 @@
-import { Button, Footer, ImagePanel, Label, PageHero } from "../../../_components/marketing";
+import Link from "next/link";
+import { Footer, Header } from "../../../_components/marketing";
+import { figmaAssets } from "@/content/site";
+
+const shortParagraphs = [
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel dapibus ipsum, a tristique sem. Ut sed scelerisque sem. Nulla eget gravida quam, eget scelerisque elit.",
+  "Suspendisse ullamcorper condimentum molestie. Pellentesque fringilla tristique purus, vitae euismod tortor tempor eu. In posuere libero sed scelerisque rutrum. Aenean sit amet hendrerit lacus. Duis facilisis ac purus a blandit.",
+  "Integer porttitor sagittis massa in ultricies. Praesent vitae laoreet sem, ac aliquet metus. Curabitur tincidunt sit amet eros eget placerat.",
+];
+
+const mediumParagraphs = [
+  ...shortParagraphs,
+  "Nam id erat id ipsum faucibus accumsan eget ut enim. Praesent pellentesque auctor eros, non condimentum nisi fringilla eget. Donec accumsan mi nec mi scelerisque placerat. Curabitur vitae lacinia lectus, id varius nisi. Duis rutrum massa vel mollis faucibus. Donec dapibus ligula lectus, et pretium augue congue eu.",
+];
+
+const tabletOnlyParagraphs = [
+  ...mediumParagraphs,
+  "Praesent erat tortor, egestas et tempus a, interdum sit amet augue. Nam in rhoncus sem, vel dignissim orci. Vestibulum a faucibus mi.",
+];
+
+function ArticleSection({
+  className = "",
+  paragraphs,
+}: {
+  className?: string;
+  paragraphs: string[];
+}) {
+  return (
+    <section className={`news-detail-article-section ${className}`}>
+      <h2>Header</h2>
+      <p className="news-detail-kicker">ONE-LINER FOR SECTION TO GIVE AN OVERVIEW</p>
+      <div className="news-detail-copy">
+        {paragraphs.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function FeatureImage() {
+  return (
+    <figure className="news-detail-feature">
+      <div className="news-detail-feature-img">
+        <img alt="" src={figmaAssets.figmaBusinessPartners} />
+      </div>
+      <figcaption>IMAGE DESCRIPTION, LOCATION, AND MORE - AS REQUIRED</figcaption>
+    </figure>
+  );
+}
+
+function WriterProfile() {
+  return (
+    <section className="news-detail-writer" aria-labelledby="writer-profile-title">
+      <h2 id="writer-profile-title">WRITER PROFILE</h2>
+      <article className="news-detail-writer-card">
+        <img alt="" className="news-detail-writer-bg" src={figmaAssets.figmaBusinessPartners} />
+        <span className="news-detail-writer-ring">
+          <img alt="" src={figmaAssets.figmaTeamPortrait} />
+        </span>
+        <span className="news-detail-writer-copy">
+          <strong>FirstName LastName</strong>
+          <span>Title/Role, Company | Location</span>
+          <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dignissim fringilla feugiat. Praesent sed condimentum nulla.</span>
+        </span>
+      </article>
+    </section>
+  );
+}
+
+function MoreNewsCard({ className = "" }: { className?: string }) {
+  return (
+    <Link className={`news-detail-card figma-motion-card ${className}`} href="/insights/news/specific-news">
+      <img alt="" src={figmaAssets.figmaBuilding} />
+      <span className="news-detail-card-copy">
+        <span>NEWS</span>
+        <span>One Liner For Specific News Update</span>
+        <span>A short, captivating statement about what this news update covers.</span>
+      </span>
+      <span className="news-detail-card-button">Read More</span>
+    </Link>
+  );
+}
+
+function MoreNews() {
+  return (
+    <section className="news-detail-more" aria-labelledby="more-news-title">
+      <div className="news-detail-more-copy">
+        <p id="more-news-title">MORE NEWS</p>
+        <h2>Enjoyed this update? Check out more insights like this.</h2>
+        <span>Discover insights built to replace guesswork with clearer thinking and smarter innovation.</span>
+      </div>
+      <div className="news-detail-more-grid">
+        <MoreNewsCard className="news-detail-card--small" />
+        <MoreNewsCard className="news-detail-card--large" />
+      </div>
+      <Link className="news-detail-outline-button news-detail-all-news" href="/insights/news">
+        All News
+      </Link>
+    </section>
+  );
+}
+
+function ServicesCta() {
+  return (
+    <section className="news-detail-services" aria-label="Services">
+      <h2>Built to attain your goals — find the service that fits your next step.</h2>
+      <Link className="news-detail-outline-button" href="/what-we-do/services">
+        Our Services
+      </Link>
+    </section>
+  );
+}
 
 export default function NewsTemplatePage() {
   return (
-    <main className="overflow-hidden bg-white text-black">
-      <PageHero
-        active="insights"
-        subtitle="A short, captivating statement about what this news update addresses."
-        title="Headline for News Update"
-      />
-      <section className="px-6 pb-24">
-        <div className="mx-auto max-w-[996px]">
-          <p className="font-bold uppercase">Name of Writer • 00th Month, Year</p>
-          <ImagePanel className="mt-10 h-[320px] rounded-3xl md:h-[480px]" />
-          <article className="mt-20">
-            <Label>Header</Label>
-            <h2 className="mt-3 font-display text-5xl font-medium">
-              One-liner for section to give an overview
-            </h2>
-            <p className="mt-6 whitespace-pre-line text-xl leading-relaxed">
-              {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel dapibus ipsum, a tristique sem. Ut sed scelerisque sem. Nulla eget gravida quam, eget scelerisque elit.
-
-Suspendisse ullamcorper condimentum molestie. Pellentesque fringilla tristique purus, vitae euismod tortor tempor eu. In posuere libero sed scelerisque rutrum. Aenean sit amet hendrerit lacus.`}
-            </p>
-          </article>
-          <div className="mt-12">
-            <Button href="/insights/news" variant="dark">
-              More News
-            </Button>
+    <main className="news-detail-page">
+      <section className="news-detail-hero">
+        <Header active="insights" tone="dark" />
+        <div className="news-detail-hero-image">
+          <img alt="" src={figmaAssets.figmaBusinessPartners} />
+        </div>
+        <div className="news-detail-hero-copy">
+          <h1>Header For Specific News Article/Update</h1>
+          <p className="news-detail-summary news-detail-summary--desktop">
+            A short, captivating statement about what this news article/update covers, or a witty/catchy related one-liner.
+          </p>
+          <p className="news-detail-summary news-detail-summary--tablet-horizontal">
+            A short, captivating statement about what this article addresses.
+          </p>
+          <p className="news-detail-summary news-detail-summary--tablet-vertical">
+            A captivating statement about what service was offered to the company. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dignissim fringilla feugiat.
+          </p>
+          <p className="news-detail-author">NAME OF WRITER &bull; 00th Month, Year</p>
+          <div className="news-detail-topics">
+            <p>Topics</p>
+            <span>Industry1, Industry2, Industry3</span>
           </div>
         </div>
       </section>
+
+      <section className="news-detail-body">
+        <div className="figma-container news-detail-shell">
+          <ArticleSection paragraphs={shortParagraphs} />
+          <FeatureImage />
+          <div className="news-detail-copy news-detail-copy--standalone">
+            {shortParagraphs.map((paragraph) => (
+              <p key={`standalone-${paragraph}`}>{paragraph}</p>
+            ))}
+          </div>
+          <ArticleSection className="news-detail-article-section--main" paragraphs={mediumParagraphs} />
+          <ArticleSection className="news-detail-article-section--tablet" paragraphs={tabletOnlyParagraphs} />
+          <p className="news-detail-disclaimer">
+            A disclaimer of some sort, if necessary. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+          <WriterProfile />
+          <MoreNews />
+          <ServicesCta />
+        </div>
+      </section>
+
       <Footer />
     </main>
   );

@@ -1,55 +1,9 @@
 import Link from "next/link";
-import { figmaAssets, siteContent } from "@/content/site";
-import { Footer } from "../_components/marketing";
+import type { CSSProperties, ReactNode } from "react";
+import { figmaAssets } from "@/content/site";
+import { Footer, Header } from "../_components/marketing";
 
-const imageUrl = figmaAssets.figmaBusinessPartners;
-
-const timeline = [
-  {
-    year: "2016",
-    text: "HYBR conceptualised to help ventures scale their impact in Africa.",
-  },
-  {
-    year: "2017",
-    text: "Launched maiden edition of the Young Enterprise (YES) Bootcamp in Lagos in partnership with Samsung, Google, Deloitte, and Sage.",
-  },
-  {
-    year: "2018",
-    text: "YES expands to reach ventures in Lagos, Johannesburg, and Nairobi. HYBR opens office in Cape Town.",
-  },
-  {
-    year: "2019",
-    text: "Implements the Merck-Make-IT-Africa Joint program to impact healthcare ventures across Africa.",
-  },
-  {
-    year: "2019",
-    text: "Implements the Entrepreneurs Plastics Innovation Challenge (EPIC) powered by Coca-Cola.",
-  },
-  {
-    year: "2020",
-    text: "Supports ventures globally, through the Growing through Uncertainty program during COVID-19.",
-  },
-  {
-    year: "2020",
-    text: "Ecosystem study - Innovating in the New Normal post COVID-19. Opens operations in London, UK.",
-  },
-  {
-    year: "2021",
-    text: "Partnership with ABSA for continent-wide innovation intelligence.",
-  },
-  {
-    year: "2022",
-    text: "Strategic reorganization, new purpose, and missions.",
-  },
-  {
-    year: "2024",
-    text: "Transition into a full-service innovation agency.",
-  },
-  {
-    year: "2025",
-    text: "HYBR continues to help leaders build innovation with clarity, discipline, and momentum.",
-  },
-];
+const primaryImage = figmaAssets.figmaBusinessPartners;
 
 const contentLinks = [
   { label: "Our History", href: "#history" },
@@ -59,73 +13,229 @@ const contentLinks = [
   { label: "Careers", href: "#careers" },
 ];
 
+const timeline = [
+  {
+    year: "2016",
+    text: "HYBR conceptualised to help ventures scale their impact in Africa.",
+    icon: "hybr",
+    desktop: { x: 0, y: 171, w: 490, h: 164, side: "top" },
+    mobile: { x: 130, y: 0, w: 212, h: 160 },
+  },
+  {
+    year: "2017",
+    text: "Launched maiden edition of the Young Enterprise (YES) Bootcamp in Lagos in partnership with Samsung, Google, Deloitte, and Sage.",
+    icon: "shoe",
+    desktop: { x: 366, y: 527, w: 490, h: 220, side: "bottom" },
+    mobile: { x: 130, y: 279, w: 212, h: 217 },
+  },
+  {
+    year: "2018",
+    text: "YES expands to reach ventures in Lagos, Johannesburg, and Nairobi. HYBR opens office in Cape Town.",
+    icon: "arrows",
+    desktop: { x: 732, y: 143, w: 490, h: 192, side: "top" },
+    mobile: { x: 130, y: 615, w: 212, h: 179 },
+  },
+  {
+    year: "2019",
+    text: "Implements the Merck-Make-IT-Africa Joint program to impact healthcare ventures across Africa.",
+    icon: "health",
+    desktop: { x: 1098, y: 527, w: 490, h: 192, side: "bottom" },
+    mobile: { x: 130, y: 932, w: 212, h: 198 },
+  },
+  {
+    year: "2019",
+    text: "Implements the Entrepreneurs Plastics Innovation Challenge (EPIC) powered by Coca-Cola.",
+    icon: "bottle",
+    desktop: { x: 1464, y: 143, w: 490, h: 192, side: "top" },
+    mobile: { x: 130, y: 1249, w: 212, h: 198 },
+  },
+  {
+    year: "2020",
+    text: "Supports ventures globally, through the Growing through Uncertainty program during COVID-19.",
+    icon: "handshake",
+    desktop: { x: 1830, y: 527, w: 490, h: 192, side: "bottom" },
+    mobile: { x: 130, y: 1547, w: 212, h: 179 },
+  },
+  {
+    year: "2020",
+    text: "Ecosystem study - Innovating in the New Normal post COVID-19. Opens operations in London, UK.",
+    icon: "pin",
+    desktop: { x: 2196, y: 143, w: 490, h: 192, side: "top" },
+    mobile: { x: 130, y: 1864, w: 212, h: 198 },
+  },
+  {
+    year: "2021",
+    text: "Partnership with ABSA for continent-wide innovation intelligence.",
+    icon: "robot",
+    desktop: { x: 2562, y: 527, w: 490, h: 164, side: "bottom" },
+    mobile: { x: 130, y: 2162, w: 212, h: 160 },
+  },
+  {
+    year: "2022",
+    text: "Strategic reorganization, new purpose, and missions.",
+    icon: "compass",
+    desktop: { x: 2928, y: 171, w: 490, h: 164, side: "top" },
+    mobile: { x: 130, y: 2441, w: 212, h: 160 },
+  },
+  {
+    year: "2024",
+    text: "Transition into a full-service innovation agency.",
+    icon: "sparkle",
+    desktop: { x: 3294, y: 527, w: 490, h: 164, side: "bottom" },
+    mobile: { x: 130, y: 2701, w: 212, h: 141 },
+  },
+];
 
-function Header() {
+type TimelineIconKind = (typeof timeline)[number]["icon"];
+
+function TimelineIcon({ kind }: { kind: TimelineIconKind }) {
+  if (kind === "hybr") {
+    return (
+      <svg aria-hidden="true" fill="none" viewBox="0 0 40 40">
+        <circle cx="20" cy="27" r="7" stroke="currentColor" strokeWidth="3" />
+        <circle cx="20" cy="22" r="13" stroke="currentColor" strokeWidth="3" />
+        <circle cx="20" cy="20" r="18" stroke="currentColor" strokeWidth="3" />
+      </svg>
+    );
+  }
+
+  if (kind === "arrows") {
+    return (
+      <svg aria-hidden="true" fill="none" viewBox="0 0 40 40">
+        <path d="M20 6v28M6 20h28M20 6l-5 5M20 6l5 5M20 34l-5-5M20 34l5-5M6 20l5-5M6 20l5 5M34 20l-5-5M34 20l-5 5" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
+      </svg>
+    );
+  }
+
+  if (kind === "shoe") {
+    return (
+      <svg aria-hidden="true" fill="none" viewBox="0 0 40 40">
+        <path d="M9 25c6.5 4.7 14.2 6 22.4 3.5M12.5 18.5l9 8.2M17.5 14.5l10.8 10.2M10 28.5h23.5" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
+      </svg>
+    );
+  }
+
+  if (kind === "health") {
+    return (
+      <svg aria-hidden="true" fill="none" viewBox="0 0 40 40">
+        <path d="M20 7v26M14 13h12M12 20h16M15 33h10" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
+        <path d="M13 13c0-4 3-7 7-7s7 3 7 7c0 5-7 7-7 12" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
+      </svg>
+    );
+  }
+
+  if (kind === "bottle") {
+    return (
+      <svg aria-hidden="true" fill="none" viewBox="0 0 40 40">
+        <path d="M17 5h6v7l4 5v16a3 3 0 0 1-3 3h-8a3 3 0 0 1-3-3V17l4-5V5Z" stroke="currentColor" strokeLinejoin="round" strokeWidth="2.4" />
+        <path d="M17 12h6M13 23h14" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
+      </svg>
+    );
+  }
+
+  if (kind === "handshake") {
+    return (
+      <svg aria-hidden="true" fill="none" viewBox="0 0 40 40">
+        <path d="M6 22l7-8 7 6 7-6 7 8" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
+        <path d="M12 23l5 5c2 2 4 2 6 0l5-5M16 16l-4 4M24 16l4 4" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
+      </svg>
+    );
+  }
+
+  if (kind === "pin") {
+    return (
+      <svg aria-hidden="true" fill="none" viewBox="0 0 40 40">
+        <path d="M20 35s11-10 11-20a11 11 0 0 0-22 0c0 10 11 20 11 20Z" stroke="currentColor" strokeLinejoin="round" strokeWidth="2.4" />
+        <circle cx="20" cy="15" r="4" stroke="currentColor" strokeWidth="2.4" />
+      </svg>
+    );
+  }
+
+  if (kind === "robot") {
+    return (
+      <svg aria-hidden="true" fill="none" viewBox="0 0 40 40">
+        <rect height="20" rx="5" stroke="currentColor" strokeWidth="2.4" width="24" x="8" y="13" />
+        <path d="M20 13V7M14 7h12M5 23h3M32 23h3" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
+        <path d="M15 22h.1M25 22h.1M16 28h8" stroke="currentColor" strokeLinecap="round" strokeWidth="3" />
+      </svg>
+    );
+  }
+
+  if (kind === "compass") {
+    return (
+      <svg aria-hidden="true" fill="none" viewBox="0 0 40 40">
+        <circle cx="20" cy="20" r="14" stroke="currentColor" strokeWidth="2.4" />
+        <path d="M25 15l-3 9-7 3 3-9 7-3Z" stroke="currentColor" strokeLinejoin="round" strokeWidth="2.4" />
+      </svg>
+    );
+  }
+
+  if (kind === "sparkle") {
+    return (
+      <svg aria-hidden="true" fill="none" viewBox="0 0 40 40">
+        <path d="M20 5l4 11 11 4-11 4-4 11-4-11-11-4 11-4 4-11ZM31 5l1.8 5.2L38 12l-5.2 1.8L31 19l-1.8-5.2L24 12l5.2-1.8L31 5Z" stroke="currentColor" strokeLinejoin="round" strokeWidth="2.2" />
+      </svg>
+    );
+  }
+
   return (
-    <header className="absolute left-0 right-0 top-0 z-20 px-6">
-      <div className="mx-auto flex min-h-28 max-w-[1200px] flex-col items-start justify-center gap-5 py-6 md:h-[152px] md:flex-row md:items-center md:justify-between md:py-0">
-        <Link className="block h-10 w-[128px] overflow-hidden md:h-14 md:w-[179px]" href="/">
-          <img alt={siteContent.brand} className="h-full w-full object-contain" src={figmaAssets.logoBlue} />
-        </Link>
-        <nav className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase sm:gap-5 md:gap-8 md:text-sm">
-          <Link className="text-hybr-blue" href="/who-we-are">
-            Who We Are
-          </Link>
-          <Link href="/what-we-do">What We Do</Link>
-          <Link href="/insights">Insights</Link>
-          <Link
-            className="inline-flex min-h-12 items-center justify-center rounded-full border border-hybr-blue bg-hybr-blue px-5 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(25,106,180,0.18)] md:min-h-[48px] md:px-7 md:text-base"
-            href="/contact"
-          >
-            Let&apos;s Talk
-          </Link>
-        </nav>
-      </div>
-    </header>
+    <svg aria-hidden="true" fill="none" viewBox="0 0 40 40">
+      <path d="M9 26c7 5 15 5 22 0M13 15l9 9M16 12l12 12" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
+    </svg>
   );
 }
 
-function SectionLabel({ children }: { children: React.ReactNode }) {
-  return <p className="text-base font-bold uppercase">{children}</p>;
+function timelineStyle(item: (typeof timeline)[number]) {
+  return {
+    "--history-x": `${item.desktop.x}px`,
+    "--history-y": `${item.desktop.y}px`,
+    "--history-w": `${item.desktop.w}px`,
+    "--history-h": `${item.desktop.h}px`,
+    "--history-mobile-x": `${item.mobile.x}px`,
+    "--history-mobile-y": `${item.mobile.y}px`,
+    "--history-mobile-w": `${item.mobile.w}px`,
+    "--history-mobile-h": `${item.mobile.h}px`,
+  } as CSSProperties;
 }
 
-function Button({
+function SectionLabel({ children }: { children: ReactNode }) {
+  return <p className="who-section-label">{children}</p>;
+}
+
+function FigmaButton({
   children,
   href,
   light = false,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
   href: string;
   light?: boolean;
 }) {
   return (
-    <Link
-      className={`inline-flex min-h-12 items-center justify-center rounded-full border-2 px-5 text-sm font-medium md:min-h-[61px] md:px-8 md:text-lg ${
-        light
-          ? "border-white text-white"
-          : "border-hybr-green bg-white text-hybr-green"
-      }`}
-      href={href}
-    >
+    <Link className={light ? "who-button who-button--light" : "who-button"} href={href}>
       {children}
     </Link>
   );
 }
 
-function ImageCard({
+function ImageSurface({
   className = "",
+  src = primaryImage,
+  overlay,
   children,
 }: {
   className?: string;
-  children?: React.ReactNode;
+  src?: string;
+  overlay?: string;
+  children?: ReactNode;
 }) {
+  const image = overlay ? `${overlay}, url(${src})` : `url(${src})`;
+
   return (
     <div
-      className={`relative overflow-hidden bg-black ${className}`}
+      className={`who-image-surface ${className}`}
       style={{
-        backgroundImage: `linear-gradient(90deg, rgba(0,0,0,.3), rgba(0,0,0,.08)), url(${imageUrl})`,
-        backgroundPosition: "center",
-        backgroundSize: "cover",
+        backgroundImage: image,
       }}
     >
       {children}
@@ -133,166 +243,182 @@ function ImageCard({
   );
 }
 
+function EarlyDaysCard() {
+  return (
+    <section className="who-early" id="early-days" aria-labelledby="who-early-title">
+      <div className="who-early-image">
+        <span
+          aria-hidden="true"
+          className="who-early-media"
+          style={{ backgroundImage: `url(${primaryImage})` }}
+        />
+        <div>
+          <h2 id="who-early-title">Early Days</h2>
+          <p>A captivating statement about what this section represents.</p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function AboutImageCard() {
+  return (
+    <div className="who-about-image" aria-hidden="true">
+      <span
+        className="who-about-media"
+        style={{ backgroundImage: `url(${primaryImage})` }}
+      />
+    </div>
+  );
+}
+
+function ContentDrop() {
+  return (
+    <aside className="who-content-drop" aria-label="Page contents">
+      <span
+        aria-hidden="true"
+        className="who-content-drop-media"
+        style={{ backgroundImage: `url(${primaryImage})` }}
+      />
+      <p>CONTENT</p>
+      <nav>
+        {contentLinks.map((link) => (
+          <a href={link.href} key={link.href}>
+            {link.label}
+          </a>
+        ))}
+      </nav>
+    </aside>
+  );
+}
+
+function Timeline() {
+  return (
+    <div className="who-timeline-shell">
+      <div className="who-timeline-track">
+        <div className="who-timeline-rail" aria-hidden="true" />
+        <span className="who-timeline-range-year who-timeline-range-start" aria-hidden="true">
+          2016
+        </span>
+        <span className="who-timeline-range-year who-timeline-range-end" aria-hidden="true">
+          2025
+        </span>
+        {timeline.map((item, index) => (
+          <article
+            className={`who-timeline-card ${index === 0 ? "is-featured" : ""} is-${item.desktop.side}`}
+            key={`${item.year}-${index}`}
+            style={timelineStyle(item)}
+          >
+            <span className="who-timeline-pin" aria-hidden="true">
+              <TimelineIcon kind={item.icon} />
+            </span>
+            <p>{item.text}</p>
+            <strong>{item.year}</strong>
+          </article>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function WhoWeArePage() {
   return (
-    <main className="overflow-hidden bg-white text-black">
-      <Header />
+    <main className="who-page">
+      <div className="who-frame">
+        <Header active="who" />
 
-      <section className="relative min-h-[540px] px-6 pt-48 md:min-h-[705px] md:pt-[232px]">
-        <div className="mx-auto max-w-[1200px]">
-          <h1 className="font-display text-[56px] font-medium leading-none sm:text-[76px] md:text-[112px] lg:text-[160px]">
-            Who We Are
-          </h1>
-          <p className="mt-4 text-lg font-medium leading-relaxed md:text-2xl">
-            A Tribe of Dynamic Doers - Building What&apos;s Next.
-          </p>
-        </div>
+        <section className="who-hero" aria-labelledby="who-title">
+          <h1 id="who-title">Who We Are</h1>
+          <p>A Tribe of Dynamic Doers &mdash; Building What&apos;s Next.</p>
+        </section>
 
-        <aside className="mx-auto mt-10 max-w-[1200px] rounded-3xl bg-black p-6 text-white xl:absolute xl:right-[-259px] xl:top-[238px] xl:mt-0 xl:h-[197px] xl:w-[337px] xl:overflow-hidden xl:rounded-bl-[1000px] xl:rounded-br-[800px] xl:rounded-tl-[1000px] xl:p-0">
-          <ImageCard className="absolute inset-0 opacity-70" />
-          <p className="relative z-10 mb-4 font-display text-base font-bold xl:absolute xl:left-8 xl:top-1/2 xl:mb-0 xl:-translate-y-1/2 xl:-rotate-90">
-            CONTENT
-          </p>
-          <nav className="relative z-10 flex flex-wrap gap-3 text-base font-medium xl:absolute xl:right-[108px] xl:top-1/2 xl:-translate-y-1/2 xl:flex-col xl:text-right">
-            {contentLinks.map((link) => (
-              <a key={link.href} href={link.href}>
-                {link.label}
-              </a>
-            ))}
-          </nav>
-        </aside>
-      </section>
+        <ContentDrop />
 
-      <section id="history" className="relative bg-black px-6 py-24 text-white">
-        <div className="mx-auto max-w-[1200px]">
-          <div className="mb-12 flex items-center justify-between gap-8">
+        <section className="who-history" id="history" aria-labelledby="who-history-title">
+          <div className="who-history-head">
             <SectionLabel>Our History</SectionLabel>
-            <a
-              className="hidden rounded-full border-2 border-black bg-white px-8 py-4 text-lg font-medium text-black md:inline-flex"
-              href="#careers"
-            >
-              See The Whole Journey
-            </a>
           </div>
+          <a className="who-journey-button" href="#careers">
+            <span>See The Whole Journey</span>
+            <svg aria-hidden="true" className="who-journey-icon" fill="none" viewBox="0 0 32 32">
+              <circle cx="16" cy="16" r="13" stroke="currentColor" strokeWidth="2" />
+              <path d="M10 14L16 20L22 14" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
+            </svg>
+          </a>
+          <h2 id="who-history-title" className="sr-only">
+            Our History
+          </h2>
+          <Timeline />
+        </section>
 
-          <div className="relative overflow-x-auto pb-8">
-            <div className="absolute left-8 right-8 top-[240px] h-1 bg-white/70" />
-            <div className="grid min-w-[2600px] grid-cols-11 gap-8 md:min-w-[2600px]">
-              {timeline.map((item, index) => (
-                <article
-                  className={`relative rounded-3xl bg-white p-8 text-black ${
-                    index % 2 === 0 ? "mt-0" : "mt-80"
-                  }`}
-                  key={`${item.year}-${item.text}`}
-                >
-                  <span className="absolute left-1/2 top-[calc(100%+54px)] grid size-12 -translate-x-1/2 place-items-center rounded-full border-4 border-white bg-black text-sm font-bold text-white">
-                    {item.year.slice(2)}
-                  </span>
-                  <p className="font-display text-xl leading-snug">{item.text}</p>
-                  <p className="mt-5 text-sm font-bold">{item.year}</p>
-                </article>
-              ))}
-            </div>
+        <EarlyDaysCard />
+
+        <span className="who-about-orbit" aria-hidden="true" />
+
+        <section className="who-about-copy" id="about-us" aria-labelledby="who-about-title">
+          <SectionLabel>About Us</SectionLabel>
+          <h2 id="who-about-title">
+            We help innovators turn untapped potential into world-shaping solutions.
+          </h2>
+          <div className="who-copy-stack">
+            <p>
+              At HYBR, we don&rsquo;t just innovate&mdash;we reimagine the very blueprint of
+              how innovation is discovered, nurtured, and scaled in underserved markets.
+            </p>
+            <p>
+              We transform ideas, products, services, and organizations into innovation
+              leaders. We are a purpose-driven innovation agency&mdash;unearthing
+              breakthrough ideas, empowering brilliant innovation leaders, and igniting
+              solutions with global impact. From Lagos to London, Cape Town to
+              California, HYBR is where big ideas meet bold execution.
+            </p>
           </div>
-        </div>
-      </section>
+          <FigmaButton href="/who-we-are/about-us">Learn More</FigmaButton>
+        </section>
 
-      <section id="early-days" className="relative px-6 py-28">
-        <div className="pointer-events-none absolute -right-[560px] top-20 hidden h-[1200px] w-[1200px] rounded-full border border-hybr-green/30 md:block" />
-        <div className="mx-auto max-w-[1200px]">
-          <ImageCard className="h-[300px] rounded-2xl md:h-[386px]">
-            <div className="absolute bottom-8 left-8 right-8 text-white md:bottom-12 md:left-12 md:right-auto">
-              <h2 className="font-display text-3xl font-medium">Early Days</h2>
-              <p className="mt-2 text-lg">
-                A captivating statement about what this section represents.
-              </p>
-            </div>
-          </ImageCard>
-        </div>
-      </section>
+        <AboutImageCard />
 
-      <section id="about-us" className="relative px-6 pb-36">
-        <div className="mx-auto grid max-w-[1200px] items-center gap-16 lg:grid-cols-2">
-          <div>
-            <SectionLabel>About Us</SectionLabel>
-            <h2 className="mt-2 font-display text-5xl font-medium leading-tight">
-              We help innovators turn untapped potential into world-shaping
-              solutions.
-            </h2>
-            <div className="mt-6 space-y-5 text-2xl leading-relaxed">
-              <p>
-                At HYBR, we don&apos;t just innovate - we reimagine the very
-                blueprint of how innovation is discovered, nurtured, and scaled
-                in underserved markets.
-              </p>
-              <p>
-                We transform ideas, products, services, and organizations into
-                innovation leaders. We are a purpose-driven innovation agency -
-                unearthing breakthrough ideas, empowering brilliant innovation
-                leaders, and igniting solutions with global impact. From Lagos
-                to London, Cape Town to California, HYBR is where big ideas meet
-                bold execution.
-              </p>
-            </div>
-            <div className="mt-8">
-              <Button href="/who-we-are/about-us">Learn More</Button>
-            </div>
-          </div>
-          <ImageCard className="h-[260px] rounded-[32px] sm:h-[336px] sm:rounded-full lg:translate-x-40" />
-        </div>
-      </section>
-
-      <section id="our-team" className="px-6 pb-36">
-        <div className="mx-auto max-w-[1200px] overflow-hidden rounded-3xl bg-black p-6 text-white md:p-12">
-          <div className="grid gap-12 lg:grid-cols-[461px_1fr]">
+        <section className="who-team" id="our-team" aria-labelledby="who-team-title">
+          <div className="who-team-head">
             <div>
               <SectionLabel>Our Team</SectionLabel>
-              <h2 className="mt-4 font-display text-5xl font-medium leading-tight">
-                The people powering{" "}
-                <span className="text-[#8dc540]">HYBR</span>: innovators
-                obsessed with building what&apos;s next.
+              <h2 id="who-team-title">
+                The people powering <span>HYBR</span>: innovators obsessed with building
+                what&apos;s next.
               </h2>
             </div>
-            <p className="text-xl leading-relaxed">
-              Our team brings together decades of experience across innovation
-              strategy, venture building, AI, and enterprise transformation.
-              From designing market-shifting business models to launching
-              scalable technologies in frontier markets, we combine analytic
-              rigor, creative problem-solving, and deep sector expertise to help
-              organizations unlock what&apos;s possible.
+            <p>
+              Our team brings together decades of experience across innovation strategy,
+              venture building, AI, and enterprise transformation. From designing
+              market-shifting business models to launching scalable technologies in
+              frontier markets, we combine analytic rigor, creative problem-solving, and
+              deep sector expertise to help organizations unlock what&apos;s possible.
             </p>
           </div>
-          <ImageCard className="mt-12 h-[245px] rounded-3xl">
-            <div className="absolute bottom-8 left-8 right-auto md:bottom-12 md:left-auto md:right-16">
-              <Button href="/who-we-are/our-team" light>
-                Learn More
-              </Button>
-            </div>
-          </ImageCard>
-        </div>
-      </section>
+          <ImageSurface className="who-team-image">
+            <FigmaButton href="/who-we-are/our-team" light>
+              Learn More
+            </FigmaButton>
+          </ImageSurface>
+        </section>
 
-      <section id="careers" className="px-6 pb-36">
-        <div className="mx-auto grid max-w-[1200px] items-center gap-16 lg:grid-cols-2">
-          <ImageCard className="h-[260px] rounded-[32px] sm:h-[336px] sm:rounded-full lg:-translate-x-40" />
-          <div className="text-right">
-            <SectionLabel>Careers</SectionLabel>
-            <h2 className="mt-2 font-display text-5xl font-medium leading-tight">
-              Join us and build the future - turning tough challenges into
-              breakthrough solutions.
-            </h2>
-            <p className="mt-6 text-2xl leading-relaxed">
-              If you&apos;re driven by curiosity, obsessed with solving complex
-              problems, and excited to shape the future of global underserved
-              markets, you&apos;ll feel right at home here. Explore careers at
-              HYBR and build what&apos;s next with us.
-            </p>
-            <div className="mt-8">
-              <Button href="/who-we-are/careers">Learn More</Button>
-            </div>
-          </div>
-        </div>
-      </section>
+        <ImageSurface className="who-careers-image" />
+
+        <section className="who-careers-copy" id="careers" aria-labelledby="who-careers-title">
+          <SectionLabel>Careers</SectionLabel>
+          <h2 id="who-careers-title">
+            Join us and build the future&mdash;turning tough challenges into breakthrough
+            solutions.
+          </h2>
+          <p>
+            If you&rsquo;re driven by curiosity, obsessed with solving complex problems,
+            and excited to shape the future of global underserved markets, you&rsquo;ll
+            feel right at home here. Explore careers at HYBR and build what&rsquo;s next
+            with us.
+          </p>
+          <FigmaButton href="/who-we-are/careers">Learn More</FigmaButton>
+        </section>
+      </div>
 
       <Footer />
     </main>
