@@ -1,129 +1,215 @@
-import { Button, Footer, ImagePanel, Label, PageHero } from "../../_components/marketing";
+import Link from "next/link";
 import { figmaAssets } from "@/content/site";
+import { Footer, Header } from "../../_components/marketing";
+import styles from "./page.module.css";
 
-const teamGroups = [
-  { label: "Core", description: "Responsible for the operation and function of the business across strategy, operations, commercial, finance, and communications." },
-  { label: "Associates", description: "Subject matter authorities and/ or niche experts with distinctive highly specialised skills sets. Supplement the Core team with in-depth proficiencies." },
-  { label: "Affiliates", description: "Networked organisations and / or individuals offer a broad range of services that complement the Core team." },
-  { label: "Advisors", description: "World authorities and renowned experts in their fields who provide the critique necessary for improvement and progression." },
+const contentLinks = [
+  { label: "Our Network", href: "#network" },
+  { label: "Meet The Team", href: "#team" },
+  { label: "More About Us", href: "#more-about-us" },
 ];
 
-const teamMembers = Array.from({ length: 10 }, (_, i) => ({
-  id: i + 1,
-  name: i === 0 ? "Oluwatobi Agbana" : "Team Member Name",
-  role:
-    i === 0
-      ? "Marketing & Communications Analyst"
-      : ["Growth Strategy", "Business Development", "Corporate Systems", "Research", "Product Innovation"][i % 5],
+const networkTiers = [
+  {
+    label: "Core",
+    text: "Responsible for the operation and function of the business across strategy, operations, commercial, finance, and communications.",
+  },
+  {
+    label: "Associates",
+    text: "Subject matter authorities and/ or niche experts with distinctive highly specialised skills sets. Supplement the Core team with in-depth proficiencies.",
+  },
+  {
+    label: "Affiliates",
+    text: "Networked organisations and / or individuals offer a broad range of services that complement the Core team.",
+  },
+  {
+    label: "Advisors",
+    text: "World authorities and renowned experts in their fields who provide the critique necessary for improvement and progression.",
+  },
+];
+
+const teamMembers = Array.from({ length: 10 }, (_, index) => ({
+  id: index + 1,
+  name: "Oluwatobi Agbana",
+  role: "Marketing & Communications Analyst",
+  skills: ["Growth Strategy", "Business Development", "Corporate Systems"],
 }));
+
+function HybrMark({ className = "" }: { className?: string }) {
+  return (
+    <svg aria-hidden="true" className={className} fill="none" viewBox="0 0 56 56">
+      <circle cx="28" cy="43.2" r="10.28" stroke="currentColor" strokeWidth="4.54" />
+      <circle cx="28" cy="35.1" r="18.33" stroke="currentColor" strokeWidth="4.54" />
+      <circle cx="28" cy="27.88" r="25.54" stroke="currentColor" strokeWidth="4.54" />
+    </svg>
+  );
+}
+
+function ArrowIcon({ direction }: { direction: "left" | "right" }) {
+  return (
+    <svg aria-hidden="true" fill="none" viewBox="0 0 32 32">
+      {direction === "left" ? (
+        <path d="M19 9L12 16L19 23" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
+      ) : (
+        <path d="M13 9L20 16L13 23" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
+      )}
+    </svg>
+  );
+}
+
+function ContentDrop() {
+  return (
+    <aside aria-label="Page contents" className="team-content-drop">
+      <span
+        aria-hidden="true"
+        className="team-content-drop-media"
+        style={{ backgroundImage: `url(${figmaAssets.figmaBusinessPartners})` }}
+      />
+      <p>CONTENT</p>
+      <nav>
+        {contentLinks.map((link) => (
+          <a href={link.href} key={link.href}>
+            {link.label}
+          </a>
+        ))}
+      </nav>
+    </aside>
+  );
+}
+
+function NetworkMap() {
+  return (
+    <section aria-labelledby="team-network-title" className="team-network" id="network">
+      <h2 id="team-network-title">OUR NETWORK</h2>
+      <div className="team-network-card">
+        <span aria-hidden="true" className="team-network-rings" />
+        {networkTiers.map((tier) => (
+          <div className={`team-network-tier is-${tier.label.toLowerCase()}`} key={tier.label}>
+            <h3>{tier.label}</h3>
+            <p>{tier.text}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function TierDrop() {
+  return (
+    <aside aria-label="Team tiers" className="team-tier-drop">
+      <p>TIERS</p>
+      <nav>
+        {networkTiers.map((tier) => (
+          <a href="#team" key={tier.label}>
+            {tier.label}
+          </a>
+        ))}
+      </nav>
+    </aside>
+  );
+}
+
+function TeamCard({ member }: { member: (typeof teamMembers)[number] }) {
+  return (
+    <article className="team-member-card">
+      <span
+        aria-hidden="true"
+        className="team-member-photo"
+        style={{ backgroundImage: `url(${figmaAssets.figmaTeamPortrait})` }}
+      />
+      <HybrMark className="team-member-mark" />
+      <div className="team-member-copy">
+        <div>
+          <div className="team-member-name-row">
+            <h3>{member.name}</h3>
+            <svg aria-hidden="true" className="team-member-linkedin" fill="none" viewBox="0 0 32 32">
+              <rect height="20" rx="3" stroke="currentColor" strokeWidth="2.2" width="20" x="6" y="6" />
+              <path d="M11 14V22" stroke="currentColor" strokeWidth="2.4" />
+              <path d="M16 22V17.5C16 15.84 17.34 14.5 19 14.5C20.66 14.5 22 15.84 22 17.5V22" stroke="currentColor" strokeWidth="2.4" />
+              <circle cx="11" cy="10.5" fill="currentColor" r="1.5" />
+            </svg>
+          </div>
+          <p>{member.role}</p>
+          <Link className="team-member-more" href="/who-we-are/our-team">
+            Learn More
+          </Link>
+        </div>
+        <div className="team-member-tags">
+          {member.skills.map((skill) => (
+            <span key={`${member.id}-${skill}`}>{skill}</span>
+          ))}
+        </div>
+      </div>
+    </article>
+  );
+}
+
+function TierNavigator() {
+  return (
+    <div aria-label="Core tier navigation" className="team-tier-nav">
+      <ArrowIcon direction="left" />
+      <span>CORE</span>
+      <ArrowIcon direction="right" />
+    </div>
+  );
+}
 
 export default function OurTeamPage() {
   return (
-    <main className="overflow-hidden bg-white text-black">
-      <PageHero
-        active="who"
-        menu={[
-          { label: "Our Network", href: "#network" },
-          { label: "Meet The Team", href: "#team" },
-          { label: "More About Us", href: "#about" },
-        ]}
-        subtitle="Explore the network model behind the people powering HYBR."
-        title="Our Team"
-      />
+    <main className={`${styles.teamScope} team-page`}>
+      <div className="team-frame">
+        <Header active="who" />
 
-      <section id="network" className="px-6 pb-24">
-        <div className="mx-auto max-w-[1200px]">
-          <div className="team-network-map relative overflow-hidden rounded-[20px] bg-black p-6 text-white md:p-12 lg:min-h-[1027px]">
-            <div className="relative z-10 grid gap-6 md:grid-cols-2 lg:absolute lg:inset-x-16 lg:top-24 lg:grid-cols-1">
-              {teamGroups.map((group, index) => (
-                <div
-                  className={`team-network-tier rounded-[20px] p-6 text-center ${
-                    index === 0 || index === 2 ? "bg-white text-black" : "bg-black text-white"
-                  }`}
-                  key={group.label}
-                >
-                  <h3 className="font-display text-2xl font-medium">{group.label}</h3>
-                  <p className="mx-auto mt-3 max-w-[520px] text-sm leading-relaxed">{group.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="mx-auto mt-20 max-w-[894px] text-center">
-            <Label>Meet the Team</Label>
-            <p className="mt-4 text-xl leading-relaxed">
-              Our network model enables us to go further faster, be radically
-              original, achieve greater lasting impact, and do so with ruthless
-              efficiency.
-            </p>
-            <div className="mt-8 flex justify-center">
-              <Button href="#team">View as Single Page</Button>
-            </div>
-          </div>
-        </div>
-      </section>
+        <section aria-labelledby="team-title" className="team-hero">
+          <h1 id="team-title">Our Team</h1>
+          <p>The people powering HYBR: innovators obsessed with building what&apos;s next.</p>
+        </section>
 
-      <section id="team" className="px-6 pb-24">
-        <div className="mx-auto max-w-[1200px]">
-          <Label>Core</Label>
-          <p className="mt-2 text-xl leading-relaxed">
-            Oversees strategy, operations, commercial, finance, and
-            communications, supported by expert specialists and project managers.
+        <ContentDrop />
+        <NetworkMap />
+
+        <section aria-labelledby="team-meet-title" className="team-meet">
+          <h2 id="team-meet-title">Meet the Team</h2>
+          <p>
+            Our network model enables us to go further faster, be radically original,
+            achieve greater lasting impact, and do so with ruthless efficiency
           </p>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {teamMembers.map((member) => (
-              <article
-                className="relative overflow-hidden rounded-[20px] lg:h-[425px]"
-                key={member.id}
-                style={{
-                  backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.68)), url(${figmaAssets.figmaTeamPortrait})`,
-                  backgroundPosition: "center top",
-                  backgroundSize: "cover",
-                }}
-              >
-                <div className="absolute bottom-8 left-8 right-8 text-white">
-                  <p className="font-display text-2xl font-medium">{member.name}</p>
-                  <p className="mt-1 text-sm font-semibold uppercase tracking-[0.08em] opacity-75">{member.role}</p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold uppercase text-black">
-                      Learn More
-                    </span>
-                    <span className="rounded-full border border-white/55 px-3 py-1 text-xs font-semibold uppercase">
-                      {member.role}
-                    </span>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+          <Link href="#team">View as Single Page</Link>
+        </section>
 
-      <section id="about" className="px-6 pb-36">
-        <div className="mx-auto max-w-[1200px]">
-          <Label>Tiers</Label>
-          <div className="grid gap-12 lg:grid-cols-[1fr_420px] lg:items-center">
-            <div>
-              <h2 className="font-display text-4xl font-medium leading-tight md:text-5xl">
-                The people powering HYBR: innovators obsessed with building what&apos;s next.
-              </h2>
-              <p className="mt-5 text-xl leading-relaxed">
-                Empowering organizations to unlock new value, create impact,
-                and shape tomorrow.
-                <br />
-                <br />
-                Build what&apos;s next - collaborate, experiment, and create
-                change with HYBR. Join a team where curiosity, creativity, and
-                impact drive everything we do.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <Button href="/who-we-are/about-us">About Us</Button>
-                <Button href="/who-we-are/careers" variant="dark">Join Us</Button>
-              </div>
-            </div>
-            <ImagePanel className="h-[280px] rounded-2xl md:h-[336px]" />
-          </div>
+        <section aria-labelledby="team-core-title" className="team-core" id="team">
+          <h2 id="team-core-title">Core</h2>
+          <p>
+            Oversees strategy, operations, commercial, finance, and communications,
+            supported by expert specialists and project managers.
+          </p>
+        </section>
+
+        <TierDrop />
+
+        <div className="team-member-grid">
+          {teamMembers.map((member) => (
+            <TeamCard key={member.id} member={member} />
+          ))}
         </div>
-      </section>
+
+        <TierNavigator />
+
+        <section aria-labelledby="team-more-title" className="team-more" id="more-about-us">
+          <h2 id="team-more-title">
+            Empowering organizations to unlock new value, create impact, and shape tomorrow.
+          </h2>
+          <p>
+            Build what&apos;s next &mdash; collaborate, experiment, and create change
+            with HYBR. Join a team where curiosity, creativity, and impact drive
+            everything we do.
+          </p>
+          <div>
+            <Link href="/who-we-are/careers">Join Us</Link>
+            <Link href="/what-we-do">What We Do</Link>
+          </div>
+        </section>
+      </div>
 
       <Footer />
     </main>
