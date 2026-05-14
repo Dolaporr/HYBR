@@ -19,6 +19,9 @@ export const figmaAssets = {
   article: "/home/article.png",
   webinar: "/home/webinar.png",
   whoHero: "/home/who-hero.png",
+  ourWorkFeature: "/home/our-work-feature-source.png",
+  ourWorkTall: "/home/our-work-tall-source.png",
+  productOrbit: "/what-product-orbit.svg",
 } as const;
 
 export const navigation = [
