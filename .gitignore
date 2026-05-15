@@ -31,6 +31,11 @@ yarn-error.log*
 .pnpm-debug.log*
 dev-server.*.log
 .next-*.log
+.chrome-debug*/
+.edge-debug*/
+.edge-cdp*/
+.tmp-*.log
+.tmp-*.png
 
 # generated design exports
 figma-*.json

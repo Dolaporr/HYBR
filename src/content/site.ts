@@ -22,6 +22,9 @@ export const figmaAssets = {
   ourWorkFeature: "/home/our-work-feature-source.png",
   ourWorkTall: "/home/our-work-tall-source.png",
   productOrbit: "/what-product-orbit.svg",
+  servicesCaseStudy: "/what/services-case-study.png",
+  servicesTestimonialAvatar: "/what/services-testimonial-avatar.png",
+  servicesTestimonialBg: "/what/services-testimonial-bg.png",
 } as const;
 
 export const navigation = [

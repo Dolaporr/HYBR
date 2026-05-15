@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     ".tools/**",
+    ".chrome-debug*/**",
+    ".edge-debug*/**",
+    ".edge-cdp*/**",
     "next-env.d.ts",
   ]),
 ]);
