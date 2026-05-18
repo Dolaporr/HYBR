@@ -33,7 +33,7 @@
   color: #648c2d;
   display: inline-flex;
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
   justify-content: center;
   line-height: normal;
@@ -94,14 +94,14 @@
 }
 
 .workScope :global(.work-content-drop-media::after) {
-  background: rgba(0, 0, 0, .6);
+  background: rgba(0, 0, 0, .5);
   content: "";
   inset: 0;
   position: absolute;
 }
 
 .workScope :global(.work-card-image::after) {
-  background: rgba(0, 0, 0, .5);
+  background: rgba(0, 0, 0, .6);
   content: "";
   inset: 0;
   position: absolute;
@@ -109,7 +109,7 @@
 
 .workScope :global(.work-content-drop p) {
   font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 700;
   left: 42px;
   line-height: normal;
@@ -133,7 +133,7 @@
 .workScope :global(.work-content-drop a) {
   color: #ffffff;
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 16px;
   text-decoration: none;
@@ -157,7 +157,7 @@
   color: #858688;
   display: flex;
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-  font-size: 8px;
+  font-size: 16px;
   font-weight: 500;
   gap: 6px;
   height: 40px;
@@ -175,7 +175,7 @@
   font: inherit;
   outline: 0;
   padding: 0;
-  width: 44px;
+  width: 104px;
 }
 
 .workScope :global(.work-filter input::placeholder) {
@@ -184,8 +184,8 @@
 }
 
 .workScope :global(.work-filter-icon) {
-  height: 12px;
-  width: 12px;
+  height: 24px;
+  width: 24px;
 }
 
 .workScope :global(.work-filter-chevron) {
@@ -208,10 +208,10 @@
 
 .workScope :global(.work-section-label) {
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-  font-size: 8px;
+  font-size: 16px;
   font-weight: 700;
   left: 24px;
-  line-height: 10px;
+  line-height: 20px;
   position: absolute;
   text-transform: uppercase;
   z-index: 2;
@@ -227,7 +227,7 @@
 
 .workScope :global(.work-card) {
   background: #000000;
-  border-radius: 6px;
+  border-radius: 16px;
   color: #ffffff;
   height: 386px;
   left: 24px;
@@ -262,10 +262,10 @@
 
 .workScope :global(.work-card-eyebrow) {
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-  font-size: 8px;
+  font-size: 16px;
   font-weight: 700;
   left: 32px;
-  line-height: 10px;
+  line-height: 20px;
   position: absolute;
   text-transform: uppercase;
   top: 40px;
@@ -280,7 +280,7 @@
   left: 32px;
   line-height: 38px;
   position: absolute;
-  top: 62px;
+  top: 82px;
   width: 278px;
   z-index: 2;
 }
@@ -303,10 +303,10 @@
 
 .workScope :global(.work-card-company) {
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-  font-size: 8px;
+  font-size: 16px;
   font-weight: 700;
   left: 32px;
-  line-height: 10px;
+  line-height: 20px;
   position: absolute;
   text-transform: uppercase;
   top: 258px;
@@ -325,8 +325,8 @@
 .workScope :global(.work-button.is-read) {
   border-color: #ffffff;
   color: #000000;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 500;
   min-height: 48px;
   padding: 10px 28px;
   right: 32px;
@@ -335,7 +335,7 @@
 }
 
 .workScope :global(.work-button.is-view-all) {
-  font-size: 12px;
+  font-size: 20px;
   left: 55px;
   min-height: 56px;
   top: 1844px;
@@ -350,7 +350,7 @@
 .workScope :global(.work-services-image) {
   background-position: center;
   background-size: cover;
-  border-radius: 1000px 0 0 1000px;
+  border-radius: 1000px 0 1000px 1000px;
   display: block;
   filter: hue-rotate(35deg) saturate(1.12) brightness(1.03);
   height: 118px;
@@ -369,17 +369,17 @@
 
 .workScope :global(.work-services-copy p) {
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-  font-size: 8px;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 10px;
+  line-height: 20px;
   text-transform: uppercase;
 }
 
 .workScope :global(.work-services-copy h2) {
   font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 500;
-  line-height: 29px;
+  line-height: 38px;
   margin-top: 6px;
   width: 342px;
 }
@@ -387,19 +387,19 @@
 .workScope :global(.work-services-copy > span) {
   display: block;
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 500;
-  line-height: 15px;
+  line-height: 20px;
   margin-top: 6px;
-  width: 238px;
+  width: 342px;
 }
 
 .workScope :global(.work-button.is-services) {
-  font-size: 12px;
+  font-size: 20px;
   left: 0;
-  min-height: 40px;
-  top: 174px;
-  width: 157px;
+  min-height: 56px;
+  top: 196px;
+  width: max-content;
 }
 
 .workScope :global(.work-button .is-desktop-label) {
@@ -424,7 +424,7 @@
   }
 
   .workScope :global(.work-hero h1) {
-    font-size: 112px;
+    font-size: 104px;
     line-height: 122px;
   }
 
@@ -470,7 +470,7 @@
 
   .workScope :global(.work-filter) {
     border-width: 2px;
-    font-size: 12px;
+    font-size: 20px;
     height: 56px;
     justify-content: space-between;
     padding-inline: 26px;
@@ -640,7 +640,7 @@
   }
 
   .workScope :global(.work-card.is-recent .work-button.is-read) {
-    font-size: 12px;
+    font-size: 14px;
     min-height: 33px;
     padding-inline: 18px;
     right: 24px;
@@ -649,7 +649,7 @@
   }
 
   .workScope :global(.work-button.is-view-all) {
-    font-size: 16px;
+    font-size: 20px;
     left: 260px;
     top: 1744px;
   }
@@ -659,6 +659,7 @@
   }
 
   .workScope :global(.work-services-image) {
+    border-radius: 1000px 0 1000px 1000px;
     height: 248px;
     left: 80px;
     width: 640px;
@@ -690,7 +691,7 @@
   }
 
   .workScope :global(.work-button.is-services) {
-    font-size: 16px;
+    font-size: 20px;
     min-height: 56px;
     top: 160px;
     width: 192px;
@@ -719,7 +720,7 @@
   }
 
   .workScope :global(.work-hero h1) {
-    font-size: 112px;
+    font-size: 104px;
     line-height: 122px;
   }
 
@@ -760,7 +761,7 @@
 
   .workScope :global(.work-filter) {
     border-width: 2px;
-    font-size: 12px;
+    font-size: 20px;
     height: 56px;
     justify-content: space-between;
     padding-inline: 26px;
@@ -924,7 +925,7 @@
   }
 
   .workScope :global(.work-card.is-recent .work-button.is-read) {
-    font-size: 12px;
+    font-size: 20px;
     min-height: 40px;
     right: 40px;
     top: 228px;
@@ -932,7 +933,7 @@
   }
 
   .workScope :global(.work-button.is-view-all) {
-    font-size: 16px;
+    font-size: 20px;
     left: 495px;
     top: 1564px;
   }
@@ -942,6 +943,7 @@
   }
 
   .workScope :global(.work-services-image) {
+    border-radius: 1000px;
     height: 336px;
     left: 785px;
     width: 976px;
@@ -973,7 +975,7 @@
   }
 
   .workScope :global(.work-button.is-services) {
-    font-size: 16px;
+    font-size: 20px;
     min-height: 56px;
     top: 184px;
     width: 192px;
@@ -1043,7 +1045,7 @@
 
   .workScope :global(.work-filter) {
     border-width: 2px;
-    font-size: 12px;
+    font-size: 20px;
     height: 56px;
     justify-content: space-between;
     padding-inline: 26px;
@@ -1104,7 +1106,7 @@
   }
 
   .workScope :global(.work-card) {
-    border-radius: 8px;
+    border-radius: 16px;
     left: 120px;
   }
 
@@ -1165,7 +1167,7 @@
     background: transparent;
     border-color: #ffffff;
     color: #ffffff;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 500;
     min-height: 61px;
     right: 40px;
@@ -1233,7 +1235,7 @@
   .workScope :global(.work-card.is-recent .work-button.is-read) {
     border-color: #ffffff;
     color: #000000;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 500;
     min-height: 61px;
     right: 40px;
@@ -1242,7 +1244,7 @@
   }
 
   .workScope :global(.work-button.is-view-all) {
-    font-size: 16px;
+    font-size: 24px;
     left: 558px;
     min-height: 61px;
     top: 1745px;
@@ -1254,6 +1256,7 @@
   }
 
   .workScope :global(.work-services-image) {
+    border-radius: 1000px;
     height: 336px;
     left: 773px;
     width: 976px;
@@ -1285,7 +1288,7 @@
   }
 
   .workScope :global(.work-button.is-services) {
-    font-size: 16px;
+    font-size: 24px;
     min-height: 61px;
     top: 216px;
     width: 217px;
