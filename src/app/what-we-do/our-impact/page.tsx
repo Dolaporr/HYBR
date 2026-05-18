@@ -1,101 +1,213 @@
-import { Button, CaseCard, Footer, ImagePanel, Label, PageHero } from "../../_components/marketing";
+import Link from "next/link";
+import type { ReactNode } from "react";
 import { figmaAssets } from "@/content/site";
+import { Footer, Header } from "../../_components/marketing";
+import styles from "./impact.module.css";
 
-const metrics = [
-  ["35+", "Countries Reached", "Helping organizations make confident decisions worldwide.", "View All Locations"],
-  ["300K+", "Jobs Created", "Our work creates job opportunities at every level.", "View Our Reach"],
-  ["4000+", "Ventures Impacted", "We help businesses turn good ideas into great results.", "View Our Reach"],
-];
+const contentLinks = [
+  { label: "HYBR's Impact", href: "#impact" },
+  { label: "Countries Reached", href: "#countries" },
+  { label: "Jobs Created", href: "#jobs" },
+  { label: "Ventures Impacted", href: "#ventures" },
+  { label: "Our Work", href: "#work" },
+] as const;
+
+function ImpactButton({
+  children,
+  className = "",
+  href,
+}: {
+  children: ReactNode;
+  className?: string;
+  href: string;
+}) {
+  return (
+    <Link className={`impact-button ${className}`} href={href}>
+      {children}
+    </Link>
+  );
+}
+
+function HybrMark({ className = "" }: { className?: string }) {
+  return (
+    <svg aria-hidden="true" className={className} fill="none" viewBox="0 0 56 56">
+      <circle cx="28" cy="43.2" r="10.28" stroke="#ffffff" strokeWidth="4.54" />
+      <circle cx="28" cy="35.1" r="18.33" stroke="#4fc2f0" strokeWidth="4.54" />
+      <circle cx="28" cy="27.88" r="25.54" stroke="#8dc540" strokeWidth="4.54" />
+    </svg>
+  );
+}
+
+function ContentDrop() {
+  return (
+    <aside aria-label="Our Impact page contents" className="impact-content-drop">
+      <span
+        aria-hidden="true"
+        className="impact-content-drop-media"
+        style={{ backgroundImage: `url(${figmaAssets.figmaBusinessPartners})` }}
+      />
+      <p>CONTENT</p>
+      <nav>
+        {contentLinks.map((link) => (
+          <Link href={link.href} key={link.href}>
+            {link.label}
+          </Link>
+        ))}
+      </nav>
+    </aside>
+  );
+}
+
+function Metric({
+  body,
+  button,
+  className,
+  id,
+  label,
+  value,
+}: {
+  body: string;
+  button?: string;
+  className: string;
+  id: string;
+  label: string;
+  value: string;
+}) {
+  return (
+    <section className={`impact-metric ${className}`} id={id}>
+      <div className="impact-metric-text">
+        <strong>{value}</strong>
+        <span>{label}</span>
+      </div>
+      <p>{body}</p>
+      {button ? (
+        <ImpactButton href="/what-we-do/our-work">
+          {button}
+        </ImpactButton>
+      ) : null}
+    </section>
+  );
+}
+
+function TrustedGrid() {
+  return (
+    <div aria-hidden="true" className="impact-trusted-grid">
+      {Array.from({ length: 9 }).map((_, index) => (
+        <span key={index} />
+      ))}
+    </div>
+  );
+}
+
+function CaseStudyCard({ className = "" }: { className?: string }) {
+  return (
+    <article className={`impact-case-card ${className}`}>
+      <span
+        aria-hidden="true"
+        className="impact-case-image"
+        style={{ backgroundImage: `url(${figmaAssets.ourWorkCard})` }}
+      />
+      <p className="impact-case-label">CASE STUDY</p>
+      <h3>One Liner For Specific Case Study</h3>
+      <p className="impact-case-body is-long">
+        A captivating statement about what service was offered to the company.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+        dignissim fringilla feugiat.
+      </p>
+      <p className="impact-case-body is-short">
+        A short, captivating statement about what this case study is about.
+      </p>
+      <p className="impact-case-company">COMPANY NAME</p>
+      <HybrMark className="impact-case-mark" />
+      <ImpactButton className="is-read" href="/case-studies/one-liner">
+        Read More
+      </ImpactButton>
+    </article>
+  );
+}
 
 export default function OurImpactPage() {
   return (
-    <main className="overflow-hidden bg-white text-black">
-      <PageHero
-        active="what"
-        menu={[
-          { label: "HYBR's Impact", href: "#impact" },
-          { label: "Countries Reached", href: "#countries" },
-          { label: "Jobs Created", href: "#jobs" },
-          { label: "Ventures Impacted", href: "#ventures" },
-          { label: "Our Work", href: "#work" },
-        ]}
-        subtitle="How your ideas can bring a positive impact to your business."
-        title="Our Impact"
-      />
+    <main className={`${styles.impactScope} impact-page`}>
+      <div className="impact-frame">
+        <Header active="what" />
 
-      <section id="impact" className="px-6 pb-24">
-        <div className="mx-auto max-w-[1200px]">
-          <ImagePanel
-            className="min-h-[336px] rounded-l-full rounded-r-[20px] lg:ml-auto lg:w-[976px]"
-            overlay="linear-gradient(90deg, rgba(0,0,0,.12), rgba(0,0,0,.6))"
-            src={figmaAssets.figmaBusinessPartners}
-          >
-            <div className="flex min-h-[336px] items-center p-8 text-white md:p-12 lg:ml-auto lg:w-[612px]">
-              <div>
-                <Label>HYBR&apos;s Impact</Label>
-                <h2 className="mt-3 font-display text-4xl font-medium leading-tight md:text-5xl">
-                  Making the right decisions for your business isn&apos;t always easy.
-                </h2>
-              </div>
-            </div>
-          </ImagePanel>
+        <section aria-labelledby="impact-title" className="impact-hero">
+          <h1 id="impact-title">Our Impact</h1>
+          <p>How your ideas can bring a positive impact to your business.</p>
+        </section>
 
-          <div className="mt-28 grid gap-6 lg:grid-cols-2">
-            <article id="countries" className="rounded-[24px] bg-[#f1f1f1] p-8 md:p-10 lg:min-h-[316px]">
-              <p className="font-display text-7xl font-medium text-hybr-blue">{metrics[0][0]}</p>
-              <p className="mt-3 font-bold uppercase">{metrics[0][1]}</p>
-              <p className="mt-5 max-w-[360px] text-lg leading-relaxed">{metrics[0][2]}</p>
-              <div className="mt-8">
-                <Button href="/what-we-do/our-work" variant="dark">{metrics[0][3]}</Button>
-              </div>
-            </article>
-            <div className="rounded-full bg-black p-10 text-white lg:min-h-[588px]">
-              <Label>Trusted By</Label>
-              <div className="flex h-full items-center justify-center text-center">
-                <p className="max-w-[360px] text-xl leading-relaxed">
-                  Teams across regions trust HYBR to turn uncertainty into clear innovation action.
-                </p>
-              </div>
-            </div>
-            <article id="jobs" className="rounded-[24px] bg-[#f1f1f1] p-8 md:p-10 lg:-mt-64 lg:min-h-[215px]">
-              <p className="font-display text-7xl font-medium text-hybr-blue">{metrics[1][0]}</p>
-              <p className="mt-3 font-bold uppercase">{metrics[1][1]}</p>
-              <p className="mt-5 max-w-[360px] text-lg leading-relaxed">{metrics[1][2]}</p>
-            </article>
-            <article id="ventures" className="rounded-[24px] bg-[#f1f1f1] p-8 md:p-10 lg:min-h-[316px]">
-              <p className="font-display text-7xl font-medium text-hybr-blue">{metrics[2][0]}</p>
-              <p className="mt-3 font-bold uppercase">{metrics[2][1]}</p>
-              <p className="mt-5 max-w-[360px] text-lg leading-relaxed">{metrics[2][2]}</p>
-              <div className="mt-8">
-                <Button href="/what-we-do/our-work" variant="dark">{metrics[2][3]}</Button>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
+        <ContentDrop />
 
-      <section id="work" className="px-6 pb-24">
-        <div className="mx-auto max-w-[1200px]">
-          <div className="grid gap-6 lg:grid-cols-2">
-            <CaseCard className="min-h-[372px]" dark />
-            <CaseCard className="min-h-[372px]" dark />
+        <span
+          aria-hidden="true"
+          className="impact-intro-image"
+          style={{ backgroundImage: `url(${figmaAssets.figmaBusinessPartners})` }}
+        />
+        <section aria-labelledby="impact-intro-title" className="impact-intro-copy" id="impact">
+          <h2 id="impact-intro-title">HYBR&rsquo;s Impact</h2>
+          <div>
+            <p>
+              Making the right decisions for your business isn&rsquo;t always easy.
+              Many organisations struggle to get it right. HYBR brings structure
+              to the process, helping you turn business ideas into clear,
+              informed decisions.
+            </p>
+            <p>
+              With the right decisions in place, confidence follows. Your ideas
+              will be tested, validated, and made ready to work in the real
+              world, so you can deliver solutions that create real impact for
+              your business.
+            </p>
           </div>
-          <div className="mt-10 grid gap-6 lg:grid-cols-[588px_1fr] lg:items-start">
-            <div>
-              <Label>Our Work: Case Studies</Label>
-              <h2 className="mt-3 font-display text-4xl font-medium md:text-5xl">
-                Supporting Ideas From Start To Finish
-              </h2>
-              <p className="mt-4 text-xl leading-relaxed">
-                See how we&apos;re working with people like you to change the world.
-              </p>
-            </div>
-            <div className="lg:justify-self-end">
-              <Button href="/what-we-do/our-work" variant="dark">All Case Studies</Button>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
+
+        <img alt="" className="impact-globe" src={figmaAssets.impactGlobe} />
+
+        <Metric
+          body="Helping organizations make confident decisions worldwide."
+          button="View All Locations"
+          className="is-countries"
+          id="countries"
+          label="COUNTRIES REACHED"
+          value="35+"
+        />
+
+        <div aria-hidden="true" className="impact-blue-band" />
+        <p className="impact-trusted-label">TRUSTED BY</p>
+        <TrustedGrid />
+
+        <Metric
+          body="Our work creates job opportunities at every level."
+          className="is-jobs"
+          id="jobs"
+          label="JOBS CREATED"
+          value="300K+"
+        />
+
+        <CaseStudyCard className="is-feature" />
+
+        <Metric
+          body="We help businesses turn good ideas into great results."
+          button="View Our Reach"
+          className="is-ventures"
+          id="ventures"
+          label="VENTURES IMPACTED"
+          value="4000+"
+        />
+
+        <section aria-labelledby="impact-work-title" className="impact-work-heading" id="work">
+          <p>OUR WORK: CASE STUDIES</p>
+          <h2 id="impact-work-title">Supporting Ideas From Start To Finish</h2>
+          <span>See how we&rsquo;re working with people like you to change the world.</span>
+        </section>
+
+        <CaseStudyCard className="is-work-one" />
+        <CaseStudyCard className="is-work-two" />
+        <ImpactButton className="is-all" href="/what-we-do/our-work">
+          All Case Studies
+        </ImpactButton>
+      </div>
 
       <Footer />
     </main>

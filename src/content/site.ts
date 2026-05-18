@@ -22,6 +22,7 @@ export const figmaAssets = {
   ourWorkFeature: "/home/our-work-feature-source.png",
   ourWorkTall: "/home/our-work-tall-source.png",
   ourWorkCard: "/what/our-work-card.png",
+  impactGlobe: "/what/impact-globe.svg",
   productOrbit: "/what-product-orbit.svg",
   servicesCaseStudy: "/what/services-case-study.png",
   servicesTestimonialAvatar: "/what/services-testimonial-avatar.png",
