@@ -104,7 +104,7 @@ function MoreNews() {
 function ServicesCta() {
   return (
     <section className="news-detail-services" aria-label="Services">
-      <h2>Built to attain your goals — find the service that fits your next step.</h2>
+      <h2>Built to attain your goals - find the service that fits your next step.</h2>
       <Link className="news-detail-outline-button" href="/what-we-do/services">
         Our Services
       </Link>

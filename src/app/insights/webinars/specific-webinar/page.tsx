@@ -106,6 +106,21 @@ function RelatedWebinarRow({
   );
 }
 
+function RelatedTopics({ className = "" }: { className?: string }) {
+  return (
+    <section className={`webinar-topics ${className}`.trim()}>
+      <h2>Related Topics</h2>
+      <div>
+        {topics.map((topic) => (
+          <Link href="/insights/articles" key={topic}>
+            {topic}
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function SpeakerCard({ speaker }: { speaker: (typeof speakers)[number] }) {
   return (
     <article
@@ -134,7 +149,7 @@ function SpeakerCard({ speaker }: { speaker: (typeof speakers)[number] }) {
   );
 }
 
-  export default function SpecificWebinarPage() {
+export default function SpecificWebinarPage() {
   return (
     <main className="webinar-detail-page bg-white text-black">
       <Header active="insights" />
@@ -176,6 +191,8 @@ function SpeakerCard({ speaker }: { speaker: (typeof speakers)[number] }) {
                 </p>
               </div>
 
+              <RelatedTopics className="webinar-topics--mobile" />
+
               <section className="webinar-speakers">
                 <div className="webinar-speakers-head">
                   <h2>About The Speakers</h2>
@@ -201,16 +218,7 @@ function SpeakerCard({ speaker }: { speaker: (typeof speakers)[number] }) {
                 HYBR Ad
               </div>
 
-              <section className="webinar-topics">
-                <h2>Related Topics</h2>
-                <div>
-                  {topics.map((topic) => (
-                    <Link href="/insights/articles" key={topic}>
-                      {topic}
-                    </Link>
-                  ))}
-                </div>
-              </section>
+              <RelatedTopics />
 
               <section className="webinar-latest">
                 <h2>Latest Webinars</h2>

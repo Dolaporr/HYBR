@@ -1,5 +1,5 @@
 export const figmaAssets = {
-  figmaBusinessPartners: "/figma-assets/image-fills/1958cc39abc0ad658a9c5454fb531e80c31f464e.png",
+  figmaBusinessPartners: "/figma-assets/image-fills/1958cc39abc0ad658a9c5454fb531e80c31f464e-optimized.jpg",
   figmaBuilding: "/figma-assets/image-fills/49ea5afcd08e354d2128485561e0136b723e384e.png",
   figmaFieldHero: "/figma-assets/image-fills/d50005e607480723ef80c8b7ba3864acdbcd1a39.png",
   figmaTeamPortrait: "/figma-assets/image-fills/3575adb86737d96194fbaf002a8bc285b11fb790.png",

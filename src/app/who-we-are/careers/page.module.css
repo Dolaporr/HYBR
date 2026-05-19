@@ -7,7 +7,7 @@
 .careersScope :global(.careers-frame) {
   background: #ffffff;
   height: 9270px;
-  margin-inline: auto;
+  margin-inline: 0;
   max-width: 390px;
   overflow: hidden;
   position: relative;
@@ -737,6 +737,7 @@
 @media (min-width: 560px) and (max-width: 1023px) {
   .careersScope :global(.careers-frame) {
     height: 8435px;
+    margin-inline: auto;
     max-width: 800px;
   }
 
@@ -1060,6 +1061,7 @@
 @media (min-width: 1024px) and (max-width: 1359px) {
   .careersScope :global(.careers-frame) {
     height: 7133px;
+    margin-inline: auto;
     max-width: 1280px;
   }
 
@@ -1395,6 +1397,7 @@
 @media (min-width: 1360px) {
   .careersScope :global(.careers-frame) {
     height: 7838px;
+    margin-inline: auto;
     max-width: 1440px;
   }
 

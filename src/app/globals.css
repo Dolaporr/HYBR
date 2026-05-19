@@ -484,6 +484,10 @@ a {
   margin-top: 18px;
 }
 
+.webinar-topics--mobile {
+  display: none;
+}
+
 .webinar-topics h2 {
   font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
   font-size: 32px;
@@ -634,6 +638,529 @@ a {
 
 .field::placeholder {
   color: rgba(255, 255, 255, 0.86);
+}
+
+.provisional-page {
+  background: #ffffff;
+  color: #000000;
+  overflow-x: clip;
+}
+
+.provisional-shell {
+  margin-inline: auto;
+  max-width: 1200px;
+  width: calc(100% - 240px);
+}
+
+.provisional-hero {
+  padding: 243px 0 128px;
+}
+
+.provisional-hero--compact {
+  padding-bottom: 80px;
+}
+
+.provisional-title {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 150px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 0.98;
+  margin: 0;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.provisional-subtitle {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 24px 0 0;
+  max-width: 780px;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.provisional-kicker {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.provisional-media {
+  background: #000000;
+  overflow: hidden;
+  position: relative;
+}
+
+.provisional-media img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.products-section {
+  padding: 0 0 120px;
+}
+
+.products-intro {
+  font-size: 24px;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 760px;
+}
+
+.products-list {
+  display: grid;
+  gap: 32px;
+  margin-top: 56px;
+}
+
+.product-card {
+  align-items: center;
+  background: #000000;
+  border-radius: 16px;
+  color: #ffffff;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 420px minmax(0, 1fr) 290px;
+  min-height: 176px;
+  padding: 40px;
+}
+
+.product-card h2 {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 54px;
+  font-weight: 500;
+  line-height: 1;
+  margin: 0;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.product-card p {
+  font-size: 20px;
+  line-height: 1.45;
+  margin: 0;
+  min-width: 0;
+}
+
+.product-card-cta,
+.resource-cta a {
+  align-items: center;
+  background: #ffffff;
+  border-radius: 100px;
+  color: #000000;
+  display: inline-flex;
+  font-size: 20px;
+  font-weight: 500;
+  justify-content: center;
+  line-height: normal;
+  min-height: 56px;
+  padding: 16px 32px;
+  text-align: center;
+  white-space: normal;
+}
+
+.product-card-cta {
+  font-size: 18px;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.contact-section,
+.resource-download-section {
+  padding: 0 0 112px;
+}
+
+.contact-panel,
+.resource-download-panel {
+  background: #000000;
+  border-radius: 16px;
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  overflow: hidden;
+}
+
+.contact-copy,
+.resource-download-copy {
+  padding: 56px;
+}
+
+.contact-copy h2,
+.resource-download-copy h2,
+.resource-cta h2 {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 56px;
+  font-weight: 500;
+  line-height: 1.08;
+  margin: 16px 0 0;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.contact-copy > p:last-of-type,
+.resource-download-copy p {
+  font-size: 22px;
+  line-height: 1.45;
+  margin: 32px 0 0;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.contact-media {
+  border-radius: 16px;
+  height: 260px;
+  margin-top: 56px;
+}
+
+.provisional-form {
+  background: var(--hybr-blue);
+  display: grid;
+  gap: 32px;
+  padding: 56px;
+}
+
+.provisional-form .field {
+  min-width: 0;
+}
+
+.provisional-form textarea.field {
+  min-height: 176px;
+  resize: none;
+}
+
+.provisional-form button {
+  background: #000000;
+  border: 0;
+  border-radius: 100px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  min-height: 56px;
+  padding: 16px 32px;
+  text-transform: uppercase;
+}
+
+.contact-details-section {
+  padding: 0 0 112px;
+}
+
+.contact-detail-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.contact-detail-card {
+  background: #f1f1f1;
+  border-radius: 16px;
+  min-width: 0;
+  padding: 40px;
+}
+
+.contact-detail-card p {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.contact-detail-card span {
+  display: block;
+  font-size: 22px;
+  line-height: 1.35;
+  margin-top: 32px;
+  overflow-wrap: anywhere;
+}
+
+.resource-hero {
+  padding: 232px 0 112px;
+}
+
+.resource-hero-grid {
+  align-items: end;
+  display: grid;
+  gap: 64px;
+  grid-template-columns: minmax(0, 1fr) 480px;
+}
+
+.resource-title {
+  font-size: 112px;
+  margin-top: 16px;
+}
+
+.resource-subtitle {
+  margin-top: 40px;
+}
+
+.resource-hero-media {
+  border-radius: 16px;
+  height: 420px;
+}
+
+.resource-cta {
+  padding: 0 0 112px;
+  text-align: center;
+}
+
+.resource-cta h2 {
+  margin-inline: auto;
+  max-width: 900px;
+}
+
+.resource-cta a {
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+  margin-top: 40px;
+}
+
+@media (max-width: 1023px) {
+  .about-page .inner-page-subtitle {
+    max-width: 342px !important;
+    width: 342px;
+  }
+
+  .about-page .inner-page-hero > div {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 342px !important;
+    width: 342px;
+  }
+
+  .about-page .figma-content-drop {
+    box-sizing: border-box;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 342px !important;
+    overflow: hidden;
+    padding: 24px !important;
+    width: 342px !important;
+  }
+
+  .about-page .figma-content-drop nav {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px 14px !important;
+    max-width: 100%;
+  }
+
+  .about-page .figma-content-drop nav a {
+    font-size: 15px;
+    line-height: 1.2;
+    white-space: normal;
+  }
+
+  .about-page section {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  .about-page section > div {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 342px !important;
+    width: 342px;
+  }
+
+  .about-page #history .grid {
+    display: block;
+  }
+
+  .about-page h2,
+  .about-page p {
+    max-width: 100%;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .provisional-shell {
+    margin-left: 24px;
+    margin-right: 0;
+    max-width: 342px;
+    width: 342px;
+  }
+
+  .provisional-hero {
+    padding: 187px 0 80px;
+  }
+
+  .provisional-hero--compact {
+    padding-bottom: 64px;
+  }
+
+  .provisional-title {
+    font-size: 48px;
+    line-height: 1.04;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .provisional-subtitle {
+    font-size: 16px;
+    line-height: 1.35;
+    margin-top: 12px;
+    max-width: 342px;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .provisional-kicker {
+    font-size: 16px;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .products-section,
+  .contact-section,
+  .contact-details-section,
+  .resource-download-section,
+  .resource-cta {
+    padding-bottom: 80px;
+  }
+
+  .products-intro {
+    font-size: 20px;
+    line-height: 1.45;
+    max-width: 342px;
+  }
+
+  .products-list {
+    gap: 32px;
+    margin-top: 48px;
+  }
+
+  .product-card {
+    display: block;
+    min-height: 0;
+    padding: 24px;
+    width: 342px;
+  }
+
+  .product-card h2 {
+    font-size: 40px;
+  }
+
+  .product-card p {
+    font-size: 20px;
+    line-height: 1.45;
+    margin-top: 40px;
+  }
+
+  .product-card-cta {
+    font-size: 16px;
+    margin-top: 40px;
+    min-height: 48px;
+    padding: 12px 20px;
+    width: 100%;
+  }
+
+  .contact-panel,
+  .resource-download-panel {
+    display: block;
+    width: 342px;
+  }
+
+  .contact-copy,
+  .resource-download-copy {
+    padding: 24px;
+  }
+
+  .contact-copy h2,
+  .resource-download-copy h2,
+  .resource-cta h2 {
+    font-size: 40px;
+    line-height: 1.1;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .contact-copy > p:last-of-type,
+  .resource-download-copy p {
+    font-size: 20px;
+    line-height: 1.4;
+    margin-top: 28px;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .contact-media {
+    height: 240px;
+    margin-top: 48px;
+  }
+
+  .provisional-form {
+    gap: 24px;
+    padding: 24px;
+  }
+
+  .provisional-form textarea.field {
+    min-height: 128px;
+  }
+
+  .provisional-form button {
+    font-size: 18px;
+    min-height: 56px;
+  }
+
+  .contact-detail-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1fr;
+  }
+
+  .contact-detail-card {
+    padding: 24px;
+  }
+
+  .contact-detail-card p {
+    font-size: 16px;
+  }
+
+  .contact-detail-card span {
+    font-size: 20px;
+    margin-top: 32px;
+  }
+
+  .resource-hero {
+    padding: 187px 0 80px;
+  }
+
+  .resource-hero-grid {
+    display: block;
+  }
+
+  .resource-title {
+    font-size: 48px;
+    margin-top: 16px;
+  }
+
+  .resource-subtitle {
+    margin-top: 32px;
+  }
+
+  .resource-hero-media {
+    height: 300px;
+    margin-top: 56px;
+    width: 342px;
+  }
+
+  .resource-cta h2 {
+    max-width: 342px;
+  }
+
+  .resource-cta a {
+    font-size: 16px;
+    margin-top: 32px;
+    min-height: 48px;
+    padding: 12px 24px;
+  }
 }
 
 .figma-motion-card {
@@ -826,6 +1353,222 @@ a {
 
   .figma-content-drop {
     border-radius: 24px !important;
+  }
+
+  .about-page .figma-content-drop {
+    box-sizing: border-box;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 342px !important;
+    overflow: hidden;
+    padding: 24px !important;
+    width: calc(100vw - 48px) !important;
+  }
+
+  .about-page .figma-content-drop nav {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px 14px !important;
+    max-width: 100%;
+  }
+
+  .about-page .figma-content-drop nav a {
+    font-size: 15px;
+    line-height: 1.2;
+    white-space: normal;
+  }
+
+  .about-page section {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  .about-page section > div {
+    max-width: 342px !important;
+    width: 100%;
+  }
+
+  .about-page #history .grid {
+    display: block;
+  }
+
+  .about-page h2,
+  .about-page p {
+    max-width: 100%;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .provisional-shell {
+    margin-left: 24px;
+    margin-right: 0;
+    max-width: 342px;
+    width: 342px;
+  }
+
+  .provisional-hero {
+    padding: 187px 0 80px;
+  }
+
+  .provisional-hero--compact {
+    padding-bottom: 64px;
+  }
+
+  .provisional-title {
+    font-size: 48px;
+    line-height: 1.04;
+  }
+
+  .provisional-subtitle {
+    font-size: 16px;
+    line-height: 1.35;
+    margin-top: 12px;
+    max-width: 342px;
+  }
+
+  .provisional-kicker {
+    font-size: 16px;
+  }
+
+  .products-section,
+  .contact-section,
+  .contact-details-section,
+  .resource-download-section,
+  .resource-cta {
+    padding-bottom: 80px;
+  }
+
+  .products-intro {
+    font-size: 20px;
+    line-height: 1.45;
+    max-width: 342px;
+  }
+
+  .products-list {
+    gap: 32px;
+    margin-top: 48px;
+  }
+
+  .product-card {
+    display: block;
+    min-height: 0;
+    padding: 24px;
+    width: 342px;
+  }
+
+  .product-card h2 {
+    font-size: 40px;
+  }
+
+  .product-card p {
+    font-size: 20px;
+    line-height: 1.45;
+    margin-top: 40px;
+  }
+
+  .product-card-cta {
+    font-size: 16px;
+    margin-top: 40px;
+    min-height: 48px;
+    padding: 12px 20px;
+    width: 100%;
+  }
+
+  .contact-panel,
+  .resource-download-panel {
+    display: block;
+    width: 342px;
+  }
+
+  .contact-copy,
+  .resource-download-copy {
+    padding: 24px;
+  }
+
+  .contact-copy h2,
+  .resource-download-copy h2,
+  .resource-cta h2 {
+    font-size: 40px;
+    line-height: 1.1;
+  }
+
+  .contact-copy > p:last-of-type,
+  .resource-download-copy p {
+    font-size: 20px;
+    line-height: 1.4;
+    margin-top: 28px;
+  }
+
+  .contact-media {
+    height: 240px;
+    margin-top: 48px;
+  }
+
+  .provisional-form {
+    gap: 24px;
+    padding: 24px;
+  }
+
+  .provisional-form textarea.field {
+    min-height: 128px;
+  }
+
+  .provisional-form button {
+    font-size: 18px;
+    min-height: 56px;
+  }
+
+  .contact-detail-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1fr;
+  }
+
+  .contact-detail-card {
+    padding: 24px;
+  }
+
+  .contact-detail-card p {
+    font-size: 16px;
+  }
+
+  .contact-detail-card span {
+    font-size: 20px;
+    margin-top: 32px;
+  }
+
+  .resource-hero {
+    padding: 187px 0 80px;
+  }
+
+  .resource-hero-grid {
+    display: block;
+  }
+
+  .resource-title {
+    font-size: 48px;
+    margin-top: 16px;
+  }
+
+  .resource-subtitle {
+    margin-top: 32px;
+  }
+
+  .resource-hero-media {
+    height: 300px;
+    margin-top: 56px;
+    width: 342px;
+  }
+
+  .resource-cta h2 {
+    max-width: 342px;
+  }
+
+  .resource-cta a {
+    font-size: 16px;
+    margin-top: 32px;
+    min-height: 48px;
+    padding: 12px 24px;
   }
 }
 
@@ -5835,6 +6578,13 @@ a {
 }
 
 @media (max-width: 559px) {
+  .webinar-detail-frame .figma-container {
+    margin-left: 24px;
+    margin-right: 24px;
+    max-width: none;
+    width: calc(100vw - 48px);
+  }
+
   .webinar-detail-frame {
     padding: 140px 0 96px;
   }
@@ -5854,7 +6604,7 @@ a {
     border-radius: 0;
     height: 224px;
     margin-left: -24px;
-    width: calc(100% + 48px);
+    width: 100vw;
   }
 
   .webinar-play {
@@ -5884,14 +6634,19 @@ a {
   }
 
   .webinar-detail-actions {
-    align-items: flex-start;
-    flex-direction: column;
+    align-items: center;
     gap: 16px;
+    justify-content: space-between;
     margin-top: 16px;
+    min-height: 48px;
   }
 
   .webinar-detail-actions-left {
-    gap: 40px;
+    border: 1.5px solid #000000;
+    border-radius: 100px;
+    gap: 10px;
+    min-height: 45px;
+    padding: 8px 24px;
   }
 
   .webinar-detail-action {
@@ -5899,14 +6654,28 @@ a {
     line-height: 19.504px;
   }
 
+  .webinar-detail-action span {
+    display: none;
+  }
+
+  .webinar-detail-action + .webinar-detail-action::before {
+    content: "|";
+    display: inline-block;
+    margin-right: 10px;
+  }
+
   .webinar-detail-action svg {
-    height: 40px;
-    width: 40px;
+    height: 24px;
+    width: 24px;
   }
 
   .webinar-transcript-link {
-    font-size: 20px;
-    line-height: 24.38px;
+    border: 1.5px solid #000000;
+    border-radius: 100px;
+    font-size: 16px;
+    line-height: 19.504px;
+    padding: 10px 24px;
+    text-decoration: none;
   }
 
   .webinar-body-copy {
@@ -5919,8 +6688,17 @@ a {
     margin-top: 20px;
   }
 
+  .webinar-topics--mobile {
+    display: block;
+    margin-top: 40px;
+  }
+
+  .webinar-detail-sidebar .webinar-topics {
+    display: none;
+  }
+
   .webinar-speakers {
-    margin-top: 48px;
+    margin-top: 44px;
   }
 
   .webinar-speakers-head {
@@ -5979,27 +6757,73 @@ a {
     margin-top: 8px;
   }
 
+  .webinar-latest-list {
+    gap: 24px;
+  }
+
   .related-webinar-row {
-    gap: 16px;
-    grid-template-columns: 136px 1fr;
+    border-radius: 16px;
+    color: #ffffff;
+    display: block;
+    height: 216px;
+    overflow: hidden;
+    position: relative;
+    width: calc(100vw - 48px);
   }
 
   .webinar-video--compact {
-    border-radius: 8px;
-    height: 84px;
+    border-radius: 16px;
+    height: 100%;
     margin-left: 0;
-    width: 136px;
+    width: 100%;
   }
 
   .webinar-video--compact .webinar-play {
     height: 24px;
-    left: 32px;
+    bottom: 20px;
+    left: 38px;
+    top: auto;
+    transform: rotate(90deg);
     width: 24px;
   }
 
-  .related-webinar-row h3,
+  .webinar-video--compact .webinar-duration {
+    bottom: 24px;
+    font-size: 16px;
+    line-height: 19.504px;
+    right: 32px;
+  }
+
+  .related-webinar-row > div:last-child {
+    bottom: 58px;
+    left: 32px;
+    position: absolute;
+    width: 278px;
+    z-index: 2;
+  }
+
+  .related-webinar-row > div:last-child::before {
+    content: "WEBINAR";
+    display: block;
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.504px;
+    margin-bottom: 4px;
+  }
+
+  .related-webinar-row h3 {
+    color: #ffffff;
+    font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: normal;
+  }
+
   .related-webinar-row p {
-    font-size: 12px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
     line-height: 14.628px;
   }
 
@@ -12184,7 +13008,7 @@ a {
 .team-frame {
   background: #ffffff;
   height: 7910px;
-  margin-inline: auto;
+  margin-inline: 0;
   max-width: 390px;
   overflow: hidden;
   position: relative;
@@ -12646,6 +13470,7 @@ a {
 @media (min-width: 560px) and (max-width: 1023px) {
   .team-frame {
     height: 5574px;
+    margin-inline: auto;
     max-width: 800px;
   }
 
@@ -12839,6 +13664,7 @@ a {
 @media (min-width: 1024px) and (max-width: 1359px) {
   .team-frame {
     height: 5579px;
+    margin-inline: auto;
     max-width: 1280px;
   }
 
@@ -13027,6 +13853,7 @@ a {
 @media (min-width: 1360px) {
   .team-frame {
     height: 5857px;
+    margin-inline: auto;
     max-width: 1440px;
   }
 

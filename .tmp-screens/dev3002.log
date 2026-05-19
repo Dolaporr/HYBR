@@ -1,0 +1,17 @@
+
+> hybr@0.1.0 dev
+> next dev --hostname 127.0.0.1 --port 3002
+
+▲ Next.js 16.2.4 (Turbopack)
+- Local:         http://127.0.0.1:3002
+- Network:       http://127.0.0.1:3002
+✓ Ready in 1664ms
+⨯ Another next dev server is already running.
+
+- Local:        http://localhost:3000
+- PID:          13884
+- Dir:          C:\Users\alade\Documents\hybr
+- Log:          .next\dev\logs\next-development.log
+
+Run taskkill /PID 13884 /F to stop it.
+[?25h

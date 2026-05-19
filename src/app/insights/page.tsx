@@ -98,7 +98,7 @@ function InsightCard({
   kind,
   title,
   body,
-  imageSrc = figmaAssets.figmaBuilding,
+  imageSrc = figmaAssets.article,
   href,
 }: {
   className: string;
@@ -178,7 +178,7 @@ export default function InsightsPage() {
           <WebinarCard
             className="insights-spotlight-main"
             featured
-            imageSrc={figmaAssets.article}
+            imageSrc={figmaAssets.figmaBuilding}
             title="Title of Specific Webinar"
           />
           <InsightCard
@@ -244,7 +244,7 @@ export default function InsightsPage() {
           <InsightCard
             className="insights-article-tall"
             href="/insights/articles/specific-article"
-            imageSrc={figmaAssets.article}
+            imageSrc={figmaAssets.figmaBuilding}
             kind="ARTICLE"
             title="One Liner For Specific Article"
           />

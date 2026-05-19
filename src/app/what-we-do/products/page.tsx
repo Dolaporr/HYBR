@@ -1,35 +1,36 @@
-import { Button, Footer, PageHero } from "../../_components/marketing";
+import Link from "next/link";
+import { Footer, Header } from "../../_components/marketing";
 
 const products = ["INDX", "FLYWHEEL", "ALPHA"];
 
 export default function ProductsPage() {
   return (
-    <main className="overflow-hidden bg-white text-black">
-      <PageHero
-        active="what"
-        subtitle="Tools designed to make innovation feel effortless."
-        title="Our Products"
-      />
-      <section className="px-6 pb-24">
-        <div className="mx-auto max-w-[1200px]">
-          <p className="max-w-[760px] text-2xl leading-relaxed">
-            Helping you turn your best ideas into meaningful results through
-            repeatable tools, frameworks, and productized innovation systems.
+    <main className="provisional-page products-page">
+      <Header active="what" />
+      <section className="provisional-hero">
+        <div className="provisional-shell">
+          <h1 className="provisional-title">Our Products</h1>
+          <p className="provisional-subtitle">Tools designed to make innovation feel effortless.</p>
+        </div>
+      </section>
+
+      <section className="products-section">
+        <div className="provisional-shell">
+          <p className="products-intro">
+            Helping you turn your best ideas into meaningful results through repeatable tools,
+            frameworks, and productized innovation systems.
           </p>
-          <div className="mt-12 space-y-8">
+          <div className="products-list">
             {products.map((product) => (
-              <article
-                className="grid gap-8 rounded-3xl bg-black p-10 text-white lg:grid-cols-[320px_1fr_260px] lg:items-center"
-                key={product}
-              >
-                <h2 className="font-display text-6xl font-medium">{product}</h2>
-                <p className="text-xl leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  tempus dolor id metus auctor tincidunt. Cras et gravida dolor.
+              <article className="product-card" key={product}>
+                <h2>{product}</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus dolor id
+                  metus auctor tincidunt. Cras et gravida dolor.
                 </p>
-                <Button href="/contact" variant="white">
+                <Link className="product-card-cta" href="/contact">
                   Access {product}
-                </Button>
+                </Link>
               </article>
             ))}
           </div>

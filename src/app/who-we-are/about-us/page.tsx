@@ -28,7 +28,7 @@ const values = [
 
 export default function AboutUsPage() {
   return (
-    <main className="overflow-hidden bg-white text-black">
+    <main className="about-page overflow-hidden bg-white text-black">
       <PageHero
         active="who"
         menu={[
