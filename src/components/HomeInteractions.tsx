@@ -8,6 +8,7 @@ export function HomeInteractions() {
     if (!page) return;
 
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const supportsFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
     const revealItems = Array.from(document.querySelectorAll<HTMLElement>(".home-reveal"));
     const tiltItems = Array.from(document.querySelectorAll<HTMLElement>(".home-tilt-card"));
     let pointerFrame = 0;
@@ -54,6 +55,7 @@ export function HomeInteractions() {
     window.addEventListener("resize", revealVisibleItems, { passive: true });
 
     const handlePointerMove = (event: PointerEvent) => {
+      if (!supportsFinePointer || event.pointerType !== "mouse") return;
       if (pointerFrame) cancelAnimationFrame(pointerFrame);
       pointerFrame = requestAnimationFrame(() => {
         page.classList.add("has-pointer");
@@ -62,8 +64,9 @@ export function HomeInteractions() {
       });
     };
 
-    const tiltCleanups = tiltItems.map((item) => {
+    const tiltCleanups = supportsFinePointer ? tiltItems.map((item) => {
       const move = (event: PointerEvent) => {
+        if (event.pointerType !== "mouse") return;
         const rect = item.getBoundingClientRect();
         const x = (event.clientX - rect.left) / rect.width - 0.5;
         const y = (event.clientY - rect.top) / rect.height - 0.5;
@@ -82,15 +85,19 @@ export function HomeInteractions() {
         item.removeEventListener("pointermove", move);
         item.removeEventListener("pointerleave", leave);
       };
-    });
+    }) : [];
 
-    window.addEventListener("pointermove", handlePointerMove, { passive: true });
+    if (supportsFinePointer) {
+      window.addEventListener("pointermove", handlePointerMove, { passive: true });
+    }
 
     return () => {
       window.clearTimeout(loaderTimer);
       observer.disconnect();
       window.removeEventListener("resize", revealVisibleItems);
-      window.removeEventListener("pointermove", handlePointerMove);
+      if (supportsFinePointer) {
+        window.removeEventListener("pointermove", handlePointerMove);
+      }
       tiltCleanups.forEach((cleanup) => cleanup());
       if (pointerFrame) cancelAnimationFrame(pointerFrame);
       page.classList.remove("home-motion-ready", "is-loaded", "has-pointer");

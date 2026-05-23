@@ -16048,3 +16048,171 @@ a {
     width: 278px !important;
   }
 }
+
+/* Mobile audit follow-up: keep desktop-only pointer effects off touch layouts. */
+@media (hover: none), (pointer: coarse), (max-width: 1023px) {
+  .homepage-live .home-pointer-ring {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+
+  .homepage-live.has-pointer .home-pointer-ring,
+  .homepage-live.home-motion-ready.has-pointer .home-pointer-ring {
+    opacity: 0 !important;
+    transform: translate(-50%, -50%) scale(0) !important;
+  }
+}
+
+.homepage-live .home-testimonial-avatar {
+  isolation: isolate;
+  overflow: visible !important;
+}
+
+.homepage-live .home-testimonial-avatar > span {
+  z-index: 1;
+}
+
+.homepage-live .home-testimonial-avatar-image {
+  background: #ffffff !important;
+  display: block !important;
+  object-fit: cover !important;
+  object-position: 58% 46% !important;
+  overflow: hidden !important;
+  z-index: 2 !important;
+}
+
+/* Mobile Figma relationship fixes from the 390px mockup frame. */
+@media (max-width: 559px) {
+  .homepage-live .home-video-section {
+    padding: 82px 24px 84px !important;
+  }
+
+  .homepage-live .home-green-inline {
+    display: block !important;
+    height: 398.655px !important;
+    left: 41px !important;
+    top: 166px !important;
+    width: 398.655px !important;
+    z-index: 2 !important;
+  }
+
+  .homepage-live .home-risk-section {
+    padding: 152px 24px 149px !important;
+  }
+
+  .homepage-live .home-panel {
+    align-items: center !important;
+    border-radius: 24px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    height: 843px !important;
+    min-height: 843px !important;
+    padding: 59px 32px !important;
+  }
+
+  .homepage-live .home-panel > div:first-child {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    width: 278px !important;
+  }
+
+  .homepage-live .home-panel > div:first-child > div:first-child,
+  .homepage-live .home-panel > div:first-child > div:nth-child(2) {
+    left: auto !important;
+    padding-top: 0 !important;
+    position: static !important;
+    top: auto !important;
+    width: 278px !important;
+  }
+
+  .homepage-live .home-panel .home-section-label + h2 {
+    margin-top: 4px !important;
+  }
+
+  .homepage-live .home-panel h2 {
+    line-height: normal !important;
+  }
+
+  .homepage-live .home-panel > div:first-child > div:first-child > p {
+    margin-top: 24px !important;
+  }
+
+  .homepage-live .home-panel > div:first-child > div:nth-child(2) h3 {
+    font-family: var(--font-montserrat), sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: normal !important;
+  }
+
+  .homepage-live .home-panel > div:first-child > div:nth-child(2) ul {
+    margin-top: 24px !important;
+  }
+
+  .homepage-live .home-panel > .relative {
+    align-items: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 30px !important;
+    margin-top: 21px !important;
+    position: relative !important;
+    width: 278px !important;
+  }
+
+  .homepage-live .home-panel > .relative > div:first-child {
+    border-radius: 16px !important;
+    height: 124px !important;
+    width: 278px !important;
+  }
+
+  .homepage-live .home-who-actions {
+    bottom: auto !important;
+    display: flex !important;
+    position: static !important;
+    right: auto !important;
+    width: 278px !important;
+  }
+
+  .homepage-live .home-who-button--mobile {
+    background: transparent !important;
+    border: 2px solid #ffffff !important;
+    border-radius: 100px !important;
+    box-shadow: none !important;
+    color: #ffffff !important;
+    display: inline-flex !important;
+    height: 56px !important;
+    min-height: 56px !important;
+    padding: 16px 32px !important;
+    width: 278px !important;
+  }
+
+  .homepage-live .home-testimonial-avatar {
+    align-items: initial !important;
+    display: block !important;
+    height: 188.025px !important;
+    justify-content: initial !important;
+    width: 188px !important;
+  }
+
+  .homepage-live .home-testimonial-avatar > span {
+    inset: 0 !important;
+    position: absolute !important;
+  }
+
+  .homepage-live .home-testimonial-avatar-image {
+    height: 141px !important;
+    left: 24px !important;
+    object-position: 50% 50% !important;
+    position: absolute !important;
+    top: 47px !important;
+    transform: none !important;
+    width: 141px !important;
+  }
+
+  .homepage-live .home-footer .home-footer-pattern {
+    bottom: -86px !important;
+    right: -183px !important;
+  }
+}
