@@ -7,6 +7,7 @@ const assets = {
   hero: figmaAssets.heroHome,
   logo: figmaAssets.logoBlue,
   video: figmaAssets.video,
+  webinar: figmaAssets.webinar,
   play: figmaAssets.play,
   riskImage: figmaAssets.risk,
   whoImage: figmaAssets.people,
@@ -464,9 +465,12 @@ export default function Home() {
                 overlay="linear-gradient(90deg, rgba(25,106,180,.24), rgba(0,0,0,.12))"
                 src={assets.whoImage}
               />
-              <div className="absolute bottom-4 right-4">
-                <Button href="/who-we-are/our-team" variant="glass">
+              <div className="home-who-actions absolute bottom-4 right-4">
+                <Button className="home-who-button home-who-button--desktop" href="/who-we-are/our-team" variant="glass">
                   Meet The Team
+                </Button>
+                <Button className="home-who-button home-who-button--mobile" href="/who-we-are/about-us" variant="glass">
+                  Learn More
                 </Button>
               </div>
             </div>
@@ -575,7 +579,7 @@ export default function Home() {
                 <span className="text-xs font-semibold uppercase tracking-[0.12em] md:text-[20px]">
                   Company Name
                 </span>
-                <a className="home-inline-cta" href="/case-studies/one-liner">
+                <a className="home-inline-cta home-case-feature-cta" href="/case-studies/one-liner">
                   Read More
                 </a>
               </div>
@@ -587,7 +591,7 @@ export default function Home() {
             <img alt="" aria-hidden="true" className="home-case-bg home-case-bg--tall" src={assets.ourWorkTall} />
             <div className="home-case-tall-top">
               <BrandMark className="home-case-mark home-case-mark--small" />
-              <a className="home-inline-cta home-inline-cta--light" href="/case-studies/one-liner">
+              <a className="home-inline-cta home-inline-cta--light home-case-tall-cta" href="/case-studies/one-liner">
                 Read More
               </a>
             </div>
@@ -654,19 +658,23 @@ export default function Home() {
             <article
               className="home-webinar-card home-tilt-card relative overflow-hidden rounded-[14px] bg-black p-5 text-white"
               style={{
-                backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.62)), url(${assets.video})`,
+                backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.62)), url(${assets.webinar})`,
                 backgroundPosition: "center",
                 backgroundSize: "cover",
               }}
             >
-              <SectionLabel>Webinar</SectionLabel>
-              <img alt="" className="absolute right-5 top-5 size-8 rotate-90" src={assets.play} />
-              <h3 className="mt-18 max-w-[300px] text-[22px] font-medium leading-[1.06]">
-                One Liner For Specific Webinar
-              </h3>
-              <p className="mt-3 text-[11px] font-semibold">Jedidiah Akpata & Charles Ojei</p>
-              <p className="text-[11px] font-semibold">November 2023</p>
-              <p className="absolute bottom-5 right-5 text-[11px] font-semibold">01:40:35</p>
+              <img alt="" className="home-webinar-play absolute right-5 top-5 size-8 rotate-90" src={assets.play} />
+              <p className="home-webinar-duration absolute bottom-5 right-5 text-[11px] font-semibold">
+                01:40:35
+              </p>
+              <div className="home-webinar-copy">
+                <SectionLabel className="home-webinar-label">Webinar</SectionLabel>
+                <h3 className="home-webinar-title mt-18 max-w-[300px] text-[22px] font-medium leading-[1.06]">
+                  One Liner For Specific Webinar
+                </h3>
+                <p className="home-webinar-speakers mt-3 text-[11px] font-semibold">Jedidiah Akpata & Charles Ojei</p>
+                <p className="home-webinar-date text-[11px] font-semibold">November 2023</p>
+              </div>
             </article>
             <article
               className="home-article-card home-tilt-card relative overflow-hidden rounded-[14px] bg-black p-5 text-white"

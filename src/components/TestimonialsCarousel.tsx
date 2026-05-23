@@ -68,11 +68,11 @@ export function TestimonialsCarousel() {
           className="home-testimonial-card home-testimonial-animate grid gap-10 text-left text-white md:grid-cols-[116px_1fr]"
           key={active}
         >
-          <div className="relative flex size-[116px] items-center justify-center rounded-full">
+          <div className="home-testimonial-avatar relative flex size-[116px] items-center justify-center rounded-full">
             <span className="absolute inset-0 rounded-full border-[1.5px] border-[#8dc540] opacity-60" />
             <img
               alt={t.name}
-              className="size-[88px] rounded-full border-[3px] border-[#8dc540] object-cover"
+              className="home-testimonial-avatar-image size-[88px] rounded-full border-[3px] border-[#8dc540] object-cover"
               src={t.image}
             />
           </div>

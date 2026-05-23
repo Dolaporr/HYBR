@@ -15684,3 +15684,367 @@ a {
     width: min(324px, var(--home-mobile-frame)) !important;
   }
 }
+
+/* Homepage deep design audit fixes: explicit hooks for the Figma mobile/desktop states. */
+.homepage-live .homepage-mobile-menu::before,
+.homepage-live .homepage-mobile-menu::after {
+  content: none !important;
+  display: none !important;
+}
+
+.homepage-live .homepage-menu-button {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.homepage-live .homepage-menu-button svg {
+  height: 32px;
+  width: 32px;
+}
+
+.homepage-live .home-green-inline {
+  z-index: 2 !important;
+}
+
+.homepage-live .home-risk-section {
+  z-index: 1 !important;
+}
+
+.homepage-live .home-who-button--mobile {
+  display: none;
+}
+
+.homepage-live .home-impact-stat,
+.homepage-live .home-impact-stat:hover,
+.homepage-live .home-impact-stat:focus-within {
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+.homepage-live .home-impact-value {
+  overflow: visible !important;
+}
+
+.homepage-live .home-testimonials-section {
+  background: #000000 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+}
+
+.homepage-live .home-testimonials-title,
+.homepage-live .home-testimonials-copy {
+  color: #ffffff !important;
+}
+
+.homepage-live .home-testimonial-card {
+  background: #000000 !important;
+  background-image: none !important;
+}
+
+.homepage-live .home-testimonial-avatar {
+  align-items: center !important;
+  display: flex !important;
+  justify-content: center !important;
+  position: relative !important;
+}
+
+.homepage-live .home-testimonial-avatar-image {
+  left: 50% !important;
+  position: absolute !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.homepage-live .home-webinar-card {
+  background-color: #000000 !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+.homepage-live .home-webinar-copy,
+.homepage-live .home-webinar-label,
+.homepage-live .home-webinar-title,
+.homepage-live .home-webinar-speakers,
+.homepage-live .home-webinar-date,
+.homepage-live .home-webinar-duration,
+.homepage-live .home-webinar-play {
+  z-index: 2;
+}
+
+@media (min-width: 1024px) {
+  .homepage-live .home-webinar-label {
+    left: 32px !important;
+    position: absolute !important;
+    top: 32px !important;
+  }
+
+  .homepage-live .home-webinar-title {
+    left: 32px !important;
+    margin-top: 0 !important;
+    position: absolute !important;
+    top: 212px !important;
+    width: min(300px, calc(100% - 64px)) !important;
+  }
+
+  .homepage-live .home-webinar-speakers {
+    left: 32px !important;
+    margin-top: 0 !important;
+    position: absolute !important;
+    top: 281px !important;
+  }
+
+  .homepage-live .home-webinar-date {
+    left: 32px !important;
+    position: absolute !important;
+    top: 302px !important;
+  }
+
+  .homepage-live .home-webinar-duration {
+    bottom: 32px !important;
+    left: auto !important;
+    position: absolute !important;
+    right: 32px !important;
+    top: auto !important;
+  }
+
+  .homepage-live .home-footer-pattern {
+    bottom: -184px !important;
+    top: auto !important;
+  }
+}
+
+@media (max-width: 559px) {
+  .homepage-live .homepage-mobile-menu {
+    height: 48px;
+    width: 48px;
+  }
+
+  .homepage-live .home-who-button--desktop {
+    display: none !important;
+  }
+
+  .homepage-live .home-who-button--mobile {
+    display: inline-flex !important;
+    width: 178px;
+  }
+
+  .homepage-live .home-case-feature,
+  .homepage-live .home-case-tall {
+    position: relative !important;
+  }
+
+  .homepage-live .home-case-feature .home-case-content {
+    display: block !important;
+    max-width: none !important;
+    position: static !important;
+  }
+
+  .homepage-live .home-case-feature .home-case-kicker,
+  .homepage-live .home-case-feature .home-case-content h3,
+  .homepage-live .home-case-feature .home-case-content p:nth-of-type(2),
+  .homepage-live .home-case-tall-copy {
+    left: 32px !important;
+    max-width: 278px !important;
+    position: absolute !important;
+    width: 278px !important;
+  }
+
+  .homepage-live .home-case-feature .home-case-kicker {
+    top: 40px !important;
+  }
+
+  .homepage-live .home-case-feature .home-case-content h3 {
+    top: 68px !important;
+  }
+
+  .homepage-live .home-case-feature .home-case-content p:nth-of-type(2) {
+    top: 154px !important;
+  }
+
+  .homepage-live .home-case-feature .home-case-content > div:last-child {
+    display: block !important;
+    margin: 0 !important;
+    position: static !important;
+  }
+
+  .homepage-live .home-case-tall-top {
+    display: block !important;
+    position: static !important;
+  }
+
+  .homepage-live .home-case-tall-copy {
+    top: 40px !important;
+  }
+
+  .homepage-live .home-case-feature-cta,
+  .homepage-live .home-case-tall-cta {
+    bottom: auto !important;
+    height: 48px !important;
+    left: auto !important;
+    min-height: 48px !important;
+    padding: 0 !important;
+    position: absolute !important;
+    right: 32px !important;
+    top: 298px !important;
+    width: 158px !important;
+    z-index: 3 !important;
+  }
+
+  .homepage-live .home-testimonials-section {
+    background: #000000 !important;
+    background-image: none !important;
+  }
+
+  .homepage-live .home-testimonial-card {
+    background: #000000 !important;
+    background-image: none !important;
+  }
+
+  .homepage-live .home-testimonial-avatar {
+    height: 188px !important;
+    width: 188px !important;
+  }
+
+  .homepage-live .home-testimonial-avatar-image {
+    height: 141px !important;
+    width: 141px !important;
+  }
+
+  .homepage-live .home-webinar-card {
+    background-position: center !important;
+    background-size: cover !important;
+  }
+
+  .homepage-live .home-webinar-play {
+    height: 24px !important;
+    right: 32px !important;
+    top: 40px !important;
+    width: 24px !important;
+  }
+
+  .homepage-live .home-webinar-duration {
+    bottom: auto !important;
+    font-size: 16px !important;
+    left: 32px !important;
+    line-height: 19.504px !important;
+    position: absolute !important;
+    right: auto !important;
+    top: 40px !important;
+  }
+
+  .homepage-live .home-webinar-copy {
+    bottom: 40px !important;
+    left: 32px !important;
+    position: absolute !important;
+    right: auto !important;
+    top: auto !important;
+    width: calc(var(--home-mobile-frame) - 64px) !important;
+  }
+
+  .homepage-live .home-webinar-label {
+    display: block !important;
+    font-size: 16px !important;
+    line-height: 19.504px !important;
+    margin: 0 0 8px !important;
+    position: static !important;
+  }
+
+  .homepage-live .home-webinar-title {
+    font-size: 32px !important;
+    line-height: 37.568px !important;
+    margin: 0 0 8px !important;
+    max-width: 278px !important;
+    position: static !important;
+    width: 278px !important;
+  }
+
+  .homepage-live .home-webinar-speakers,
+  .homepage-live .home-webinar-date {
+    font-size: 16px !important;
+    line-height: 19.504px !important;
+    margin: 0 !important;
+    position: static !important;
+  }
+
+  .homepage-live .home-footer {
+    position: relative !important;
+  }
+
+  .homepage-live .home-footer-inner,
+  .homepage-live .home-footer-main {
+    position: static !important;
+  }
+
+  .homepage-live .home-footer-main > :not(.home-footer-pattern),
+  .homepage-live .home-footer-bottom {
+    position: relative;
+    z-index: 1;
+  }
+
+  .homepage-live .home-footer .home-footer-pattern {
+    bottom: -150px !important;
+    height: 406px !important;
+    opacity: 0.4 !important;
+    position: absolute !important;
+    right: -285px !important;
+    top: auto !important;
+    width: 406px !important;
+    z-index: 0 !important;
+  }
+}
+
+@media (max-width: 559px) {
+  .homepage-live .home-case-feature .home-case-content {
+    left: 32px !important;
+    position: absolute !important;
+    top: 40px !important;
+    width: calc(var(--home-mobile-frame) - 64px) !important;
+  }
+
+  .homepage-live .home-case-feature .home-case-kicker,
+  .homepage-live .home-case-feature .home-case-content h3,
+  .homepage-live .home-case-feature .home-case-content p:nth-of-type(2) {
+    left: auto !important;
+    max-width: none !important;
+    position: static !important;
+    top: auto !important;
+    width: 100% !important;
+  }
+
+  .homepage-live .home-case-feature .home-case-content h3,
+  .homepage-live .home-case-tall-copy h3 {
+    margin-top: 0 !important;
+  }
+
+  .homepage-live .home-case-feature .home-case-content p:nth-of-type(2),
+  .homepage-live .home-case-tall-copy p:nth-of-type(2) {
+    margin-top: 8px !important;
+    max-width: 278px !important;
+    width: 278px !important;
+  }
+
+  .homepage-live .home-case-feature .home-case-feature-cta {
+    left: auto !important;
+    right: 0 !important;
+    top: 258px !important;
+  }
+
+  .homepage-live .home-case-tall .home-case-tall-cta {
+    left: auto !important;
+    right: 32px !important;
+    top: 298px !important;
+  }
+
+  .homepage-live .home-webinar-card .home-webinar-title {
+    font-size: 32px !important;
+    line-height: 37.568px !important;
+    margin: 0 0 8px !important;
+    max-width: 278px !important;
+    position: static !important;
+    width: 278px !important;
+  }
+}
