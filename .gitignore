@@ -36,6 +36,7 @@ dev-server.*.log
 .edge-cdp*/
 .tmp-*.log
 .tmp-*.png
+.tmp-screens/
 
 # generated design exports
 figma-*.json

@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { figmaAssets, footerGroups, navigation } from "@/content/site";
+import { HomeInteractions } from "@/components/HomeInteractions";
 import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 
 const assets = {
@@ -39,6 +40,7 @@ const services = [
     second: "Market Acceleration",
     icon: "bag",
     tag: "Applied Research and Strategy",
+    href: "/what-we-do/services",
     bgPosition: "center 32%",
   },
   {
@@ -47,6 +49,7 @@ const services = [
     second: "Applied Research and Strategy",
     icon: "palette",
     tag: "Prototyping, Product & Service Design",
+    href: "/what-we-do/services",
     bgPosition: "center 42%",
   },
   {
@@ -55,6 +58,7 @@ const services = [
     second: "Market Acceleration",
     icon: "trend",
     tag: "Market Acceleration",
+    href: "/what-we-do/services",
     bgPosition: "center 52%",
   },
 ] as const;
@@ -163,8 +167,10 @@ function SocialIcon({
   if (kind === "x") {
     return (
       <svg aria-hidden="true" className="size-8" fill="none" viewBox="0 0 32 32">
-        <path d="M7 7L25 25" stroke="currentColor" strokeWidth="2.8" />
-        <path d="M25 7L7 25" stroke="currentColor" strokeWidth="2.8" />
+        <path
+          d="M18.86 14.25 26.24 5.75h-1.75l-6.41 7.38-5.12-7.38H7.06l7.74 11.15-7.74 8.92h1.75l6.77-7.8 5.41 7.8h5.89l-8.02-11.57Zm-2.4 2.76-.78-1.11-6.24-8.86h2.68l5.03 7.14.78 1.11 6.55 9.29H21.8l-5.34-7.57Z"
+          fill="currentColor"
+        />
       </svg>
     );
   }
@@ -257,6 +263,7 @@ function ServiceGlyph({ kind }: { kind: "bag" | "palette" | "trend" }) {
 export default function Home() {
   return (
     <main className="homepage-live min-h-screen overflow-hidden bg-white text-black">
+      <HomeInteractions />
       <header className="home-header absolute left-0 right-0 top-0 z-20">
         <div className="mx-auto flex min-h-28 max-w-[1200px] items-center justify-between gap-5 px-6 py-6 md:h-[152px] md:py-0 lg:px-0">
           <a
@@ -303,7 +310,7 @@ export default function Home() {
       </header>
 
       <section
-        className="homepage-hero relative min-h-[720px] px-6 pt-48 text-white md:min-h-[804px] md:pt-[205px]"
+        className="homepage-hero home-hero-entrance relative min-h-[720px] px-6 pt-48 text-white md:min-h-[804px] md:pt-[205px]"
         style={{
           backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.52), rgba(0,0,0,.62) 58%, rgba(0,0,0,.72)), url(${assets.hero})`,
           backgroundPosition: "center",
@@ -355,17 +362,17 @@ export default function Home() {
       </section>
 
       <div className="home-transition-wrap">
-        <section className="home-video-section relative px-6 py-16 md:py-24">
+        <section className="home-video-section home-reveal relative px-6 py-16 md:py-24" data-reveal="scale">
           <img
             alt="Featured HYBR video"
-            className="home-video-card"
+            className="home-video-card home-tilt-card"
             src="/Webinar Card - horizontal tab.svg"
           />
         </section>
 
         <img alt="" aria-hidden="true" className="home-green-inline" src="/green inline horizontal tab.svg" />
 
-        <section className="home-risk-section relative bg-black px-6 py-20 text-white md:py-28">
+        <section className="home-risk-section home-reveal relative bg-black px-6 py-20 text-white md:py-28" data-reveal="up">
           <img
             alt=""
             aria-hidden="true"
@@ -400,7 +407,7 @@ export default function Home() {
               </ul>
             </div>
             <ImagePanel
-              className="home-droplet-right h-[260px] sm:h-[336px]"
+              className="home-droplet-right home-static-image h-[260px] sm:h-[336px]"
               overlay="linear-gradient(120deg, rgba(141,197,64,.26), rgba(113,32,128,.28))"
               src={assets.riskImage}
             />
@@ -416,8 +423,8 @@ export default function Home() {
           src="/home/inline-connector.svg"
         />
 
-        <section id="who-we-are" className="home-band home-who-band relative px-6 py-24">
-          <div className="home-panel mx-auto max-w-[1200px] overflow-hidden rounded-3xl bg-black p-8 text-white md:p-12">
+        <section id="who-we-are" className="home-band home-who-band home-reveal relative px-6 py-24" data-reveal="left">
+          <div className="home-panel home-tilt-card mx-auto max-w-[1200px] overflow-hidden rounded-3xl bg-black p-8 text-white md:p-12">
             <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
               <div>
                 <SectionLabel className="text-[#8dc540]">Who We Are</SectionLabel>
@@ -466,7 +473,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="what-we-do" className="home-band home-what-band relative px-6 py-32">
+        <section id="what-we-do" className="home-band home-what-band home-reveal relative px-6 py-32" data-reveal="right">
           <div className="home-services-wrap mx-auto">
             <SectionLabel>What We Do</SectionLabel>
             <h2 className="home-section-title mt-2 max-w-[640px] font-display font-medium leading-tight">
@@ -476,7 +483,7 @@ export default function Home() {
               {services.map((service) => (
                 <article
                   key={service.title}
-                  className="home-service-card rounded-3xl text-white"
+                  className="home-service-card home-tilt-card rounded-3xl text-white"
                   style={{
                     backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.74) 76%), url(${assets.whoImage})`,
                     backgroundPosition: service.bgPosition,
@@ -491,7 +498,9 @@ export default function Home() {
                     <h3 className="font-display text-[32px] font-medium leading-none">
                       {service.title}
                     </h3>
-                    <p className="home-service-pill">{service.tag}</p>
+                    <a className="home-service-pill" href={service.href}>
+                      {service.tag}
+                    </a>
                   </div>
                 </article>
               ))}
@@ -506,7 +515,7 @@ export default function Home() {
         </section>
       </div>
 
-      <section className="home-band home-impact-section px-6 py-24 text-center">
+      <section className="home-band home-impact-section home-reveal px-6 py-24 text-center" data-reveal="up">
         <div className="home-impact-wrap mx-auto">
           <SectionLabel>Our Impact</SectionLabel>
           <h2 className="home-impact-headline mx-auto mt-2 font-display font-medium leading-tight">
@@ -515,7 +524,7 @@ export default function Home() {
           </h2>
           <div className="home-impact-grid mt-12 grid gap-6 md:grid-cols-3">
             {impact.map((item) => (
-              <div key={item.label} className="home-impact-stat">
+              <div key={item.label} className="home-impact-stat home-reveal" data-reveal="scale">
                 <p className="home-impact-value font-extrabold">{item.value}</p>
                 <p className="home-impact-label mt-2 text-sm font-semibold uppercase">
                   {item.label}
@@ -531,7 +540,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-band home-work-section px-6 py-28">
+      <section className="home-band home-work-section home-reveal px-6 py-28" data-reveal="left">
         <div className="home-work-wrap mx-auto grid">
           <div className="home-work-copy">
             <SectionLabel>Our Work</SectionLabel>
@@ -549,7 +558,7 @@ export default function Home() {
             </Button>
           </div>
           <article
-            className="home-case-feature overflow-hidden rounded-[14px] text-white"
+            className="home-case-feature home-tilt-card overflow-hidden rounded-[14px] text-white"
           >
             <img alt="" aria-hidden="true" className="home-case-bg home-case-bg--feature" src={assets.ourWorkFeature} />
             <BrandMark className="home-case-mark" />
@@ -573,7 +582,7 @@ export default function Home() {
             </div>
           </article>
           <article
-            className="home-case-tall overflow-hidden rounded-[14px] text-white"
+            className="home-case-tall home-tilt-card overflow-hidden rounded-[14px] text-white"
           >
             <img alt="" aria-hidden="true" className="home-case-bg home-case-bg--tall" src={assets.ourWorkTall} />
             <div className="home-case-tall-top">
@@ -596,7 +605,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-band home-testimonials-section px-6 py-24">
+      <section className="home-band home-testimonials-section home-reveal px-6 py-24" data-reveal="up">
         <div className="home-testimonials-wrap mx-auto text-center">
           <SectionLabel>Testimonials</SectionLabel>
           <h2 className="home-testimonials-title mt-2 font-display font-medium">
@@ -616,22 +625,22 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="insights" className="home-band home-insights-section px-6 py-24">
+      <section id="insights" className="home-band home-insights-section home-reveal px-6 py-24" data-reveal="right">
         <div className="home-insights-wrap mx-auto grid gap-4 lg:grid-cols-[289px_406px] lg:justify-center">
           <article
-            className="home-news-card relative overflow-hidden rounded-[14px] bg-black p-5 text-white"
+            className="home-news-card home-tilt-card relative overflow-hidden rounded-[14px] bg-black p-5 text-white"
             style={{
               backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.56)), url(${assets.news})`,
               backgroundPosition: "center",
               backgroundSize: "cover",
             }}
           >
-            <div className="flex justify-end">
+            <div className="home-card-action flex justify-end">
               <Button href="/insights/news/specific-news" variant="white">
                 Read More
               </Button>
             </div>
-            <div className="absolute bottom-5 left-5 right-5">
+            <div className="home-news-card-copy absolute bottom-5 left-5 right-5">
               <SectionLabel>News</SectionLabel>
               <h3 className="mt-3 text-[22px] font-medium leading-[1.05]">
                 One Liner For Specific News Update
@@ -643,7 +652,7 @@ export default function Home() {
           </article>
           <div className="home-insights-stack">
             <article
-              className="home-webinar-card relative overflow-hidden rounded-[14px] bg-black p-5 text-white"
+              className="home-webinar-card home-tilt-card relative overflow-hidden rounded-[14px] bg-black p-5 text-white"
               style={{
                 backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.62)), url(${assets.video})`,
                 backgroundPosition: "center",
@@ -658,6 +667,26 @@ export default function Home() {
               <p className="mt-3 text-[11px] font-semibold">Jedidiah Akpata & Charles Ojei</p>
               <p className="text-[11px] font-semibold">November 2023</p>
               <p className="absolute bottom-5 right-5 text-[11px] font-semibold">01:40:35</p>
+            </article>
+            <article
+              className="home-article-card home-tilt-card relative overflow-hidden rounded-[14px] bg-black p-5 text-white"
+              style={{
+                backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.64)), url(${assets.ourWorkFeature})`,
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+              }}
+            >
+              <div className="home-card-action flex justify-end">
+                <Button href="/insights/articles/specific-article" variant="white">
+                  Read More
+                </Button>
+              </div>
+              <div className="home-article-card-copy absolute bottom-5 left-5 right-5">
+                <SectionLabel>Article</SectionLabel>
+                <h3 className="mt-3 text-[22px] font-medium leading-[1.05]">
+                  One Liner For Specific Article
+                </h3>
+              </div>
             </article>
             <div className="home-insights-copy">
               <SectionLabel>Insights</SectionLabel>
@@ -674,10 +703,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-band home-gain-section px-6 py-24">
+      <section className="home-band home-gain-section home-reveal px-6 py-24" data-reveal="left">
         <div className="home-gain-wrap mx-auto grid gap-10 lg:grid-cols-[384px_1fr] lg:items-center">
           <ImagePanel
-            className="home-droplet-left home-gain-image h-[260px] sm:h-[336px]"
+            className="home-droplet-left home-gain-image home-static-image h-[260px] sm:h-[336px]"
             overlay="linear-gradient(90deg, rgba(25,106,180,.2), rgba(0,0,0,.1))"
             src={assets.whoImage}
           />
@@ -704,7 +733,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-band home-cta-section px-6 py-16 text-center">
+      <section className="home-band home-cta-section home-reveal px-6 py-16 text-center" data-reveal="scale">
         <div className="home-cta-wrap mx-auto">
           <h2 className="font-display text-[26px] font-medium md:text-[28px]">
             Ready to Build What&apos;s Next?
@@ -715,14 +744,15 @@ export default function Home() {
           <div className="mt-5 flex flex-wrap justify-center gap-4">
             <Button variant="outline">Book a Strategy Call</Button>
             <Button href="/resources/innovation-guide" variant="outline">
-              Download Our Innovation Guide
+              <span className="home-cta-guide-full">Download Our Innovation Guide</span>
+              <span className="home-cta-guide-mobile">Get Our Innovation Guide</span>
             </Button>
           </div>
         </div>
       </section>
 
-      <section id="contact" className="home-band home-contact-section px-6 py-24">
-        <div className="home-contact-shell mx-auto grid max-w-[1200px] overflow-hidden rounded-3xl bg-black text-white lg:grid-cols-2">
+      <section id="contact" className="home-band home-contact-section home-reveal px-6 py-24" data-reveal="up">
+        <div className="home-contact-shell home-tilt-card mx-auto grid max-w-[1200px] overflow-hidden rounded-3xl bg-black text-white lg:grid-cols-2">
           <div
             className="min-h-[380px] bg-cover bg-center p-6 md:p-16 lg:min-h-0"
             style={{
@@ -752,15 +782,15 @@ export default function Home() {
       </section>
 
       <footer className="home-footer bg-black px-6 py-14 text-white md:py-20">
-        <div className="mx-auto max-w-[1200px]">
-          <div className="relative grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="home-footer-inner mx-auto max-w-[1200px]">
+          <div className="home-footer-main relative grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
             <img
               alt=""
-              className="pointer-events-none absolute -bottom-44 -right-64 hidden h-[390px] w-[390px] opacity-50 lg:block"
+              className="home-footer-pattern pointer-events-none absolute -bottom-44 -right-64 hidden h-[390px] w-[390px] opacity-50 lg:block"
               src={assets.footerPattern}
             />
             {footerGroups.map((group) => (
-              <div key={group.title}>
+              <div className="home-footer-group" key={group.title}>
                 <h3 className="font-bold uppercase">{group.title}</h3>
                 <ul className="mt-4 space-y-3 text-sm">
                   {group.links.map((link) => (
@@ -771,9 +801,9 @@ export default function Home() {
                 </ul>
               </div>
             ))}
-            <div>
+            <div className="home-footer-follow">
               <h3 className="font-bold uppercase">Follow us</h3>
-              <div className="mt-4 flex flex-wrap gap-4 text-white">
+              <div className="home-footer-socials mt-4 flex flex-wrap gap-4 text-white">
                 <SocialIcon kind="instagram" />
                 <SocialIcon kind="linkedin" />
                 <SocialIcon kind="x" />
@@ -787,12 +817,12 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="mt-14 flex flex-col gap-6 text-sm uppercase md:mt-20 md:flex-row md:items-center md:justify-between">
-            <div className="flex flex-wrap gap-5 md:gap-8">
+          <div className="home-footer-bottom mt-14 flex flex-col gap-6 text-sm uppercase md:mt-20 md:flex-row md:items-center md:justify-between">
+            <div className="home-footer-legal flex flex-wrap gap-5 md:gap-8">
               <span>Privacy Policy</span>
               <span>Terms & Conditions</span>
             </div>
-            <img alt="HYBR" className="h-10 w-[128px] object-contain" src={assets.footerLogo} />
+            <img alt="HYBR" className="home-footer-logo h-10 w-[128px] object-contain" src={assets.footerLogo} />
             <span>&copy; 2025 HYBR GROUP</span>
           </div>
         </div>
