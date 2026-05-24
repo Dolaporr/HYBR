@@ -110,7 +110,7 @@ function FooterSocialIcon({ kind }: { kind: string }) {
   }
 
   if (kind === "X") {
-    return <svg aria-label="X" className="size-7" fill="none" viewBox="0 0 32 32"><path d="M7 7L25 25" stroke="currentColor" strokeWidth="2.8" /><path d="M25 7L7 25" stroke="currentColor" strokeWidth="2.8" /></svg>;
+    return <svg aria-label="X" className="size-7" fill="none" viewBox="0 0 32 32"><path d="M18.86 14.25 26.24 5.75h-1.75l-6.41 7.38-5.12-7.38H7.06l7.74 11.15-7.74 8.92h1.75l6.77-7.8 5.41 7.8h5.89l-8.02-11.57Zm-2.4 2.76-.78-1.11-6.24-8.86h2.68l5.03 7.14.78 1.11 6.55 9.29H21.8l-5.34-7.57Z" fill="currentColor" /></svg>;
   }
 
   if (kind === "YouTube") {
@@ -121,17 +121,19 @@ function FooterSocialIcon({ kind }: { kind: string }) {
 }
 
 export function Footer() {
+  const socialOrder = ["Instagram", "LinkedIn", "X", "YouTube", "Facebook", "Medium", "TikTok"];
+
   return (
-    <footer className="site-footer bg-black px-6 py-14 text-white md:py-20">
-      <div className="site-footer-inner mx-auto max-w-[1200px]">
-        <div className="relative grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
+    <footer className="site-footer home-footer bg-black px-6 py-14 text-white md:py-20">
+      <div className="site-footer-inner home-footer-inner mx-auto max-w-[1200px]">
+        <div className="home-footer-main relative grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           <img
             alt=""
-            className="pointer-events-none absolute -bottom-44 -right-64 hidden h-[390px] w-[390px] opacity-50 lg:block"
+            className="home-footer-pattern pointer-events-none absolute -bottom-44 -right-64 hidden h-[390px] w-[390px] opacity-50 lg:block"
             src={figmaAssets.footerPattern}
           />
           {footerGroups.map((group) => (
-            <div key={group.title}>
+            <div className="home-footer-group" key={group.title}>
               <h3 className="font-bold uppercase">{group.title}</h3>
               <ul className="mt-4 space-y-3 text-sm">
                 {group.links.map((link) => (
@@ -142,26 +144,26 @@ export function Footer() {
               </ul>
             </div>
           ))}
-          <div>
+          <div className="home-footer-follow">
             <h3 className="font-bold uppercase">Follow us</h3>
-            <div className="mt-4 flex flex-wrap gap-4 text-white">
-              {siteContent.socialLinks.map((link) => (
+            <div className="home-footer-socials mt-4 flex flex-wrap gap-4 text-white">
+              {socialOrder.map((link) => (
                 <FooterSocialIcon key={link} kind={link} />
               ))}
             </div>
             <div className="mt-8">
-              <Button href="/contact" variant="white">
+              <Link className="hybr-button hybr-button--white" href="/contact">
                 Let&apos;s Talk
-              </Button>
+              </Link>
             </div>
           </div>
         </div>
-        <div className="mt-14 flex flex-col gap-6 text-sm uppercase md:mt-20 md:flex-row md:items-center md:justify-between">
-          <div className="flex flex-wrap gap-5 md:gap-8">
+        <div className="home-footer-bottom mt-14 flex flex-col gap-6 text-sm uppercase md:mt-20 md:flex-row md:items-center md:justify-between">
+          <div className="home-footer-legal flex flex-wrap gap-5 md:gap-8">
             <span>Privacy Policy</span>
             <span>Terms & Conditions</span>
           </div>
-          <img alt={siteContent.brand} className="h-10 w-[128px] object-contain" src={figmaAssets.logoWhite} />
+          <img alt={siteContent.brand} className="home-footer-logo h-10 w-[128px] object-contain" src={figmaAssets.logoWhite} />
           <span>{siteContent.footerCopyright}</span>
         </div>
       </div>
