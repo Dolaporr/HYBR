@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 import { figmaAssets, footerGroups, navigation } from "@/content/site";
-import { HomeInteractions } from "@/components/HomeInteractions";
 import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 
 const assets = {
@@ -264,7 +263,6 @@ function ServiceGlyph({ kind }: { kind: "bag" | "palette" | "trend" }) {
 export default function Home() {
   return (
     <main className="homepage-live min-h-screen overflow-hidden bg-white text-black">
-      <HomeInteractions />
       <header className="home-header absolute left-0 right-0 top-0 z-20">
         <div className="mx-auto flex min-h-28 max-w-[1200px] items-center justify-between gap-5 px-6 py-6 md:h-[152px] md:py-0 lg:px-0">
           <a

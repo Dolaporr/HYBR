@@ -1,25 +1,57 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
-export function HomeInteractions() {
+const revealSelectors = [
+  ".site-reveal",
+  ".home-reveal",
+  "main:not(.homepage-live) .inner-page-hero",
+  "main:not(.homepage-live) section",
+  "main:not(.homepage-live) article",
+].join(",");
+
+const tiltSelectors = [
+  ".site-tilt-card",
+  ".home-tilt-card",
+  "main:not(.homepage-live) article",
+  "main:not(.homepage-live) .what-services",
+  "main:not(.homepage-live) .what-team",
+  "main:not(.homepage-live) .figma-content-drop",
+].join(",");
+
+const revealDirections = ["up", "left", "right", "scale"] as const;
+
+export function SiteInteractions() {
+  const pathname = usePathname();
+
   useEffect(() => {
-    const page = document.querySelector<HTMLElement>(".homepage-live");
-    if (!page) return;
+    const page = document.body;
 
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const supportsFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-    const revealItems = Array.from(document.querySelectorAll<HTMLElement>(".home-reveal"));
-    const tiltItems = Array.from(document.querySelectorAll<HTMLElement>(".home-tilt-card"));
+    const revealItems = Array.from(document.querySelectorAll<HTMLElement>(revealSelectors));
+    const tiltItems = Array.from(document.querySelectorAll<HTMLElement>(tiltSelectors));
     let pointerFrame = 0;
 
-    page.classList.add("home-motion-ready");
+    revealItems.forEach((item, index) => {
+      item.classList.add("site-reveal");
+      if (!item.dataset.reveal) {
+        item.dataset.reveal = revealDirections[index % revealDirections.length];
+      }
+    });
+
+    tiltItems.forEach((item) => {
+      item.classList.add("site-tilt-card");
+    });
+
+    page.classList.add("site-motion-ready", "home-motion-ready");
 
     if (prefersReducedMotion) {
       revealItems.forEach((item) => item.classList.add("is-visible"));
       page.classList.add("is-loaded");
       return () => {
-        page.classList.remove("home-motion-ready", "is-loaded");
+        page.classList.remove("site-motion-ready", "home-motion-ready", "is-loaded");
       };
     }
 
@@ -61,6 +93,8 @@ export function HomeInteractions() {
         page.classList.add("has-pointer");
         page.style.setProperty("--home-pointer-x", `${event.clientX}px`);
         page.style.setProperty("--home-pointer-y", `${event.clientY}px`);
+        page.style.setProperty("--site-pointer-x", `${event.clientX}px`);
+        page.style.setProperty("--site-pointer-y", `${event.clientY}px`);
       });
     };
 
@@ -100,14 +134,18 @@ export function HomeInteractions() {
       }
       tiltCleanups.forEach((cleanup) => cleanup());
       if (pointerFrame) cancelAnimationFrame(pointerFrame);
-      page.classList.remove("home-motion-ready", "is-loaded", "has-pointer");
+      page.classList.remove("site-motion-ready", "home-motion-ready", "is-loaded", "has-pointer");
     };
-  }, []);
+  }, [pathname]);
 
   return (
     <>
-      <span aria-hidden="true" className="home-pointer-ring" />
-      <span aria-hidden="true" className="home-loading-bar" />
+      <span aria-hidden="true" className="site-pointer-ring home-pointer-ring" />
+      <span aria-hidden="true" className="site-loading-bar home-loading-bar" />
     </>
   );
+}
+
+export function HomeInteractions() {
+  return <SiteInteractions />;
 }

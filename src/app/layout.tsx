@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Raleway, Inter } from "next/font/google";
+import { SiteInteractions } from "@/components/HomeInteractions";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -39,7 +40,10 @@ export default function RootLayout({
       lang="en"
       className={`${montserrat.variable} ${raleway.variable} ${inter.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <SiteInteractions />
+        {children}
+      </body>
     </html>
   );
 }
