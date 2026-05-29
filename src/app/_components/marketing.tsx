@@ -148,7 +148,9 @@ export function Footer() {
             <h3 className="font-bold uppercase">Follow us</h3>
             <div className="home-footer-socials mt-4 flex flex-wrap gap-4 text-white">
               {socialOrder.map((link) => (
-                <FooterSocialIcon key={link} kind={link} />
+                <Link aria-label={`${link} placeholder`} href="#" key={link}>
+                  <FooterSocialIcon kind={link} />
+                </Link>
               ))}
             </div>
             <div className="mt-8">
@@ -189,7 +191,7 @@ export function Button({
 
   return (
     <Link
-      className={`inline-flex min-h-12 items-center justify-center rounded-full border px-5 text-sm font-medium shadow-[0_8px_18px_rgba(0,0,0,0.06)] transition duration-200 hover:-translate-y-0.5 md:min-h-[46px] md:px-7 md:text-[20px] ${variants[variant]}`}
+      className={`inline-flex min-h-12 items-center justify-center rounded-full border px-5 text-sm font-medium shadow-[0_8px_18px_rgba(0,0,0,0.06)] transition duration-200 md:min-h-[46px] md:px-7 md:text-[20px] ${variants[variant]}`}
       href={href}
     >
       {children}
@@ -204,19 +206,21 @@ export function Label({ children, className = "" }: { children: ReactNode; class
 export function ImagePanel({
   className = "",
   children,
-  overlay = "linear-gradient(90deg, rgba(0,0,0,.32), rgba(0,0,0,.08))",
   src = imageUrl,
+  tint,
 }: {
   className?: string;
   children?: ReactNode;
-  overlay?: string;
   src?: string;
+  tint?: string;
 }) {
   return (
     <div
       className={`relative overflow-hidden bg-black ${className}`}
       style={{
-        backgroundImage: `${overlay}, url(${src})`,
+        backgroundColor: tint,
+        backgroundImage: `url(${src})`,
+        backgroundBlendMode: tint ? "multiply" : undefined,
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}
@@ -284,7 +288,9 @@ export function CaseCard({
       style={
         dark
           ? {
-              backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.78)), url(${imageSrc})`,
+              backgroundColor: "rgba(0,0,0,.54)",
+              backgroundImage: `url(${imageSrc})`,
+              backgroundBlendMode: "multiply",
               backgroundPosition: "center",
               backgroundSize: "cover",
             }
@@ -367,7 +373,9 @@ export function InsightCard({
     <article
       className={`figma-motion-card rounded-[20px] bg-black p-6 text-white md:p-8 ${className}`}
       style={{
-        backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.68)), url(${imageSrc})`,
+        backgroundColor: "rgba(0,0,0,.48)",
+        backgroundImage: `url(${imageSrc})`,
+        backgroundBlendMode: "multiply",
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}
@@ -413,7 +421,6 @@ export function WhatWeDoCta() {
         </div>
         <ImagePanel
           className="min-h-[280px] rounded-l-full rounded-r-[20px] md:min-h-[336px]"
-          overlay="linear-gradient(90deg, rgba(0,0,0,.12), rgba(0,0,0,.04))"
           src={figmaAssets.figmaBusinessPartners}
         />
       </div>

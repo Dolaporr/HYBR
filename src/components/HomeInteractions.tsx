@@ -3,21 +3,37 @@
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
+const figmaLockedPageFilters = [
+  ".what-page",
+  ".services-page",
+  ".work-page",
+  ".who-page",
+  ".about-page",
+  ".team-page",
+  ".careers-page",
+  ".insights-hub-page",
+  ".articles-page",
+  ".webinars-listing-page",
+  ".news-page",
+].map((selector) => `:not(${selector})`).join("");
+
+const animatedMainSelector = `main:not(.homepage-live)${figmaLockedPageFilters}`;
+
 const revealSelectors = [
   ".site-reveal",
   ".home-reveal",
-  "main:not(.homepage-live) .inner-page-hero",
-  "main:not(.homepage-live) section",
-  "main:not(.homepage-live) article",
+  `${animatedMainSelector} .inner-page-hero`,
+  `${animatedMainSelector} section`,
+  `${animatedMainSelector} article`,
 ].join(",");
 
 const tiltSelectors = [
   ".site-tilt-card",
   ".home-tilt-card",
-  "main:not(.homepage-live) article",
-  "main:not(.homepage-live) .what-services",
-  "main:not(.homepage-live) .what-team",
-  "main:not(.homepage-live) .figma-content-drop",
+  `${animatedMainSelector} article`,
+  `${animatedMainSelector} .what-services`,
+  `${animatedMainSelector} .what-team`,
+  `${animatedMainSelector} .figma-content-drop`,
 ].join(",");
 
 const revealDirections = ["up", "left", "right", "scale"] as const;

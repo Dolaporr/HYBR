@@ -139,14 +139,9 @@
 }
 
 .teamScope :global(.team-network-rings) {
-  background:
-    radial-gradient(
-      circle,
-      #ffffff 0 211px,
-      #000000 212px 480px,
-      #ffffff 481px 747px,
-      transparent 748px
-    );
+  background: transparent;
+  border: 268px solid #000000;
+  border-radius: 50%;
   height: 1494px;
   left: 50%;
   position: absolute;

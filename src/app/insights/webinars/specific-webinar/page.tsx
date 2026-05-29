@@ -126,7 +126,9 @@ function SpeakerCard({ speaker }: { speaker: (typeof speakers)[number] }) {
     <article
       className="webinar-speaker-card"
       style={{
-        backgroundImage: `linear-gradient(90deg, rgba(0,0,0,.58), rgba(0,0,0,.36)), url(${figmaAssets.figmaBusinessPartners})`,
+        backgroundColor: "rgba(0,0,0,.52)",
+        backgroundImage: `url(${figmaAssets.figmaBusinessPartners})`,
+        backgroundBlendMode: "multiply",
       }}
     >
       <div className="webinar-speaker-person">
@@ -212,7 +214,9 @@ export default function SpecificWebinarPage() {
               <div
                 className="webinar-ad-card"
                 style={{
-                  backgroundImage: `linear-gradient(90deg, rgba(0,0,0,.44), rgba(0,0,0,.18)), url(${figmaAssets.figmaFieldHero})`,
+                  backgroundColor: "rgba(0,0,0,.4)",
+                  backgroundImage: `url(${figmaAssets.figmaFieldHero})`,
+                  backgroundBlendMode: "multiply",
                 }}
               >
                 HYBR Ad

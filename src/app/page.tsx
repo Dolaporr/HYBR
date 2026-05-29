@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { figmaAssets, footerGroups, navigation } from "@/content/site";
+import { HeroWordRotator } from "@/components/HeroWordRotator";
 import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 
 const assets = {
@@ -112,17 +113,19 @@ function SectionLabel({
 function ImagePanel({
   className = "",
   src = assets.whoImage,
-  overlay = "linear-gradient(90deg, rgba(0,0,0,.2), rgba(0,0,0,.08))",
+  tint,
 }: {
   className?: string;
   src?: string;
-  overlay?: string;
+  tint?: string;
 }) {
   return (
     <div
       className={`overflow-hidden bg-black ${className}`}
       style={{
-        backgroundImage: `${overlay}, url(${src})`,
+        backgroundColor: tint,
+        backgroundImage: `url(${src})`,
+        backgroundBlendMode: tint ? "multiply" : undefined,
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}
@@ -311,7 +314,9 @@ export default function Home() {
       <section
         className="homepage-hero home-hero-entrance relative min-h-[720px] px-6 pt-48 text-white md:min-h-[804px] md:pt-[205px]"
         style={{
-          backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.52), rgba(0,0,0,.62) 58%, rgba(0,0,0,.72)), url(${assets.hero})`,
+          backgroundColor: "rgba(0,0,0,.6)",
+          backgroundImage: `url(${assets.hero})`,
+          backgroundBlendMode: "multiply",
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
@@ -320,11 +325,7 @@ export default function Home() {
           <div className="max-w-[1196px]">
             <h1 className="home-hero-title font-display text-[48px] font-medium leading-[1.08] min-[390px]:text-[54px] sm:text-[72px] md:text-[80px]">
               Build{" "}
-              <span className="hero-rotator" aria-label="ideas services markets products teams">
-                {rotatingWords.map((word) => (
-                  <span key={word}>{word}</span>
-                ))}
-              </span>
+              <HeroWordRotator words={rotatingWords} />
               <br />
               faster, smarter
             </h1>
@@ -364,7 +365,7 @@ export default function Home() {
         <section className="home-video-section home-reveal relative px-6 py-16 md:py-24" data-reveal="scale">
           <img
             alt="Featured HYBR video"
-            className="home-video-card home-tilt-card"
+            className="home-video-card"
             src="/Webinar Card - horizontal tab.svg"
           />
         </section>
@@ -399,7 +400,7 @@ export default function Home() {
               <ul className="mt-8 space-y-5 text-xl md:text-2xl">
                 {risks.map((risk) => (
                   <li key={risk} className="flex gap-4">
-                    <span className="risk-marker">x</span>
+                    <span aria-hidden="true" className="risk-marker">x</span>
                     <span>{risk}</span>
                   </li>
                 ))}
@@ -407,7 +408,6 @@ export default function Home() {
             </div>
             <ImagePanel
               className="home-droplet-right home-static-image h-[260px] sm:h-[336px]"
-              overlay="linear-gradient(120deg, rgba(141,197,64,.26), rgba(113,32,128,.28))"
               src={assets.riskImage}
             />
           </div>
@@ -423,11 +423,11 @@ export default function Home() {
         />
 
         <section id="who-we-are" className="home-band home-who-band home-reveal relative px-6 py-24" data-reveal="left">
-          <div className="home-panel home-tilt-card mx-auto max-w-[1200px] overflow-hidden rounded-3xl bg-black p-8 text-white md:p-12">
+          <div className="home-panel mx-auto max-w-[1200px] overflow-hidden rounded-3xl bg-black p-8 text-white md:p-12">
             <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
               <div>
-                <SectionLabel className="text-[#8dc540]">Who We Are</SectionLabel>
-                <h2 className="mt-3 font-display text-4xl font-medium md:text-5xl">
+                <SectionLabel className="home-who-label">Who We Are</SectionLabel>
+                <h2 className="home-who-heading mt-3 font-display text-4xl font-medium md:text-5xl">
                   A Purpose-Led <br />
                   Innovation Agency
                 </h2>
@@ -460,14 +460,13 @@ export default function Home() {
             <div className="relative mt-8">
               <ImagePanel
                 className="h-[220px] rounded-[18px] md:h-[245px]"
-                overlay="linear-gradient(90deg, rgba(25,106,180,.24), rgba(0,0,0,.12))"
                 src={assets.whoImage}
               />
               <div className="home-who-actions absolute bottom-4 right-4">
-                <Button className="home-who-button home-who-button--desktop" href="/who-we-are/our-team" variant="glass">
+                <Button className="home-who-button home-who-button--desktop home-arrow-hover" href="/who-we-are/our-team" variant="glass">
                   Meet The Team
                 </Button>
-                <Button className="home-who-button home-who-button--mobile" href="/who-we-are/about-us" variant="glass">
+                <Button className="home-who-button home-who-button--mobile home-arrow-hover" href="/who-we-are/about-us" variant="glass">
                   Learn More
                 </Button>
               </div>
@@ -487,7 +486,9 @@ export default function Home() {
                   key={service.title}
                   className="home-service-card home-tilt-card rounded-3xl text-white"
                   style={{
-                    backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.74) 76%), url(${assets.whoImage})`,
+                    backgroundColor: "rgba(0,0,0,.48)",
+                    backgroundImage: `url(${assets.whoImage})`,
+                    backgroundBlendMode: "multiply",
                     backgroundPosition: service.bgPosition,
                     backgroundSize: "cover",
                   }}
@@ -508,7 +509,7 @@ export default function Home() {
               ))}
             </div>
             <div className="home-services-cta mt-8 text-center">
-              <Button href="/what-we-do/services" variant="outline">
+              <Button className="home-arrow-hover" href="/what-we-do/services" variant="outline">
                 <span className="home-services-cta-full">Explore Our Services</span>
                 <span className="home-services-cta-mobile">Explore Services</span>
               </Button>
@@ -560,7 +561,7 @@ export default function Home() {
             </Button>
           </div>
           <article
-            className="home-case-feature home-tilt-card overflow-hidden rounded-[14px] text-white"
+            className="home-case-feature overflow-hidden rounded-[14px] text-white"
           >
             <img alt="" aria-hidden="true" className="home-case-bg home-case-bg--feature" src={assets.ourWorkFeature} />
             <BrandMark className="home-case-mark" />
@@ -584,7 +585,7 @@ export default function Home() {
             </div>
           </article>
           <article
-            className="home-case-tall home-tilt-card overflow-hidden rounded-[14px] text-white"
+            className="home-case-tall overflow-hidden rounded-[14px] text-white"
           >
             <img alt="" aria-hidden="true" className="home-case-bg home-case-bg--tall" src={assets.ourWorkTall} />
             <div className="home-case-tall-top">
@@ -630,10 +631,12 @@ export default function Home() {
       <section id="insights" className="home-band home-insights-section home-reveal px-6 py-24" data-reveal="right">
         <div className="home-insights-wrap mx-auto grid gap-4 lg:grid-cols-[289px_406px] lg:justify-center">
           <article
-            className="home-news-card home-tilt-card relative overflow-hidden rounded-[14px] bg-black p-5 text-white"
+            className="home-news-card relative overflow-hidden rounded-[14px] bg-black p-5 text-white"
             style={{
-              backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.56)), url(${assets.news})`,
-              backgroundPosition: "center",
+              backgroundColor: "rgba(0,0,0,.38)",
+              backgroundImage: `url(${assets.news})`,
+              backgroundBlendMode: "multiply",
+              backgroundPosition: "50% 50%",
               backgroundSize: "cover",
             }}
           >
@@ -654,9 +657,11 @@ export default function Home() {
           </article>
           <div className="home-insights-stack">
             <article
-              className="home-webinar-card home-tilt-card relative overflow-hidden rounded-[14px] bg-black p-5 text-white"
+              className="home-webinar-card relative overflow-hidden rounded-[14px] bg-black p-5 text-white"
               style={{
-                backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.62)), url(${assets.webinar})`,
+                backgroundColor: "rgba(0,0,0,.46)",
+                backgroundImage: `url(${assets.webinar})`,
+                backgroundBlendMode: "multiply",
                 backgroundPosition: "center",
                 backgroundSize: "cover",
               }}
@@ -675,9 +680,11 @@ export default function Home() {
               </div>
             </article>
             <article
-              className="home-article-card home-tilt-card relative overflow-hidden rounded-[14px] bg-black p-5 text-white"
+              className="home-article-card relative overflow-hidden rounded-[14px] bg-black p-5 text-white"
               style={{
-                backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.64)), url(${assets.ourWorkFeature})`,
+                backgroundColor: "rgba(0,0,0,.48)",
+                backgroundImage: `url(${assets.ourWorkFeature})`,
+                backgroundBlendMode: "multiply",
                 backgroundPosition: "center",
                 backgroundSize: "cover",
               }}
@@ -713,7 +720,6 @@ export default function Home() {
         <div className="home-gain-wrap mx-auto grid gap-10 lg:grid-cols-[384px_1fr] lg:items-center">
           <ImagePanel
             className="home-droplet-left home-gain-image home-static-image h-[260px] sm:h-[336px]"
-            overlay="linear-gradient(90deg, rgba(25,106,180,.2), rgba(0,0,0,.1))"
             src={assets.whoImage}
           />
           <div className="home-gain-copy">
@@ -723,9 +729,7 @@ export default function Home() {
             <ul className="home-gain-list mt-4 space-y-1">
               {gainList.map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <svg aria-hidden="true" className="mt-1 size-5 shrink-0 text-black" fill="none" viewBox="0 0 20 20">
-                    <path d="M4 10L8.5 14.5L16 6" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+                  <span aria-hidden="true" className="home-gain-check">&#10003;</span>
                   <span className="font-medium">{item}</span>
                 </li>
               ))}
@@ -758,11 +762,13 @@ export default function Home() {
       </section>
 
       <section id="contact" className="home-band home-contact-section home-reveal px-6 py-24" data-reveal="up">
-        <div className="home-contact-shell home-tilt-card mx-auto grid max-w-[1200px] overflow-hidden rounded-3xl bg-black text-white lg:grid-cols-2">
+        <div className="home-contact-shell mx-auto grid max-w-[1200px] overflow-hidden rounded-3xl bg-black text-white lg:grid-cols-2">
           <div
             className="min-h-[380px] bg-cover bg-center p-6 md:p-16 lg:min-h-0"
             style={{
-              backgroundImage: `linear-gradient(90deg, rgba(0,0,0,.22), rgba(0,0,0,.18)), url(${assets.contact})`,
+              backgroundColor: "rgba(0,0,0,.28)",
+              backgroundImage: `url(${assets.contact})`,
+              backgroundBlendMode: "multiply",
             }}
           >
             <h2 className="font-display text-4xl font-medium md:text-5xl">
@@ -780,7 +786,7 @@ export default function Home() {
               className="field min-h-40 resize-none"
               placeholder="What would you like us to know?"
             />
-            <button className="home-submit-button min-h-14 w-full rounded-full bg-white px-8 text-lg font-medium text-black transition hover:-translate-y-0.5">
+            <button className="home-submit-button min-h-14 w-full rounded-full bg-white px-8 text-lg font-medium text-black transition">
               Submit
             </button>
           </form>
@@ -810,13 +816,11 @@ export default function Home() {
             <div className="home-footer-follow">
               <h3 className="font-bold uppercase">Follow us</h3>
               <div className="home-footer-socials mt-4 flex flex-wrap gap-4 text-white">
-                <SocialIcon kind="instagram" />
-                <SocialIcon kind="linkedin" />
-                <SocialIcon kind="x" />
-                <SocialIcon kind="youtube" />
-                <SocialIcon kind="facebook" />
-                <SocialIcon kind="medium" />
-                <SocialIcon kind="tiktok" />
+                {(["instagram", "linkedin", "x", "youtube", "facebook", "medium", "tiktok"] as const).map((kind) => (
+                  <a aria-label={`${kind} placeholder`} href="#" key={kind}>
+                    <SocialIcon kind={kind} />
+                  </a>
+                ))}
               </div>
               <div className="mt-8">
                 <Button variant="white">Let&apos;s Talk</Button>

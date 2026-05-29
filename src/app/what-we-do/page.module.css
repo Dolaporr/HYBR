@@ -21,6 +21,21 @@
   margin: 0;
 }
 
+.whatScope :global(.what-services.site-reveal),
+.whatScope :global(.what-work.site-reveal),
+.whatScope :global(.what-products.site-reveal),
+.whatScope :global(.what-impact.site-reveal),
+.whatScope :global(.what-team.site-reveal),
+.whatScope :global(.what-case-card.site-reveal),
+.whatScope :global(.what-product-card.site-reveal) {
+  clip-path: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+  will-change: auto !important;
+}
+
 .whatScope :global(.what-button) {
   align-items: center;
   background: #ffffff;
@@ -211,16 +226,16 @@
 
 .whatScope :global(.what-process-map) {
   color: #ffffff;
-  height: 298px;
-  left: 53px;
+  height: 140px;
+  left: 151px;
   position: absolute;
-  top: 412px;
-  width: 230px;
+  top: 374px;
+  width: 160px;
 }
 
 .whatScope :global(.what-process-word) {
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-  font-size: 32px;
+  font-size: 16px;
   font-weight: 600;
   line-height: normal;
   position: absolute;
@@ -229,42 +244,46 @@
 }
 
 .whatScope :global(.what-process-word.is-discover) {
-  left: 16px;
+  left: 44px;
   top: 0;
 }
 
 .whatScope :global(.what-process-word.is-develop) {
   color: #4fc2f0;
-  left: 68px;
-  top: 154px;
+  left: 0;
+  top: 72px;
 }
 
 .whatScope :global(.what-process-word.is-deploy) {
   color: #8dc540;
-  left: 77px;
-  top: 259px;
+  left: 84px;
+  top: 42px;
 }
 
 .whatScope :global(.what-process-arrow) {
   position: absolute;
 }
 
+.whatScope :global(.what-process-arrow path) {
+  stroke-width: 3px;
+}
+
 .whatScope :global(.what-process-arrow.is-first) {
   color: #ffffff;
-  height: 134px;
-  left: 71px;
-  top: 63px;
-  transform: rotate(56deg);
-  width: 118px;
+  height: 58px;
+  left: 55px;
+  top: 23px;
+  transform: none;
+  width: 54px;
 }
 
 .whatScope :global(.what-process-arrow.is-second) {
   color: #ffffff;
-  height: 114px;
-  left: 112px;
-  top: 222px;
-  transform: rotate(139deg);
-  width: 113px;
+  height: 48px;
+  left: 99px;
+  top: 54px;
+  transform: rotate(10deg);
+  width: 48px;
 }
 
 .whatScope :global(.what-work) {
@@ -729,45 +748,45 @@
   }
 
   .whatScope :global(.what-process-map) {
-    height: 206px;
-    left: 183px;
-    top: 386px;
-    width: 435px;
+    height: 156px;
+    left: 460px;
+    top: 360px;
+    width: 276px;
   }
 
   .whatScope :global(.what-process-word) {
-    font-size: 40px;
+    font-size: 24px;
   }
 
   .whatScope :global(.what-process-word.is-discover) {
-    left: 0;
+    left: 54px;
     top: 0;
   }
 
   .whatScope :global(.what-process-word.is-develop) {
-    left: 94px;
-    top: 154px;
+    left: 34px;
+    top: 104px;
   }
 
   .whatScope :global(.what-process-word.is-deploy) {
-    left: 249px;
-    top: 63px;
+    left: 178px;
+    top: 58px;
   }
 
   .whatScope :global(.what-process-arrow.is-first) {
-    height: 134px;
-    left: 112px;
-    top: 63px;
-    transform: rotate(-124deg) scaleX(-1);
-    width: 128px;
+    height: 74px;
+    left: 89px;
+    top: 34px;
+    transform: none;
+    width: 70px;
   }
 
   .whatScope :global(.what-process-arrow.is-second) {
-    height: 96px;
-    left: 311px;
-    top: 110px;
-    transform: rotate(8deg);
-    width: 92px;
+    height: 58px;
+    left: 192px;
+    top: 76px;
+    transform: rotate(10deg);
+    width: 58px;
   }
 
   .whatScope :global(.what-work-copy) {
@@ -1029,45 +1048,45 @@
   }
 
   .whatScope :global(.what-process-map) {
-    height: 206px;
-    left: 725px;
-    top: 213px;
-    width: 435px;
+    height: 176px;
+    left: 760px;
+    top: 220px;
+    width: 348px;
   }
 
   .whatScope :global(.what-process-word) {
-    font-size: 40px;
+    font-size: 32px;
   }
 
   .whatScope :global(.what-process-word.is-discover) {
-    left: 0;
+    left: 66px;
     top: 0;
   }
 
   .whatScope :global(.what-process-word.is-develop) {
-    left: 94px;
-    top: 154px;
+    left: 44px;
+    top: 108px;
   }
 
   .whatScope :global(.what-process-word.is-deploy) {
-    left: 249px;
-    top: 63px;
+    left: 212px;
+    top: 54px;
   }
 
   .whatScope :global(.what-process-arrow.is-first) {
-    height: 134px;
-    left: 112px;
-    top: 63px;
-    transform: rotate(-124deg) scaleX(-1);
-    width: 128px;
+    height: 78px;
+    left: 109px;
+    top: 39px;
+    transform: none;
+    width: 74px;
   }
 
   .whatScope :global(.what-process-arrow.is-second) {
-    height: 96px;
-    left: 311px;
-    top: 110px;
-    transform: rotate(8deg);
-    width: 92px;
+    height: 64px;
+    left: 226px;
+    top: 74px;
+    transform: rotate(10deg);
+    width: 64px;
   }
 
   .whatScope :global(.what-work-copy) {
@@ -1339,45 +1358,45 @@
   }
 
   .whatScope :global(.what-process-map) {
-    height: 206px;
-    left: 810px;
-    top: 200px;
-    width: 449px;
+    height: 176px;
+    left: 828px;
+    top: 206px;
+    width: 348px;
   }
 
   .whatScope :global(.what-process-word) {
-    font-size: 40px;
+    font-size: 32px;
   }
 
   .whatScope :global(.what-process-word.is-discover) {
-    left: 0;
+    left: 66px;
     top: 0;
   }
 
   .whatScope :global(.what-process-word.is-develop) {
-    left: 99px;
-    top: 154px;
+    left: 44px;
+    top: 108px;
   }
 
   .whatScope :global(.what-process-word.is-deploy) {
-    left: 278px;
-    top: 63px;
+    left: 212px;
+    top: 54px;
   }
 
   .whatScope :global(.what-process-arrow.is-first) {
-    height: 134px;
-    left: 103px;
-    top: 63px;
-    transform: rotate(-124deg) scaleX(-1);
-    width: 118px;
+    height: 78px;
+    left: 109px;
+    top: 39px;
+    transform: none;
+    width: 74px;
   }
 
   .whatScope :global(.what-process-arrow.is-second) {
-    height: 96px;
-    left: 313px;
-    top: 110px;
-    transform: rotate(8deg);
-    width: 84px;
+    height: 64px;
+    left: 226px;
+    top: 74px;
+    transform: rotate(10deg);
+    width: 64px;
   }
 
   .whatScope :global(.what-work-copy) {
