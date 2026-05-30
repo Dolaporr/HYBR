@@ -88,100 +88,22 @@ const timeline = [
 
 type TimelineIconKind = (typeof timeline)[number]["icon"];
 
+const timelineIconAssets: Record<TimelineIconKind, string> = {
+  hybr: "/who/timeline/hybr-mark.svg",
+  shoe: "/who/timeline/sneaker-move.svg",
+  arrows: "/who/timeline/arrows-out-cardinal.svg",
+  health: "/who/timeline/asclepius.svg",
+  bottle: "/who/timeline/beer-bottle.svg",
+  handshake: "/who/timeline/handshake.svg",
+  pin: "/who/timeline/map-pin-area.svg",
+  robot: "/who/timeline/robot.svg",
+  compass: "/who/timeline/compass.svg",
+  sparkle: "/who/timeline/sparkle.svg",
+};
+
 function TimelineIcon({ kind }: { kind: TimelineIconKind }) {
-  if (kind === "hybr") {
-    return (
-      <svg aria-hidden="true" fill="none" viewBox="0 0 40 40">
-        <circle cx="20" cy="27" r="7" stroke="currentColor" strokeWidth="3" />
-        <circle cx="20" cy="22" r="13" stroke="currentColor" strokeWidth="3" />
-        <circle cx="20" cy="20" r="18" stroke="currentColor" strokeWidth="3" />
-      </svg>
-    );
-  }
-
-  if (kind === "arrows") {
-    return (
-      <svg aria-hidden="true" fill="none" viewBox="0 0 40 40">
-        <path d="M20 6v28M6 20h28M20 6l-5 5M20 6l5 5M20 34l-5-5M20 34l5-5M6 20l5-5M6 20l5 5M34 20l-5-5M34 20l-5 5" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
-      </svg>
-    );
-  }
-
-  if (kind === "shoe") {
-    return (
-      <svg aria-hidden="true" fill="none" viewBox="0 0 40 40">
-        <path d="M9 25c6.5 4.7 14.2 6 22.4 3.5M12.5 18.5l9 8.2M17.5 14.5l10.8 10.2M10 28.5h23.5" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
-      </svg>
-    );
-  }
-
-  if (kind === "health") {
-    return (
-      <svg aria-hidden="true" fill="none" viewBox="0 0 40 40">
-        <path d="M20 7v26M14 13h12M12 20h16M15 33h10" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
-        <path d="M13 13c0-4 3-7 7-7s7 3 7 7c0 5-7 7-7 12" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
-      </svg>
-    );
-  }
-
-  if (kind === "bottle") {
-    return (
-      <svg aria-hidden="true" fill="none" viewBox="0 0 40 40">
-        <path d="M17 5h6v7l4 5v16a3 3 0 0 1-3 3h-8a3 3 0 0 1-3-3V17l4-5V5Z" stroke="currentColor" strokeLinejoin="round" strokeWidth="2.4" />
-        <path d="M17 12h6M13 23h14" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
-      </svg>
-    );
-  }
-
-  if (kind === "handshake") {
-    return (
-      <svg aria-hidden="true" fill="none" viewBox="0 0 40 40">
-        <path d="M6 22l7-8 7 6 7-6 7 8" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
-        <path d="M12 23l5 5c2 2 4 2 6 0l5-5M16 16l-4 4M24 16l4 4" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
-      </svg>
-    );
-  }
-
-  if (kind === "pin") {
-    return (
-      <svg aria-hidden="true" fill="none" viewBox="0 0 40 40">
-        <path d="M20 35s11-10 11-20a11 11 0 0 0-22 0c0 10 11 20 11 20Z" stroke="currentColor" strokeLinejoin="round" strokeWidth="2.4" />
-        <circle cx="20" cy="15" r="4" stroke="currentColor" strokeWidth="2.4" />
-      </svg>
-    );
-  }
-
-  if (kind === "robot") {
-    return (
-      <svg aria-hidden="true" fill="none" viewBox="0 0 40 40">
-        <rect height="20" rx="5" stroke="currentColor" strokeWidth="2.4" width="24" x="8" y="13" />
-        <path d="M20 13V7M14 7h12M5 23h3M32 23h3" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
-        <path d="M15 22h.1M25 22h.1M16 28h8" stroke="currentColor" strokeLinecap="round" strokeWidth="3" />
-      </svg>
-    );
-  }
-
-  if (kind === "compass") {
-    return (
-      <svg aria-hidden="true" fill="none" viewBox="0 0 40 40">
-        <circle cx="20" cy="20" r="14" stroke="currentColor" strokeWidth="2.4" />
-        <path d="M25 15l-3 9-7 3 3-9 7-3Z" stroke="currentColor" strokeLinejoin="round" strokeWidth="2.4" />
-      </svg>
-    );
-  }
-
-  if (kind === "sparkle") {
-    return (
-      <svg aria-hidden="true" fill="none" viewBox="0 0 40 40">
-        <path d="M20 5l4 11 11 4-11 4-4 11-4-11-11-4 11-4 4-11ZM31 5l1.8 5.2L38 12l-5.2 1.8L31 19l-1.8-5.2L24 12l5.2-1.8L31 5Z" stroke="currentColor" strokeLinejoin="round" strokeWidth="2.2" />
-      </svg>
-    );
-  }
-
   return (
-    <svg aria-hidden="true" fill="none" viewBox="0 0 40 40">
-      <path d="M9 26c7 5 15 5 22 0M13 15l9 9M16 12l12 12" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
-    </svg>
+    <img alt="" aria-hidden="true" loading="lazy" src={timelineIconAssets[kind]} />
   );
 }
 
@@ -204,15 +126,19 @@ function SectionLabel({ children }: { children: ReactNode }) {
 
 function FigmaButton({
   children,
+  className = "",
   href,
   light = false,
 }: {
   children: ReactNode;
+  className?: string;
   href: string;
   light?: boolean;
 }) {
+  const toneClass = light ? "who-button who-button--light" : "who-button";
+
   return (
-    <Link className={light ? "who-button who-button--light" : "who-button"} href={href}>
+    <Link className={`${toneClass} ${className}`.trim()} href={href}>
       {children}
     </Link>
   );
@@ -235,8 +161,9 @@ function ImageSurface({
     <div
       className={`who-image-surface ${className}`}
       style={{
+        "--who-image": image,
         backgroundImage: image,
-      }}
+      } as CSSProperties}
     >
       {children}
     </div>
@@ -395,11 +322,10 @@ export default function WhoWeArePage() {
               deep sector expertise to help organizations unlock what&apos;s possible.
             </p>
           </div>
-          <ImageSurface className="who-team-image">
-            <FigmaButton href="/who-we-are/our-team" light>
-              Learn More
-            </FigmaButton>
-          </ImageSurface>
+          <ImageSurface className="who-team-image" />
+          <FigmaButton className="who-team-button" href="/who-we-are/our-team" light>
+            Learn More
+          </FigmaButton>
         </section>
 
         <ImageSurface className="who-careers-image" />

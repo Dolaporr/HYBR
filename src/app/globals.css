@@ -12094,7 +12094,7 @@ body {
 
 .who-frame {
   background: #ffffff;
-  height: 6774px;
+  height: 6904px;
   margin-inline: auto;
   max-width: 390px;
   overflow: hidden;
@@ -12324,9 +12324,12 @@ body {
   z-index: -1;
 }
 
-.who-timeline-pin svg {
-  height: 40px;
-  width: 40px;
+.who-timeline-pin img {
+  display: block;
+  height: 40px !important;
+  max-width: none;
+  object-fit: contain;
+  width: 40px !important;
 }
 
 .who-early {
@@ -12426,7 +12429,25 @@ body {
 }
 
 .who-careers-image {
+  background: #000000 !important;
+  border: 0;
+  border-radius: 0 1000px 1000px 1000px;
+  height: 118px;
+  overflow: hidden;
   top: 6031px;
+}
+
+.who-careers-image::before {
+  background-image: var(--who-image);
+  background-position: 50%;
+  background-size: cover;
+  border: 2px solid #000000;
+  content: "";
+  height: 228.028px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: -10px;
 }
 
 .who-about-copy,
@@ -12442,7 +12463,7 @@ body {
 }
 
 .who-careers-copy {
-  top: 6213px;
+  top: 6323px;
   z-index: 1;
 }
 
@@ -12553,21 +12574,31 @@ body {
 
 .who-team-image {
   border-radius: 12px;
-  bottom: 48px;
+  bottom: 104px;
   height: 124px;
   left: 32px;
   position: absolute;
   width: 278px;
 }
 
-.who-team-image .who-button {
-  bottom: 16px;
-  left: 16px;
+.who-team-button {
+  bottom: 32px;
+  left: 76px;
   margin-top: 0;
   position: absolute;
+  width: 190px;
 }
 
 @media (min-width: 560px) {
+  .who-careers-image {
+    background-color: transparent !important;
+    background-image: var(--who-image) !important;
+  }
+
+  .who-careers-image::before {
+    display: none;
+  }
+
   .who-about-orbit {
     background: url("/who/about-orbit.svg") center / 100% 100% no-repeat;
     display: flex;
@@ -12772,6 +12803,8 @@ body {
 
   .who-about-image,
   .who-careers-image {
+    border: 0;
+    border-radius: 1000px;
     height: 248px;
     left: 80px;
     width: 640px;
@@ -12827,10 +12860,11 @@ body {
     width: 544px;
   }
 
-  .who-team-image .who-button {
-    bottom: 36px;
+  .who-team-button {
+    bottom: 84px;
     left: auto;
     right: 36px;
+    width: auto;
   }
 
   .who-careers-image {
@@ -13139,13 +13173,16 @@ body {
     width: 944px;
   }
 
-  .who-team-image .who-button {
-    bottom: 48px;
+  .who-team-button {
+    bottom: 96px;
     left: auto;
-    right: 48px;
+    right: 96px;
+    width: auto;
   }
 
   .who-careers-image {
+    border: 0;
+    border-radius: 1000px;
     height: 336px;
     left: -348px;
     top: 3998px;
@@ -13466,13 +13503,16 @@ body {
     width: 1104px;
   }
 
-  .who-team-image .who-button {
-    bottom: 48px;
+  .who-team-button {
+    bottom: 104px;
     left: auto;
-    right: 48px;
+    right: 96px;
+    width: auto;
   }
 
   .who-careers-image {
+    border: 0;
+    border-radius: 1000px;
     height: 336px;
     left: -268px;
     top: 4519px;
@@ -13512,41 +13552,45 @@ body {
 }
 
 .who-page .who-timeline-pin {
-  border-width: 2px;
-  height: 32px;
-  left: -114px;
-  top: calc(50% - 16px);
-  width: 32px;
+  border-width: 3px;
+  height: 64px;
+  left: -130px;
+  top: calc(50% - 32px);
+  width: 64px;
   z-index: 5;
 }
 
 .who-page .who-timeline-pin::after {
-  height: 2px;
-  left: 16px;
-  top: 15px;
+  background: repeating-linear-gradient(to right, #ffffff 0 3px, transparent 3px 6px);
+  height: 4px;
+  left: 32px;
+  top: 30px;
   width: 98px;
 }
 
-.who-page .who-timeline-pin svg {
-  height: 18px;
-  width: 18px;
+.who-page .who-timeline-pin img {
+  height: 40px !important;
+  max-width: none;
+  object-fit: contain;
+  width: 40px !important;
 }
 
 @media (min-width: 560px) {
   .who-page .who-timeline-pin {
-    left: calc(50% - 16px);
-    top: 244px;
+    left: calc(50% - 32px);
+    top: 228px;
   }
 
   .who-page .who-timeline-card.is-bottom .who-timeline-pin {
-    top: -112px;
+    top: -128px;
   }
 
   .who-page .who-timeline-pin::after {
+    background: repeating-linear-gradient(to bottom, #ffffff 0 3px, transparent 3px 6px);
     height: 80px;
-    left: 15px;
-    top: -80px;
-    width: 2px;
+    left: 30px;
+    top: -48px;
+    width: 4px;
   }
 
   .who-page .who-timeline-card.is-bottom .who-timeline-pin::after {
