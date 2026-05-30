@@ -226,16 +226,16 @@
 
 .whatScope :global(.what-process-map) {
   color: #ffffff;
-  height: 140px;
-  left: 151px;
+  height: 298px;
+  left: 53px;
   position: absolute;
-  top: 374px;
-  width: 160px;
+  top: 412px;
+  width: 229.492px;
 }
 
 .whatScope :global(.what-process-word) {
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 32px;
   font-weight: 600;
   line-height: normal;
   position: absolute;
@@ -244,46 +244,59 @@
 }
 
 .whatScope :global(.what-process-word.is-discover) {
-  left: 44px;
+  left: 16.492px;
   top: 0;
 }
 
 .whatScope :global(.what-process-word.is-develop) {
   color: #4fc2f0;
-  left: 0;
-  top: 72px;
+  left: 68.492px;
+  top: 154.004px;
 }
 
 .whatScope :global(.what-process-word.is-deploy) {
   color: #8dc540;
-  left: 84px;
-  top: 42px;
+  left: 77.492px;
+  top: 259px;
 }
 
 .whatScope :global(.what-process-arrow) {
+  display: block;
+  max-width: none;
+  pointer-events: none;
   position: absolute;
 }
 
-.whatScope :global(.what-process-arrow path) {
-  stroke-width: 3px;
+.whatScope :global(.what-process-arrow--desktop) {
+  display: none;
 }
 
-.whatScope :global(.what-process-arrow.is-first) {
-  color: #ffffff;
-  height: 58px;
-  left: 55px;
-  top: 23px;
-  transform: none;
-  width: 54px;
+.whatScope :global(.what-process-arrow--mobile.is-first) {
+  height: 59.082px;
+  left: 52.85px;
+  top: 67.428px;
+  transform: rotate(55.8deg) scaleY(-1);
+  transform-origin: center;
+  width: 122.204px;
 }
 
-.whatScope :global(.what-process-arrow.is-second) {
-  color: #ffffff;
-  height: 48px;
-  left: 99px;
-  top: 54px;
-  transform: rotate(10deg);
-  width: 48px;
+.whatScope :global(.what-process-arrow--mobile.is-second) {
+  height: 87.403px;
+  left: 30.48px;
+  top: 186.447px;
+  transform: rotate(139.12deg);
+  transform-origin: center;
+  width: 73.217px;
+}
+
+@media (min-width: 560px) {
+  .whatScope :global(.what-process-arrow--mobile) {
+    display: none;
+  }
+
+  .whatScope :global(.what-process-arrow--desktop) {
+    display: block;
+  }
 }
 
 .whatScope :global(.what-work) {
@@ -482,13 +495,15 @@
 }
 
 .whatScope :global(.what-product-icon) {
-  color: #ffffff;
+  display: block;
   height: 88px;
+  max-width: none;
+  object-fit: fill;
   width: 88px;
 }
 
 .whatScope :global(.what-product-card.is-alpha .what-product-icon) {
-  width: 110px;
+  width: 110.466px;
 }
 
 .whatScope :global(.what-product-brand h3) {
@@ -748,10 +763,10 @@
   }
 
   .whatScope :global(.what-process-map) {
-    height: 156px;
-    left: 460px;
-    top: 360px;
-    width: 276px;
+    height: 160px;
+    left: 432px;
+    top: 350px;
+    width: 310px;
   }
 
   .whatScope :global(.what-process-word) {
@@ -759,34 +774,42 @@
   }
 
   .whatScope :global(.what-process-word.is-discover) {
-    left: 54px;
+    left: 0;
     top: 0;
   }
 
   .whatScope :global(.what-process-word.is-develop) {
-    left: 34px;
-    top: 104px;
+    left: 68px;
+    top: 107px;
   }
 
   .whatScope :global(.what-process-word.is-deploy) {
-    left: 178px;
-    top: 58px;
-  }
-
-  .whatScope :global(.what-process-arrow.is-first) {
-    height: 74px;
-    left: 89px;
-    top: 34px;
-    transform: none;
-    width: 70px;
-  }
-
-  .whatScope :global(.what-process-arrow.is-second) {
-    height: 58px;
     left: 192px;
+    top: 44px;
+  }
+
+  .whatScope :global(.what-process-arrow--mobile) {
+    display: none;
+  }
+
+  .whatScope :global(.what-process-arrow--desktop) {
+    display: block;
+  }
+
+  .whatScope :global(.what-process-arrow--desktop.is-first) {
+    height: 108px;
+    left: 71px;
+    top: 44px;
+    transform: none;
+    width: 82px;
+  }
+
+  .whatScope :global(.what-process-arrow--desktop.is-second) {
+    height: 86px;
+    left: 216px;
     top: 76px;
-    transform: rotate(10deg);
-    width: 58px;
+    transform: none;
+    width: 86px;
   }
 
   .whatScope :global(.what-work-copy) {
@@ -1048,10 +1071,10 @@
   }
 
   .whatScope :global(.what-process-map) {
-    height: 176px;
-    left: 760px;
-    top: 220px;
-    width: 348px;
+    height: 206.378px;
+    left: 720px;
+    top: 205px;
+    width: 449px;
   }
 
   .whatScope :global(.what-process-word) {
@@ -1059,34 +1082,34 @@
   }
 
   .whatScope :global(.what-process-word.is-discover) {
-    left: 66px;
+    left: 0;
     top: 0;
   }
 
   .whatScope :global(.what-process-word.is-develop) {
-    left: 44px;
-    top: 108px;
+    left: 99px;
+    top: 154px;
   }
 
   .whatScope :global(.what-process-word.is-deploy) {
-    left: 212px;
-    top: 54px;
+    left: 278px;
+    top: 63px;
   }
 
-  .whatScope :global(.what-process-arrow.is-first) {
-    height: 78px;
-    left: 109px;
-    top: 39px;
+  .whatScope :global(.what-process-arrow--desktop.is-first) {
+    height: 108px;
+    left: 103px;
+    top: 63.031px;
     transform: none;
-    width: 74px;
+    width: 82px;
   }
 
-  .whatScope :global(.what-process-arrow.is-second) {
-    height: 64px;
-    left: 226px;
-    top: 74px;
-    transform: rotate(10deg);
-    width: 64px;
+  .whatScope :global(.what-process-arrow--desktop.is-second) {
+    height: 86px;
+    left: 312.613px;
+    top: 110px;
+    transform: none;
+    width: 86px;
   }
 
   .whatScope :global(.what-work-copy) {
@@ -1175,10 +1198,23 @@
     flex: 0 0 170px;
   }
 
+  .whatScope :global(.what-product-card.is-indx .what-product-brand) {
+    flex-basis: 92px;
+  }
+
+  .whatScope :global(.what-product-card.is-alpha) {
+    gap: 40px;
+  }
+
+  .whatScope :global(.what-product-card.is-alpha .what-product-brand) {
+    flex-basis: 110.466px;
+  }
+
   .whatScope :global(.what-product-copy) {
     align-items: flex-start;
+    flex: 1 1 auto;
     margin-top: 0;
-    width: 686px;
+    width: auto;
   }
 
   .whatScope :global(.what-product-copy p) {
@@ -1358,10 +1394,10 @@
   }
 
   .whatScope :global(.what-process-map) {
-    height: 176px;
-    left: 828px;
-    top: 206px;
-    width: 348px;
+    height: 206.378px;
+    left: 810px;
+    top: 200px;
+    width: 449px;
   }
 
   .whatScope :global(.what-process-word) {
@@ -1369,34 +1405,34 @@
   }
 
   .whatScope :global(.what-process-word.is-discover) {
-    left: 66px;
+    left: 0;
     top: 0;
   }
 
   .whatScope :global(.what-process-word.is-develop) {
-    left: 44px;
-    top: 108px;
+    left: 99px;
+    top: 154px;
   }
 
   .whatScope :global(.what-process-word.is-deploy) {
-    left: 212px;
-    top: 54px;
+    left: 278px;
+    top: 63px;
   }
 
-  .whatScope :global(.what-process-arrow.is-first) {
-    height: 78px;
-    left: 109px;
-    top: 39px;
+  .whatScope :global(.what-process-arrow--desktop.is-first) {
+    height: 108px;
+    left: 103px;
+    top: 63.031px;
     transform: none;
-    width: 74px;
+    width: 82px;
   }
 
-  .whatScope :global(.what-process-arrow.is-second) {
-    height: 64px;
-    left: 226px;
-    top: 74px;
-    transform: rotate(10deg);
-    width: 64px;
+  .whatScope :global(.what-process-arrow--desktop.is-second) {
+    height: 86px;
+    left: 312.613px;
+    top: 110px;
+    transform: none;
+    width: 86px;
   }
 
   .whatScope :global(.what-work-copy) {
@@ -1502,15 +1538,28 @@
     flex: 0 0 170px;
   }
 
+  .whatScope :global(.what-product-card.is-indx .what-product-brand) {
+    flex-basis: 92px;
+  }
+
+  .whatScope :global(.what-product-card.is-alpha) {
+    gap: 40px;
+  }
+
+  .whatScope :global(.what-product-card.is-alpha .what-product-brand) {
+    flex-basis: 110.466px;
+  }
+
   .whatScope :global(.what-product-brand h3) {
     font-size: 32px;
   }
 
   .whatScope :global(.what-product-copy) {
     align-items: flex-start;
+    flex: 1 1 auto;
     gap: 40px;
     margin-top: 0;
-    width: 846px;
+    width: auto;
   }
 
   .whatScope :global(.what-product-copy p) {

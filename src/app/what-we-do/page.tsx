@@ -22,6 +22,12 @@ const products = [
   { key: "alpha", name: "ALPHA", cta: "Access ALPHA", hasDesktopEmail: false },
 ] as const;
 
+const productIconAssets: Record<(typeof products)[number]["key"], string> = {
+  flywheel: "/what/vectors/icon-flywheel.svg",
+  indx: "/what/vectors/icon-indx.svg",
+  alpha: "/what/vectors/icon-alpha.svg",
+};
+
 function ButtonLink({
   children,
   className = "",
@@ -58,32 +64,9 @@ function ContentDrop() {
   );
 }
 
-function ProductIcon({ type }: { type: string }) {
-  if (type === "flywheel") {
-    return (
-      <svg aria-hidden="true" className="what-product-icon" fill="none" viewBox="0 0 96 96">
-        <circle cx="48" cy="48" r="28" stroke="currentColor" strokeWidth="5" />
-        <path d="M48 20C59 30 64 39 64 48C64 57 59 66 48 76C37 66 32 57 32 48C32 39 37 30 48 20Z" stroke="currentColor" strokeWidth="5" />
-        <path d="M20 48H76M48 20V76" stroke="currentColor" strokeLinecap="round" strokeWidth="5" />
-      </svg>
-    );
-  }
-
-  if (type === "indx") {
-    return (
-      <svg aria-hidden="true" className="what-product-icon" fill="none" viewBox="0 0 96 96">
-        <path d="M48 15L75 30V61L48 77L21 61V30L48 15Z" stroke="currentColor" strokeLinejoin="round" strokeWidth="5" />
-        <path d="M21 30L48 46L75 30M48 46V77M33 38L60 23M63 38L36 23" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="5" />
-      </svg>
-    );
-  }
-
+function ProductIcon({ type }: { type: (typeof products)[number]["key"] }) {
   return (
-    <svg aria-hidden="true" className="what-product-icon" fill="none" viewBox="0 0 120 96">
-      <path d="M18 76C37 29 72 19 101 20C93 51 74 76 38 76H18Z" stroke="currentColor" strokeLinejoin="round" strokeWidth="5" />
-      <path d="M32 66C47 53 65 43 89 35" stroke="currentColor" strokeLinecap="round" strokeWidth="5" />
-      <path d="M46 76C47 63 44 53 36 43" stroke="currentColor" strokeLinecap="round" strokeWidth="5" />
-    </svg>
+    <img alt="" aria-hidden="true" className="what-product-icon" src={productIconAssets[type]} />
   );
 }
 
@@ -93,14 +76,26 @@ function ProcessMap() {
       <span className="what-process-word is-discover">Discover</span>
       <span className="what-process-word is-develop">Develop</span>
       <span className="what-process-word is-deploy">Deploy</span>
-      <svg className="what-process-arrow is-first" fill="none" viewBox="0 0 128 136">
-        <path d="M103 13C67 30 44 57 33 111" stroke="currentColor" strokeLinecap="round" strokeWidth="4" />
-        <path d="M19 91L33 116L55 96" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" />
-      </svg>
-      <svg className="what-process-arrow is-second" fill="none" viewBox="0 0 104 112">
-        <path d="M18 17C60 29 82 55 88 91" stroke="currentColor" strokeLinecap="round" strokeWidth="4" />
-        <path d="M70 82L89 96L99 73" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" />
-      </svg>
+      <img
+        alt=""
+        className="what-process-arrow what-process-arrow--mobile is-first"
+        src="/what/vectors/service-arrow-mobile-down.svg"
+      />
+      <img
+        alt=""
+        className="what-process-arrow what-process-arrow--mobile is-second"
+        src="/what/vectors/service-arrow-mobile-loop.svg"
+      />
+      <img
+        alt=""
+        className="what-process-arrow what-process-arrow--desktop is-first"
+        src="/what/vectors/service-arrow-down.svg"
+      />
+      <img
+        alt=""
+        className="what-process-arrow what-process-arrow--desktop is-second"
+        src="/what/vectors/service-arrow-loop.svg"
+      />
     </div>
   );
 }
