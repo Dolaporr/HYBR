@@ -5,12 +5,12 @@ import { figmaAssets } from "@/content/site";
 
 const aboutAssets = {
   founder: "/about/founder.jpg",
-  history: "/about/history.jpg",
+  history: figmaAssets.figmaBusinessPartners,
   earlyDays: "/about/early-days-optimized.jpg",
-  valuesIntegrity: "/about/values-integrity.jpg",
+  valuesIntegrity: figmaAssets.figmaBusinessPartners,
   valuesCreativity: "/about/values-creativity.jpg",
-  valuesEntrepreneurial: "/about/values-entrepreneurial-optimized.jpg",
-  valuesTogether: "/about/values-together.jpg",
+  valuesEntrepreneurial: figmaAssets.figmaBusinessPartners,
+  valuesTogether: "/about/founder.jpg",
   missionCircular: "/about/mission-circular.svg",
   missionInclusion: "/about/mission-inclusion.svg",
   missionSustainable: "/about/mission-sustainable.svg",

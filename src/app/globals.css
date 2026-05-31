@@ -5623,6 +5623,7 @@ body {
 .insights-hub-page {
   background: #ffffff;
   color: #000000;
+  overflow-x: hidden;
 }
 
 .insights-stage {
@@ -5861,7 +5862,7 @@ body {
   left: auto;
   right: 32px;
   top: 32px;
-  transform: rotate(90deg);
+  transform: none;
   width: 28px;
 }
 
@@ -6578,12 +6579,15 @@ body {
 @media (max-width: 559px) {
   .insights-stage {
     height: 5013px;
+    max-width: 100vw;
+    overflow-x: hidden;
+    width: 100%;
   }
 
   .insights-hero-copy {
     left: 24px;
     top: 187px;
-    width: 342px;
+    width: calc(100vw - 48px);
   }
 
   .insights-hero-copy h1 {
@@ -6594,7 +6598,7 @@ body {
   .insights-hero-copy p {
     font-size: 16px;
     line-height: 20px;
-    width: 342px;
+    width: calc(100vw - 48px);
   }
 
   .insights-content-drop {
@@ -6633,7 +6637,7 @@ body {
     gap: 16px;
     left: 24px;
     top: 348px;
-    width: 342px;
+    width: calc(100vw - 48px);
   }
 
   .insights-search-pill,
@@ -6647,7 +6651,9 @@ body {
   }
 
   .insights-search-pill {
-    width: 253px;
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto;
   }
 
   .insights-search-pill svg,
@@ -6658,6 +6664,7 @@ body {
 
   .insights-filter-pill {
     display: flex;
+    flex: 0 0 73px;
     width: 73px;
   }
 
@@ -6683,14 +6690,14 @@ body {
     height: 386px;
     left: 24px;
     top: 473px;
-    width: 342px;
+    width: calc(100vw - 48px);
   }
 
   .insights-spotlight-article,
   .insights-spotlight-news {
     height: 280px;
     top: 883px;
-    width: 163px;
+    width: calc(50vw - 32px);
   }
 
   .insights-spotlight-article {
@@ -6698,13 +6705,18 @@ body {
   }
 
   .insights-spotlight-news {
-    left: 203px;
+    left: calc(50vw + 8px);
   }
 
   .insights-webinars-copy {
     left: 24px;
+    text-align: left;
     top: 1319px;
-    width: 342px;
+    width: calc(100vw - 48px);
+  }
+
+  .insights-section-copy {
+    text-align: left;
   }
 
   .insights-section-copy p {
@@ -6724,7 +6736,7 @@ body {
   .insights-webinar-b {
     height: 386px;
     left: 24px;
-    width: 342px;
+    width: calc(100vw - 48px);
   }
 
   .insights-webinar-a {
@@ -6742,7 +6754,7 @@ body {
   .insights-articles-copy {
     left: 24px;
     top: 2605px;
-    width: 342px;
+    width: calc(100vw - 48px);
   }
 
   .insights-articles-button {
@@ -6756,7 +6768,7 @@ body {
     display: block;
     height: 280px;
     top: 2847px;
-    width: 163px;
+    width: calc(50vw - 32px);
   }
 
   .insights-article-small-a {
@@ -6764,7 +6776,7 @@ body {
   }
 
   .insights-article-small-b {
-    left: 202.5px;
+    left: calc(50vw + 8px);
   }
 
   .insights-article-tall {
@@ -6774,14 +6786,14 @@ body {
   .insights-news-copy {
     left: 24px;
     top: 3350px;
-    width: 342px;
+    width: calc(100vw - 48px);
   }
 
   .insights-news-a,
   .insights-news-b {
     height: 280px;
     top: 3604px;
-    width: 163px;
+    width: calc(50vw - 32px);
   }
 
   .insights-news-a {
@@ -6789,7 +6801,7 @@ body {
   }
 
   .insights-news-b {
-    left: 203px;
+    left: calc(50vw + 8px);
   }
 
   .insights-news-button {
@@ -6812,7 +6824,7 @@ body {
     bottom: 40px;
     gap: 8px;
     left: 32px;
-    width: 278px;
+    width: calc(100% - 64px);
   }
 
   .insights-card-mobile-kind {
@@ -6838,7 +6850,7 @@ body {
     left: auto;
     right: 32px;
     top: 38px;
-    transform: rotate(90deg);
+    transform: none;
     width: 24px;
   }
 
@@ -6846,7 +6858,7 @@ body {
     gap: 0;
     left: 16px;
     top: 24px;
-    width: 131px;
+    width: calc(100% - 32px);
   }
 
   .insights-story-copy span:first-child {
@@ -6883,7 +6895,7 @@ body {
     height: 751px;
     left: 0;
     top: 4096px;
-    width: 390px;
+    width: 100vw;
   }
 
   .insights-newsletter > img {
@@ -6897,13 +6909,13 @@ body {
     height: 487px;
     left: 0;
     top: 264px;
-    width: 390px;
+    width: 100%;
   }
 
   .insights-newsletter-copy {
     left: 24px;
     top: 56px;
-    width: 342px;
+    width: calc(100vw - 48px);
   }
 
   .insights-newsletter-copy h2 {
@@ -6918,7 +6930,7 @@ body {
     gap: 42px;
     left: 24px;
     top: 340px;
-    width: 342px;
+    width: calc(100vw - 48px);
   }
 
   .insights-newsletter-form input,
@@ -6926,7 +6938,7 @@ body {
     font-size: 16px;
     height: 51px;
     padding: 16px 32px;
-    width: 342px;
+    width: 100%;
   }
 
   .insights-newsletter-form button {
@@ -16696,7 +16708,7 @@ body {
 }
 
 .about-floating-frames {
-  display: block;
+  display: none;
   inset: 0;
   pointer-events: none;
   position: absolute;
@@ -16777,7 +16789,7 @@ body {
 
 .about-play-button {
   height: 104px;
-  left: 50%;
+  left: calc(50% + 104px);
   position: absolute;
   top: calc(50% - 1px);
   transform: translate(-50%, -50%);
@@ -16900,7 +16912,7 @@ body {
 }
 
 .about-history-media img {
-  inset: auto auto -246px 50%;
+  inset: -113px auto auto 50%;
   height: 738px;
   transform: translateX(-50%);
   width: 1107px;
@@ -17052,19 +17064,21 @@ body {
   height: 237px;
   justify-content: center;
   padding: 32px 48px;
-  transition: transform 220ms ease, box-shadow 220ms ease;
-}
-
-.about-mission-card:hover {
-  box-shadow: 0 26px 48px rgba(0, 0, 0, 0.18);
-  transform: translateY(-4px);
 }
 
 .about-mission-card img {
   height: 88px;
   object-fit: contain;
   object-position: left center;
-  width: 112px;
+  width: 88px;
+}
+
+.about-mission-card:nth-child(3) img {
+  width: 110px;
+}
+
+.about-frame .about-mission-card {
+  color: #ffffff;
 }
 
 .about-mission-card span {
@@ -17075,6 +17089,7 @@ body {
 }
 
 .about-mission-card strong {
+  color: #ffffff;
   font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
   font-size: 32px;
   font-weight: 500;
@@ -17102,13 +17117,15 @@ body {
   min-height: 61px;
   padding: 16px 32px;
   text-align: center;
-  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
   white-space: nowrap;
   width: max-content;
 }
 
 .about-button:hover {
-  transform: translateY(-2px);
+  background: #8dc540;
+  border-color: #8dc540;
+  color: #000000;
 }
 
 .about-button--green {
@@ -17116,8 +17133,9 @@ body {
 }
 
 .about-button--green:hover {
-  background: #648c2d;
-  color: #ffffff;
+  background: #8dc540;
+  border-color: #8dc540;
+  color: #000000;
 }
 
 .about-button--white {
@@ -17125,7 +17143,8 @@ body {
 }
 
 .about-button--white:hover {
-  background: #ffffff;
+  background: #8dc540;
+  border-color: #8dc540;
   color: #000000;
 }
 
@@ -17137,7 +17156,7 @@ body {
 }
 
 .about-missions-section > .about-button:hover {
-  transform: translate(-50%, -2px);
+  transform: translateX(-50%);
 }
 
 .about-values-section {
@@ -17194,6 +17213,10 @@ body {
 
 .about-value-card:nth-child(4) .about-value-overlay {
   background: rgba(0, 0, 0, 0.2);
+}
+
+.about-value-card:nth-child(3) .about-value-bg {
+  transform: scaleX(-1);
 }
 
 .about-value-content {
@@ -17326,6 +17349,16 @@ body {
 }
 
 @media (min-width: 560px) and (max-width: 1023px) {
+  .about-frame section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .about-frame section > div {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
   .about-hero {
     height: 640px;
   }
@@ -17405,6 +17438,16 @@ body {
     margin-right: 0;
   }
 
+  .about-frame section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .about-frame section > div {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
   .about-floating-frames {
     display: none;
   }
@@ -17416,7 +17459,8 @@ body {
   .about-hero-copy {
     left: 24px;
     top: 187px;
-    width: 300px;
+    max-width: 300px !important;
+    width: 300px !important;
   }
 
   .about-hero-copy h1 {
@@ -17427,6 +17471,7 @@ body {
   .about-hero-copy p {
     font-size: 16px;
     line-height: normal;
+    width: 278px !important;
   }
 
   .about-content-drop {
@@ -17472,8 +17517,8 @@ body {
 
   .about-play-button {
     height: 48px;
-    left: calc(50% + 107px);
-    top: calc(50% - 129px);
+    left: calc(100% - 16px);
+    top: 64px;
     width: 48px;
   }
 
@@ -17658,7 +17703,7 @@ body {
 
   .about-mission-card {
     border-radius: 24px;
-    height: 176px;
+    height: 164px;
     padding: 40px;
     position: absolute;
     width: 100%;
@@ -17676,6 +17721,7 @@ body {
   }
 
   .about-mission-card:nth-child(2) {
+    height: 160px;
     top: 204px;
   }
 
@@ -17685,7 +17731,11 @@ body {
 
   .about-mission-card img {
     height: 80px;
-    width: 100px;
+    width: 80px;
+  }
+
+  .about-mission-card:nth-child(3) img {
+    width: 100.424px;
   }
 
   .about-mission-card span {
@@ -17711,7 +17761,7 @@ body {
   }
 
   .about-values-section {
-    height: 1764px;
+    height: 1816px;
     margin-top: 14px;
     width: min(342px, calc(100vw - 48px));
   }
@@ -17736,22 +17786,22 @@ body {
   }
 
   .about-value-card:nth-child(1) {
-    height: 328px;
+    height: 336px;
     top: 0;
   }
 
   .about-value-card:nth-child(2) {
-    height: 388px;
+    height: 396px;
     top: 376px;
   }
 
   .about-value-card:nth-child(3) {
-    height: 368px;
+    height: 376px;
     top: 812px;
   }
 
   .about-value-card:nth-child(4) {
-    height: 368px;
+    height: 376px;
     top: 1228px;
   }
 
@@ -17774,7 +17824,7 @@ body {
     align-items: flex-start;
     gap: 32px;
     height: 716px;
-    margin-top: 208px;
+    margin-top: 156px;
     padding-bottom: 0;
     text-align: left;
     width: min(342px, calc(100vw - 48px));
@@ -17921,6 +17971,23 @@ body {
 
 .about-missions-section > .about-button:hover {
   transform: translateX(-50%) !important;
+}
+
+.insights-webinars-button:hover,
+.insights-webinars-button:focus-visible,
+.insights-webinars-button:active,
+.insights-news-button:hover,
+.insights-news-button:focus-visible,
+.insights-news-button:active {
+  transform: translateX(-50%) !important;
+}
+
+@media (max-width: 559px) {
+  .insights-articles-button:hover,
+  .insights-articles-button:focus-visible,
+  .insights-articles-button:active {
+    transform: translateX(-50%) !important;
+  }
 }
 
 .home-arrow-hover {
