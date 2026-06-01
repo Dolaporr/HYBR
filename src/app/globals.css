@@ -13753,23 +13753,50 @@ body {
 }
 
 .team-network-rings {
-  background: transparent;
-  border: 268px solid #000000;
+  background: #ffffff;
+  border: 2px solid #ffffff;
   border-radius: 50%;
   height: 1494px;
   left: 50%;
   position: absolute;
-  top: -741px;
+  top: -742px;
   transform: translateX(-50%);
   width: 1494px;
+  z-index: 0;
+}
+
+.team-network-rings::before,
+.team-network-rings::after {
+  border-radius: 50%;
+  content: "";
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.team-network-rings::before {
+  background: #000000;
+  border: 2px solid #ffffff;
+  height: 961px;
+  top: 259px;
+  width: 961px;
+}
+
+.team-network-rings::after {
+  background: #ffffff;
+  border: 2px solid #000000;
+  height: 423px;
+  top: 535px;
+  width: 422px;
 }
 
 .team-network-tier {
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-  left: 25px;
+  left: 23px;
   position: absolute;
   text-align: center;
   width: 292px;
+  z-index: 1;
 }
 
 .team-network-tier h3 {
@@ -13788,22 +13815,22 @@ body {
 
 .team-network-tier.is-core {
   color: #000000;
-  top: 32px;
+  top: 31px;
 }
 
 .team-network-tier.is-associates {
   color: #ffffff;
-  top: 267px;
+  top: 266px;
 }
 
 .team-network-tier.is-affiliates {
   color: #000000;
-  top: 556px;
+  top: 555px;
 }
 
 .team-network-tier.is-advisors {
   color: #ffffff;
-  top: 801px;
+  top: 800px;
 }
 
 .team-meet {
@@ -14131,27 +14158,35 @@ body {
     width: 640px;
   }
 
+  .team-network-rings {
+    top: -749px;
+  }
+
   .team-network-tier {
-    left: 50%;
-    transform: translateX(-50%);
+    transform: none;
   }
 
   .team-network-tier.is-core {
-    top: 64px;
+    left: 149px;
+    top: 24px;
+    width: 339px;
   }
 
   .team-network-tier.is-associates {
-    top: 276px;
-    width: 444px;
+    left: 58px;
+    top: 259px;
+    width: 519px;
   }
 
   .team-network-tier.is-affiliates {
-    top: 585px;
-    width: 500px;
+    left: 28px;
+    top: 548px;
+    width: 580px;
   }
 
   .team-network-tier.is-advisors {
-    top: 826px;
+    left: 37px;
+    top: 814px;
     width: 562px;
   }
 
@@ -14324,27 +14359,35 @@ body {
     width: 1040px;
   }
 
+  .team-network-rings {
+    top: -749px;
+  }
+
   .team-network-tier {
-    left: 50%;
-    transform: translateX(-50%);
+    transform: none;
   }
 
   .team-network-tier.is-core {
-    top: 64px;
+    left: 348px;
+    top: 24px;
+    width: 339px;
   }
 
   .team-network-tier.is-associates {
-    top: 276px;
-    width: 444px;
+    left: 258px;
+    top: 259px;
+    width: 519px;
   }
 
   .team-network-tier.is-affiliates {
-    top: 585px;
+    left: 197px;
+    top: 548px;
     width: 642px;
   }
 
   .team-network-tier.is-advisors {
-    top: 826px;
+    left: 57px;
+    top: 814px;
     width: 922px;
   }
 
@@ -14518,31 +14561,35 @@ body {
     width: 1200px;
   }
 
+  .team-network-rings {
+    top: -749px;
+  }
+
   .team-network-tier {
     transform: none;
   }
 
   .team-network-tier.is-core {
-    left: 430px;
-    top: 86px;
+    left: 428px;
+    top: 24px;
     width: 339px;
   }
 
   .team-network-tier.is-associates {
-    left: 341px;
-    top: 336px;
+    left: 338px;
+    top: 259px;
     width: 519px;
   }
 
   .team-network-tier.is-affiliates {
-    left: 279px;
-    top: 612px;
+    left: 277px;
+    top: 548px;
     width: 642px;
   }
 
   .team-network-tier.is-advisors {
-    left: 139px;
-    top: 842px;
+    left: 137px;
+    top: 814px;
     width: 922px;
   }
 
