@@ -8416,12 +8416,13 @@ body {
   font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 700;
-  left: 18px;
+  left: 3px;
   line-height: normal;
   position: absolute;
-  top: 91px;
-  transform: rotate(-90deg);
+  top: 88px;
+  transform: rotate(90deg);
   transform-origin: center;
+  width: 77px;
 }
 
 .articles-content-drop div {
@@ -9270,7 +9271,8 @@ body {
 
   .articles-content-drop {
     height: 132px;
-    right: -308px;
+    left: calc(100vw - 82px);
+    right: auto;
     top: -10px;
     width: 342px;
   }
@@ -9282,8 +9284,9 @@ body {
   .articles-content-drop-label {
     display: block;
     font-size: 16px;
-    left: 22px;
-    top: 62px;
+    left: 1px;
+    top: 56px;
+    width: 81px;
     z-index: 2;
   }
 
