@@ -9275,9 +9275,16 @@ body {
     width: 342px;
   }
 
-  .articles-content-drop div,
-  .articles-content-drop-label {
+  .articles-content-drop div {
     display: none;
+  }
+
+  .articles-content-drop-label {
+    display: block;
+    font-size: 16px;
+    left: 22px;
+    top: 62px;
+    z-index: 2;
   }
 
   .articles-hero {
@@ -9590,10 +9597,16 @@ body {
   }
 
   .articles-what-image {
+    border-radius: 0 1000px 1000px 1000px;
+    clip-path: inset(0 round 0 1000px 1000px 1000px);
     height: 118px;
     left: 0;
     top: 0;
     width: 342px;
+  }
+
+  .articles-what-image img {
+    border-radius: 0 1000px 1000px 1000px;
   }
 
   .articles-what-copy {

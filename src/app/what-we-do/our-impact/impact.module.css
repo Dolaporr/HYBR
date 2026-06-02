@@ -45,9 +45,10 @@
 }
 
 .impactScope :global(.impact-hero) {
-  left: 24px;
+  left: 50%;
   position: absolute;
   top: 187px;
+  transform: translateX(-50%);
   width: 342px;
   z-index: 2;
 }
@@ -145,16 +146,18 @@
   border-radius: 0 1000px 1000px 1000px;
   display: block;
   height: 118px;
-  left: 24px;
+  left: 50%;
   position: absolute;
   top: 700px;
+  transform: translateX(-50%);
   width: 342px;
 }
 
 .impactScope :global(.impact-intro-copy) {
-  left: 24px;
+  left: 50%;
   position: absolute;
   top: 874px;
+  transform: translateX(-50%);
   width: 342px;
 }
 
@@ -181,10 +184,11 @@
 
 .impactScope :global(.impact-globe) {
   height: 342px;
-  left: 24px;
+  left: 50%;
   object-fit: contain;
   position: absolute;
   top: 1354px;
+  transform: translateX(-50%);
   width: 342px;
 }
 
@@ -202,9 +206,10 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  left: 24px;
+  left: 50%;
   position: absolute;
   text-align: center;
+  transform: translateX(-50%);
   width: 342px;
   z-index: 2;
 }
@@ -273,9 +278,10 @@
   display: grid;
   gap: 14.65px;
   grid-template-columns: repeat(3, 104.694px);
-  left: 24px;
+  left: 50%;
   position: absolute;
   top: 2242px;
+  transform: translateX(-50%);
   z-index: 2;
 }
 
@@ -292,9 +298,10 @@
   border-radius: 16px;
   color: #ffffff;
   height: 386px;
-  left: 24px;
+  left: 50%;
   overflow: hidden;
   position: absolute;
+  transform: translateX(-50%);
   width: 342px;
   z-index: 2;
 }
@@ -304,12 +311,10 @@
 }
 
 .impactScope :global(.impact-case-card.is-work-one) {
-  left: 18px;
   top: 4032px;
 }
 
 .impactScope :global(.impact-case-card.is-work-two) {
-  left: 18px;
   top: 4458px;
 }
 
@@ -397,9 +402,10 @@
 }
 
 .impactScope :global(.impact-work-heading) {
-  left: 24px;
+  left: 50%;
   position: absolute;
   top: 3848px;
+  transform: translateX(-50%);
   width: 342px;
   z-index: 2;
 }
@@ -428,9 +434,10 @@
 }
 
 .impactScope :global(.impact-button.is-all) {
-  left: 74px;
+  left: 50%;
   position: absolute;
   top: 4884px;
+  transform: translateX(-50%);
 }
 
 @media (min-width: 560px) and (max-width: 1023px) {
@@ -442,6 +449,7 @@
   .impactScope :global(.impact-hero) {
     left: 80px;
     top: 240px;
+    transform: none;
     width: 640px;
   }
 
@@ -480,12 +488,14 @@
     height: 248px;
     left: 80px;
     top: 712px;
+    transform: none;
     width: 640px;
   }
 
   .impactScope :global(.impact-intro-copy) {
     left: 80px;
     top: 1040px;
+    transform: none;
     width: 640px;
   }
 
@@ -504,6 +514,7 @@
     height: 508px;
     left: 226px;
     top: 1502px;
+    transform: none;
     width: 508px;
   }
 
@@ -514,6 +525,7 @@
 
   .impactScope :global(.impact-metric) {
     left: 80px;
+    transform: none;
     width: 640px;
   }
 
@@ -550,6 +562,7 @@
     grid-template-columns: repeat(3, 195.919px);
     left: 80px;
     top: 2699px;
+    transform: none;
   }
 
   .impactScope :global(.impact-trusted-grid span) {
@@ -560,6 +573,7 @@
   .impactScope :global(.impact-case-card) {
     height: 258px;
     left: 80px;
+    transform: none;
     width: 640px;
   }
 
@@ -636,6 +650,7 @@
   .impactScope :global(.impact-work-heading) {
     left: 80px;
     top: 4862px;
+    transform: none;
     width: 640px;
   }
 
@@ -655,6 +670,7 @@
   .impactScope :global(.impact-hero) {
     left: 120px;
     top: 240px;
+    transform: none;
     width: 520px;
   }
 
@@ -703,6 +719,7 @@
     right: 120px;
     text-align: right;
     top: 697px;
+    transform: none;
     width: 588px;
   }
 
@@ -721,6 +738,7 @@
     height: 508px;
     left: 652px;
     top: 1232px;
+    transform: none;
     width: 508px;
   }
 
@@ -733,6 +751,7 @@
     align-items: flex-start;
     left: 120px;
     text-align: left;
+    transform: none;
     width: 508px;
   }
 
@@ -773,6 +792,7 @@
     grid-template-columns: repeat(3, 155.51px);
     left: 652px;
     top: 2172px;
+    transform: none;
   }
 
   .impactScope :global(.impact-trusted-grid span) {
@@ -782,6 +802,7 @@
 
   .impactScope :global(.impact-case-card) {
     height: 308px;
+    transform: none;
     width: 508px;
   }
 
@@ -856,6 +877,7 @@
   .impactScope :global(.impact-work-heading) {
     left: 120px;
     top: 3635px;
+    transform: none;
     width: 798px;
   }
 
@@ -872,6 +894,7 @@
   .impactScope :global(.impact-button.is-all) {
     left: 495px;
     top: 4129px;
+    transform: none;
   }
 }
 
@@ -884,6 +907,7 @@
   .impactScope :global(.impact-hero) {
     left: 120px;
     top: 243px;
+    transform: none;
     width: 792px;
   }
 
@@ -937,6 +961,7 @@
     right: 120px;
     text-align: right;
     top: 681px;
+    transform: none;
     width: 612px;
   }
 
@@ -955,6 +980,7 @@
     height: 588px;
     left: 732px;
     top: 1250px;
+    transform: none;
     width: 588px;
   }
 
@@ -968,6 +994,7 @@
     gap: 16px;
     left: 120px;
     text-align: left;
+    transform: none;
     width: 588px;
   }
 
@@ -1019,6 +1046,7 @@
     grid-template-columns: repeat(3, 180px);
     left: 732px;
     top: 2288px;
+    transform: none;
   }
 
   .impactScope :global(.impact-trusted-grid span) {
@@ -1029,6 +1057,7 @@
   .impactScope :global(.impact-case-card) {
     border-radius: 16px;
     height: 372px;
+    transform: none;
     width: 588px;
   }
 

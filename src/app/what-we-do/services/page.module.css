@@ -195,25 +195,42 @@
 }
 
 .servicesScope :global(.services-process-arrow) {
+  display: block;
+  max-width: none;
+  pointer-events: none;
   position: absolute;
 }
 
+.servicesScope :global(.services-process-arrow--desktop) {
+  display: none;
+}
+
 .servicesScope :global(.services-process-arrow.is-first) {
-  color: #ffffff;
-  height: 134px;
-  left: 71px;
-  top: 63px;
-  transform: rotate(56deg);
-  width: 118px;
+  height: 59.082px;
+  left: 52.85px;
+  top: 67.428px;
+  transform: rotate(55.8deg) scaleY(-1);
+  transform-origin: center;
+  width: 122.204px;
 }
 
 .servicesScope :global(.services-process-arrow.is-second) {
-  color: #ffffff;
-  height: 114px;
-  left: 112px;
-  top: 222px;
-  transform: rotate(139deg);
-  width: 113px;
+  height: 87.403px;
+  left: 30.48px;
+  top: 186.447px;
+  transform: rotate(139.12deg);
+  transform-origin: center;
+  width: 73.217px;
+}
+
+@media (min-width: 560px) {
+  .servicesScope :global(.services-process-arrow--mobile) {
+    display: none;
+  }
+
+  .servicesScope :global(.services-process-arrow--desktop) {
+    display: block;
+  }
 }
 
 .servicesScope :global(.services-service) {
@@ -429,6 +446,7 @@
 }
 
 .servicesScope :global(.services-testimonial-inner) {
+  animation: servicesTestimonialFade .35s ease both;
   height: 478px;
   left: 56px;
   position: absolute;
@@ -518,22 +536,41 @@
 .servicesScope :global(.services-carousel-dots) {
   display: flex;
   gap: 6px;
-  left: 125px;
+  left: 50%;
   position: absolute;
   top: 674px;
-  width: 93px;
+  transform: translateX(-50%);
+  width: max-content;
 }
 
-.servicesScope :global(.services-carousel-dots span) {
+.servicesScope :global(.services-carousel-dots span),
+.servicesScope :global(.services-carousel-dots button) {
+  appearance: none;
   background: #d9d9d9;
+  border: 0;
   border-radius: 50%;
   display: block;
   height: 8px;
+  padding: 0;
   width: 8px;
+}
+
+.servicesScope :global(.services-carousel-dots button) {
+  cursor: pointer;
 }
 
 .servicesScope :global(.services-carousel-dots .is-active) {
   background: #8dc540;
+}
+
+@keyframes servicesTestimonialFade {
+  from {
+    opacity: .65;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .servicesScope :global(.services-talk-button) {
@@ -628,19 +665,19 @@
   }
 
   .servicesScope :global(.services-process-arrow.is-first) {
-    height: 134px;
-    left: 112px;
+    height: 108px;
+    left: 92px;
     top: 63px;
-    transform: rotate(-124deg) scaleX(-1);
-    width: 128px;
+    transform: none;
+    width: 82px;
   }
 
   .servicesScope :global(.services-process-arrow.is-second) {
-    height: 96px;
-    left: 311px;
+    height: 86px;
+    left: 282px;
     top: 110px;
-    transform: rotate(8deg);
-    width: 92px;
+    transform: none;
+    width: 86px;
   }
 
   .servicesScope :global(.services-service) {
@@ -796,7 +833,7 @@
   }
 
   .servicesScope :global(.services-carousel-dots) {
-    left: 346px;
+    left: 50%;
     top: 466px;
   }
 
@@ -894,19 +931,19 @@
   }
 
   .servicesScope :global(.services-process-arrow.is-first) {
-    height: 134px;
-    left: 112px;
+    height: 108px;
+    left: 103px;
     top: 63px;
-    transform: rotate(-124deg) scaleX(-1);
-    width: 128px;
+    transform: none;
+    width: 82px;
   }
 
   .servicesScope :global(.services-process-arrow.is-second) {
-    height: 96px;
-    left: 311px;
+    height: 86px;
+    left: 302px;
     top: 110px;
-    transform: rotate(8deg);
-    width: 92px;
+    transform: none;
+    width: 86px;
   }
 
   .servicesScope :global(.services-service) {
@@ -1077,7 +1114,7 @@
   }
 
   .servicesScope :global(.services-carousel-dots) {
-    left: 562px;
+    left: 50%;
     top: 392px;
   }
 
@@ -1174,19 +1211,19 @@
   }
 
   .servicesScope :global(.services-process-arrow.is-first) {
-    height: 134px;
+    height: 108px;
     left: 103px;
     top: 63px;
-    transform: rotate(-124deg) scaleX(-1);
-    width: 118px;
+    transform: none;
+    width: 82px;
   }
 
   .servicesScope :global(.services-process-arrow.is-second) {
-    height: 96px;
+    height: 86px;
     left: 313px;
     top: 110px;
-    transform: rotate(8deg);
-    width: 84px;
+    transform: none;
+    width: 86px;
   }
 
   .servicesScope :global(.services-service) {
@@ -1353,7 +1390,7 @@
   }
 
   .servicesScope :global(.services-carousel-dots) {
-    left: 642px;
+    left: 50%;
     top: 383px;
   }
 

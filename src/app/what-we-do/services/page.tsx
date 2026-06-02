@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { figmaAssets } from "@/content/site";
 import { Footer, Header } from "../../_components/marketing";
 import styles from "./page.module.css";
+import { ServicesTestimonials, type ServiceTestimonial } from "./ServicesTestimonials";
 
 const contentLinks = [
   { label: "HYBR's Impact", href: "/what-we-do/our-impact" },
@@ -47,6 +48,36 @@ const services = [
     ],
   },
 ] as const;
+
+const serviceTestimonials: ServiceTestimonial[] = [
+  {
+    id: "first",
+    avatar: figmaAssets.servicesTestimonialAvatar,
+    background: figmaAssets.servicesTestimonialBg,
+    name: "FirstName LastName",
+    quote:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dignissim fringilla feugiat. Praesent sed condimentum nulla. Praesent lacinia eleifend turpis, sit amet dignissim massa accumsan in.",
+    role: "Title/Role | Location",
+  },
+  {
+    id: "second",
+    avatar: figmaAssets.servicesTestimonialAvatar,
+    background: figmaAssets.servicesTestimonialBg,
+    name: "SecondName LastName",
+    quote:
+      "HYBR helped our team move from scattered ideas to a focused innovation roadmap, giving us the confidence to test, learn, and scale with clearer direction.",
+    role: "Title/Role | Location",
+  },
+  {
+    id: "third",
+    avatar: figmaAssets.servicesTestimonialAvatar,
+    background: figmaAssets.servicesTestimonialBg,
+    name: "ThirdName LastName",
+    quote:
+      "The collaboration gave us practical structure, stronger decisions, and a sharper path from discovery to deployment across the work that mattered most.",
+    role: "Title/Role | Location",
+  },
+];
 
 function ButtonLink({
   children,
@@ -100,14 +131,26 @@ function ProcessMap() {
       <span className="services-process-word is-discover">Discover</span>
       <span className="services-process-word is-develop">Develop</span>
       <span className="services-process-word is-deploy">Deploy</span>
-      <svg className="services-process-arrow is-first" fill="none" viewBox="0 0 128 136">
-        <path d="M103 13C67 30 44 57 33 111" stroke="currentColor" strokeLinecap="round" strokeWidth="4" />
-        <path d="M19 91L33 116L55 96" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" />
-      </svg>
-      <svg className="services-process-arrow is-second" fill="none" viewBox="0 0 104 112">
-        <path d="M18 17C60 29 82 55 88 91" stroke="currentColor" strokeLinecap="round" strokeWidth="4" />
-        <path d="M70 82L89 96L99 73" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" />
-      </svg>
+      <img
+        alt=""
+        className="services-process-arrow services-process-arrow--mobile is-first"
+        src="/what/services-vectors/process-mobile-first.svg"
+      />
+      <img
+        alt=""
+        className="services-process-arrow services-process-arrow--mobile is-second"
+        src="/what/services-vectors/process-mobile-second.svg"
+      />
+      <img
+        alt=""
+        className="services-process-arrow services-process-arrow--desktop is-first"
+        src="/what/vectors/service-arrow-down.svg"
+      />
+      <img
+        alt=""
+        className="services-process-arrow services-process-arrow--desktop is-second"
+        src="/what/vectors/service-arrow-loop.svg"
+      />
     </div>
   );
 }
@@ -154,67 +197,6 @@ function ServiceSection({ service }: { service: (typeof services)[number] }) {
   );
 }
 
-function ArrowButton({ direction }: { direction: "left" | "right" }) {
-  return (
-    <button
-      aria-label={`${direction === "left" ? "Previous" : "Next"} testimonial`}
-      className={`services-carousel-arrow is-${direction}`}
-      type="button"
-    >
-      <svg aria-hidden="true" fill="none" viewBox="0 0 64 64">
-        {direction === "left" ? (
-          <path d="M39 18L25 32L39 46" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" />
-        ) : (
-          <path d="M25 18L39 32L25 46" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" />
-        )}
-      </svg>
-    </button>
-  );
-}
-
-function CarouselDots() {
-  return (
-    <div aria-hidden="true" className="services-carousel-dots">
-      <span />
-      <span className="is-active" />
-      <span />
-    </div>
-  );
-}
-
-function TestimonialCard() {
-  return (
-    <section aria-label="Client testimonial carousel" className="services-testimonial-card">
-      <span
-        aria-hidden="true"
-        className="services-testimonial-bg"
-        style={{ backgroundImage: `url(${figmaAssets.servicesTestimonialBg})` }}
-      />
-      <div className="services-testimonial-inner">
-        <div className="services-testimonial-avatar">
-          <span />
-          <img alt="" src={figmaAssets.servicesTestimonialAvatar} />
-        </div>
-        <div className="services-testimonial-copy">
-          <p>
-            &ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-            dignissim fringilla feugiat. Praesent sed condimentum nulla.
-            Praesent lacinia eleifend turpis, sit amet dignissim massa accumsan
-            in.&rdquo;
-          </p>
-          <div>
-            <strong>FirstName LastName</strong>
-            <span>Title/Role | Location</span>
-          </div>
-        </div>
-      </div>
-      <ArrowButton direction="left" />
-      <ArrowButton direction="right" />
-      <CarouselDots />
-    </section>
-  );
-}
-
 export default function ServicesPage() {
   return (
     <main className={`${styles.servicesScope} services-page`}>
@@ -251,7 +233,7 @@ export default function ServicesPage() {
           <span>These testimonials reflect the trust and confidence that come from our partnerships.</span>
         </section>
 
-        <TestimonialCard />
+        <ServicesTestimonials testimonials={serviceTestimonials} />
 
         <ButtonLink className="services-talk-button" href="/contact">
           Let&apos;s Talk
