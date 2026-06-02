@@ -42,7 +42,29 @@ const whyCards = [
   },
 ];
 
-const benefitIcons = ["clock", "calendar", "certificate", "cursor", "heart", "coins", "globe"];
+const iconAssets: Record<string, string> = {
+  bag: "/careers/icons/bag.svg",
+  palette: "/careers/icons/palette.svg",
+  trend: "/careers/icons/trend-up.svg",
+  mask: "/careers/icons/mask-happy.svg",
+  "clock-user": "/careers/icons/clock-user.svg",
+  "calendar-dots": "/careers/icons/calendar-dots.svg",
+  certificate: "/careers/icons/certificate.svg",
+  "cursor-click": "/careers/icons/cursor-click.svg",
+  "hand-heart": "/careers/icons/hand-heart.svg",
+  "hand-coins": "/careers/icons/hand-coins.svg",
+  "globe-hemisphere-east": "/careers/icons/globe-hemisphere-east.svg",
+};
+
+const benefitIcons = [
+  "clock-user",
+  "calendar-dots",
+  "certificate",
+  "cursor-click",
+  "hand-heart",
+  "hand-coins",
+  "globe-hemisphere-east",
+];
 
 const roles = Array.from({ length: 5 }, (_, index) => ({
   id: index + 1,
@@ -51,117 +73,11 @@ const roles = Array.from({ length: 5 }, (_, index) => ({
 }));
 
 function FigmaIcon({ type, className = "" }: { type: string; className?: string }) {
-  const common = {
-    className,
-    fill: "none",
-    viewBox: "0 0 80 80",
-    "aria-hidden": true,
-  };
-
-  if (type === "bag") {
-    return (
-      <svg {...common}>
-        <path d="M25 30V24C25 18.5 29.5 14 35 14H45C50.5 14 55 18.5 55 24V30" stroke="currentColor" strokeWidth="5" strokeLinecap="round" />
-        <path d="M18 30H62V60C62 64.4 58.4 68 54 68H26C21.6 68 18 64.4 18 60V30Z" stroke="currentColor" strokeWidth="5" />
-        <path d="M18 42H62" stroke="currentColor" strokeWidth="5" />
-      </svg>
-    );
-  }
-
-  if (type === "palette") {
-    return (
-      <svg {...common}>
-        <path d="M40 13C24.5 13 12 24.3 12 38.2C12 51.2 22.6 62 36.2 62H42C45.5 62 48 59.3 48 56.2C48 54.7 47.5 53.3 46.6 52.2C45.9 51.3 45.8 50.1 46.4 49.1C47 48.1 48 47.5 49.2 47.5H53.5C62 47.5 68 40.9 68 33.2C68 22 55.6 13 40 13Z" stroke="currentColor" strokeWidth="5" strokeLinejoin="round" />
-        <circle cx="27" cy="35" r="3" fill="currentColor" />
-        <circle cx="36" cy="27" r="3" fill="currentColor" />
-        <circle cx="48" cy="27" r="3" fill="currentColor" />
-        <circle cx="55" cy="37" r="3" fill="currentColor" />
-      </svg>
-    );
-  }
-
-  if (type === "trend") {
-    return (
-      <svg {...common}>
-        <path d="M14 56L32 38L44 50L66 28" stroke="currentColor" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M50 28H66V44" stroke="currentColor" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    );
-  }
-
-  if (type === "mask") {
-    return (
-      <svg {...common}>
-        <path d="M15 25C25 18 34 18 40 25C46 18 55 18 65 25V42C65 55 55 65 44 65C38 65 33 62.2 30 58C27 62.2 22 65 16 65C15.3 65 15 64.7 15 64V25Z" stroke="currentColor" strokeWidth="5" strokeLinejoin="round" />
-        <path d="M25 40H34M46 40H55M22 51C25 54 29 55 34 54M46 54C51 55 55 54 58 51" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-      </svg>
-    );
-  }
-
-  if (type === "clock") {
-    return (
-      <svg {...common}>
-        <circle cx="37" cy="38" r="22" stroke="currentColor" strokeWidth="5" />
-        <path d="M37 26V40L47 47" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx="58" cy="56" r="10" fill="#ffffff" stroke="currentColor" strokeWidth="5" />
-      </svg>
-    );
-  }
-
-  if (type === "calendar") {
-    return (
-      <svg {...common}>
-        <path d="M19 20H61C64.3 20 67 22.7 67 26V61C67 64.3 64.3 67 61 67H19C15.7 67 13 64.3 13 61V26C13 22.7 15.7 20 19 20Z" stroke="currentColor" strokeWidth="5" />
-        <path d="M26 13V27M54 13V27M13 35H67" stroke="currentColor" strokeWidth="5" strokeLinecap="round" />
-        <circle cx="29" cy="47" r="3" fill="currentColor" />
-        <circle cx="40" cy="47" r="3" fill="currentColor" />
-        <circle cx="51" cy="47" r="3" fill="currentColor" />
-      </svg>
-    );
-  }
-
-  if (type === "certificate") {
-    return (
-      <svg {...common}>
-        <path d="M18 17H62V56H18V17Z" stroke="currentColor" strokeWidth="5" />
-        <path d="M27 29H53M27 40H45" stroke="currentColor" strokeWidth="5" strokeLinecap="round" />
-        <path d="M36 56L29 69L40 64L51 69L44 56" stroke="currentColor" strokeWidth="5" strokeLinejoin="round" />
-      </svg>
-    );
-  }
-
-  if (type === "cursor") {
-    return (
-      <svg {...common}>
-        <path d="M20 14L58 52L43 55L35 70L20 14Z" stroke="currentColor" strokeWidth="5" strokeLinejoin="round" />
-        <path d="M46 46L62 62" stroke="currentColor" strokeWidth="5" strokeLinecap="round" />
-      </svg>
-    );
-  }
-
-  if (type === "heart") {
-    return (
-      <svg {...common}>
-        <path d="M17 39C17 29 25 22 34 27C37 28.7 39 31.6 40 34C41 31.6 43 28.7 46 27C55 22 63 29 63 39C63 52 46 62 40 67C34 62 17 52 17 39Z" stroke="currentColor" strokeWidth="5" strokeLinejoin="round" />
-        <path d="M13 58H27L37 66H51" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    );
-  }
-
-  if (type === "coins") {
-    return (
-      <svg {...common}>
-        <ellipse cx="40" cy="24" rx="21" ry="10" stroke="currentColor" strokeWidth="5" />
-        <path d="M19 24V48C19 53.5 28.4 58 40 58C51.6 58 61 53.5 61 48V24M19 36C19 41.5 28.4 46 40 46C51.6 46 61 41.5 61 36" stroke="currentColor" strokeWidth="5" />
-      </svg>
-    );
-  }
-
+  const src = iconAssets[type] ?? iconAssets["globe-hemisphere-east"];
   return (
-    <svg {...common}>
-      <circle cx="40" cy="40" r="27" stroke="currentColor" strokeWidth="5" />
-      <path d="M13 40H67M40 13C48 21 52 30 52 40C52 50 48 59 40 67C32 59 28 50 28 40C28 30 32 21 40 13Z" stroke="currentColor" strokeWidth="5" strokeLinejoin="round" />
-    </svg>
+    <span aria-hidden="true" className={`careers-vector-icon careers-vector-icon--${type} ${className}`}>
+      <img alt="" src={src} />
+    </span>
   );
 }
 

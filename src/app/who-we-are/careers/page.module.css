@@ -5,9 +5,10 @@
 }
 
 .careersScope :global(.careers-frame) {
+  --careers-mobile-gutter: max(16px, calc((100% - 342px) / 2));
   background: #ffffff;
   height: 9270px;
-  margin-inline: 0;
+  margin-inline: auto;
   max-width: 390px;
   overflow: hidden;
   position: relative;
@@ -22,7 +23,7 @@
 }
 
 .careersScope :global(.careers-hero) {
-  left: 24px;
+  left: var(--careers-mobile-gutter);
   position: absolute;
   top: 187px;
   width: 300px;
@@ -112,8 +113,8 @@
 
 .careersScope :global(.careers-image-pill) {
   background-color: #000000;
-  background-position: center;
-  background-size: cover;
+  background-position: center -10px;
+  background-size: 100% auto;
   border: 2px solid #000000;
   overflow: hidden;
   position: absolute;
@@ -127,15 +128,15 @@
 }
 
 .careersScope :global(.careers-working-image) {
-  border-radius: 1000px;
+  border-radius: 1000px 0 1000px 1000px;
   height: 118px;
-  left: 24px;
+  left: var(--careers-mobile-gutter);
   top: 438px;
   width: 342px;
 }
 
 .careersScope :global(.careers-working) {
-  left: 24px;
+  left: var(--careers-mobile-gutter);
   position: absolute;
   top: 612px;
   width: 342px;
@@ -174,7 +175,7 @@
 .careersScope :global(.careers-benefits),
 .careersScope :global(.careers-fellowship),
 .careersScope :global(.careers-open) {
-  left: 24px;
+  left: var(--careers-mobile-gutter);
   position: absolute;
   width: 342px;
 }
@@ -201,7 +202,7 @@
   flex-direction: column;
   gap: 8px;
   justify-content: center;
-  left: 24px;
+  left: var(--careers-mobile-gutter);
   padding: 40px 32px;
   position: absolute;
   width: 342px;
@@ -214,10 +215,66 @@
 }
 
 .careersScope :global(.careers-card-icon) {
-  color: #ffffff;
   flex: 0 0 32px;
   height: 32px;
+  --fill-0: #cbe4a7;
   width: 32px;
+}
+
+.careersScope :global(.careers-vector-icon) {
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+}
+
+.careersScope :global(.careers-vector-icon img) {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.careersScope :global(.careers-vector-icon--bag) {
+  padding: 6.25% 9.38% 15.63%;
+}
+
+.careersScope :global(.careers-vector-icon--palette) {
+  padding: 9.37% 9.37% 12.5% 9.38%;
+}
+
+.careersScope :global(.careers-vector-icon--trend) {
+  padding: 18.75% 6.25% 25%;
+}
+
+.careersScope :global(.careers-vector-icon--mask) {
+  padding: 12.5% 12.5% 6.27%;
+}
+
+.careersScope :global(.careers-vector-icon--clock-user) {
+  padding: 9.37% 9.36% 9.32% 9.37%;
+}
+
+.careersScope :global(.careers-vector-icon--calendar-dots) {
+  padding: 6.25% 12.5% 12.5%;
+}
+
+.careersScope :global(.careers-vector-icon--certificate) {
+  padding: 15.63% 3.13% 9.35% 9.38%;
+}
+
+.careersScope :global(.careers-vector-icon--cursor-click) {
+  padding: 3.12% 12.5% 12.5% 3.12%;
+}
+
+.careersScope :global(.careers-vector-icon--hand-heart) {
+  padding: 12.5% 6.23% 15.62% 0;
+}
+
+.careersScope :global(.careers-vector-icon--hand-coins) {
+  padding: 9.37% 6.23% 15.63% 0;
+}
+
+.careersScope :global(.careers-vector-icon--globe-hemisphere-east) {
+  padding: 9.38% 9.38% 9.37% 9.37%;
 }
 
 .careersScope :global(.careers-why-card h3) {
@@ -266,7 +323,7 @@
   display: flex;
   height: 237px;
   justify-content: center;
-  left: 24px;
+  left: var(--careers-mobile-gutter);
   overflow: hidden;
   position: absolute;
   top: 2218px;
@@ -313,7 +370,7 @@
   border: 2px solid #000000;
   border-radius: 16px;
   height: 634px;
-  left: 24px;
+  left: var(--careers-mobile-gutter);
   overflow: hidden;
   position: absolute;
   top: 2797px;
@@ -444,9 +501,10 @@
   display: grid;
   gap: 54px;
   grid-template-columns: 180px;
-  left: 105px;
+  left: 50%;
   position: absolute;
   top: 3810px;
+  transform: translateX(-50%);
   width: 180px;
 }
 
@@ -457,9 +515,9 @@
 }
 
 .careersScope :global(.careers-benefit-icon) {
-  color: #8dc540;
   height: 80px;
   margin: 0 auto 16px;
+  --fill-0: #8dc540;
   width: 80px;
 }
 
@@ -480,9 +538,9 @@
 }
 
 .careersScope :global(.careers-fellowship-image) {
-  border-radius: 1000px;
+  border-radius: 1000px 0 1000px 1000px;
   height: 118px;
-  left: 24px;
+  left: var(--careers-mobile-gutter);
   top: 5431px;
   width: 342px;
 }
@@ -531,7 +589,7 @@
   overflow: hidden;
   position: absolute;
   top: 6139px;
-  width: 390px;
+  width: 100%;
 }
 
 .careersScope :global(.careers-internship::after) {
@@ -559,7 +617,7 @@
 }
 
 .careersScope :global(.careers-internship div) {
-  left: 40px;
+  left: max(24px, calc((100% - 310px) / 2));
   text-align: center;
   top: 165px;
   width: 310px;
@@ -587,7 +645,7 @@
 }
 
 .careersScope :global(.careers-roles-list) {
-  left: 24px;
+  left: var(--careers-mobile-gutter);
   position: absolute;
   top: 7243px;
   width: 342px;
@@ -647,7 +705,7 @@
   overflow: hidden;
   position: absolute;
   top: 8519px;
-  width: 390px;
+  width: 100%;
 }
 
 .careersScope :global(.careers-newsletter::before) {
@@ -673,7 +731,7 @@
 }
 
 .careersScope :global(.careers-newsletter-copy) {
-  left: 24px;
+  left: var(--careers-mobile-gutter);
   top: 56px;
   width: 342px;
 }
@@ -695,7 +753,7 @@
   display: flex;
   flex-direction: column;
   gap: 42px;
-  left: 24px;
+  left: var(--careers-mobile-gutter);
   top: 340px;
   width: 342px;
 }
@@ -732,6 +790,13 @@
   height: 56px;
   justify-content: center;
   padding: 16px 32px;
+}
+
+@media (min-width: 560px) {
+  .careersScope :global(.careers-image-pill) {
+    background-position: center;
+    background-size: cover;
+  }
 }
 
 @media (min-width: 560px) and (max-width: 1023px) {
@@ -928,9 +993,10 @@
   .careersScope :global(.careers-benefits-grid) {
     column-gap: 24px;
     grid-template-columns: repeat(4, 142px);
-    left: 80px;
+    left: 50%;
     row-gap: 32px;
     top: 3943px;
+    transform: translateX(-50%);
     width: 640px;
   }
 
@@ -1162,24 +1228,28 @@
   }
 
   .careersScope :global(.careers-why-card.is-purpose) {
+    height: 237px;
     left: 120px;
     top: 1229px;
     width: 508px;
   }
 
   .careersScope :global(.careers-why-card.is-curiosity) {
+    height: 237px;
     left: 652px;
     top: 1229px;
     width: 508px;
   }
 
   .careersScope :global(.careers-why-card.is-growth) {
+    height: 237px;
     left: 120px;
     top: 1498px;
     width: 375px;
   }
 
   .careersScope :global(.careers-why-card.is-boring) {
+    height: 237px;
     left: 519px;
     top: 1498px;
     width: 641px;
@@ -1256,9 +1326,10 @@
   .careersScope :global(.careers-benefits-grid) {
     column-gap: 35px;
     grid-template-columns: repeat(5, 180px);
-    left: 120px;
+    left: 50%;
     row-gap: 54px;
     top: 3192px;
+    transform: translateX(-50%);
     width: 1040px;
   }
 
@@ -1268,10 +1339,12 @@
 
   .careersScope :global(.careers-benefit:nth-child(6)) {
     grid-column: 2;
+    transform: translateX(102px);
   }
 
   .careersScope :global(.careers-benefit:nth-child(7)) {
     grid-column: 3;
+    transform: translateX(102px);
   }
 
   .careersScope :global(.careers-fellowship-image) {
@@ -1504,24 +1577,28 @@
   }
 
   .careersScope :global(.careers-why-card.is-purpose) {
+    height: 237px;
     left: 120px;
     top: 1423px;
     width: 384px;
   }
 
   .careersScope :global(.careers-why-card.is-curiosity) {
+    height: 237px;
     left: 528px;
     top: 1423px;
     width: 384px;
   }
 
   .careersScope :global(.careers-why-card.is-growth) {
+    height: 237px;
     left: 936px;
     top: 1423px;
     width: 384px;
   }
 
   .careersScope :global(.careers-why-card.is-boring) {
+    height: 237px;
     left: 120px;
     top: 1700px;
     width: 588px;
@@ -1598,9 +1675,10 @@
   .careersScope :global(.careers-benefits-grid) {
     column-gap: 24px;
     grid-template-columns: repeat(5, 180px);
-    left: 222px;
+    left: 50%;
     row-gap: 54px;
     top: 3274px;
+    transform: translateX(-50%);
     width: 996px;
   }
 
@@ -1610,10 +1688,12 @@
 
   .careersScope :global(.careers-benefit:nth-child(6)) {
     grid-column: 2;
+    transform: translateX(102px);
   }
 
   .careersScope :global(.careers-benefit:nth-child(7)) {
     grid-column: 3;
+    transform: translateX(102px);
   }
 
   .careersScope :global(.careers-fellowship-image) {
