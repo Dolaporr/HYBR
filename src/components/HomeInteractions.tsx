@@ -45,6 +45,7 @@ const contentDropSelector = [
   ".news-content-drop",
   ".who-content-drop",
   ".team-content-drop",
+  ".team-tier-drop",
   ".about-content-drop",
   ".what-content-drop",
   ".services-content-drop",
