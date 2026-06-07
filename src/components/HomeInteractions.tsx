@@ -7,6 +7,7 @@ const figmaLockedPageFilters = [
   ".what-page",
   ".services-page",
   ".work-page",
+  ".impact-page",
   ".who-page",
   ".about-page",
   ".team-page",

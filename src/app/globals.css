@@ -6587,7 +6587,7 @@ body {
   .insights-hero-copy {
     left: 24px;
     top: 187px;
-    width: calc(100vw - 48px);
+    width: min(278px, calc(100vw - 112px));
   }
 
   .insights-hero-copy h1 {
@@ -6598,7 +6598,7 @@ body {
   .insights-hero-copy p {
     font-size: 16px;
     line-height: 20px;
-    width: calc(100vw - 48px);
+    width: 100%;
   }
 
   .insights-content-drop {
@@ -7695,7 +7695,7 @@ body {
   display: grid;
   gap: 32px 24px;
   grid-template-columns: 690px 486px;
-  grid-template-rows: 211px 386px;
+  grid-template-rows: 252px 712px;
   margin-top: 180px;
 }
 
@@ -7746,7 +7746,7 @@ body {
 
 .webinars-more-card--tall {
   grid-column: 2;
-  grid-row: 1 / span 2;
+  grid-row: 2;
   height: 712px;
 }
 
@@ -7820,7 +7820,8 @@ body {
 }
 
 .webinars-more-card--tall .webinars-more-button {
-  top: 32px;
+  bottom: 32px;
+  top: auto;
 }
 
 @media (min-width: 1024px) and (max-width: 1359px) {
@@ -7908,9 +7909,9 @@ body {
   }
 
   .webinars-more {
-    gap: 71px 24px;
+    gap: 40px 24px;
     grid-template-columns: 508px 508px;
-    grid-template-rows: 184px 386px;
+    grid-template-rows: 216px 641px;
     margin-top: 252px;
   }
 
@@ -8355,7 +8356,8 @@ body {
   }
 
   .webinars-more-card--tall .webinars-more-button {
-    top: 32px;
+    bottom: 32px;
+    top: auto;
   }
 
   .webinars-more-action {
@@ -10929,10 +10931,18 @@ body {
   }
 
   .news-what-image {
+    border-radius: 0 1000px 1000px 1000px;
+    clip-path: inset(0 round 0 1000px 1000px 1000px);
     height: 118px;
     left: 0;
     top: 0;
     width: 342px;
+  }
+
+  .news-what-image img {
+    border-radius: 0 1000px 1000px 1000px;
+    height: 228.028px;
+    inset: -10px 0 auto;
   }
 
   .news-what-copy {
@@ -16554,6 +16564,12 @@ body {
   flex: 0 0 auto;
 }
 
+.home-footer .hybr-button--white {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #000000;
+}
+
 .home-footer-bottom {
   position: relative;
 }
@@ -16692,6 +16708,7 @@ body {
 .about-frame {
   background: #ffffff;
   color: #000000;
+  margin-inline: auto;
   max-width: var(--figma-desktop);
   overflow: hidden;
   position: relative;
@@ -16702,7 +16719,7 @@ body {
   box-sizing: border-box;
 }
 
-.about-frame a {
+.about-frame a:not(.hybr-button):not(.about-button) {
   color: inherit;
 }
 
@@ -16749,12 +16766,14 @@ body {
 }
 
 .about-content-drop > img {
-  height: 100%;
-  inset: 0;
+  height: auto;
+  left: -16px;
+  max-width: none;
   object-fit: cover;
   opacity: 0.5;
   position: absolute;
-  width: 100%;
+  top: -10px;
+  width: calc(100% + 22px);
 }
 
 .about-content-drop > p {
@@ -16762,15 +16781,16 @@ body {
   font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 700;
-  left: 31px;
+  left: 42px;
   line-height: normal;
   margin: 0;
   position: absolute;
   text-align: center;
-  top: 97px;
-  transform: rotate(-90deg);
-  transform-origin: left top;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  transform-origin: center;
   white-space: nowrap;
+  width: 77px;
 }
 
 .about-content-drop nav {
@@ -16858,7 +16878,9 @@ body {
 .about-early-card > img,
 .about-history-media img,
 .about-value-bg {
+  display: block;
   height: 100%;
+  max-width: none;
   object-fit: cover;
   position: absolute;
   width: 100%;
@@ -16872,16 +16894,19 @@ body {
 
 .about-play-button {
   height: 104px;
-  left: calc(50% + 104px);
+  left: 50%;
   position: absolute;
   top: calc(50% - 1px);
   transform: translate(-50%, -50%);
   width: 104px;
+  z-index: 2;
 }
 
 .about-play-button img {
   height: 100%;
+  max-width: none;
   object-fit: contain;
+  transform: rotate(90deg);
   width: 100%;
 }
 
@@ -17570,8 +17595,9 @@ body {
   .about-content-drop > p {
     font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
     font-weight: 600;
-    left: 34px;
-    top: 118px;
+    left: 42px;
+    top: 50%;
+    width: 81px;
   }
 
   .about-content-drop nav {
@@ -17600,7 +17626,7 @@ body {
 
   .about-play-button {
     height: 48px;
-    left: calc(100% - 16px);
+    left: calc(50% + 107px);
     top: 64px;
     width: 48px;
   }
@@ -17677,8 +17703,16 @@ body {
   .about-history-card .about-button {
     bottom: 59px;
     font-size: 20px;
+    left: 50%;
     min-height: 61px;
-    right: 49px;
+    right: auto;
+    transform: translateX(-50%);
+  }
+
+  .about-history-card .about-button:hover,
+  .about-history-card .about-button:focus-visible,
+  .about-history-card .about-button:active {
+    transform: translateX(-50%) !important;
   }
 
   .about-early-section {
@@ -18122,6 +18156,62 @@ body {
   background: #8dc540 !important;
   color: #101010 !important;
   transform: translateX(-50%) !important;
+}
+
+/* About Us mobile guardrails: keep these Figma crops from being overridden by shared media rules. */
+@media (max-width: 559px) {
+  .about-page .about-founder-card > img {
+    display: block !important;
+    height: 402px !important;
+    left: -215px !important;
+    max-width: none !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    top: -9px !important;
+    transform: none !important;
+    width: 715px !important;
+  }
+
+  .about-page .about-founder-card .about-play-button {
+    height: 48px !important;
+    left: calc(50% + 107px) !important;
+    top: 64px !important;
+    transform: translate(-50%, -50%) !important;
+    width: 48px !important;
+  }
+
+  .about-page .about-founder-card .about-play-button img {
+    display: block !important;
+    height: 100% !important;
+    max-width: none !important;
+    transform: rotate(90deg) !important;
+    width: 100% !important;
+  }
+
+  .about-page .about-history-card .about-button {
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .about-page .about-early-card > img {
+    display: block !important;
+    height: 386px !important;
+    left: -84px !important;
+    max-width: none !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    right: auto !important;
+    top: 0 !important;
+    transform: scaleX(-1) !important;
+    width: 579px !important;
+  }
+}
+
+.about-page .home-footer .hybr-button--white {
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #000000 !important;
 }
 
 .homepage-live .home-video-card,

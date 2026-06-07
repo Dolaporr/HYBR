@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { figmaAssets } from "@/content/site";
 import { Footer, Header } from "../../_components/marketing";
+import { TeamTierBrowser } from "./TeamTierBrowser";
 import styles from "./page.module.css";
 
 const contentLinks = [
@@ -41,18 +42,6 @@ function HybrMark({ className = "" }: { className?: string }) {
       <circle cx="28" cy="43.2" r="10.28" stroke="currentColor" strokeWidth="4.54" />
       <circle cx="28" cy="35.1" r="18.33" stroke="currentColor" strokeWidth="4.54" />
       <circle cx="28" cy="27.88" r="25.54" stroke="currentColor" strokeWidth="4.54" />
-    </svg>
-  );
-}
-
-function ArrowIcon({ direction }: { direction: "left" | "right" }) {
-  return (
-    <svg aria-hidden="true" fill="none" viewBox="0 0 32 32">
-      {direction === "left" ? (
-        <path d="M19 9L12 16L19 23" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
-      ) : (
-        <path d="M13 9L20 16L13 23" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
-      )}
     </svg>
   );
 }
@@ -144,16 +133,6 @@ function TeamCard({ member }: { member: (typeof teamMembers)[number] }) {
   );
 }
 
-function TierNavigator() {
-  return (
-    <div aria-label="Core tier navigation" className="team-tier-nav">
-      <ArrowIcon direction="left" />
-      <span>CORE</span>
-      <ArrowIcon direction="right" />
-    </div>
-  );
-}
-
 export default function OurTeamPage() {
   return (
     <main className={`${styles.teamScope} team-page`}>
@@ -177,23 +156,13 @@ export default function OurTeamPage() {
           <Link href="#team">View as Single Page</Link>
         </section>
 
-        <section aria-labelledby="team-core-title" className="team-core" id="team">
-          <h2 id="team-core-title">Core</h2>
-          <p>
-            Oversees strategy, operations, commercial, finance, and communications,
-            supported by expert specialists and project managers.
-          </p>
-        </section>
-
-        <TierDrop />
-
-        <div className="team-member-grid">
-          {teamMembers.map((member) => (
+        <TeamTierBrowser
+          members={teamMembers.map((member) => (
             <TeamCard key={member.id} member={member} />
           ))}
-        </div>
-
-        <TierNavigator />
+          tierDrop={<TierDrop />}
+          tiers={networkTiers}
+        />
 
         <section aria-labelledby="team-more-title" className="team-more" id="more-about-us">
           <h2 id="team-more-title">

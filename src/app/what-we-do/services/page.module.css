@@ -423,6 +423,7 @@
   height: 698px;
   left: 24px;
   position: absolute;
+  touch-action: pan-y;
   top: 3554px;
   width: 342px;
 }
@@ -1068,20 +1069,23 @@
   .servicesScope :global(.services-testimonial-card) {
     height: 416px;
     left: 32px;
+    max-width: 1216px;
     top: 3212px;
-    width: 1216px;
+    width: calc(100% - 64px);
   }
 
   .servicesScope :global(.services-testimonial-bg) {
     height: 344px;
     left: 88px;
-    width: 1040px;
+    max-width: 1040px;
+    width: calc(100% - 176px);
   }
 
   .servicesScope :global(.services-testimonial-inner) {
     height: 188px;
     left: 144px;
-    width: 928px;
+    max-width: 928px;
+    width: calc(100% - 288px);
   }
 
   .servicesScope :global(.services-testimonial-avatar) {
@@ -1092,7 +1096,8 @@
   .servicesScope :global(.services-testimonial-copy) {
     left: 228px;
     top: 0;
-    width: 700px;
+    max-width: 700px;
+    width: calc(100% - 228px);
   }
 
   .servicesScope :global(.services-testimonial-copy > p) {
@@ -1110,7 +1115,8 @@
   }
 
   .servicesScope :global(.services-carousel-arrow.is-right) {
-    left: 1152px;
+    left: auto;
+    right: 0;
   }
 
   .servicesScope :global(.services-carousel-dots) {
@@ -1344,20 +1350,23 @@
   .servicesScope :global(.services-testimonial-card) {
     height: 407px;
     left: 32px;
+    max-width: 1376px;
     top: 3454px;
-    width: 1376px;
+    width: calc(100% - 64px);
   }
 
   .servicesScope :global(.services-testimonial-bg) {
     height: 344px;
     left: 88px;
-    width: 1200px;
+    max-width: 1200px;
+    width: calc(100% - 176px);
   }
 
   .servicesScope :global(.services-testimonial-inner) {
     height: 188px;
     left: 144px;
-    width: 1088px;
+    max-width: 1088px;
+    width: calc(100% - 288px);
   }
 
   .servicesScope :global(.services-testimonial-avatar) {
@@ -1368,7 +1377,8 @@
   .servicesScope :global(.services-testimonial-copy) {
     left: 228px;
     top: 0;
-    width: 860px;
+    max-width: 860px;
+    width: calc(100% - 228px);
   }
 
   .servicesScope :global(.services-testimonial-copy > p) {
@@ -1386,7 +1396,8 @@
   }
 
   .servicesScope :global(.services-carousel-arrow.is-right) {
-    left: 1312px;
+    left: auto;
+    right: 0;
   }
 
   .servicesScope :global(.services-carousel-dots) {

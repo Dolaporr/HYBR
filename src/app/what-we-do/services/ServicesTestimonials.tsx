@@ -1,6 +1,4 @@
-"use client";
-
-import { useEffect, useState } from "react";
+import Script from "next/script";
 
 const CAROUSEL_DELAY_MS = 5500;
 
@@ -15,16 +13,14 @@ export type ServiceTestimonial = {
 
 function ArrowButton({
   direction,
-  onClick,
 }: {
   direction: "left" | "right";
-  onClick: () => void;
 }) {
   return (
     <button
       aria-label={`${direction === "left" ? "Previous" : "Next"} testimonial`}
       className={`services-carousel-arrow is-${direction}`}
-      onClick={onClick}
+      data-carousel-action={direction === "left" ? "previous" : "next"}
       type="button"
     >
       <svg aria-hidden="true" fill="none" viewBox="0 0 64 64">
@@ -55,38 +51,18 @@ export function ServicesTestimonials({
 }: {
   testimonials: ServiceTestimonial[];
 }) {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const active = testimonials[activeIndex] ?? testimonials[0];
-  const total = testimonials.length;
-
-  useEffect(() => {
-    if (total < 2) {
-      return undefined;
-    }
-
-    const intervalId = window.setInterval(() => {
-      setActiveIndex((index) => (index + 1) % total);
-    }, CAROUSEL_DELAY_MS);
-
-    return () => window.clearInterval(intervalId);
-  }, [total]);
+  const active = testimonials[0];
+  const serializedTestimonials = JSON.stringify(testimonials).replace(/</g, "\\u003c");
 
   if (!active) {
     return null;
   }
 
-  const goToPrevious = () => {
-    setActiveIndex((index) => (index - 1 + total) % total);
-  };
-
-  const goToNext = () => {
-    setActiveIndex((index) => (index + 1) % total);
-  };
-
   return (
     <section
       aria-label="Client testimonial carousel"
       className="services-testimonial-card"
+      data-services-testimonials=""
     >
       <span
         aria-hidden="true"
@@ -96,7 +72,6 @@ export function ServicesTestimonials({
       <div
         aria-live="polite"
         className="services-testimonial-inner"
-        key={active.id}
       >
         <div className="services-testimonial-avatar">
           <span />
@@ -110,21 +85,116 @@ export function ServicesTestimonials({
           </div>
         </div>
       </div>
-      <ArrowButton direction="left" onClick={goToPrevious} />
-      <ArrowButton direction="right" onClick={goToNext} />
+      <ArrowButton direction="left" />
+      <ArrowButton direction="right" />
       <div className="services-carousel-dots" role="tablist">
         {testimonials.map((testimonial, index) => (
           <button
             aria-label={`Show testimonial ${index + 1}`}
-            aria-selected={index === activeIndex}
-            className={index === activeIndex ? "is-active" : ""}
+            aria-selected={index === 0}
+            className={index === 0 ? "is-active" : ""}
+            data-carousel-index={index}
             key={testimonial.id}
-            onClick={() => setActiveIndex(index)}
             role="tab"
             type="button"
           />
         ))}
       </div>
+      <Script id="services-testimonials-carousel" strategy="afterInteractive">
+        {`
+(() => {
+  const testimonials = ${serializedTestimonials};
+  const total = testimonials.length;
+  if (!total) return;
+
+  document.querySelectorAll('[data-services-testimonials]').forEach((root) => {
+    if (root.dataset.carouselReady === 'true') return;
+    root.dataset.carouselReady = 'true';
+
+    const bg = root.querySelector('.services-testimonial-bg');
+    const avatar = root.querySelector('.services-testimonial-avatar img');
+    const quote = root.querySelector('.services-testimonial-copy p');
+    const name = root.querySelector('.services-testimonial-copy strong');
+    const role = root.querySelector('.services-testimonial-copy span');
+    const dots = Array.from(root.querySelectorAll('.services-carousel-dots button'));
+    let activeIndex = 0;
+    let timerId = null;
+    let swipeStart = null;
+    let lastSwipeAt = 0;
+
+    const render = (nextIndex) => {
+      activeIndex = (nextIndex + total) % total;
+      const item = testimonials[activeIndex];
+      if (!item) return;
+
+      if (bg) bg.style.backgroundImage = 'url(' + item.background + ')';
+      if (avatar) avatar.src = item.avatar;
+      if (quote) quote.textContent = '\\u201c' + item.quote + '\\u201d';
+      if (name) name.textContent = item.name;
+      if (role) role.textContent = item.role;
+
+      dots.forEach((dot, index) => {
+        const selected = index === activeIndex;
+        dot.classList.toggle('is-active', selected);
+        dot.setAttribute('aria-selected', String(selected));
+      });
+    };
+
+    const restartTimer = () => {
+      if (timerId) window.clearInterval(timerId);
+      if (total < 2) return;
+      timerId = window.setInterval(() => render(activeIndex + 1), ${CAROUSEL_DELAY_MS});
+    };
+
+    root.addEventListener('click', (event) => {
+      const target = event.target instanceof Element
+        ? event.target.closest('[data-carousel-action], [data-carousel-index]')
+        : null;
+
+      if (!target || !root.contains(target)) return;
+
+      event.preventDefault();
+      event.stopPropagation();
+
+      if (target.dataset.carouselAction === 'previous') {
+        render(activeIndex - 1);
+      } else if (target.dataset.carouselAction === 'next') {
+        render(activeIndex + 1);
+      } else if (target.dataset.carouselIndex) {
+        render(Number(target.dataset.carouselIndex));
+      }
+
+      restartTimer();
+    });
+
+    root.addEventListener('pointerdown', (event) => {
+      if (event.pointerType === 'mouse' || !event.isPrimary) return;
+      swipeStart = { x: event.clientX, y: event.clientY };
+    }, { passive: true });
+
+    root.addEventListener('pointerup', (event) => {
+      if (event.pointerType === 'mouse' || !event.isPrimary || !swipeStart) return;
+
+      const now = Date.now();
+      const deltaX = event.clientX - swipeStart.x;
+      const deltaY = event.clientY - swipeStart.y;
+      swipeStart = null;
+
+      if (now - lastSwipeAt < 250 || Math.abs(deltaX) < 44 || Math.abs(deltaX) < Math.abs(deltaY) * 1.25) {
+        return;
+      }
+
+      lastSwipeAt = now;
+      render(deltaX < 0 ? activeIndex + 1 : activeIndex - 1);
+      restartTimer();
+    }, { passive: true });
+
+    render(0);
+    restartTimer();
+  });
+})();
+        `}
+      </Script>
     </section>
   );
 }
