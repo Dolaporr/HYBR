@@ -706,6 +706,28 @@
   }
 }
 
+.workScope :global(.work-content-drop.site-content-drop) {
+  left: auto !important;
+  right: -260px !important;
+}
+
+.workScope :global(.work-content-drop.site-content-drop.is-content-open) {
+  left: auto !important;
+  right: 0 !important;
+}
+
+@media (min-width: 560px) {
+  .workScope :global(.work-content-drop.site-content-drop) {
+    left: auto !important;
+    right: -257px !important;
+  }
+
+  .workScope :global(.work-content-drop.site-content-drop.is-content-open) {
+    left: auto !important;
+    right: 0 !important;
+  }
+}
+
 @media (min-width: 1024px) and (max-width: 1359px) {
   .workScope :global(.work-frame) {
     height: 2479px;

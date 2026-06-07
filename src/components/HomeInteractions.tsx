@@ -99,7 +99,7 @@ export function SiteInteractions() {
 
     contentDrops.forEach((drop) => {
       drop.classList.add("site-content-drop");
-      drop.setAttribute("aria-expanded", "false");
+      setContentDropOpen(drop, false);
       if (!drop.hasAttribute("role")) drop.setAttribute("role", "button");
       if (!drop.hasAttribute("tabindex")) drop.tabIndex = 0;
     });

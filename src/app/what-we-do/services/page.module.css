@@ -1412,3 +1412,25 @@
     top: 3896px;
   }
 }
+
+.servicesScope :global(.services-content-drop.site-content-drop) {
+  left: auto !important;
+  right: -260px !important;
+}
+
+.servicesScope :global(.services-content-drop.site-content-drop.is-content-open) {
+  left: auto !important;
+  right: 0 !important;
+}
+
+@media (min-width: 560px) {
+  .servicesScope :global(.services-content-drop.site-content-drop) {
+    left: auto !important;
+    right: -257px !important;
+  }
+
+  .servicesScope :global(.services-content-drop.site-content-drop.is-content-open) {
+    left: auto !important;
+    right: 0 !important;
+  }
+}

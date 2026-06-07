@@ -18714,7 +18714,7 @@ body {
 }
 
 :is(.webinars-content-drop, .articles-content-drop, .news-content-drop).site-content-drop {
-  --content-drop-open-right: -24px;
+  --content-drop-open-right: 0px;
 }
 
 .team-tier-drop.site-content-drop {
@@ -18829,7 +18829,7 @@ body {
     .news-content-drop
   ).site-content-drop.is-content-open {
     left: auto !important;
-    right: -24px !important;
+    right: 0 !important;
   }
 
   :is(

@@ -1066,3 +1066,33 @@
     min-height: 61px;
   }
 }
+
+.teamScope :global(.team-content-drop.site-content-drop),
+.teamScope :global(.team-tier-drop.site-content-drop) {
+  left: auto !important;
+  right: -260px !important;
+}
+
+.teamScope :global(.team-content-drop.site-content-drop.is-content-open),
+.teamScope :global(.team-tier-drop.site-content-drop.is-content-open) {
+  left: auto !important;
+  right: 0 !important;
+}
+
+@media (min-width: 560px) {
+  .teamScope :global(.team-content-drop.site-content-drop) {
+    left: auto !important;
+    right: -257px !important;
+  }
+
+  .teamScope :global(.team-tier-drop.site-content-drop) {
+    left: auto !important;
+    right: -220px !important;
+  }
+
+  .teamScope :global(.team-content-drop.site-content-drop.is-content-open),
+  .teamScope :global(.team-tier-drop.site-content-drop.is-content-open) {
+    left: auto !important;
+    right: 0 !important;
+  }
+}

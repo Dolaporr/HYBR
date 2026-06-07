@@ -1815,3 +1815,25 @@
     width: 430px;
   }
 }
+
+.careersScope :global(.careers-content-drop.site-content-drop) {
+  left: auto !important;
+  right: -260px !important;
+}
+
+.careersScope :global(.careers-content-drop.site-content-drop.is-content-open) {
+  left: auto !important;
+  right: 0 !important;
+}
+
+@media (min-width: 560px) {
+  .careersScope :global(.careers-content-drop.site-content-drop) {
+    left: auto !important;
+    right: -257px !important;
+  }
+
+  .careersScope :global(.careers-content-drop.site-content-drop.is-content-open) {
+    left: auto !important;
+    right: 0 !important;
+  }
+}

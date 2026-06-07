@@ -72,7 +72,7 @@ export default function RootLayout({
       if (drop.dataset.contentDrawerReady === "true") return;
       drop.dataset.contentDrawerReady = "true";
       drop.classList.add("site-content-drop");
-      drop.setAttribute("aria-expanded", "false");
+      setOpen(drop, false);
       if (!drop.hasAttribute("role")) drop.setAttribute("role", "button");
       if (!drop.hasAttribute("tabindex")) drop.tabIndex = 0;
     });
