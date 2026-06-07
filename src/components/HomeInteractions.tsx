@@ -37,6 +37,22 @@ const tiltSelectors = [
   `${animatedMainSelector} .figma-content-drop`,
 ].join(",");
 
+const contentDropSelector = [
+  ".figma-content-drop",
+  ".insights-content-drop",
+  ".webinars-content-drop",
+  ".articles-content-drop",
+  ".news-content-drop",
+  ".who-content-drop",
+  ".team-content-drop",
+  ".about-content-drop",
+  ".what-content-drop",
+  ".services-content-drop",
+  ".work-content-drop",
+  ".impact-content-drop",
+  ".careers-content-drop",
+].join(",");
+
 const revealDirections = ["up", "left", "right", "scale"] as const;
 
 export function SiteInteractions() {
@@ -49,6 +65,11 @@ export function SiteInteractions() {
     const supportsFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
     const revealItems = Array.from(document.querySelectorAll<HTMLElement>(revealSelectors));
     const tiltItems = Array.from(document.querySelectorAll<HTMLElement>(tiltSelectors));
+    const nativeDrawerReady =
+      (window as Window & { __HYBR_CONTENT_DRAWERS__?: boolean }).__HYBR_CONTENT_DRAWERS__ === true;
+    const contentDrops = nativeDrawerReady
+      ? []
+      : Array.from(document.querySelectorAll<HTMLElement>(contentDropSelector));
     let pointerFrame = 0;
 
     revealItems.forEach((item, index) => {
@@ -64,10 +85,84 @@ export function SiteInteractions() {
 
     page.classList.add("site-motion-ready", "home-motion-ready");
 
+    const setContentDropOpen = (drop: HTMLElement, isOpen: boolean) => {
+      drop.classList.toggle("is-content-open", isOpen);
+      drop.setAttribute("aria-expanded", String(isOpen));
+    };
+
+    const closeContentDrops = (except?: HTMLElement) => {
+      contentDrops.forEach((drop) => {
+        if (drop !== except) setContentDropOpen(drop, false);
+      });
+    };
+
+    contentDrops.forEach((drop) => {
+      drop.classList.add("site-content-drop");
+      drop.setAttribute("aria-expanded", "false");
+      if (!drop.hasAttribute("role")) drop.setAttribute("role", "button");
+      if (!drop.hasAttribute("tabindex")) drop.tabIndex = 0;
+    });
+
+    const handleContentDropClick = (event: MouseEvent) => {
+      if (nativeDrawerReady) return;
+      if (!(event.target instanceof Element)) return;
+
+      const drop = event.target.closest<HTMLElement>(contentDropSelector);
+      if (!drop) {
+        closeContentDrops();
+        return;
+      }
+
+      const link = event.target.closest("a");
+      if (link && drop.contains(link) && drop.classList.contains("is-content-open")) {
+        window.setTimeout(() => setContentDropOpen(drop, false), 120);
+        return;
+      }
+
+      event.preventDefault();
+      const shouldOpen = !drop.classList.contains("is-content-open");
+      closeContentDrops(drop);
+      setContentDropOpen(drop, shouldOpen);
+    };
+
+    const handleContentDropKeydown = (event: KeyboardEvent) => {
+      if (nativeDrawerReady) return;
+      if (event.key === "Escape") {
+        closeContentDrops();
+        return;
+      }
+
+      if (event.key !== "Enter" && event.key !== " ") return;
+      if (!(document.activeElement instanceof Element)) return;
+
+      const drop = document.activeElement.closest<HTMLElement>(contentDropSelector);
+      if (!drop || document.activeElement.closest("a")) return;
+
+      event.preventDefault();
+      const shouldOpen = !drop.classList.contains("is-content-open");
+      closeContentDrops(drop);
+      setContentDropOpen(drop, shouldOpen);
+    };
+
+    document.addEventListener("click", handleContentDropClick);
+    document.addEventListener("keydown", handleContentDropKeydown);
+
+    const cleanupContentDrops = () => {
+      document.removeEventListener("click", handleContentDropClick);
+      document.removeEventListener("keydown", handleContentDropKeydown);
+      contentDrops.forEach((drop) => {
+        drop.classList.remove("site-content-drop", "is-content-open");
+        drop.removeAttribute("aria-expanded");
+        if (drop.getAttribute("role") === "button") drop.removeAttribute("role");
+        if (drop.tabIndex === 0) drop.removeAttribute("tabindex");
+      });
+    };
+
     if (prefersReducedMotion) {
       revealItems.forEach((item) => item.classList.add("is-visible"));
       page.classList.add("is-loaded");
       return () => {
+        cleanupContentDrops();
         page.classList.remove("site-motion-ready", "home-motion-ready", "is-loaded");
       };
     }
@@ -145,6 +240,7 @@ export function SiteInteractions() {
     return () => {
       window.clearTimeout(loaderTimer);
       observer.disconnect();
+      cleanupContentDrops();
       window.removeEventListener("resize", revealVisibleItems);
       if (supportsFinePointer) {
         window.removeEventListener("pointermove", handlePointerMove);

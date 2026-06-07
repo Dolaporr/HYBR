@@ -18326,6 +18326,104 @@ body {
   display: inline-flex;
 }
 
+:is(
+  .figma-content-drop,
+  .insights-content-drop,
+  .webinars-content-drop,
+  .articles-content-drop,
+  .news-content-drop,
+  .who-content-drop,
+  .team-content-drop,
+  .about-content-drop,
+  .what-content-drop,
+  .services-content-drop,
+  .work-content-drop,
+  .impact-content-drop,
+  .careers-content-drop
+) {
+  cursor: pointer;
+  transition: left 0.32s ease, right 0.32s ease, box-shadow 0.32s ease;
+  will-change: left, right;
+}
+
+.site-content-drop:focus-visible {
+  outline: 2px solid #8dc540;
+  outline-offset: 4px;
+}
+
+:is(
+  .figma-content-drop,
+  .insights-content-drop,
+  .who-content-drop,
+  .team-content-drop,
+  .about-content-drop,
+  .what-content-drop,
+  .services-content-drop,
+  .work-content-drop,
+  .impact-content-drop,
+  .careers-content-drop
+) > nav,
+.webinars-content-drop > div,
+.articles-content-drop > div,
+.news-content-drop > div {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(12px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+:is(
+  .figma-content-drop,
+  .insights-content-drop,
+  .webinars-content-drop,
+  .articles-content-drop,
+  .news-content-drop,
+  .who-content-drop,
+  .team-content-drop,
+  .about-content-drop,
+  .what-content-drop,
+  .services-content-drop,
+  .work-content-drop,
+  .impact-content-drop,
+  .careers-content-drop
+).is-content-open {
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
+  left: auto !important;
+  right: 0 !important;
+  z-index: 60 !important;
+}
+
+:is(
+  .figma-content-drop,
+  .insights-content-drop,
+  .who-content-drop,
+  .team-content-drop,
+  .about-content-drop,
+  .what-content-drop,
+  .services-content-drop,
+  .work-content-drop,
+  .impact-content-drop,
+  .careers-content-drop
+).is-content-open > nav,
+.webinars-content-drop.is-content-open > div,
+.articles-content-drop.is-content-open > div,
+.news-content-drop.is-content-open > div {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+.webinars-content-drop.is-content-open > div,
+.articles-content-drop.is-content-open > div,
+.news-content-drop.is-content-open > div {
+  display: flex !important;
+}
+
+.webinars-more-card--tall .webinars-more-button {
+  bottom: 84px !important;
+  top: auto !important;
+}
+
 @media (min-width: 1024px) {
   .homepage-live .home-green-inline {
     display: block !important;
@@ -18488,6 +18586,43 @@ body {
 }
 
 @media (max-width: 559px) {
+  .who-content-drop,
+  .team-content-drop,
+  .about-content-drop,
+  .what-content-drop,
+  .services-content-drop,
+  .work-content-drop,
+  .impact-content-drop,
+  .careers-content-drop,
+  .insights-content-drop,
+  .webinars-content-drop,
+  .articles-content-drop,
+  .news-content-drop {
+    left: auto !important;
+    right: -285px !important;
+  }
+
+  .who-content-drop.is-content-open,
+  .team-content-drop.is-content-open,
+  .about-content-drop.is-content-open,
+  .what-content-drop.is-content-open,
+  .services-content-drop.is-content-open,
+  .work-content-drop.is-content-open,
+  .impact-content-drop.is-content-open,
+  .careers-content-drop.is-content-open,
+  .insights-content-drop.is-content-open,
+  .webinars-content-drop.is-content-open,
+  .articles-content-drop.is-content-open,
+  .news-content-drop.is-content-open {
+    left: auto !important;
+    right: 0 !important;
+  }
+
+  .webinars-more-card--tall .webinars-more-button {
+    bottom: 76px !important;
+    top: auto !important;
+  }
+
   .homepage-live .home-green-inline {
     display: block !important;
     height: 398.655px !important;
