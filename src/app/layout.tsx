@@ -55,10 +55,99 @@ export default function RootLayout({
   ].join(",");
 
   window.__HYBR_CONTENT_DRAWERS__ = true;
+  const mobileDrawerMedia = "(max-width: 559px)";
+  const mobileClosedPeek = 97;
+  const desktopClosedPeek = 95;
+
+  const isInsightsFamilyDrop = (drop) => (
+    drop.classList.contains("insights-content-drop") ||
+    drop.classList.contains("articles-content-drop") ||
+    drop.classList.contains("webinars-content-drop") ||
+    drop.classList.contains("news-content-drop")
+  );
+
+  const isMobileEdgeAlignedDrop = (drop) => (
+    isInsightsFamilyDrop(drop) ||
+    drop.classList.contains("who-content-drop") ||
+    drop.classList.contains("team-content-drop") ||
+    drop.classList.contains("team-tier-drop") ||
+    drop.classList.contains("about-content-drop") ||
+    drop.classList.contains("what-content-drop") ||
+    drop.classList.contains("services-content-drop") ||
+    drop.classList.contains("work-content-drop") ||
+    drop.classList.contains("impact-content-drop") ||
+    drop.classList.contains("careers-content-drop")
+  );
+
+  const getMobileSeedRight = (drop, isOpen) => {
+    if (isMobileEdgeAlignedDrop(drop)) {
+      return isOpen ? "0px" : "-260px";
+    }
+
+    return "";
+  };
+
+  const alignMobileDrop = (drop, isOpen) => {
+    const isMobile = window.matchMedia(mobileDrawerMedia).matches;
+    if (!isMobile && !isInsightsFamilyDrop(drop)) return;
+
+    drop.style.removeProperty("transform");
+    const rect = drop.getBoundingClientRect();
+    if (rect.width <= 0) return;
+
+    const viewportRight = isMobile
+      ? document.documentElement.clientWidth
+      : window.innerWidth;
+    const targetRectRight = isOpen
+      ? viewportRight
+      : viewportRight + rect.width - (isMobile ? mobileClosedPeek : desktopClosedPeek);
+    const translateX = targetRectRight - rect.right;
+
+    drop.style.setProperty("left", "auto", "important");
+    drop.style.setProperty("transform", "translateX(" + translateX + "px)", "important");
+  };
+
+  const applyMobileLayout = (drop, isOpen) => {
+    const isMobile = window.matchMedia(mobileDrawerMedia).matches;
+    const mobileRight = isMobile ? getMobileSeedRight(drop, isOpen) : "";
+
+    if (mobileRight) {
+      drop.style.setProperty("left", "auto", "important");
+      drop.style.setProperty("right", mobileRight, "important");
+    } else {
+      drop.style.removeProperty("left");
+      drop.style.removeProperty("right");
+      drop.style.removeProperty("transform");
+    }
+
+    const nav = drop.querySelector("nav");
+    if (
+      nav &&
+      isMobile &&
+      (
+        drop.classList.contains("careers-content-drop") ||
+        drop.classList.contains("services-content-drop") ||
+        drop.classList.contains("work-content-drop")
+      )
+    ) {
+      nav.style.top = "34px";
+      nav.style.transform = isOpen ? "translateX(0)" : "translateX(12px)";
+    } else if (nav) {
+      nav.style.top = "";
+      nav.style.transform = "";
+    }
+
+    if (mobileRight || isInsightsFamilyDrop(drop)) {
+      alignMobileDrop(drop, isOpen);
+      window.setTimeout(() => alignMobileDrop(drop, isOpen), 120);
+      window.setTimeout(() => alignMobileDrop(drop, isOpen), 520);
+    }
+  };
 
   const setOpen = (drop, isOpen) => {
     drop.classList.toggle("is-content-open", isOpen);
     drop.setAttribute("aria-expanded", String(isOpen));
+    applyMobileLayout(drop, isOpen);
   };
 
   const closeAll = (except) => {
@@ -120,6 +209,11 @@ export default function RootLayout({
   prepare();
   document.addEventListener("click", onClick);
   document.addEventListener("keydown", onKeydown);
+  window.addEventListener("resize", () => {
+    document.querySelectorAll(selector).forEach((drop) => {
+      applyMobileLayout(drop, drop.classList.contains("is-content-open"));
+    });
+  }, { passive: true });
   new MutationObserver(prepare).observe(document.documentElement, {
     childList: true,
     subtree: true

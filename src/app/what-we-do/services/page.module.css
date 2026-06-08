@@ -7,8 +7,8 @@
 .servicesScope :global(.services-frame) {
   background: #ffffff;
   height: 4437px;
-  margin-inline: auto;
-  max-width: 390px;
+  margin-inline: 0;
+  max-width: none;
   overflow: hidden;
   position: relative;
   width: 100%;

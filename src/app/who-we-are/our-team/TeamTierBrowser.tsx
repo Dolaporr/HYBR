@@ -50,12 +50,12 @@ export function TeamTierBrowser({ members, tierDrop, tiers }: TeamTierBrowserPro
 
   return (
     <>
+      {tierDrop}
+
       <section aria-labelledby="team-tier-title" className="team-core" id="team">
         <h2 id="team-tier-title">{activeTier.label}</h2>
         <p>{activeTier.text}</p>
       </section>
-
-      {tierDrop}
 
       <div
         aria-label={`${activeTier.label} team members`}

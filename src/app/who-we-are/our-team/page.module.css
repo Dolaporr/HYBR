@@ -2,7 +2,7 @@
   background: #ffffff;
   height: 7910px;
   margin-inline: 0;
-  max-width: 390px;
+  max-width: none;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -48,9 +48,9 @@
 
 .teamScope :global(.team-content-drop) {
   border-radius: 1000px 0 600px 1000px;
-  height: 132px;
+  height: 153px;
   left: 24px;
-  top: 366px;
+  top: 166px;
   width: 342px;
 }
 
@@ -234,7 +234,7 @@
 
 .teamScope :global(.team-core) {
   left: 24px;
-  top: 2015px;
+  top: 2112px;
 }
 
 .teamScope :global(.team-meet h2),
@@ -264,7 +264,7 @@
   border-radius: 1000px 0 600px 1000px;
   height: 96px;
   left: 24px;
-  top: 2221px;
+  top: 1978px;
   width: 342px;
 }
 
@@ -479,7 +479,7 @@
 
 @media (min-width: 560px) and (max-width: 1023px) {
   .teamScope :global(.team-frame) {
-    height: 5574px;
+    height: 5720px;
     margin-inline: auto;
     max-width: 800px;
   }
@@ -574,7 +574,7 @@
 
   .teamScope :global(.team-core) {
     left: 80px;
-    top: 2205px;
+    top: 2328px;
     width: 640px;
   }
 
@@ -603,7 +603,7 @@
     height: 197px;
     left: auto;
     right: -223px;
-    top: 2165px;
+    top: 2096px;
     width: 291px;
   }
 
@@ -620,7 +620,7 @@
     gap: 32px 24px;
     grid-template-columns: repeat(2, 308px);
     left: 80px;
-    top: 2443px;
+    top: 2600px;
     width: 640px;
   }
 
@@ -654,13 +654,13 @@
   }
 
   .teamScope :global(.team-tier-nav) {
-    top: 4760px;
+    top: 4940px;
   }
 
   .teamScope :global(.team-more) {
     left: 80px;
     text-align: center;
-    top: 5048px;
+    top: 5200px;
     width: 640px;
   }
 
@@ -672,7 +672,7 @@
 
 @media (min-width: 1024px) and (max-width: 1359px) {
   .teamScope :global(.team-frame) {
-    height: 5579px;
+    height: 5660px;
     margin-inline: auto;
     max-width: 1280px;
   }
@@ -768,7 +768,7 @@
 
   .teamScope :global(.team-core) {
     left: 120px;
-    top: 2220px;
+    top: 2265px;
     width: 798px;
   }
 
@@ -797,7 +797,7 @@
     height: 197px;
     left: auto;
     right: -205px;
-    top: 2191px;
+    top: 2040px;
     width: 291px;
   }
 
@@ -814,7 +814,7 @@
     gap: 32px 24px;
     grid-template-columns: repeat(2, 508px);
     left: 120px;
-    top: 2434px;
+    top: 2485px;
     width: 1040px;
   }
 
@@ -841,13 +841,13 @@
   }
 
   .teamScope :global(.team-tier-nav) {
-    top: 4735px;
+    top: 4810px;
   }
 
   .teamScope :global(.team-more) {
     left: 50%;
     text-align: center;
-    top: 5023px;
+    top: 5090px;
     transform: translateX(-50%);
     width: 774px;
   }
@@ -861,7 +861,7 @@
 
 @media (min-width: 1360px) {
   .teamScope :global(.team-frame) {
-    height: 5857px;
+    height: 5960px;
     margin-inline: auto;
     max-width: 1440px;
   }
@@ -961,7 +961,7 @@
 
   .teamScope :global(.team-core) {
     left: 120px;
-    top: 2357px;
+    top: 2485px;
     width: 996px;
   }
 
@@ -996,7 +996,7 @@
     height: 197px;
     left: auto;
     right: -202px;
-    top: 2333px;
+    top: 2248px;
     width: 291px;
   }
 
@@ -1013,7 +1013,7 @@
     gap: 40px 24px;
     grid-template-columns: repeat(2, 588px);
     left: 120px;
-    top: 2631px;
+    top: 2720px;
     width: 1200px;
   }
 
@@ -1044,13 +1044,13 @@
   }
 
   .teamScope :global(.team-tier-nav) {
-    top: 4980px;
+    top: 5065px;
   }
 
   .teamScope :global(.team-more) {
     left: 50%;
     text-align: center;
-    top: 5324px;
+    top: 5405px;
     transform: translateX(-50%);
     width: 996px;
   }

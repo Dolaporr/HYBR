@@ -7,8 +7,8 @@
 .whatScope :global(.what-frame) {
   background: #ffffff;
   height: 8049px;
-  margin-inline: auto;
-  max-width: 390px;
+  margin-inline: 0;
+  max-width: none;
   overflow: hidden;
   position: relative;
   width: 100%;

@@ -12153,8 +12153,8 @@ body {
 .who-frame {
   background: #ffffff;
   height: 6904px;
-  margin-inline: auto;
-  max-width: 390px;
+  margin-inline: 0;
+  max-width: none;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -18723,6 +18723,16 @@ body {
 
 @media (min-width: 560px) {
   :is(
+    .webinars-content-drop,
+    .articles-content-drop,
+    .news-content-drop
+  ).site-content-drop {
+    --content-drop-shell-offset: max(120px, calc((100vw - 1200px) / 2));
+    --content-drop-closed-right: calc(-257px - var(--content-drop-shell-offset));
+    --content-drop-open-right: calc(0px - var(--content-drop-shell-offset));
+  }
+
+  :is(
     .figma-content-drop,
     .insights-content-drop,
     .webinars-content-drop,
@@ -18805,6 +18815,14 @@ body {
 
 @media (max-width: 559px) {
   :is(
+    .webinars-content-drop,
+    .articles-content-drop,
+    .news-content-drop
+  ).site-content-drop {
+    --content-drop-shell-offset: max(0px, calc(100vw - 381px));
+  }
+
+  :is(
     .who-content-drop,
     .team-content-drop,
     .team-tier-drop,
@@ -18827,9 +18845,18 @@ body {
     .webinars-content-drop,
     .articles-content-drop,
     .news-content-drop
+  ).site-content-drop {
+    left: auto !important;
+    right: calc(-260px - var(--content-drop-shell-offset)) !important;
+  }
+
+  :is(
+    .webinars-content-drop,
+    .articles-content-drop,
+    .news-content-drop
   ).site-content-drop.is-content-open {
     left: auto !important;
-    right: 0 !important;
+    right: calc(0px - var(--content-drop-shell-offset, 0px)) !important;
   }
 
   :is(
