@@ -484,7 +484,10 @@ export default function Home() {
               {services.map((service) => (
                 <article
                   key={service.title}
+                  aria-label={`${service.title} service details`}
                   className="home-service-card home-tilt-card rounded-3xl text-white"
+                  data-home-service-card=""
+                  role="button"
                   style={{
                     backgroundColor: "rgba(0,0,0,.48)",
                     backgroundImage: `url(${assets.whoImage})`,
@@ -492,17 +495,30 @@ export default function Home() {
                     backgroundPosition: service.bgPosition,
                     backgroundSize: "cover",
                   }}
+                  tabIndex={0}
                 >
-                  <InfoBadge />
-                  <span className="home-service-glyph">
-                    <ServiceGlyph kind={service.icon} />
-                  </span>
-                  <div className="home-service-body">
+                  <div className="home-service-face home-service-front">
+                    <InfoBadge />
+                    <span className="home-service-glyph">
+                      <ServiceGlyph kind={service.icon} />
+                    </span>
+                    <div className="home-service-body">
+                      <h3 className="font-display text-[32px] font-medium leading-none">
+                        {service.title}
+                      </h3>
+                      <span className="home-service-pill">
+                        {service.tag}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="home-service-face home-service-back" aria-hidden="true">
                     <h3 className="font-display text-[32px] font-medium leading-none">
                       {service.title}
                     </h3>
-                    <a className="home-service-pill" href={service.href}>
-                      {service.tag}
+                    <p>{service.first}</p>
+                    <p>{service.second}</p>
+                    <a className="home-service-back-link" href={service.href}>
+                      Learn More
                     </a>
                   </div>
                 </article>

@@ -1,4 +1,6 @@
 .teamScope :global(.team-frame) {
+  --team-mobile-content-width: min(342px, calc(100% - 48px));
+  --team-mobile-gutter: max(24px, calc((100% - var(--team-mobile-content-width)) / 2));
   background: #ffffff;
   height: 7910px;
   margin-inline: 0;
@@ -16,10 +18,10 @@
 }
 
 .teamScope :global(.team-hero) {
-  left: 24px;
+  left: var(--team-mobile-gutter);
   position: absolute;
   top: 187px;
-  width: 342px;
+  width: var(--team-mobile-content-width);
 }
 
 .teamScope :global(.team-hero h1) {
@@ -34,7 +36,7 @@
   font-size: 16px;
   font-weight: 500;
   line-height: normal;
-  width: 342px;
+  width: var(--team-mobile-content-width);
 }
 
 .teamScope :global(.team-content-drop),
@@ -49,7 +51,7 @@
 .teamScope :global(.team-content-drop) {
   border-radius: 1000px 0 600px 1000px;
   height: 153px;
-  left: 24px;
+  left: var(--team-mobile-gutter);
   top: 166px;
   width: 342px;
 }
@@ -113,10 +115,10 @@
 }
 
 .teamScope :global(.team-network) {
-  left: 24px;
+  left: var(--team-mobile-gutter);
   position: absolute;
   top: 654px;
-  width: 342px;
+  width: var(--team-mobile-content-width);
 }
 
 .teamScope :global(.team-network h2) {
@@ -135,7 +137,7 @@
   margin-top: 24px;
   overflow: hidden;
   position: relative;
-  width: 342px;
+  width: var(--team-mobile-content-width);
 }
 
 .teamScope :global(.team-network-rings) {
@@ -223,17 +225,17 @@
 .teamScope :global(.team-core),
 .teamScope :global(.team-more) {
   position: absolute;
-  width: 342px;
+  width: var(--team-mobile-content-width);
 }
 
 .teamScope :global(.team-meet) {
-  left: 24px;
+  left: var(--team-mobile-gutter);
   text-align: center;
   top: 1825px;
 }
 
 .teamScope :global(.team-core) {
-  left: 24px;
+  left: var(--team-mobile-gutter);
   top: 2112px;
 }
 
@@ -263,7 +265,7 @@
 .teamScope :global(.team-tier-drop) {
   border-radius: 1000px 0 600px 1000px;
   height: 96px;
-  left: 24px;
+  left: var(--team-mobile-gutter);
   top: 1978px;
   width: 342px;
 }
@@ -282,11 +284,11 @@
 .teamScope :global(.team-member-grid) {
   display: grid;
   gap: 40px;
-  grid-template-columns: 342px;
-  left: 24px;
+  grid-template-columns: var(--team-mobile-content-width);
+  left: var(--team-mobile-gutter);
   position: absolute;
   top: 2381px;
-  width: 342px;
+  width: var(--team-mobile-content-width);
 }
 
 .teamScope :global(.team-member-card) {
@@ -295,7 +297,7 @@
   height: 425px;
   overflow: hidden;
   position: relative;
-  width: 342px;
+  width: 100%;
 }
 
 .teamScope :global(.team-member-photo) {
@@ -449,7 +451,7 @@
 }
 
 .teamScope :global(.team-more) {
-  left: 24px;
+  left: var(--team-mobile-gutter);
   top: 7275px;
 }
 

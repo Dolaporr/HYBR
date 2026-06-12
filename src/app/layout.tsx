@@ -56,7 +56,7 @@ export default function RootLayout({
 
   window.__HYBR_CONTENT_DRAWERS__ = true;
   const mobileDrawerMedia = "(max-width: 559px)";
-  const mobileClosedPeek = 97;
+  const mobileClosedPeek = 72;
   const desktopClosedPeek = 95;
 
   const isInsightsFamilyDrop = (drop) => (

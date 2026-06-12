@@ -5,6 +5,8 @@
 }
 
 .workScope :global(.work-frame) {
+  --work-mobile-content-width: min(342px, calc(100% - 48px));
+  --work-mobile-gutter: max(24px, calc((100% - var(--work-mobile-content-width)) / 2));
   background: #ffffff;
   height: 2698px;
   margin-inline: 0;
@@ -46,10 +48,10 @@
 }
 
 .workScope :global(.work-hero) {
-  left: 24px;
+  left: var(--work-mobile-gutter);
   position: absolute;
   top: 187px;
-  width: 342px;
+  width: var(--work-mobile-content-width);
 }
 
 .workScope :global(.work-hero h1) {
@@ -142,10 +144,10 @@
 
 .workScope :global(.work-filters) {
   height: 40px;
-  left: 24px;
+  left: var(--work-mobile-gutter);
   position: absolute;
   top: 374px;
-  width: 342px;
+  width: var(--work-mobile-content-width);
   z-index: 2;
 }
 
@@ -196,7 +198,7 @@
 
 .workScope :global(.work-filter.is-search) {
   left: 0;
-  width: 342px;
+  width: 100%;
 }
 
 .workScope :global(.work-filter.is-filters),
@@ -210,7 +212,7 @@
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 700;
-  left: 24px;
+  left: var(--work-mobile-gutter);
   line-height: 20px;
   position: absolute;
   text-transform: uppercase;
@@ -230,10 +232,10 @@
   border-radius: 16px;
   color: #ffffff;
   height: 386px;
-  left: 24px;
+  left: var(--work-mobile-gutter);
   overflow: hidden;
   position: absolute;
-  width: 342px;
+  width: var(--work-mobile-content-width);
 }
 
 .workScope :global(.work-card.is-spotlight) {
@@ -336,15 +338,19 @@
 
 .workScope :global(.work-button.is-view-all) {
   font-size: 20px;
-  left: 55px;
+  left: 50%;
   min-height: 56px;
   top: 1844px;
+  transform: translateX(-50%);
   width: 280px;
 }
 
 .workScope :global(.work-services) {
+  height: 420px;
+  left: 0;
   position: absolute;
   top: 2056px;
+  width: 100%;
 }
 
 .workScope :global(.work-services-image) {
@@ -354,17 +360,17 @@
   display: block;
   filter: hue-rotate(35deg) saturate(1.12) brightness(1.03);
   height: 118px;
-  left: 24px;
+  left: var(--work-mobile-gutter);
   position: absolute;
   top: 0;
-  width: 342px;
+  width: var(--work-mobile-content-width);
 }
 
 .workScope :global(.work-services-copy) {
-  left: 24px;
+  left: var(--work-mobile-gutter);
   position: absolute;
   top: 182px;
-  width: 342px;
+  width: var(--work-mobile-content-width);
 }
 
 .workScope :global(.work-services-copy p) {
@@ -381,7 +387,7 @@
   font-weight: 500;
   line-height: 38px;
   margin-top: 6px;
-  width: 342px;
+  width: 100%;
 }
 
 .workScope :global(.work-services-copy > span) {
@@ -391,7 +397,7 @@
   font-weight: 500;
   line-height: 20px;
   margin-top: 6px;
-  width: 342px;
+  width: 100%;
 }
 
 .workScope :global(.work-button.is-services) {
@@ -717,6 +723,10 @@
 }
 
 @media (min-width: 560px) {
+  .workScope :global(.work-button.is-view-all) {
+    transform: none;
+  }
+
   .workScope :global(.work-content-drop.site-content-drop) {
     left: auto !important;
     right: -257px !important;

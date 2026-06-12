@@ -47,11 +47,11 @@
   background: #000000;
   border-radius: 1000px 0 600px 1000px;
   color: #ffffff;
-  height: 208px;
+  height: 153px;
   overflow: hidden;
   position: absolute;
   right: -276px;
-  top: 155px;
+  top: 166px;
   width: 342px;
   z-index: 3;
 }
@@ -93,12 +93,12 @@
   align-content: flex-start;
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px 12px;
   position: absolute;
-  right: 18px;
+  right: 34px;
   top: 50%;
   transform: translateY(-50%);
-  width: 238px;
+  width: 222px;
 }
 
 .careersScope :global(.careers-content-drop a) {

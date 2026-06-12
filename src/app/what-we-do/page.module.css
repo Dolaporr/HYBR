@@ -5,6 +5,8 @@
 }
 
 .whatScope :global(.what-frame) {
+  --what-mobile-content-width: min(342px, calc(100% - 48px));
+  --what-mobile-gutter: max(24px, calc((100% - var(--what-mobile-content-width)) / 2));
   background: #ffffff;
   height: 8049px;
   margin-inline: 0;
@@ -74,7 +76,7 @@
 }
 
 .whatScope :global(.what-hero) {
-  left: 24px;
+  left: var(--what-mobile-gutter);
   position: absolute;
   top: 187px;
   width: 294px;
@@ -168,11 +170,11 @@
   background: #000000;
   border-radius: 24px;
   height: 925px;
-  left: 24px;
+  left: var(--what-mobile-gutter);
   overflow: hidden;
   position: absolute;
   top: 428px;
-  width: 342px;
+  width: var(--what-mobile-content-width);
 }
 
 .whatScope :global(.what-services-bg) {
@@ -308,10 +310,10 @@
 
 .whatScope :global(.what-work-copy) {
   color: #000000;
-  left: 24px;
+  left: var(--what-mobile-gutter);
   position: absolute;
   top: 1383px;
-  width: 342px;
+  width: var(--what-mobile-content-width);
 }
 
 .whatScope :global(.what-work-copy h2),
@@ -346,10 +348,10 @@
   background: #000000;
   border-radius: 16px;
   color: #ffffff;
-  left: 24px;
+  left: var(--what-mobile-gutter);
   overflow: hidden;
   position: absolute;
-  width: 342px;
+  width: var(--what-mobile-content-width);
 }
 
 .whatScope :global(.what-case-card.is-feature) {
@@ -443,14 +445,17 @@
 }
 
 .whatScope :global(.what-section-heading) {
-  left: 24px;
+  left: var(--what-mobile-gutter);
   position: absolute;
   top: 2841px;
-  width: 342px;
+  width: var(--what-mobile-content-width);
 }
 
 .whatScope :global(.what-products-list) {
+  left: 0;
   position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .whatScope :global(.what-product-orbit) {
@@ -465,10 +470,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  left: 24px;
-  padding: 56px 64px;
+  left: var(--what-mobile-gutter);
+  padding: 56px max(32px, calc((var(--what-mobile-content-width) - 214px) / 2));
   position: absolute;
-  width: 342px;
+  width: var(--what-mobile-content-width);
 }
 
 .whatScope :global(.what-product-card.is-flywheel) {
@@ -580,9 +585,10 @@
 }
 
 .whatScope :global(.what-products-button) {
-  left: 75px;
+  left: 50%;
   position: absolute;
   top: 5627px;
+  transform: translateX(-50%);
 }
 
 .whatScope :global(.what-impact) {
@@ -592,14 +598,14 @@
   left: 0;
   position: absolute;
   top: 5990px;
-  width: 390px;
+  width: 100%;
 }
 
 .whatScope :global(.what-impact-heading) {
-  left: 24px;
+  left: var(--what-mobile-gutter);
   position: absolute;
   top: 80px;
-  width: 342px;
+  width: var(--what-mobile-content-width);
 }
 
 .whatScope :global(.what-impact-heading),
@@ -611,9 +617,10 @@
   display: flex;
   flex-direction: column;
   gap: 96px;
-  left: 79px;
+  left: 50%;
   position: absolute;
   top: 288px;
+  transform: translateX(-50%);
   width: 232px;
 }
 
@@ -636,9 +643,10 @@
 }
 
 .whatScope :global(.what-impact-button) {
-  left: 104px;
+  left: 50%;
   position: absolute;
   top: 850px;
+  transform: translateX(-50%);
 }
 
 .whatScope :global(.what-team) {
@@ -646,11 +654,11 @@
   border-radius: 24px;
   color: #000000;
   height: 766px;
-  left: 24px;
+  left: var(--what-mobile-gutter);
   overflow: hidden;
   position: absolute;
   top: 1062px;
-  width: 342px;
+  width: var(--what-mobile-content-width);
 }
 
 .whatScope :global(.what-team-copy) {
@@ -689,6 +697,15 @@
   color: #000000;
   min-height: 48px;
   padding: 12px 24px;
+}
+
+@media (max-width: 559px) {
+  .whatScope :global(.what-products-button:hover),
+  .whatScope :global(.what-products-button:focus-visible),
+  .whatScope :global(.what-impact-button:hover),
+  .whatScope :global(.what-impact-button:focus-visible) {
+    transform: translateX(-50%) !important;
+  }
 }
 
 @media (min-width: 560px) and (max-width: 1023px) {
@@ -920,6 +937,7 @@
   .whatScope :global(.what-products-button) {
     left: 281px;
     top: 4968px;
+    transform: none;
   }
 
   .whatScope :global(.what-impact) {
@@ -938,6 +956,7 @@
     display: block;
     left: 0;
     top: 296px;
+    transform: none;
     width: 800px;
   }
 
@@ -970,6 +989,7 @@
   .whatScope :global(.what-impact-button) {
     left: 310px;
     top: 661px;
+    transform: none;
   }
 
   .whatScope :global(.what-team) {
@@ -1235,6 +1255,7 @@
   .whatScope :global(.what-products-button) {
     left: 515px;
     top: 3955px;
+    transform: none;
   }
 
   .whatScope :global(.what-impact) {
@@ -1253,6 +1274,7 @@
     display: block;
     left: 0;
     top: 347px;
+    transform: none;
     width: 1280px;
   }
 
@@ -1285,6 +1307,7 @@
   .whatScope :global(.what-impact-button) {
     left: 550px;
     top: 536px;
+    transform: none;
   }
 
   .whatScope :global(.what-team) {
@@ -1587,6 +1610,7 @@
   .whatScope :global(.what-products-button) {
     left: 564px;
     top: 4247px;
+    transform: none;
   }
 
   .whatScope :global(.what-impact) {
@@ -1605,6 +1629,7 @@
     display: block;
     left: 0;
     top: 324px;
+    transform: none;
     width: 1440px;
   }
 
@@ -1637,6 +1662,7 @@
   .whatScope :global(.what-impact-button) {
     left: 619px;
     top: 529px;
+    transform: none;
   }
 
   .whatScope :global(.what-team) {

@@ -52,6 +52,7 @@ export function ServicesTestimonials({
   testimonials: ServiceTestimonial[];
 }) {
   const active = testimonials[0];
+  const next = testimonials[1] ?? active;
   const serializedTestimonials = JSON.stringify(testimonials).replace(/</g, "\\u003c");
 
   if (!active) {
@@ -68,6 +69,11 @@ export function ServicesTestimonials({
         aria-hidden="true"
         className="services-testimonial-bg"
         style={{ backgroundImage: `url(${active.background})` }}
+      />
+      <span
+        aria-hidden="true"
+        className="services-testimonial-preview"
+        style={{ backgroundImage: `url(${next.background})` }}
       />
       <div
         aria-live="polite"
@@ -116,6 +122,7 @@ export function ServicesTestimonials({
     const quote = root.querySelector('.services-testimonial-copy p');
     const name = root.querySelector('.services-testimonial-copy strong');
     const role = root.querySelector('.services-testimonial-copy span');
+    const preview = root.querySelector('.services-testimonial-preview');
     const dots = Array.from(root.querySelectorAll('.services-carousel-dots button'));
     let activeIndex = 0;
     let timerId = null;
@@ -125,9 +132,11 @@ export function ServicesTestimonials({
     const render = (nextIndex) => {
       activeIndex = (nextIndex + total) % total;
       const item = testimonials[activeIndex];
+      const nextItem = testimonials[(activeIndex + 1) % total];
       if (!item) return;
 
       if (bg) bg.style.backgroundImage = 'url(' + item.background + ')';
+      if (preview && nextItem) preview.style.backgroundImage = 'url(' + nextItem.background + ')';
       if (avatar) avatar.src = item.avatar;
       if (quote) quote.textContent = '\\u201c' + item.quote + '\\u201d';
       if (name) name.textContent = item.name;

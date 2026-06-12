@@ -29,6 +29,45 @@ const testimonials = [
 
 const AUTO_DELAY = 5000;
 
+type HomeTestimonial = (typeof testimonials)[number];
+
+function TestimonialCard({
+  ariaHidden = false,
+  className,
+  testimonial,
+}: {
+  ariaHidden?: boolean;
+  className?: string;
+  testimonial: HomeTestimonial;
+}) {
+  return (
+    <div
+      aria-hidden={ariaHidden}
+      className={`home-testimonial-card grid gap-10 text-left text-white md:grid-cols-[116px_1fr] ${className ?? ""}`}
+    >
+      <div className="home-testimonial-avatar relative flex size-[116px] items-center justify-center rounded-full">
+        <span className="absolute inset-0 rounded-full border-[1.5px] border-[#8dc540] opacity-60" />
+        <img
+          alt={ariaHidden ? "" : testimonial.name}
+          className="home-testimonial-avatar-image size-[88px] rounded-full border-[3px] border-[#8dc540] object-cover"
+          src={testimonial.image}
+        />
+      </div>
+      <div>
+        <blockquote className="home-testimonial-quote">
+          &ldquo;{testimonial.quote}&rdquo;
+        </blockquote>
+        <p className="mt-8 font-display text-[16px] font-semibold">
+          {testimonial.name}
+        </p>
+        <p className="font-display text-[16px] font-semibold text-white/86">
+          {testimonial.title}
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export function TestimonialsCarousel() {
   const [active, setActive] = useState(0);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -52,6 +91,7 @@ export function TestimonialsCarousel() {
   }, []);
 
   const t = testimonials[active];
+  const next = testimonials[(active + 1) % testimonials.length];
 
   return (
     <>
@@ -64,29 +104,18 @@ export function TestimonialsCarousel() {
         >
           &#8249;
         </button>
-        <div
-          className="home-testimonial-card home-testimonial-animate grid gap-10 text-left text-white md:grid-cols-[116px_1fr]"
-          key={active}
-        >
-          <div className="home-testimonial-avatar relative flex size-[116px] items-center justify-center rounded-full">
-            <span className="absolute inset-0 rounded-full border-[1.5px] border-[#8dc540] opacity-60" />
-            <img
-              alt={t.name}
-              className="home-testimonial-avatar-image size-[88px] rounded-full border-[3px] border-[#8dc540] object-cover"
-              src={t.image}
-            />
-          </div>
-          <div>
-            <blockquote className="home-testimonial-quote">
-              &ldquo;{t.quote}&rdquo;
-            </blockquote>
-            <p className="mt-8 font-display text-[16px] font-semibold">
-              {t.name}
-            </p>
-            <p className="font-display text-[16px] font-semibold text-white/86">
-              {t.title}
-            </p>
-          </div>
+        <div className="home-testimonial-stage">
+          <TestimonialCard
+            className="home-testimonial-animate is-active"
+            key={active}
+            testimonial={t}
+          />
+          <TestimonialCard
+            ariaHidden
+            className="home-testimonial-preview"
+            key={`preview-${active}`}
+            testimonial={next}
+          />
         </div>
         <button
           aria-label="Next testimonial"

@@ -66,6 +66,7 @@ export function SiteInteractions() {
     const supportsFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
     const revealItems = Array.from(document.querySelectorAll<HTMLElement>(revealSelectors));
     const tiltItems = Array.from(document.querySelectorAll<HTMLElement>(tiltSelectors));
+    const homeFlipCards = Array.from(document.querySelectorAll<HTMLElement>("[data-home-service-card]"));
     const nativeDrawerReady =
       (window as Window & { __HYBR_CONTENT_DRAWERS__?: boolean }).__HYBR_CONTENT_DRAWERS__ === true;
     const contentDrops = nativeDrawerReady
@@ -103,6 +104,40 @@ export function SiteInteractions() {
       if (!drop.hasAttribute("role")) drop.setAttribute("role", "button");
       if (!drop.hasAttribute("tabindex")) drop.tabIndex = 0;
     });
+
+    homeFlipCards.forEach((card) => {
+      card.setAttribute("aria-pressed", "false");
+    });
+
+    const toggleHomeFlipCard = (card: HTMLElement) => {
+      const isFlipped = !card.classList.contains("is-flipped");
+      card.classList.toggle("is-flipped", isFlipped);
+      card.setAttribute("aria-pressed", String(isFlipped));
+      const back = card.querySelector<HTMLElement>(".home-service-back");
+      if (back) back.setAttribute("aria-hidden", String(!isFlipped));
+    };
+
+    const handleHomeFlipCardClick = (event: MouseEvent) => {
+      if (!(event.target instanceof Element)) return;
+      if (event.target.closest("a")) return;
+
+      const card = event.target.closest<HTMLElement>("[data-home-service-card]");
+      if (!card) return;
+
+      event.preventDefault();
+      toggleHomeFlipCard(card);
+    };
+
+    const handleHomeFlipCardKeydown = (event: KeyboardEvent) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      if (!(event.target instanceof Element)) return;
+
+      const card = event.target.closest<HTMLElement>("[data-home-service-card]");
+      if (!card || event.target.closest("a")) return;
+
+      event.preventDefault();
+      toggleHomeFlipCard(card);
+    };
 
     const handleContentDropClick = (event: MouseEvent) => {
       if (nativeDrawerReady) return;
@@ -147,15 +182,25 @@ export function SiteInteractions() {
 
     document.addEventListener("click", handleContentDropClick);
     document.addEventListener("keydown", handleContentDropKeydown);
+    document.addEventListener("click", handleHomeFlipCardClick);
+    document.addEventListener("keydown", handleHomeFlipCardKeydown);
 
     const cleanupContentDrops = () => {
       document.removeEventListener("click", handleContentDropClick);
       document.removeEventListener("keydown", handleContentDropKeydown);
+      document.removeEventListener("click", handleHomeFlipCardClick);
+      document.removeEventListener("keydown", handleHomeFlipCardKeydown);
       contentDrops.forEach((drop) => {
         drop.classList.remove("site-content-drop", "is-content-open");
         drop.removeAttribute("aria-expanded");
         if (drop.getAttribute("role") === "button") drop.removeAttribute("role");
         if (drop.tabIndex === 0) drop.removeAttribute("tabindex");
+      });
+      homeFlipCards.forEach((card) => {
+        card.classList.remove("is-flipped");
+        card.removeAttribute("aria-pressed");
+        const back = card.querySelector<HTMLElement>(".home-service-back");
+        if (back) back.setAttribute("aria-hidden", "true");
       });
     };
 
