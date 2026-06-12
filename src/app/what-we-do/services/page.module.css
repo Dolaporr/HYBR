@@ -537,11 +537,13 @@
 .servicesScope :global(.services-carousel-dots) {
   display: flex;
   gap: 6px;
-  left: 50%;
+  justify-content: center;
+  left: 0;
   position: absolute;
+  right: 0;
   top: 674px;
-  transform: translateX(-50%);
-  width: max-content;
+  transform: none;
+  width: 100%;
 }
 
 .servicesScope :global(.services-carousel-dots span),
@@ -834,7 +836,8 @@
   }
 
   .servicesScope :global(.services-carousel-dots) {
-    left: 50%;
+    left: 0;
+    right: 0;
     top: 466px;
   }
 
@@ -1120,7 +1123,8 @@
   }
 
   .servicesScope :global(.services-carousel-dots) {
-    left: 50%;
+    left: 0;
+    right: 0;
     top: 392px;
   }
 
@@ -1401,7 +1405,8 @@
   }
 
   .servicesScope :global(.services-carousel-dots) {
-    left: 50%;
+    left: 0;
+    right: 0;
     top: 383px;
   }
 

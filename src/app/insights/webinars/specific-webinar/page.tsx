@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Button, Footer, Header } from "../../../_components/marketing";
+import { Footer, Header } from "../../../_components/marketing";
 import { figmaAssets } from "@/content/site";
 
 const topics = ["Topic 1", "Topic 2", "Topic 3"];
@@ -16,11 +16,13 @@ const speakers = [
     name: "FirstName LastName",
     role: "Title/Role, Company",
     location: "Location",
+    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dignissim fringilla feugiat. Praesent sed condimentum nulla.",
   },
   {
     name: "FirstName LastName",
     role: "Title/Role, Company",
     location: "Location",
+    bio: "Suspendisse ullamcorper condimentum molestie. Pellentesque fringilla tristique purus, vitae euismod tortor tempor eu.",
   },
 ];
 
@@ -123,7 +125,7 @@ function RelatedTopics({ className = "" }: { className?: string }) {
 
 function SpeakerCard({ speaker }: { speaker: (typeof speakers)[number] }) {
   return (
-    <article
+    <details
       className="webinar-speaker-card"
       style={{
         backgroundColor: "rgba(0,0,0,.52)",
@@ -131,23 +133,26 @@ function SpeakerCard({ speaker }: { speaker: (typeof speakers)[number] }) {
         backgroundBlendMode: "multiply",
       }}
     >
-      <div className="webinar-speaker-person">
-        <span className="webinar-speaker-ring">
-          <img alt="" src={figmaAssets.figmaTeamPortrait} />
-        </span>
-        <div>
-          <h3>{speaker.name}</h3>
-          <p>{speaker.role}</p>
-          <p>{speaker.location}</p>
+      <summary className="webinar-speaker-summary">
+        <div className="webinar-speaker-person">
+          <span className="webinar-speaker-ring">
+            <img alt="" src={figmaAssets.figmaTeamPortrait} />
+          </span>
+          <div>
+            <h3>{speaker.name}</h3>
+            <p>{speaker.role}</p>
+            <p>{speaker.location}</p>
+          </div>
         </div>
-      </div>
-      <button className="webinar-speaker-more" type="button">
-        <span>About Speaker</span>
-        <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
-          <path d="M6 9L12 15L18 9" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-        </svg>
-      </button>
-    </article>
+        <span className="webinar-speaker-more">
+          <span>About Speaker</span>
+          <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+            <path d="M6 9L12 15L18 9" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+          </svg>
+        </span>
+      </summary>
+      <p className="webinar-speaker-bio">{speaker.bio}</p>
+    </details>
   );
 }
 
@@ -198,13 +203,10 @@ export default function SpecificWebinarPage() {
               <section className="webinar-speakers">
                 <div className="webinar-speakers-head">
                   <h2>About The Speakers</h2>
-                  <Button href="/insights/webinars" variant="outline">
-                    All Webinars
-                  </Button>
                 </div>
                 <div className="webinar-speaker-list">
-                  {speakers.map((speaker) => (
-                    <SpeakerCard key={speaker.name + speaker.role} speaker={speaker} />
+                  {speakers.map((speaker, index) => (
+                    <SpeakerCard key={`${speaker.name}-${speaker.role}-${index}`} speaker={speaker} />
                   ))}
                 </div>
               </section>
@@ -231,9 +233,9 @@ export default function SpecificWebinarPage() {
                     <RelatedWebinarRow key={`${webinar.title}-${index}`} webinar={webinar} />
                   ))}
                 </div>
-                <Button href="/insights/webinars" variant="outline">
+                <Link className="news-detail-outline-button webinar-all-button" href="/insights/webinars">
                   All Webinars
-                </Button>
+                </Link>
               </section>
             </aside>
           </div>
