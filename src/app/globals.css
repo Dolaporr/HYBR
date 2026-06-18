@@ -9032,7 +9032,7 @@ body {
 }
 
 .articles-what-image {
-  --hybr-image-card-mask-current: var(--hybr-image-card-simple-mask);
+  --hybr-image-card-mask-current: var(--hybr-image-card-mask);
   background: #000000;
   border-radius: 0;
   height: 336px;
@@ -10323,7 +10323,7 @@ body {
 }
 
 .news-what-image {
-  --hybr-image-card-mask-current: var(--hybr-image-card-simple-mask);
+  --hybr-image-card-mask-current: var(--hybr-image-card-mask);
   background: #000000;
   border-radius: 0;
   height: 336px;
@@ -15809,6 +15809,7 @@ body {
   .homepage-live .home-gain-wrap,
   .homepage-live .home-gain-image,
   .homepage-live .home-gain-copy,
+  .homepage-live .home-contact-shell,
   .homepage-live .home-cta-wrap {
     max-width: var(--home-mobile-frame) !important;
     width: var(--home-mobile-frame) !important;
@@ -16106,10 +16107,21 @@ body {
   }
 
   .homepage-live .home-contact-shell {
+    background: #000000 !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
     min-height: 751px;
+    overflow: hidden !important;
+  }
+
+  .homepage-live .home-contact-shell > div:first-child,
+  .homepage-live .home-contact-form {
+    max-width: 100% !important;
+    width: 100% !important;
   }
 
   .homepage-live .home-contact-form {
+    box-sizing: border-box;
     min-height: 487px;
   }
 
@@ -16138,6 +16150,7 @@ body {
   .homepage-live .home-gain-wrap,
   .homepage-live .home-gain-image,
   .homepage-live .home-gain-copy,
+  .homepage-live .home-contact-shell,
   .homepage-live .home-cta-wrap {
     max-width: var(--home-mobile-frame) !important;
     width: var(--home-mobile-frame) !important;
@@ -18971,15 +18984,22 @@ body {
   }
 
   :is(.articles-what-image, .news-what-image) {
-    border-radius: 0 999px 999px 0 !important;
+    --hybr-image-card-mask-current: var(--hybr-image-card-mask);
+    border-radius: 0 !important;
     clip-path: none !important;
     height: 336px !important;
     left: -429px !important;
-    mask-image: none !important;
+    mask-image: var(--hybr-image-card-mask-current) !important;
+    mask-position: center !important;
+    mask-repeat: no-repeat !important;
+    mask-size: 100% 100% !important;
     overflow: hidden !important;
     position: absolute !important;
     top: 17px !important;
-    -webkit-mask-image: none !important;
+    -webkit-mask-image: var(--hybr-image-card-mask-current) !important;
+    -webkit-mask-position: center !important;
+    -webkit-mask-repeat: no-repeat !important;
+    -webkit-mask-size: 100% 100% !important;
     width: 976px !important;
   }
 
@@ -19102,9 +19122,60 @@ body {
   -webkit-mask-image: none !important;
 }
 
-:is(.who-careers-image, .articles-what-image, .news-what-image) {
+.who-careers-image {
   border-radius: 0 999px 999px 0 !important;
   clip-path: none !important;
   mask-image: none !important;
   -webkit-mask-image: none !important;
+}
+
+:is(.articles-what-image, .news-what-image) {
+  --hybr-image-card-mask-current: var(--hybr-image-card-mask);
+  border-radius: 0 !important;
+  clip-path: none !important;
+  mask-image: var(--hybr-image-card-mask-current) !important;
+  mask-position: center !important;
+  mask-repeat: no-repeat !important;
+  mask-size: 100% 100% !important;
+  -webkit-mask-image: var(--hybr-image-card-mask-current) !important;
+  -webkit-mask-position: center !important;
+  -webkit-mask-repeat: no-repeat !important;
+  -webkit-mask-size: 100% 100% !important;
+}
+
+@media (max-width: 559px) {
+  :is(.articles-what-image, .news-what-image) {
+    --hybr-image-card-mask-current: var(--hybr-image-card-mask);
+    border-radius: 0 !important;
+    clip-path: polygon(
+      0 0,
+      76% 0,
+      82% 1%,
+      88% 5%,
+      93% 13%,
+      97% 25%,
+      100% 50%,
+      97% 75%,
+      93% 87%,
+      88% 95%,
+      82% 99%,
+      76% 100%,
+      37% 100%,
+      31% 98%,
+      25% 93%,
+      19% 84%,
+      13% 71%,
+      7% 53%,
+      0 0
+    ) !important;
+    mask-image: var(--hybr-image-card-mask-current) !important;
+    mask-position: center !important;
+    mask-repeat: no-repeat !important;
+    mask-size: 100% 100% !important;
+    overflow: hidden !important;
+    -webkit-mask-image: var(--hybr-image-card-mask-current) !important;
+    -webkit-mask-position: center !important;
+    -webkit-mask-repeat: no-repeat !important;
+    -webkit-mask-size: 100% 100% !important;
+  }
 }

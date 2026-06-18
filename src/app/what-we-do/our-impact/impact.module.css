@@ -146,7 +146,7 @@
 }
 
 .impactScope :global(.impact-intro-image) {
-  --hybr-image-card-mask-current: var(--hybr-image-card-simple-mask);
+  --hybr-image-card-mask-current: var(--hybr-image-card-mask);
   background-position: center;
   background-size: cover;
   border-radius: 0;
@@ -1216,15 +1216,22 @@
 }
 
 .impactScope :global(.impact-intro-image) {
-  border-radius: 0 999px 999px 0 !important;
+  --hybr-image-card-mask-current: var(--hybr-image-card-mask);
+  border-radius: 0 !important;
   clip-path: none !important;
-  mask-image: none !important;
+  mask-image: var(--hybr-image-card-mask-current) !important;
+  mask-position: center !important;
+  mask-repeat: no-repeat !important;
+  mask-size: 100% 100% !important;
   overflow: hidden !important;
-  -webkit-mask-image: none !important;
+  -webkit-mask-image: var(--hybr-image-card-mask-current) !important;
+  -webkit-mask-position: center !important;
+  -webkit-mask-repeat: no-repeat !important;
+  -webkit-mask-size: 100% 100% !important;
 }
 
 @media (min-width: 1024px) {
   .impactScope :global(.impact-intro-image) {
-    border-radius: 999px 0 0 999px !important;
+    border-radius: 0 !important;
   }
 }
