@@ -490,15 +490,24 @@
 }
 
 .caseScope :global(.case-services-image) {
+  --hybr-image-card-mask-current: var(--hybr-image-card-mask);
   background-position: center;
   background-size: cover;
-  border-radius: 1000px 0 0 1000px;
+  border-radius: 0;
   display: block;
   filter: hue-rotate(35deg) saturate(1.12) brightness(1.03);
   height: 118px;
   left: 24px;
+  mask-image: var(--hybr-image-card-mask-current);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
   position: absolute;
   top: 0;
+  -webkit-mask-image: var(--hybr-image-card-mask-current);
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
   width: 342px;
 }
 
@@ -1218,6 +1227,7 @@
   }
 
   .caseScope :global(.case-services-image) {
+    border-radius: 0;
     height: 336px;
     left: 785px;
     width: 976px;
@@ -1588,6 +1598,7 @@
   }
 
   .caseScope :global(.case-services-image) {
+    border-radius: 0;
     height: 336px;
     left: 773px;
     width: 976px;

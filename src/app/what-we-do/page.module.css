@@ -673,14 +673,23 @@
 }
 
 .whatScope :global(.what-team-image) {
+  --hybr-image-card-mask-current: var(--hybr-image-card-team-mask);
   background-position: center;
   background-size: cover;
   border: 2px solid #ffffff;
-  border-radius: 0 1000px 0 1000px;
+  border-radius: 0;
   height: 124px;
   left: 32px;
+  mask-image: var(--hybr-image-card-mask-current);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
   position: absolute;
   top: 59px;
+  -webkit-mask-image: var(--hybr-image-card-mask-current);
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
   width: 278px;
 }
 
@@ -1343,6 +1352,23 @@
     min-height: 56px;
     padding: 16px 32px;
   }
+}
+
+.whatScope :global(.what-team-image) {
+  --hybr-image-card-mask-current: var(--hybr-image-card-team-mask);
+  background-position: center 38% !important;
+  background-size: cover !important;
+  border-radius: 0 !important;
+  clip-path: none !important;
+  mask-image: var(--hybr-image-card-mask-current) !important;
+  mask-position: center !important;
+  mask-repeat: no-repeat !important;
+  mask-size: 100% 100% !important;
+  overflow: hidden !important;
+  -webkit-mask-image: var(--hybr-image-card-mask-current) !important;
+  -webkit-mask-position: center !important;
+  -webkit-mask-repeat: no-repeat !important;
+  -webkit-mask-size: 100% 100% !important;
 }
 
 @media (min-width: 1360px) {

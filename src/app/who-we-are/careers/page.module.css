@@ -128,10 +128,19 @@
 }
 
 .careersScope :global(.careers-working-image) {
-  border-radius: 1000px 0 1000px 1000px;
+  --hybr-image-card-mask-current: var(--hybr-image-card-simple-mask);
+  border-radius: 0;
   height: 118px;
   left: var(--careers-mobile-gutter);
+  mask-image: var(--hybr-image-card-mask-current);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
   top: 438px;
+  -webkit-mask-image: var(--hybr-image-card-mask-current);
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
   width: 342px;
 }
 
@@ -537,10 +546,19 @@
 }
 
 .careersScope :global(.careers-fellowship-image) {
-  border-radius: 1000px 0 1000px 1000px;
+  --hybr-image-card-mask-current: var(--hybr-image-card-simple-mask-mirror);
+  border-radius: 0;
   height: 118px;
   left: var(--careers-mobile-gutter);
+  mask-image: var(--hybr-image-card-mask-current);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
   top: 5431px;
+  -webkit-mask-image: var(--hybr-image-card-mask-current);
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
   width: 342px;
 }
 
@@ -845,7 +863,7 @@
   }
 
   .careersScope :global(.careers-working-image) {
-    border-radius: 0 1000px 1000px 1000px;
+    border-radius: 0;
     height: 248px;
     left: 80px;
     top: 592px;
@@ -1169,7 +1187,7 @@
   }
 
   .careersScope :global(.careers-working-image) {
-    border-radius: 1000px;
+    border-radius: 0;
     height: 336px;
     left: -481px;
     top: 563px;
@@ -1347,6 +1365,7 @@
   }
 
   .careersScope :global(.careers-fellowship-image) {
+    border-radius: 0;
     height: 336px;
     left: auto;
     right: -481px;
@@ -1509,7 +1528,7 @@
   }
 
   .careersScope :global(.careers-working-image) {
-    border-radius: 1000px;
+    border-radius: 0;
     height: 336px;
     left: -370px;
     top: 688px;
@@ -1696,6 +1715,7 @@
   }
 
   .careersScope :global(.careers-fellowship-image) {
+    border-radius: 0;
     height: 536px;
     left: 773px;
     top: 3934px;
@@ -1836,4 +1856,18 @@
     left: auto !important;
     right: 0 !important;
   }
+}
+
+.careersScope :global(.careers-working-image) {
+  border-radius: 0 999px 999px 0 !important;
+  clip-path: none !important;
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+}
+
+.careersScope :global(.careers-fellowship-image) {
+  border-radius: 999px 0 0 999px !important;
+  clip-path: none !important;
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
 }

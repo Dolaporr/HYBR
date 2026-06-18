@@ -354,15 +354,24 @@
 }
 
 .workScope :global(.work-services-image) {
+  --hybr-image-card-mask-current: var(--hybr-image-card-simple-mask-mirror);
   background-position: center;
   background-size: cover;
-  border-radius: 1000px 0 1000px 1000px;
+  border-radius: 0;
   display: block;
   filter: hue-rotate(35deg) saturate(1.12) brightness(1.03);
   height: 118px;
   left: var(--work-mobile-gutter);
+  mask-image: var(--hybr-image-card-mask-current);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
   position: absolute;
   top: 0;
+  -webkit-mask-image: var(--hybr-image-card-mask-current);
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
   width: var(--work-mobile-content-width);
 }
 
@@ -665,7 +674,7 @@
   }
 
   .workScope :global(.work-services-image) {
-    border-radius: 1000px 0 1000px 1000px;
+    border-radius: 0;
     height: 248px;
     left: 80px;
     width: 640px;
@@ -710,6 +719,14 @@
   .workScope :global(.work-button .is-mobile-label) {
     display: none;
   }
+}
+
+.workScope :global(.work-services-image) {
+  border-radius: 999px 0 0 999px !important;
+  clip-path: none !important;
+  mask-image: none !important;
+  overflow: hidden !important;
+  -webkit-mask-image: none !important;
 }
 
 .workScope :global(.work-content-drop.site-content-drop) {
@@ -975,7 +992,7 @@
   }
 
   .workScope :global(.work-services-image) {
-    border-radius: 1000px;
+    border-radius: 0;
     height: 336px;
     left: 785px;
     width: 976px;
@@ -1288,7 +1305,7 @@
   }
 
   .workScope :global(.work-services-image) {
-    border-radius: 1000px;
+    border-radius: 0;
     height: 336px;
     left: 773px;
     width: 976px;
