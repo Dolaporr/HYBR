@@ -64,9 +64,7 @@ export const footerGroups = [
   {
     title: "Contact us",
     links: [
-      { label: "Address 1", href: "/contact" },
-      { label: "Phone Number", href: "/contact" },
-      { label: "Email Address", href: "/contact" },
+      { label: "sales@hybrgroup.net", href: "mailto:sales@hybrgroup.net" },
     ],
   },
 ] as const;

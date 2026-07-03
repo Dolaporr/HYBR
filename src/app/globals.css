@@ -2783,6 +2783,13 @@ body {
   width: 100%;
 }
 
+video.home-video-card {
+  aspect-ratio: 1040 / 535;
+  background: #000000;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
 .risk-marker {
   align-items: center;
   background: #8dc540;
@@ -16332,21 +16339,21 @@ body {
     left: 32px !important;
     margin-top: 0 !important;
     position: absolute !important;
-    top: 212px !important;
-    width: min(300px, calc(100% - 64px)) !important;
+    top: 154px !important;
+    width: min(340px, calc(100% - 64px)) !important;
   }
 
   .homepage-live .home-webinar-speakers {
     left: 32px !important;
     margin-top: 0 !important;
     position: absolute !important;
-    top: 281px !important;
+    top: 282px !important;
   }
 
   .homepage-live .home-webinar-date {
     left: 32px !important;
     position: absolute !important;
-    top: 302px !important;
+    top: 303px !important;
   }
 
   .homepage-live .home-webinar-duration {
@@ -19682,5 +19689,92 @@ body {
     left: auto !important;
     right: -210px !important;
     top: 112px !important;
+  }
+}
+
+.homepage-live .home-webinar-card {
+  cursor: pointer;
+  text-decoration: none !important;
+}
+
+.homepage-live .home-webinar-card:focus-visible {
+  outline: 3px solid #8cc63f;
+  outline-offset: 4px;
+}
+
+@media (min-width: 768px) {
+  .homepage-live .home-webinar-copy {
+    bottom: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    inset: 32px !important;
+    left: 32px !important;
+    max-width: none !important;
+    position: absolute !important;
+    right: 32px !important;
+    top: 32px !important;
+  }
+
+  .homepage-live .home-webinar-label {
+    flex: 0 0 auto !important;
+    left: auto !important;
+    margin: 0 !important;
+    position: static !important;
+    top: auto !important;
+  }
+
+  .homepage-live .home-webinar-title {
+    font-size: clamp(22px, 2.1vw, 30px) !important;
+    line-height: 1.04 !important;
+    margin: auto 0 0 !important;
+    max-width: min(410px, calc(100% - 112px)) !important;
+    position: static !important;
+    top: auto !important;
+    width: min(410px, calc(100% - 112px)) !important;
+  }
+
+  .homepage-live .home-webinar-speakers,
+  .homepage-live .home-webinar-date {
+    font-size: clamp(12px, 1.05vw, 16px) !important;
+    line-height: 1.18 !important;
+    max-width: min(520px, calc(100% - 112px)) !important;
+    position: static !important;
+    top: auto !important;
+    width: min(520px, calc(100% - 112px)) !important;
+  }
+
+  .homepage-live .home-webinar-speakers {
+    margin: 10px 0 0 !important;
+  }
+
+  .homepage-live .home-webinar-date {
+    margin: 2px 0 0 !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .homepage-live .home-webinar-card {
+    height: 300px !important;
+    min-height: 300px !important;
+  }
+
+  .homepage-live .home-webinar-copy {
+    inset: 24px !important;
+    left: 24px !important;
+    right: 24px !important;
+    top: 24px !important;
+  }
+
+  .homepage-live .home-webinar-title {
+    font-size: 22px !important;
+    max-width: calc(100% - 84px) !important;
+    width: calc(100% - 84px) !important;
+  }
+
+  .homepage-live .home-webinar-speakers,
+  .homepage-live .home-webinar-date {
+    font-size: 12px !important;
+    max-width: calc(100% - 84px) !important;
+    width: calc(100% - 84px) !important;
   }
 }

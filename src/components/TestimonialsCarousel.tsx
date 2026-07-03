@@ -5,6 +5,13 @@ import { useCallback, useEffect, useRef, useState } from "react";
 const testimonials = [
   {
     quote:
+      "Working with HYBR transformed how our leadership team approaches innovation. We now have the tools and confidence to build what's next.",
+    name: "Placeholder Client",
+    title: "Director of Strategy, Future Group",
+    image: "/home/testimonial.png",
+  },
+  {
+    quote:
       "The curated innovation retreat for AFEX's 40-exco team was truly world class and highly impactful, shaping our strategic plans going forward.",
     name: "Ayo Balogun",
     title:

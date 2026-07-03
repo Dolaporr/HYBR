@@ -17,6 +17,7 @@ const assets = {
   contact: figmaAssets.contact,
   caseStudy: "/home/case-study.png",
   caseStudyLogo: "/home/logo-case-study.svg",
+  mockVideo: "/home/website-mock-1.mp4",
   plasticWaste: "/home/edit-flags/plastic-waste.jpg",
   ourWorkFeature: "/home/our-work-feature-source.png",
   ourWorkTall: "/home/our-work-tall-source.png",
@@ -25,6 +26,7 @@ const assets = {
 };
 
 const trustedLogoStrip = "/logos/sliding-animation.svg";
+const webinarYoutubeUrl = "https://www.youtube.com/watch?v=jEJqt1T-G50&themeRefresh=1";
 
 const rotatingWords = ["ideas", "products", "services", "markets", "teams"];
 
@@ -380,11 +382,15 @@ export default function Home() {
 
       <div className="home-transition-wrap">
         <section className="home-video-section home-reveal relative px-6 py-16 md:py-24" data-reveal="scale">
-          <img
-            alt="Featured HYBR video"
+          <video
             className="home-video-card"
-            src="/Webinar Card - horizontal tab.svg"
-          />
+            controls
+            playsInline
+            poster="/Webinar Card - horizontal tab.svg"
+            preload="metadata"
+          >
+            <source src={assets.mockVideo} type="video/mp4" />
+          </video>
         </section>
 
         <img alt="" aria-hidden="true" className="home-green-inline" src="/green inline horizontal tab.svg" />
@@ -682,16 +688,22 @@ export default function Home() {
             <div className="home-news-card-copy absolute bottom-5 left-5 right-5">
               <SectionLabel>News</SectionLabel>
               <h3 className="mt-3 text-[22px] font-medium leading-[1.05]">
-                One Liner For Specific News Update
+                SPCTA Completes IHS Deeptech Accelerator
               </h3>
               <p className="mt-3 max-w-[215px] text-[11px] leading-[1.4]">
-                A short, captivating statement about what this news update covers.
+                HYBR Labs-built venture SPCTA joins leading innovators in Ilorin,
+                advancing its mission to scale circular supply chain infrastructure
+                across Africa.
               </p>
             </div>
           </article>
           <div className="home-insights-stack">
-            <article
-              className="home-webinar-card relative overflow-hidden rounded-[14px] bg-black p-5 text-white"
+            <a
+              aria-label="Watch The Systems Mindset webinar on YouTube"
+              className="home-webinar-card relative block overflow-hidden rounded-[14px] bg-black p-5 text-white"
+              href={webinarYoutubeUrl}
+              rel="noopener noreferrer"
+              target="_blank"
               style={{
                 backgroundColor: "rgba(0,0,0,.46)",
                 backgroundImage: `url(${assets.webinar})`,
@@ -707,12 +719,16 @@ export default function Home() {
               <div className="home-webinar-copy">
                 <SectionLabel className="home-webinar-label">Webinar</SectionLabel>
                 <h3 className="home-webinar-title mt-18 max-w-[300px] text-[22px] font-medium leading-[1.06]">
-                  One Liner For Specific Webinar
+                  The Systems Mindset: A Smarter Way To Solve Complex Problems
                 </h3>
-                <p className="home-webinar-speakers mt-3 text-[11px] font-semibold">Jedidiah Akpata & Charles Ojei</p>
-                <p className="home-webinar-date text-[11px] font-semibold">November 2023</p>
+                <p className="home-webinar-speakers mt-3 text-[11px] font-semibold">
+                  Adeyinka Aderombi - CIO, Rex Insurance
+                </p>
+                <p className="home-webinar-date text-[11px] font-semibold">
+                  Soromfe Uzomah, Principal Program Manager, Microsoft
+                </p>
               </div>
-            </article>
+            </a>
             <article
               className="home-article-card relative overflow-hidden rounded-[14px] bg-black p-5 text-white"
               style={{
