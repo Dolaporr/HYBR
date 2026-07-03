@@ -9,21 +9,21 @@ const testimonials = [
     name: "Ayo Balogun",
     title:
       "CEO, AFEX Commodities | 2022 Financial Times Fastest Growing Venture in Africa",
-    image: "/home/testimonial.png",
+    image: "/home/edit-flags/ayo-balogun.png",
   },
   {
     quote:
-      "HYBR helped us navigate a complex market entry with clarity and speed. Their frameworks turned ambiguity into actionable strategy.",
-    name: "Placeholder Client",
-    title: "CEO, Innovation Corp",
-    image: "/home/testimonial.png",
+      "HYBR helped Coca-Cola turn a critical plastic waste challenge into a scalable innovation program with strong environmental and employment impact. Their work combined ecosystem insight, innovation sourcing and practical execution.",
+    name: "Peter Ekunkoya",
+    title: "Former Commercial Director, Coca-Cola",
+    image: "/home/edit-flags/peter-ekunkoya.png",
   },
   {
     quote:
-      "Working with HYBR transformed how our leadership team approaches innovation. We now have the tools and confidence to build what's next.",
-    name: "Placeholder Client",
-    title: "Director of Strategy, Future Group",
-    image: "/home/testimonial.png",
+      "HYBR has been a reliable and trusted partner, bringing clarity, structure, and execution discipline to complex innovation and growth work. Their practical, collaborative approach makes them a valuable partner.",
+    name: "Yewande Adewusi",
+    title: "COO, Alitheia Capital",
+    image: "/home/edit-flags/yewande-adewusi.png",
   },
 ];
 

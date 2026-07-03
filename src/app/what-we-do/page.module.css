@@ -1022,7 +1022,7 @@
   }
 
   .whatScope :global(.what-team-actions) {
-    bottom: 33px;
+    bottom: 12px;
     gap: 32px;
     left: 153px;
   }

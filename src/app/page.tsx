@@ -17,6 +17,7 @@ const assets = {
   contact: figmaAssets.contact,
   caseStudy: "/home/case-study.png",
   caseStudyLogo: "/home/logo-case-study.svg",
+  plasticWaste: "/home/edit-flags/plastic-waste.jpg",
   ourWorkFeature: "/home/our-work-feature-source.png",
   ourWorkTall: "/home/our-work-tall-source.png",
   footerLogo: figmaAssets.logoWhite,
@@ -25,7 +26,7 @@ const assets = {
 
 const trustedLogoStrip = "/logos/sliding-animation.svg";
 
-const rotatingWords = ["ideas", "services", "markets", "products", "teams"];
+const rotatingWords = ["ideas", "products", "services", "markets", "teams"];
 
 const risks = [
   "Wasting time and budget on ideas customers don’t want",
@@ -141,6 +142,22 @@ function BrandMark({ className = "" }: { className?: string }) {
       className={className}
       src={assets.caseStudyLogo}
     />
+  );
+}
+
+function CompanyWordmark({
+  kind,
+  className = "",
+}: {
+  kind: "coca-cola" | "alitheia";
+  className?: string;
+}) {
+  const label = kind === "coca-cola" ? "Coca-Cola" : "Alitheia Capital";
+
+  return (
+    <span className={`home-company-wordmark home-company-wordmark--${kind} ${className}`} aria-label={label}>
+      {label}
+    </span>
   );
 }
 
@@ -579,21 +596,20 @@ export default function Home() {
           <article
             className="home-case-feature overflow-hidden rounded-[14px] text-white"
           >
-            <img alt="" aria-hidden="true" className="home-case-bg home-case-bg--feature" src={assets.ourWorkFeature} />
+            <img alt="" aria-hidden="true" className="home-case-bg home-case-bg--feature" src={assets.plasticWaste} />
             <BrandMark className="home-case-mark" />
             <div className="home-case-content">
               <p className="home-case-kicker">CASE STUDY</p>
               <h3 className="text-[21px] font-medium leading-[1.1]">
-                One Liner For Specific Case Study
+                Eliminating Plastic Waste In Nigeria
               </h3>
               <p className="mt-3 max-w-[305px] text-[11px] font-semibold leading-[1.45] text-white/82">
-                A captivating statement about what service was offered to the
-                company. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                We delivered a holistic innovation programme to tackle a critical
+                and urgent environmental problem which helps Coca Cola to
+                radically eliminate plastic waste.
               </p>
               <div className="mt-5 flex items-end justify-between gap-4">
-                <span className="text-xs font-semibold uppercase tracking-[0.12em] md:text-[20px]">
-                  Company Name
-                </span>
+                <CompanyWordmark kind="coca-cola" />
                 <a className="home-inline-cta home-case-feature-cta" href="/case-studies/one-liner">
                   Read More
                 </a>
@@ -613,12 +629,14 @@ export default function Home() {
             <div className="home-case-tall-copy">
               <p className="home-case-kicker">CASE STUDY</p>
               <h3 className="text-[20px] font-medium leading-[1.12]">
-                One Liner For Specific Case Study
+                Operational and technical diagnostics
               </h3>
-              <p className="mt-3 max-w-[190px] text-[11px] font-semibold leading-[1.4] text-white/82">
-                A captivating statement about what service was offered to the
-                company. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              <p className="mt-3 max-w-[315px] text-[11px] font-semibold leading-[1.4] text-white/82">
+                We conducted - in record time - robust due diligence and scale
+                diagnostics for a female-led food company working towards Series A
+                round funding.
               </p>
+              <CompanyWordmark kind="alitheia" className="home-case-tall-company" />
             </div>
           </article>
         </div>
@@ -631,9 +649,9 @@ export default function Home() {
             Hear from Our Clients.
           </h2>
           <p className="home-testimonials-copy mx-auto mt-4">
-            Captivating supporting statement that introduces the
-            &quot;testimonial&quot; section, with text or video reviews from HYBR&apos;s
-            clientele.
+            Our clients trust HYBR to bring clarity to complex opportunities,
+            build customer evidence, and turn innovation into practical growth.
+            Hear what they have to say about working with us.
           </p>
           <TestimonialsCarousel />
           <div className="mt-5">
