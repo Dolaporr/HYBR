@@ -19778,3 +19778,95 @@ video.home-video-card {
     width: calc(100% - 84px) !important;
   }
 }
+
+@media (max-width: 559px) {
+  .homepage-live .home-news-card {
+    height: 476px !important;
+    min-height: 476px !important;
+    padding: 40px 32px 112px !important;
+  }
+
+  .homepage-live .home-news-card-copy {
+    left: 32px !important;
+    max-width: 278px !important;
+    top: 40px !important;
+    width: 278px !important;
+  }
+
+  .homepage-live .home-news-card h3 {
+    font-size: 30px !important;
+    line-height: 35.1px !important;
+    max-width: 268px !important;
+  }
+
+  .homepage-live .home-news-card p {
+    margin-top: 18px !important;
+    max-width: 224px !important;
+  }
+
+  .homepage-live .home-news-card .home-card-action {
+    bottom: 32px !important;
+    right: 32px !important;
+    z-index: 3 !important;
+  }
+
+  .homepage-live .home-webinar-card {
+    height: 430px !important;
+    min-height: 430px !important;
+  }
+
+  .homepage-live .home-webinar-duration {
+    top: 40px !important;
+  }
+
+  .homepage-live .home-webinar-copy {
+    bottom: 34px !important;
+    left: 32px !important;
+    top: 84px !important;
+    width: calc(var(--home-mobile-frame) - 64px) !important;
+  }
+
+  .homepage-live .home-webinar-label {
+    margin: 0 0 14px !important;
+  }
+
+  .homepage-live .home-webinar-title {
+    font-size: 31px !important;
+    line-height: 36.25px !important;
+    margin: 0 0 14px !important;
+  }
+
+  .homepage-live .home-webinar-speakers,
+  .homepage-live .home-webinar-date {
+    max-width: 278px !important;
+  }
+
+  .homepage-live .home-contact-section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .homepage-live .home-contact-shell {
+    border-radius: 0 !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    max-width: none !important;
+    min-height: auto !important;
+    width: 100vw !important;
+  }
+
+  .homepage-live .home-contact-shell > div:first-child,
+  .homepage-live .home-contact-form {
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  .homepage-live .home-contact-shell > div:first-child {
+    min-height: 342px !important;
+  }
+
+  .homepage-live .home-contact-form {
+    min-height: auto !important;
+    padding: 64px 32px 56px !important;
+  }
+}

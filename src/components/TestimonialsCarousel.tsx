@@ -35,6 +35,7 @@ const testimonials = [
 ];
 
 const AUTO_DELAY = 5000;
+const DOT_COUNT = 3;
 
 type HomeTestimonial = (typeof testimonials)[number];
 
@@ -99,6 +100,7 @@ export function TestimonialsCarousel() {
 
   const t = testimonials[active];
   const next = testimonials[(active + 1) % testimonials.length];
+  const activeDot = active % DOT_COUNT;
 
   return (
     <>
@@ -134,10 +136,10 @@ export function TestimonialsCarousel() {
         </button>
       </div>
       <div className="home-testimonial-dots mt-5">
-        {testimonials.map((_, i) => (
+        {Array.from({ length: DOT_COUNT }).map((_, i) => (
           <span
-            aria-label={`Go to testimonial ${i + 1}`}
-            className={i === active ? "is-active" : ""}
+            aria-label={`Go to testimonial set ${i + 1}`}
+            className={i === activeDot ? "is-active" : ""}
             key={i}
             onClick={() => go(i)}
             role="button"
