@@ -93,12 +93,16 @@ function TestimonialCard({
     >
       <div className="home-testimonial-avatar relative flex size-[116px] items-center justify-center rounded-full">
         <span className="absolute inset-0 rounded-full border-[1.5px] border-[#8dc540] opacity-60" />
-        <img
-          alt={ariaHidden ? "" : testimonial.name}
-          className={`home-testimonial-avatar-image size-[88px] rounded-full border-[3px] border-[#8dc540] object-cover ${testimonial.avatarClassName ?? ""}`}
-          draggable={false}
-          src={testimonial.image}
-        />
+        <span
+          className={`home-testimonial-avatar-image size-[88px] overflow-hidden rounded-full border-[3px] border-[#8dc540] ${testimonial.avatarClassName ?? ""}`}
+        >
+          <img
+            alt={ariaHidden ? "" : testimonial.name}
+            className="home-testimonial-avatar-photo size-full object-cover"
+            draggable={false}
+            src={testimonial.image}
+          />
+        </span>
       </div>
       <div>
         <blockquote className="home-testimonial-quote">

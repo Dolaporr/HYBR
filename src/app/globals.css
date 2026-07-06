@@ -19908,9 +19908,27 @@ video.home-video-card {
     width: var(--home-testimonial-photo-size) !important;
   }
 
-  .homepage-live .home-testimonial-avatar-image--peter {
+  .homepage-live
+    .home-testimonial-card
+    .home-testimonial-avatar-image
+    > .home-testimonial-avatar-photo {
+    border: 0 !important;
+    bottom: auto !important;
+    display: block !important;
+    height: 100% !important;
+    left: auto !important;
+    object-fit: cover !important;
+    position: static !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+  }
+
+  .homepage-live
+    .home-testimonial-avatar-image--peter
+    > .home-testimonial-avatar-photo {
     object-position: 50% 39% !important;
-    transform: translateX(-50%) scale(1.16) !important;
-    transform-origin: center bottom !important;
+    transform: scale(1.12) !important;
+    transform-origin: center 44% !important;
   }
 }
