@@ -19897,10 +19897,12 @@ video.home-video-card {
   }
 
   .homepage-live .home-testimonial-avatar-image {
+    bottom: 0 !important;
+    box-sizing: border-box !important;
     height: var(--home-testimonial-photo-size) !important;
     left: 50% !important;
     position: absolute !important;
-    top: calc(var(--home-testimonial-avatar-size) - var(--home-testimonial-photo-size)) !important;
+    top: auto !important;
     transform: translateX(-50%) !important;
     width: var(--home-testimonial-photo-size) !important;
   }

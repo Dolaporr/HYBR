@@ -1,7 +1,9 @@
 "use client";
 
 import {
+  type MouseEvent,
   type PointerEvent,
+  type TouchEvent,
   useCallback,
   useEffect,
   useRef,
@@ -51,6 +53,10 @@ type SwipeState = {
   startX: number;
   startY: number;
 };
+type TouchState = {
+  startX: number;
+  startY: number;
+};
 
 function capturePointer(element: HTMLDivElement, pointerId: number) {
   try {
@@ -89,6 +95,7 @@ function TestimonialCard({
         <img
           alt={ariaHidden ? "" : testimonial.name}
           className="home-testimonial-avatar-image size-[88px] rounded-full border-[3px] border-[#8dc540] object-cover"
+          draggable={false}
           src={testimonial.image}
         />
       </div>
@@ -110,11 +117,13 @@ function TestimonialCard({
 export function TestimonialsCarousel() {
   const [active, setActive] = useState(0);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const lastSwipeAtRef = useRef(0);
   const swipeRef = useRef<SwipeState>({
     pointerId: null,
     startX: 0,
     startY: 0,
   });
+  const touchRef = useRef<TouchState | null>(null);
 
   const scheduleNext = useCallback(() => {
     if (timerRef.current) clearTimeout(timerRef.current);
@@ -138,7 +147,24 @@ export function TestimonialsCarousel() {
     setActive((idx) => (idx + step + testimonials.length) % testimonials.length);
   }, []);
 
+  const finishSwipe = useCallback(
+    (deltaX: number, deltaY: number) => {
+      const absX = Math.abs(deltaX);
+      const absY = Math.abs(deltaY);
+
+      if (absX < SWIPE_MIN_DISTANCE || absX <= absY * SWIPE_AXIS_LOCK) {
+        return false;
+      }
+
+      lastSwipeAtRef.current = Date.now();
+      goBy(deltaX < 0 ? 1 : -1);
+      return true;
+    },
+    [goBy],
+  );
+
   const handlePointerDown = useCallback((event: PointerEvent<HTMLDivElement>) => {
+    if (event.pointerType === "touch") return;
     if (event.pointerType === "mouse" && event.button !== 0) return;
 
     swipeRef.current = {
@@ -151,23 +177,21 @@ export function TestimonialsCarousel() {
 
   const handlePointerEnd = useCallback(
     (event: PointerEvent<HTMLDivElement>) => {
+      if (event.pointerType === "touch") return;
+
       const swipe = swipeRef.current;
 
       if (swipe.pointerId !== event.pointerId) return;
 
       const deltaX = event.clientX - swipe.startX;
       const deltaY = event.clientY - swipe.startY;
-      const absX = Math.abs(deltaX);
-      const absY = Math.abs(deltaY);
 
       releasePointer(event.currentTarget, event.pointerId);
       swipeRef.current.pointerId = null;
 
-      if (absX >= SWIPE_MIN_DISTANCE && absX > absY * SWIPE_AXIS_LOCK) {
-        goBy(deltaX < 0 ? 1 : -1);
-      }
+      finishSwipe(deltaX, deltaY);
     },
-    [goBy],
+    [finishSwipe],
   );
 
   const handlePointerCancel = useCallback((event: PointerEvent<HTMLDivElement>) => {
@@ -176,6 +200,43 @@ export function TestimonialsCarousel() {
     releasePointer(event.currentTarget, event.pointerId);
     swipeRef.current.pointerId = null;
   }, []);
+
+  const handleTouchStart = useCallback((event: TouchEvent<HTMLDivElement>) => {
+    if (event.touches.length !== 1) {
+      touchRef.current = null;
+      return;
+    }
+
+    const touch = event.touches[0];
+    touchRef.current = {
+      startX: touch.clientX,
+      startY: touch.clientY,
+    };
+  }, []);
+
+  const handleTouchEnd = useCallback(
+    (event: TouchEvent<HTMLDivElement>) => {
+      const touchStart = touchRef.current;
+      const touch = event.changedTouches[0];
+
+      touchRef.current = null;
+      if (!touchStart || !touch) return;
+
+      finishSwipe(touch.clientX - touchStart.startX, touch.clientY - touchStart.startY);
+    },
+    [finishSwipe],
+  );
+
+  const handleStageClick = useCallback(
+    (event: MouseEvent<HTMLDivElement>) => {
+      if (Date.now() - lastSwipeAtRef.current < 350) return;
+
+      const rect = event.currentTarget.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      goBy(x < rect.width / 2 ? -1 : 1);
+    },
+    [goBy],
+  );
 
   const t = testimonials[active];
   const next = testimonials[(active + 1) % testimonials.length];
@@ -194,9 +255,12 @@ export function TestimonialsCarousel() {
         </button>
         <div
           className="home-testimonial-stage"
+          onClick={handleStageClick}
           onPointerCancel={handlePointerCancel}
           onPointerDown={handlePointerDown}
           onPointerUp={handlePointerEnd}
+          onTouchEnd={handleTouchEnd}
+          onTouchStart={handleTouchStart}
         >
           <TestimonialCard
             className="home-testimonial-animate is-active"
