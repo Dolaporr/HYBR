@@ -31,6 +31,7 @@ const testimonials = [
       "HYBR helped Coca-Cola turn a critical plastic waste challenge into a scalable innovation program with strong environmental and employment impact. Their work combined ecosystem insight, innovation sourcing and practical execution.",
     name: "Peter Ekunkoya",
     title: "Former Commercial Director, Coca-Cola",
+    avatarClassName: "home-testimonial-avatar-image--peter",
     image: "/home/edit-flags/peter-ekunkoya.png",
   },
   {
@@ -94,7 +95,7 @@ function TestimonialCard({
         <span className="absolute inset-0 rounded-full border-[1.5px] border-[#8dc540] opacity-60" />
         <img
           alt={ariaHidden ? "" : testimonial.name}
-          className="home-testimonial-avatar-image size-[88px] rounded-full border-[3px] border-[#8dc540] object-cover"
+          className={`home-testimonial-avatar-image size-[88px] rounded-full border-[3px] border-[#8dc540] object-cover ${testimonial.avatarClassName ?? ""}`}
           draggable={false}
           src={testimonial.image}
         />

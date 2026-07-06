@@ -19906,4 +19906,10 @@ video.home-video-card {
     transform: translateX(-50%) !important;
     width: var(--home-testimonial-photo-size) !important;
   }
+
+  .homepage-live .home-testimonial-avatar-image--peter {
+    object-position: 50% 39% !important;
+    transform: translateX(-50%) scale(1.16) !important;
+    transform-origin: center bottom !important;
+  }
 }
