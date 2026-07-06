@@ -19844,6 +19844,7 @@ video.home-video-card {
   .homepage-live .home-contact-section {
     padding-left: 0 !important;
     padding-right: 0 !important;
+    padding-bottom: 0 !important;
   }
 
   .homepage-live .home-contact-shell {
