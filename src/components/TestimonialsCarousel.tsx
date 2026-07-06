@@ -1,6 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  type PointerEvent,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 const testimonials = [
   {
@@ -36,8 +42,33 @@ const testimonials = [
 
 const AUTO_DELAY = 5000;
 const DOT_COUNT = 3;
+const SWIPE_MIN_DISTANCE = 44;
+const SWIPE_AXIS_LOCK = 1.2;
 
 type HomeTestimonial = (typeof testimonials)[number];
+type SwipeState = {
+  pointerId: number | null;
+  startX: number;
+  startY: number;
+};
+
+function capturePointer(element: HTMLDivElement, pointerId: number) {
+  try {
+    element.setPointerCapture(pointerId);
+  } catch {
+    return;
+  }
+}
+
+function releasePointer(element: HTMLDivElement, pointerId: number) {
+  if (!element.hasPointerCapture(pointerId)) return;
+
+  try {
+    element.releasePointerCapture(pointerId);
+  } catch {
+    return;
+  }
+}
 
 function TestimonialCard({
   ariaHidden = false,
@@ -79,6 +110,11 @@ function TestimonialCard({
 export function TestimonialsCarousel() {
   const [active, setActive] = useState(0);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const swipeRef = useRef<SwipeState>({
+    pointerId: null,
+    startX: 0,
+    startY: 0,
+  });
 
   const scheduleNext = useCallback(() => {
     if (timerRef.current) clearTimeout(timerRef.current);
@@ -98,6 +134,49 @@ export function TestimonialsCarousel() {
     setActive((idx + testimonials.length) % testimonials.length);
   }, []);
 
+  const goBy = useCallback((step: number) => {
+    setActive((idx) => (idx + step + testimonials.length) % testimonials.length);
+  }, []);
+
+  const handlePointerDown = useCallback((event: PointerEvent<HTMLDivElement>) => {
+    if (event.pointerType === "mouse" && event.button !== 0) return;
+
+    swipeRef.current = {
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      startY: event.clientY,
+    };
+    capturePointer(event.currentTarget, event.pointerId);
+  }, []);
+
+  const handlePointerEnd = useCallback(
+    (event: PointerEvent<HTMLDivElement>) => {
+      const swipe = swipeRef.current;
+
+      if (swipe.pointerId !== event.pointerId) return;
+
+      const deltaX = event.clientX - swipe.startX;
+      const deltaY = event.clientY - swipe.startY;
+      const absX = Math.abs(deltaX);
+      const absY = Math.abs(deltaY);
+
+      releasePointer(event.currentTarget, event.pointerId);
+      swipeRef.current.pointerId = null;
+
+      if (absX >= SWIPE_MIN_DISTANCE && absX > absY * SWIPE_AXIS_LOCK) {
+        goBy(deltaX < 0 ? 1 : -1);
+      }
+    },
+    [goBy],
+  );
+
+  const handlePointerCancel = useCallback((event: PointerEvent<HTMLDivElement>) => {
+    if (swipeRef.current.pointerId !== event.pointerId) return;
+
+    releasePointer(event.currentTarget, event.pointerId);
+    swipeRef.current.pointerId = null;
+  }, []);
+
   const t = testimonials[active];
   const next = testimonials[(active + 1) % testimonials.length];
   const activeDot = active % DOT_COUNT;
@@ -113,7 +192,12 @@ export function TestimonialsCarousel() {
         >
           &#8249;
         </button>
-        <div className="home-testimonial-stage">
+        <div
+          className="home-testimonial-stage"
+          onPointerCancel={handlePointerCancel}
+          onPointerDown={handlePointerDown}
+          onPointerUp={handlePointerEnd}
+        >
           <TestimonialCard
             className="home-testimonial-animate is-active"
             key={active}

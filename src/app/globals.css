@@ -19870,3 +19870,38 @@ video.home-video-card {
     padding: 64px 32px 56px !important;
   }
 }
+
+@media (max-width: 559px) {
+  .homepage-live .home-testimonial-stage {
+    cursor: grab;
+    touch-action: pan-y;
+    user-select: none;
+  }
+
+  .homepage-live .home-testimonial-stage:active {
+    cursor: grabbing;
+  }
+
+  .homepage-live .home-testimonial-avatar {
+    --home-testimonial-avatar-size: 188px;
+    --home-testimonial-photo-size: 141px;
+    display: block !important;
+    height: var(--home-testimonial-avatar-size) !important;
+    position: relative !important;
+    width: var(--home-testimonial-avatar-size) !important;
+  }
+
+  .homepage-live .home-testimonial-avatar > span {
+    inset: 0 !important;
+    position: absolute !important;
+  }
+
+  .homepage-live .home-testimonial-avatar-image {
+    height: var(--home-testimonial-photo-size) !important;
+    left: 50% !important;
+    position: absolute !important;
+    top: calc(var(--home-testimonial-avatar-size) - var(--home-testimonial-photo-size)) !important;
+    transform: translateX(-50%) !important;
+    width: var(--home-testimonial-photo-size) !important;
+  }
+}
