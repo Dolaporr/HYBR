@@ -181,7 +181,7 @@ function EarlyDaysCard() {
         />
         <div>
           <h2 id="who-early-title">Early Days</h2>
-          <p>A captivating statement about what this section represents.</p>
+          <p>Big ambitions. Small beginnings. Unwavering belief.</p>
         </div>
       </div>
     </section>
@@ -243,6 +243,7 @@ function Timeline() {
             <strong>{item.year}</strong>
           </article>
         ))}
+        <span id="who-history-end" className="who-timeline-end-marker" aria-hidden="true" />
       </div>
     </div>
   );
@@ -270,6 +271,13 @@ export default function WhoWeArePage() {
             <svg aria-hidden="true" className="who-journey-icon" fill="none" viewBox="0 0 32 32">
               <circle cx="16" cy="16" r="13" stroke="currentColor" strokeWidth="2" />
               <path d="M10 14L16 20L22 14" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
+            </svg>
+          </a>
+          <a className="who-timeline-scroll-next" href="#who-history-end" aria-label="Scroll right to view the remaining history">
+            <span>View More</span>
+            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+              <path d="M5 12H19" stroke="currentColor" strokeLinecap="round" strokeWidth="2" />
+              <path d="M13 6L19 12L13 18" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
             </svg>
           </a>
           <h2 id="who-history-title" className="sr-only">

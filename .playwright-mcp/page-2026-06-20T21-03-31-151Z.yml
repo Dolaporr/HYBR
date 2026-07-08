@@ -1,0 +1,308 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e4]:
+      - link "HYBR" [ref=e5] [cursor=pointer]:
+        - /url: "#"
+        - img "HYBR" [ref=e6]
+      - group [ref=e7]:
+        - generic "Toggle navigation" [ref=e8] [cursor=pointer]:
+          - img [ref=e9]
+    - generic [ref=e12]:
+      - generic [ref=e13]:
+        - heading "Build ideas services markets products teams faster, smarter" [level=1] [ref=e14]:
+          - text: Build
+          - generic "ideas services markets products teams" [ref=e15]:
+            - generic [ref=e16]: ideas
+            - generic [ref=e17]: services
+            - generic [ref=e18]: markets
+            - generic [ref=e19]: products
+            - generic [ref=e20]: teams
+          - text: faster, smarter
+        - paragraph [ref=e21]: A Tribe of Dynamic Doers - Building What's Next.
+      - generic [ref=e22]:
+        - paragraph [ref=e23]: Trusted By
+        - generic [ref=e25]:
+          - img "Trusted by partner logos" [ref=e26]
+          - img [ref=e27]
+          - img [ref=e28]
+    - generic [ref=e29]:
+      - img "Featured HYBR video" [ref=e31]
+      - img
+      - generic [ref=e32]:
+        - img [ref=e33]
+        - generic [ref=e34]:
+          - generic [ref=e35]:
+            - heading "Innovation Is Slowed By Guesswork" [level=2] [ref=e36]
+            - paragraph [ref=e37]:
+              - text: "As a leader, you face one common enemy:"
+              - link "innovation by guesswork" [ref=e38] [cursor=pointer]:
+                - /url: /resources/innovation-guide
+              - text: . Fragmented insights, slow decisions, siloed teams, and no clear direction. Yet you're still expected to deliver the next big win, without a roadmap.
+          - generic [ref=e39]:
+            - heading "You Risk..." [level=3] [ref=e40]
+            - list [ref=e41]:
+              - listitem [ref=e42]:
+                - generic [ref=e43]: x
+                - generic [ref=e44]: Wasting time and budget on ideas customers don’t want
+              - listitem [ref=e45]:
+                - generic [ref=e46]: x
+                - generic [ref=e47]: Slow, fragmented decision-making
+              - listitem [ref=e48]:
+                - generic [ref=e49]: x
+                - generic [ref=e50]: Products that fail to scale
+              - listitem [ref=e51]:
+                - generic [ref=e52]: x
+                - generic [ref=e53]: Losing momentum — and market relevance
+    - generic [ref=e55]:
+      - generic [ref=e57]:
+        - generic [ref=e58]:
+          - generic [ref=e59]:
+            - paragraph [ref=e60]: Who We Are
+            - heading "A Purpose-Led Innovation Agency" [level=2] [ref=e61]:
+              - text: A Purpose-Led
+              - text: Innovation Agency
+            - paragraph [ref=e62]: At HYBR, we don't just advise - we help you navigate, build, and scale. With proven frameworks and deep ecosystem access, we guide teams to clarity and accelerate the work that unlocks your next big win.
+          - generic [ref=e63]:
+            - heading "With HYBR, you get:" [level=3] [ref=e64]
+            - list [ref=e65]:
+              - listitem [ref=e66]: ✓A trusted guide who understands your innovation challenges
+              - listitem [ref=e67]: ✓A partner who brings clarity, discipline, and purpose
+              - listitem [ref=e68]: ✓A proven system to cut through the noise and deliver results faster
+        - generic [ref=e71]:
+          - link "→ Meet The Team" [ref=e72] [cursor=pointer]:
+            - /url: /who-we-are/our-team
+          - text: →
+      - generic [ref=e74]:
+        - paragraph [ref=e75]: What We Do
+        - heading "We Help You Build Innovation That Works - and Works Fast" [level=2] [ref=e76]
+        - generic [ref=e77]:
+          - button "Discover service details" [ref=e78] [cursor=pointer]:
+            - generic [ref=e79]:
+              - generic [ref=e80]: i
+              - img [ref=e82]
+              - generic [ref=e85]:
+                - heading "Discover" [level=3] [ref=e86]
+                - generic [ref=e87]: Applied Research and Strategy
+            - generic [ref=e88]:
+              - heading [level=3] [ref=e89]: Discover
+              - paragraph [ref=e90]: Applied Research and Strategy
+              - paragraph [ref=e91]: Market Acceleration
+              - link [ref=e92]:
+                - /url: /what-we-do/services
+                - text: Learn More
+          - button "Develop service details" [ref=e93] [cursor=pointer]:
+            - generic [ref=e94]:
+              - generic [ref=e95]: i
+              - img [ref=e97]
+              - generic [ref=e103]:
+                - heading "Develop" [level=3] [ref=e104]
+                - generic [ref=e105]: Prototyping, Product & Service Design
+            - generic [ref=e106]:
+              - heading [level=3] [ref=e107]: Develop
+              - paragraph [ref=e108]: Prototyping, Product & Service Design
+              - paragraph [ref=e109]: Applied Research and Strategy
+              - link [ref=e110]:
+                - /url: /what-we-do/services
+                - text: Learn More
+          - button "Deploy service details" [ref=e111] [cursor=pointer]:
+            - generic [ref=e112]:
+              - generic [ref=e113]: i
+              - img [ref=e115]
+              - generic [ref=e118]:
+                - heading "Deploy" [level=3] [ref=e119]
+                - generic [ref=e120]: Market Acceleration
+            - generic [ref=e121]:
+              - heading [level=3] [ref=e122]: Deploy
+              - paragraph [ref=e123]: Prototyping, Product & Service Design
+              - paragraph [ref=e124]: Market Acceleration
+              - link [ref=e125]:
+                - /url: /what-we-do/services
+                - text: Learn More
+        - link "→ Explore Our Services" [ref=e127] [cursor=pointer]:
+          - /url: /what-we-do/services
+          - text: →
+          - generic [ref=e128]: Explore Our Services
+    - generic [ref=e130]:
+      - paragraph [ref=e131]: Our Impact
+      - heading "No jargon, no wasted experiments, no building in the dark - just clarity, alignment, and momentum." [level=2] [ref=e132]
+      - generic [ref=e133]:
+        - generic [ref=e134]:
+          - paragraph [ref=e135]: 300K+
+          - paragraph [ref=e136]: Jobs Created
+        - generic [ref=e137]:
+          - paragraph [ref=e138]: 35+
+          - paragraph [ref=e139]: Countries Reached
+        - generic [ref=e140]:
+          - paragraph [ref=e141]: 4000+
+          - paragraph [ref=e142]: Ventures Impacted
+      - link "Learn More" [ref=e144] [cursor=pointer]:
+        - /url: /what-we-do/our-impact
+    - generic [ref=e146]:
+      - paragraph [ref=e147]: Testimonials
+      - heading "Hear from Our Clients." [level=2] [ref=e148]
+      - paragraph [ref=e149]: Captivating supporting statement that introduces the "testimonial" section, with text or video reviews from HYBR's clientele.
+      - generic [ref=e151]:
+        - generic [ref=e152]:
+          - img "Ayo Balogun" [ref=e155]
+          - generic [ref=e156]:
+            - blockquote [ref=e157]: “The curated innovation retreat for AFEX's 40-exco team was truly world class and highly impactful, shaping our strategic plans going forward.”
+            - paragraph [ref=e158]: Ayo Balogun
+            - paragraph [ref=e159]: CEO, AFEX Commodities | 2022 Financial Times Fastest Growing Venture in Africa
+        - generic:
+          - generic:
+            - blockquote: “HYBR helped us navigate a complex market entry with clarity and speed. Their frameworks turned ambiguity into actionable strategy.”
+            - paragraph: Placeholder Client
+            - paragraph: CEO, Innovation Corp
+      - generic [ref=e160]:
+        - button "Go to testimonial 1" [ref=e161]
+        - button "Go to testimonial 2" [ref=e162]
+        - button "Go to testimonial 3" [ref=e163]
+      - link "Book A Strategy Call" [ref=e165] [cursor=pointer]:
+        - /url: /contact
+    - generic [ref=e167]:
+      - article [ref=e168]:
+        - link "Read More" [ref=e170] [cursor=pointer]:
+          - /url: /insights/news/specific-news
+        - generic [ref=e171]:
+          - paragraph [ref=e172]: News
+          - heading "One Liner For Specific News Update" [level=3] [ref=e173]
+          - paragraph [ref=e174]: A short, captivating statement about what this news update covers.
+      - generic [ref=e175]:
+        - article [ref=e176]:
+          - paragraph [ref=e177]: 01:40:35
+          - generic [ref=e178]:
+            - paragraph [ref=e179]: Webinar
+            - heading "One Liner For Specific Webinar" [level=3] [ref=e180]
+            - paragraph [ref=e181]: Jedidiah Akpata & Charles Ojei
+            - paragraph [ref=e182]: November 2023
+        - generic [ref=e183]:
+          - paragraph [ref=e184]: Insights
+          - heading "Connect with our latest thinking." [level=2] [ref=e185]
+          - link "Our Insights" [ref=e187] [cursor=pointer]:
+            - /url: /insights
+    - generic [ref=e191]:
+      - heading "With HYBR, You Gain..." [level=2] [ref=e192]
+      - list [ref=e193]:
+        - listitem [ref=e194]:
+          - generic [ref=e195]: ✓
+          - generic [ref=e196]: Clarity on what to build and why
+        - listitem [ref=e197]:
+          - generic [ref=e198]: ✓
+          - generic [ref=e199]: Alignment across teams and leadership
+        - listitem [ref=e200]:
+          - generic [ref=e201]: ✓
+          - generic [ref=e202]: Faster decisions and smarter experiments
+        - listitem [ref=e203]:
+          - generic [ref=e204]: ✓
+          - generic [ref=e205]: A scalable roadmap for growth
+        - listitem [ref=e206]:
+          - generic [ref=e207]: ✓
+          - generic [ref=e208]: Confidence in every innovation step
+      - paragraph [ref=e209]:
+        - text: You lead with vision.
+        - text: We help you deliver with precision.
+    - generic [ref=e211]:
+      - heading "Ready to Build What's Next?" [level=2] [ref=e212]
+      - paragraph [ref=e213]: Innovation deserves purpose, discipline, and momentum. We bring all three.
+      - generic [ref=e214]:
+        - link "Book a Strategy Call" [ref=e215] [cursor=pointer]:
+          - /url: /contact
+        - link "Download Our Innovation Guide" [ref=e216] [cursor=pointer]:
+          - /url: /resources/innovation-guide
+          - generic [ref=e217]: Download Our Innovation Guide
+    - generic [ref=e219]:
+      - generic [ref=e220]:
+        - heading "Build Innovation that Works, with Us" [level=2] [ref=e221]
+        - paragraph [ref=e222]: Supporting lead generator body text to encourage users to book a strategy call.
+      - generic [ref=e223]:
+        - textbox "Insert Your Name" [ref=e224]
+        - textbox "Insert Your Email" [ref=e225]
+        - textbox "What would you like us to know?" [ref=e226]
+        - button "Submit" [ref=e227]
+    - generic [ref=e229]:
+      - generic [ref=e230]:
+        - generic [ref=e231]:
+          - heading "Who We Are" [level=3] [ref=e232]
+          - list [ref=e233]:
+            - listitem [ref=e234]:
+              - link "About Us" [ref=e235] [cursor=pointer]:
+                - /url: /who-we-are/about-us
+            - listitem [ref=e236]:
+              - link "Our Team" [ref=e237] [cursor=pointer]:
+                - /url: /who-we-are/our-team
+            - listitem [ref=e238]:
+              - link "Careers" [ref=e239] [cursor=pointer]:
+                - /url: /who-we-are/careers
+        - generic [ref=e240]:
+          - heading "What We Do" [level=3] [ref=e241]
+          - list [ref=e242]:
+            - listitem [ref=e243]:
+              - link "Our Services" [ref=e244] [cursor=pointer]:
+                - /url: /what-we-do/services
+            - listitem [ref=e245]:
+              - link "Our Products" [ref=e246] [cursor=pointer]:
+                - /url: /what-we-do/products
+            - listitem [ref=e247]:
+              - link "Our Work" [ref=e248] [cursor=pointer]:
+                - /url: /what-we-do/our-work
+            - listitem [ref=e249]:
+              - link "Our Impact" [ref=e250] [cursor=pointer]:
+                - /url: /what-we-do/our-impact
+        - generic [ref=e251]:
+          - heading "Insights" [level=3] [ref=e252]
+          - list [ref=e253]:
+            - listitem [ref=e254]:
+              - link "Articles & Posts" [ref=e255] [cursor=pointer]:
+                - /url: /insights/articles
+            - listitem [ref=e256]:
+              - link "Webinars" [ref=e257] [cursor=pointer]:
+                - /url: /insights/webinars
+            - listitem [ref=e258]:
+              - link "News & Updates" [ref=e259] [cursor=pointer]:
+                - /url: /insights/news
+        - generic [ref=e260]:
+          - heading "Contact us" [level=3] [ref=e261]
+          - list [ref=e262]:
+            - listitem [ref=e263]:
+              - link "Address 1" [ref=e264] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=e265]:
+              - link "Phone Number" [ref=e266] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=e267]:
+              - link "Email Address" [ref=e268] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e269]:
+          - heading "Follow us" [level=3] [ref=e270]
+          - generic [ref=e271]:
+            - link "instagram placeholder" [ref=e272] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e273]
+            - link "linkedin placeholder" [ref=e277] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e278]
+            - link "x placeholder" [ref=e282] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e283]
+            - link "youtube placeholder" [ref=e285] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e286]
+            - link "facebook placeholder" [ref=e289] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e290]
+            - link "medium placeholder" [ref=e293] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e294]
+            - link "tiktok placeholder" [ref=e298] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e299]
+          - link "Let's Talk" [ref=e302] [cursor=pointer]:
+            - /url: /contact
+      - generic [ref=e303]:
+        - generic [ref=e304]:
+          - generic [ref=e305]: Privacy Policy
+          - generic [ref=e306]: Terms & Conditions
+        - img "HYBR" [ref=e307]
+        - generic [ref=e308]: © 2025 HYBR GROUP
+  - button "Open Next.js Dev Tools" [ref=e314] [cursor=pointer]:
+    - img [ref=e315]

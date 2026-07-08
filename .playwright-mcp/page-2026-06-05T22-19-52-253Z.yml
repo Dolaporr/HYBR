@@ -1,0 +1,161 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - link "HYBR" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "HYBR" [ref=e7]
+      - navigation [ref=e8]:
+        - link "Who We Are" [ref=e9] [cursor=pointer]:
+          - /url: /who-we-are
+        - link "What We Do" [ref=e10] [cursor=pointer]:
+          - /url: /what-we-do
+        - link "Insights" [ref=e11] [cursor=pointer]:
+          - /url: /insights
+        - link "Let's Talk" [ref=e12] [cursor=pointer]:
+          - /url: /contact
+    - region "Our Work" [ref=e13]:
+      - heading "Our Work" [level=1] [ref=e14]
+      - paragraph [ref=e15]: Ideas are easy. Getting results is work.
+    - complementary "Our Work page contents" [ref=e16]:
+      - paragraph [ref=e17]: CONTENT
+      - navigation [ref=e18]:
+        - link "Spotlight" [ref=e19] [cursor=pointer]:
+          - /url: "#spotlight"
+        - link "Search & Filter" [ref=e20] [cursor=pointer]:
+          - /url: "#search"
+        - link "Recent Case Studies" [ref=e21] [cursor=pointer]:
+          - /url: "#recent"
+        - link "Our Services" [ref=e22] [cursor=pointer]:
+          - /url: "#services"
+    - region "Search and filter case studies" [ref=e23]:
+      - generic [ref=e24]:
+        - generic [ref=e25]: Search case studies
+        - img [ref=e26]
+        - searchbox "Search case studies" [ref=e29]
+      - button "Filters" [ref=e30]:
+        - generic [ref=e31]: Filters
+        - img [ref=e32]
+    - paragraph [ref=e34]: SPOTLIGHT
+    - region "Spotlight case study":
+      - article [ref=e35]:
+        - paragraph [ref=e36]: CASE STUDY
+        - heading "One Liner For Specific Case Study" [level=2] [ref=e37]
+        - paragraph [ref=e38]: A captivating statement about what service was offered to the company. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dignissim fringilla feugiat.
+        - paragraph [ref=e39]: COMPANY NAME
+        - img [ref=e40]
+        - link "Read More" [ref=e44] [cursor=pointer]:
+          - /url: /case-studies/one-liner
+    - region "CASE STUDIES":
+      - paragraph [ref=e45]: CASE STUDIES
+      - generic:
+        - article [ref=e46]:
+          - paragraph [ref=e47]: CASE STUDY
+          - heading "One Liner For Specific Case Study" [level=2] [ref=e48]
+          - paragraph [ref=e49]: A captivating statement about what service was offered to the company. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dignissim fringilla feugiat.
+          - paragraph [ref=e50]: COMPANY NAME
+          - img [ref=e51]
+          - link "Read More" [ref=e55] [cursor=pointer]:
+            - /url: /case-studies/one-liner
+        - article [ref=e56]:
+          - paragraph [ref=e57]: CASE STUDY
+          - heading "One Liner For Specific Case Study" [level=2] [ref=e58]
+          - paragraph [ref=e59]: A captivating statement about what service was offered to the company. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dignissim fringilla feugiat.
+          - paragraph [ref=e60]: COMPANY NAME
+          - img [ref=e61]
+          - link "Read More" [ref=e65] [cursor=pointer]:
+            - /url: /case-studies/one-liner
+      - link "View All Case Studies" [ref=e66] [cursor=pointer]:
+        - /url: /case-studies/one-liner
+    - region "Curious how we do it? Explore our services.":
+      - generic [ref=e68]:
+        - paragraph [ref=e69]: OUR SERVICES
+        - heading "Curious how we do it? Explore our services." [level=2] [ref=e70]
+        - generic [ref=e71]: Discover how our services support ideas from start to finish.
+        - link "Our Services" [ref=e72] [cursor=pointer]:
+          - /url: /what-we-do/services
+          - generic [ref=e73]: Our Services
+  - generic [ref=e75]:
+    - generic [ref=e76]:
+      - generic [ref=e77]:
+        - heading "Who We Are" [level=3] [ref=e78]
+        - list [ref=e79]:
+          - listitem [ref=e80]:
+            - link "About Us" [ref=e81] [cursor=pointer]:
+              - /url: /who-we-are/about-us
+          - listitem [ref=e82]:
+            - link "Our Team" [ref=e83] [cursor=pointer]:
+              - /url: /who-we-are/our-team
+          - listitem [ref=e84]:
+            - link "Careers" [ref=e85] [cursor=pointer]:
+              - /url: /who-we-are/careers
+      - generic [ref=e86]:
+        - heading "What We Do" [level=3] [ref=e87]
+        - list [ref=e88]:
+          - listitem [ref=e89]:
+            - link "Our Services" [ref=e90] [cursor=pointer]:
+              - /url: /what-we-do/services
+          - listitem [ref=e91]:
+            - link "Our Products" [ref=e92] [cursor=pointer]:
+              - /url: /what-we-do/products
+          - listitem [ref=e93]:
+            - link "Our Work" [ref=e94] [cursor=pointer]:
+              - /url: /what-we-do/our-work
+          - listitem [ref=e95]:
+            - link "Our Impact" [ref=e96] [cursor=pointer]:
+              - /url: /what-we-do/our-impact
+      - generic [ref=e97]:
+        - heading "Insights" [level=3] [ref=e98]
+        - list [ref=e99]:
+          - listitem [ref=e100]:
+            - link "Articles & Posts" [ref=e101] [cursor=pointer]:
+              - /url: /insights/articles
+          - listitem [ref=e102]:
+            - link "Webinars" [ref=e103] [cursor=pointer]:
+              - /url: /insights/webinars
+          - listitem [ref=e104]:
+            - link "News & Updates" [ref=e105] [cursor=pointer]:
+              - /url: /insights/news
+      - generic [ref=e106]:
+        - heading "Contact us" [level=3] [ref=e107]
+        - list [ref=e108]:
+          - listitem [ref=e109]:
+            - link "Address 1" [ref=e110] [cursor=pointer]:
+              - /url: /contact
+          - listitem [ref=e111]:
+            - link "Phone Number" [ref=e112] [cursor=pointer]:
+              - /url: /contact
+          - listitem [ref=e113]:
+            - link "Email Address" [ref=e114] [cursor=pointer]:
+              - /url: /contact
+      - generic [ref=e115]:
+        - heading "Follow us" [level=3] [ref=e116]
+        - generic [ref=e117]:
+          - link "Instagram placeholder" [ref=e118] [cursor=pointer]:
+            - /url: "#"
+            - img "Instagram" [ref=e119]
+          - link "LinkedIn placeholder" [ref=e123] [cursor=pointer]:
+            - /url: "#"
+            - img "LinkedIn" [ref=e124]
+          - link "X placeholder" [ref=e128] [cursor=pointer]:
+            - /url: "#"
+            - img "X" [ref=e129]
+          - link "YouTube placeholder" [ref=e131] [cursor=pointer]:
+            - /url: "#"
+            - img "YouTube" [ref=e132]
+          - link "Facebook placeholder" [ref=e135] [cursor=pointer]:
+            - /url: "#"
+            - img "Facebook" [ref=e136]
+          - link "Medium placeholder" [ref=e139] [cursor=pointer]:
+            - /url: "#"
+            - img "Medium" [ref=e140]
+          - link "TikTok placeholder" [ref=e144] [cursor=pointer]:
+            - /url: "#"
+            - img "TikTok" [ref=e145]
+        - link "Let's Talk" [ref=e148] [cursor=pointer]:
+          - /url: /contact
+    - generic [ref=e149]:
+      - generic [ref=e150]:
+        - generic [ref=e151]: Privacy Policy
+        - generic [ref=e152]: Terms & Conditions
+      - img "HYBR" [ref=e153]
+      - generic [ref=e154]: © 2025 HYBR GROUP

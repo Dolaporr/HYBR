@@ -1906,6 +1906,11 @@ a {
   margin: 0;
 }
 
+.home-service-back-items {
+  display: grid;
+  gap: 8px;
+}
+
 .home-service-back-link {
   align-items: center;
   background: #8dc540;
@@ -19910,4 +19915,58 @@ video.home-video-card {
     width: var(--home-testimonial-photo-size) !important;
   }
 
+}
+
+.who-page .who-frame {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+.who-page .who-about-copy .who-copy-stack p + p {
+  margin-top: 24px !important;
+}
+
+.who-timeline-end-marker {
+  height: 1px;
+  left: 3890px;
+  position: absolute;
+  top: 0;
+  width: 1px;
+}
+
+.who-timeline-scroll-next {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .who-timeline-scroll-next {
+    align-items: center;
+    background: #ffffff;
+    border: 2px solid #8dc540;
+    border-radius: 999px;
+    color: #648c2d;
+    display: inline-flex;
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    gap: 10px;
+    justify-content: center;
+    min-height: 52px;
+    padding: 12px 22px;
+    position: absolute;
+    right: 32px;
+    top: 492px;
+    z-index: 5;
+  }
+
+  .who-timeline-scroll-next svg {
+    height: 24px;
+    width: 24px;
+  }
+
+  .who-timeline-scroll-next:hover,
+  .who-timeline-scroll-next:focus-visible {
+    background: #8dc540;
+    color: #ffffff;
+  }
 }

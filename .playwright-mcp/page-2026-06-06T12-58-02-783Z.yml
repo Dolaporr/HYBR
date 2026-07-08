@@ -1,0 +1,194 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - link "HYBR" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "HYBR" [ref=e7]
+      - navigation [ref=e8]:
+        - link "Who We Are" [ref=e9] [cursor=pointer]:
+          - /url: /who-we-are
+        - link "What We Do" [ref=e10] [cursor=pointer]:
+          - /url: /what-we-do
+        - link "Insights" [ref=e11] [cursor=pointer]:
+          - /url: /insights
+        - link "Let's Talk" [ref=e12] [cursor=pointer]:
+          - /url: /contact
+    - region "Our Services" [ref=e13]:
+      - heading "Our Services" [level=1] [ref=e14]
+      - paragraph [ref=e15]: Built to attain your goals — find the service that fits your next step.
+    - complementary "Our Services page contents" [ref=e16]:
+      - paragraph [ref=e17]: CONTENT
+      - navigation [ref=e18]:
+        - link "HYBR's Impact" [ref=e19] [cursor=pointer]:
+          - /url: /what-we-do/our-impact
+        - link "Countries Reached" [ref=e20] [cursor=pointer]:
+          - /url: /what-we-do/our-impact#countries
+        - link "Jobs Created" [ref=e21] [cursor=pointer]:
+          - /url: /what-we-do/our-impact#jobs
+        - link "Ventures Impacted" [ref=e22] [cursor=pointer]:
+          - /url: /what-we-do/our-impact#ventures
+        - link "Our Work" [ref=e23] [cursor=pointer]:
+          - /url: /what-we-do/our-work
+    - region "Discover develop deploy process" [ref=e24]:
+      - generic [ref=e25]:
+        - generic [ref=e26]: Discover
+        - generic [ref=e27]: Develop
+        - generic [ref=e28]: Deploy
+    - generic:
+      - generic [ref=e29]:
+        - heading "Discover" [level=2] [ref=e30]
+        - paragraph [ref=e31]: We help you discover what matters most. Using applied research, data and analytics, innovation sourcing, and value chain diagnostics, we reveal insights that guide confident decisions and unlock real value.
+      - generic [ref=e32]:
+        - generic [ref=e33]: Applied Research
+        - generic [ref=e34]: Value Chain Diagnostics
+        - generic [ref=e35]: Innovation Sourcing
+        - generic [ref=e36]: Data & Analytics
+      - article [ref=e37]:
+        - generic [ref=e39]:
+          - img [ref=e40]
+          - heading "COMPANY NAME" [level=3] [ref=e44]
+        - paragraph [ref=e45]: A captivating statement about what service was offered to the company. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dignissim fringilla feugiat.
+        - paragraph [ref=e46]: CASE STUDY
+        - link "Read More" [ref=e47] [cursor=pointer]:
+          - /url: /case-studies/one-liner
+    - generic:
+      - generic [ref=e48]:
+        - heading "Develop" [level=2] [ref=e49]
+        - paragraph [ref=e50]: Where insight becomes action. Through product and service innovation, experience design, fast prototyping, and field experiments, concepts evolve into solutions that work in practice.
+      - generic [ref=e51]:
+        - generic [ref=e52]: Product & Service Innovation
+        - generic [ref=e53]: User Experience & Interface Design
+        - generic [ref=e54]: Rapid Prototyping
+        - generic [ref=e55]: Pilot & Field Experiments
+      - article [ref=e56]:
+        - generic [ref=e58]:
+          - img [ref=e59]
+          - heading "COMPANY NAME" [level=3] [ref=e63]
+        - paragraph [ref=e64]: A captivating statement about what service was offered to the company. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dignissim fringilla feugiat.
+        - paragraph [ref=e65]: CASE STUDY
+        - link "Read More" [ref=e66] [cursor=pointer]:
+          - /url: /case-studies/one-liner
+    - generic:
+      - generic [ref=e67]:
+        - heading "Deploy" [level=2] [ref=e68]
+        - paragraph [ref=e69]: Your solutions are ready for the real world. From go-to-market strategy and venture building to scaling execution and impact assessment, everything is focused on helping you launch with confidence and grow with purpose.
+      - generic [ref=e70]:
+        - generic [ref=e71]: Go-To Market Strategy
+        - generic [ref=e72]: Venture Building
+        - generic [ref=e73]: Market Execution and Scaling
+        - generic [ref=e74]: Impact Assessment
+      - article [ref=e75]:
+        - generic [ref=e77]:
+          - img [ref=e78]
+          - heading "COMPANY NAME" [level=3] [ref=e82]
+        - paragraph [ref=e83]: A captivating statement about what service was offered to the company. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dignissim fringilla feugiat.
+        - paragraph [ref=e84]: CASE STUDY
+        - link "Read More" [ref=e85] [cursor=pointer]:
+          - /url: /case-studies/one-liner
+    - link "Book A Meeting" [ref=e86] [cursor=pointer]:
+      - /url: /contact
+    - region "What our clients say about working with us." [ref=e87]:
+      - paragraph [ref=e88]: TESTIMONIALS
+      - heading "What our clients say about working with us." [level=2] [ref=e89]
+      - generic [ref=e90]: These testimonials reflect the trust and confidence that come from our partnerships.
+    - region "Client testimonial carousel" [ref=e91]:
+      - generic [ref=e96]:
+        - paragraph [ref=e97]: “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dignissim fringilla feugiat. Praesent sed condimentum nulla. Praesent lacinia eleifend turpis, sit amet dignissim massa accumsan in.”
+        - generic [ref=e98]:
+          - strong [ref=e99]: FirstName LastName
+          - generic [ref=e100]: Title/Role | Location
+      - button "Previous testimonial" [ref=e101]:
+        - img [ref=e102]
+      - button "Next testimonial" [ref=e104]:
+        - img [ref=e105]
+      - tablist [ref=e107]:
+        - tab "Show testimonial 1" [selected] [ref=e108] [cursor=pointer]
+        - tab "Show testimonial 2" [ref=e109] [cursor=pointer]
+        - tab "Show testimonial 3" [ref=e110] [cursor=pointer]
+    - link "Let's Talk" [ref=e111] [cursor=pointer]:
+      - /url: /contact
+  - generic [ref=e113]:
+    - generic [ref=e114]:
+      - generic [ref=e115]:
+        - heading "Who We Are" [level=3] [ref=e116]
+        - list [ref=e117]:
+          - listitem [ref=e118]:
+            - link "About Us" [ref=e119] [cursor=pointer]:
+              - /url: /who-we-are/about-us
+          - listitem [ref=e120]:
+            - link "Our Team" [ref=e121] [cursor=pointer]:
+              - /url: /who-we-are/our-team
+          - listitem [ref=e122]:
+            - link "Careers" [ref=e123] [cursor=pointer]:
+              - /url: /who-we-are/careers
+      - generic [ref=e124]:
+        - heading "What We Do" [level=3] [ref=e125]
+        - list [ref=e126]:
+          - listitem [ref=e127]:
+            - link "Our Services" [ref=e128] [cursor=pointer]:
+              - /url: /what-we-do/services
+          - listitem [ref=e129]:
+            - link "Our Products" [ref=e130] [cursor=pointer]:
+              - /url: /what-we-do/products
+          - listitem [ref=e131]:
+            - link "Our Work" [ref=e132] [cursor=pointer]:
+              - /url: /what-we-do/our-work
+          - listitem [ref=e133]:
+            - link "Our Impact" [ref=e134] [cursor=pointer]:
+              - /url: /what-we-do/our-impact
+      - generic [ref=e135]:
+        - heading "Insights" [level=3] [ref=e136]
+        - list [ref=e137]:
+          - listitem [ref=e138]:
+            - link "Articles & Posts" [ref=e139] [cursor=pointer]:
+              - /url: /insights/articles
+          - listitem [ref=e140]:
+            - link "Webinars" [ref=e141] [cursor=pointer]:
+              - /url: /insights/webinars
+          - listitem [ref=e142]:
+            - link "News & Updates" [ref=e143] [cursor=pointer]:
+              - /url: /insights/news
+      - generic [ref=e144]:
+        - heading "Contact us" [level=3] [ref=e145]
+        - list [ref=e146]:
+          - listitem [ref=e147]:
+            - link "Address 1" [ref=e148] [cursor=pointer]:
+              - /url: /contact
+          - listitem [ref=e149]:
+            - link "Phone Number" [ref=e150] [cursor=pointer]:
+              - /url: /contact
+          - listitem [ref=e151]:
+            - link "Email Address" [ref=e152] [cursor=pointer]:
+              - /url: /contact
+      - generic [ref=e153]:
+        - heading "Follow us" [level=3] [ref=e154]
+        - generic [ref=e155]:
+          - link "Instagram placeholder" [ref=e156] [cursor=pointer]:
+            - /url: "#"
+            - img "Instagram" [ref=e157]
+          - link "LinkedIn placeholder" [ref=e161] [cursor=pointer]:
+            - /url: "#"
+            - img "LinkedIn" [ref=e162]
+          - link "X placeholder" [ref=e166] [cursor=pointer]:
+            - /url: "#"
+            - img "X" [ref=e167]
+          - link "YouTube placeholder" [ref=e169] [cursor=pointer]:
+            - /url: "#"
+            - img "YouTube" [ref=e170]
+          - link "Facebook placeholder" [ref=e173] [cursor=pointer]:
+            - /url: "#"
+            - img "Facebook" [ref=e174]
+          - link "Medium placeholder" [ref=e177] [cursor=pointer]:
+            - /url: "#"
+            - img "Medium" [ref=e178]
+          - link "TikTok placeholder" [ref=e182] [cursor=pointer]:
+            - /url: "#"
+            - img "TikTok" [ref=e183]
+        - link "Let's Talk" [ref=e186] [cursor=pointer]:
+          - /url: /contact
+    - generic [ref=e187]:
+      - generic [ref=e188]:
+        - generic [ref=e189]: Privacy Policy
+        - generic [ref=e190]: Terms & Conditions
+      - img "HYBR" [ref=e191]
+      - generic [ref=e192]: © 2025 HYBR GROUP

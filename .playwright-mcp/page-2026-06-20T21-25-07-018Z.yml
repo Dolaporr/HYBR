@@ -1,0 +1,195 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e5]:
+        - link "HYBR" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img "HYBR" [ref=e7]
+        - navigation [ref=e8]:
+          - link "Who We Are" [ref=e9] [cursor=pointer]:
+            - /url: /who-we-are
+          - link "What We Do" [ref=e10] [cursor=pointer]:
+            - /url: /what-we-do
+          - link "Insights" [ref=e11] [cursor=pointer]:
+            - /url: /insights
+          - link "Let's Talk" [ref=e12] [cursor=pointer]:
+            - /url: /contact
+      - region "Who We Are" [ref=e13]:
+        - heading "Who We Are" [level=1] [ref=e14]
+        - paragraph [ref=e15]: A Tribe of Dynamic Doers — Building What's Next.
+      - button "Page contents" [ref=e16] [cursor=pointer]:
+        - paragraph [ref=e17]: CONTENT
+        - navigation:
+          - link "Our History":
+            - /url: "#history"
+          - link "Early Days":
+            - /url: "#early-days"
+          - link "About Us":
+            - /url: "#about-us"
+          - link "Our Team":
+            - /url: "#our-team"
+          - link "Careers":
+            - /url: "#careers"
+      - region "Our History" [ref=e18]:
+        - paragraph [ref=e20]: Our History
+        - link "See The Whole Journey" [ref=e21] [cursor=pointer]:
+          - /url: "#careers"
+          - generic [ref=e22]: See The Whole Journey
+          - img [ref=e23]
+        - heading "Our History" [level=2] [ref=e26]
+        - generic [ref=e28]:
+          - generic [ref=e30]: "2016"
+          - generic [ref=e31]: "2025"
+          - article [ref=e32]:
+            - img [ref=e34]
+            - paragraph [ref=e35]: HYBR conceptualised to help ventures scale their impact in Africa.
+            - strong [ref=e36]: "2016"
+          - article [ref=e37]:
+            - img [ref=e39]
+            - paragraph [ref=e40]: Launched maiden edition of the Young Enterprise (YES) Bootcamp in Lagos in partnership with Samsung, Google, Deloitte, and Sage.
+            - strong [ref=e41]: "2017"
+          - article [ref=e42]:
+            - img [ref=e44]
+            - paragraph [ref=e45]: YES expands to reach ventures in Lagos, Johannesburg, and Nairobi. HYBR opens office in Cape Town.
+            - strong [ref=e46]: "2018"
+          - article [ref=e47]:
+            - img [ref=e49]
+            - paragraph [ref=e50]: Implements the Merck-Make-IT-Africa Joint program to impact healthcare ventures across Africa.
+            - strong [ref=e51]: "2019"
+          - article [ref=e52]:
+            - img [ref=e54]
+            - paragraph [ref=e55]: Implements the Entrepreneurs Plastics Innovation Challenge (EPIC) powered by Coca-Cola.
+            - strong [ref=e56]: "2019"
+          - article [ref=e57]:
+            - img [ref=e59]
+            - paragraph [ref=e60]: Supports ventures globally, through the Growing through Uncertainty program during COVID-19.
+            - strong [ref=e61]: "2020"
+          - article [ref=e62]:
+            - img [ref=e64]
+            - paragraph [ref=e65]: Ecosystem study - Innovating in the New Normal post COVID-19. Opens operations in London, UK.
+            - strong [ref=e66]: "2020"
+          - article [ref=e67]:
+            - img [ref=e69]
+            - paragraph [ref=e70]: Partnership with ABSA for continent-wide innovation intelligence.
+            - strong [ref=e71]: "2021"
+          - article [ref=e72]:
+            - img [ref=e74]
+            - paragraph [ref=e75]: Strategic reorganization, new purpose, and missions.
+            - strong [ref=e76]: "2022"
+          - article [ref=e77]:
+            - img [ref=e79]
+            - paragraph [ref=e80]: Transition into a full-service innovation agency.
+            - strong [ref=e81]: "2024"
+      - region "Early Days" [ref=e82]:
+        - generic [ref=e84]:
+          - heading "Early Days" [level=2] [ref=e85]
+          - paragraph [ref=e86]: A captivating statement about what this section represents.
+      - region "We help innovators turn untapped potential into world-shaping solutions." [ref=e87]:
+        - paragraph [ref=e88]: About Us
+        - heading "We help innovators turn untapped potential into world-shaping solutions." [level=2] [ref=e89]
+        - generic [ref=e90]:
+          - paragraph [ref=e91]: At HYBR, we don’t just innovate—we reimagine the very blueprint of how innovation is discovered, nurtured, and scaled in underserved markets.
+          - paragraph [ref=e92]: We transform ideas, products, services, and organizations into innovation leaders. We are a purpose-driven innovation agency—unearthing breakthrough ideas, empowering brilliant innovation leaders, and igniting solutions with global impact. From Lagos to London, Cape Town to California, HYBR is where big ideas meet bold execution.
+        - link "Learn More" [ref=e93] [cursor=pointer]:
+          - /url: /who-we-are/about-us
+      - 'region "The people powering HYBR: innovators obsessed with building what''s next." [ref=e95]':
+        - generic [ref=e96]:
+          - generic [ref=e97]:
+            - paragraph [ref=e98]: Our Team
+            - 'heading "The people powering HYBR: innovators obsessed with building what''s next." [level=2] [ref=e99]'
+          - paragraph [ref=e100]: Our team brings together decades of experience across innovation strategy, venture building, AI, and enterprise transformation. From designing market-shifting business models to launching scalable technologies in frontier markets, we combine analytic rigor, creative problem-solving, and deep sector expertise to help organizations unlock what's possible.
+        - link "Learn More" [ref=e102] [cursor=pointer]:
+          - /url: /who-we-are/our-team
+      - region "Join us and build the future—turning tough challenges into breakthrough solutions." [ref=e104]:
+        - paragraph [ref=e105]: Careers
+        - heading "Join us and build the future—turning tough challenges into breakthrough solutions." [level=2] [ref=e106]
+        - paragraph [ref=e107]: If you’re driven by curiosity, obsessed with solving complex problems, and excited to shape the future of global underserved markets, you’ll feel right at home here. Explore careers at HYBR and build what’s next with us.
+        - link "Learn More" [ref=e108] [cursor=pointer]:
+          - /url: /who-we-are/careers
+    - generic [ref=e110]:
+      - generic [ref=e111]:
+        - generic [ref=e112]:
+          - heading "Who We Are" [level=3] [ref=e113]
+          - list [ref=e114]:
+            - listitem [ref=e115]:
+              - link "About Us" [ref=e116] [cursor=pointer]:
+                - /url: /who-we-are/about-us
+            - listitem [ref=e117]:
+              - link "Our Team" [ref=e118] [cursor=pointer]:
+                - /url: /who-we-are/our-team
+            - listitem [ref=e119]:
+              - link "Careers" [ref=e120] [cursor=pointer]:
+                - /url: /who-we-are/careers
+        - generic [ref=e121]:
+          - heading "What We Do" [level=3] [ref=e122]
+          - list [ref=e123]:
+            - listitem [ref=e124]:
+              - link "Our Services" [ref=e125] [cursor=pointer]:
+                - /url: /what-we-do/services
+            - listitem [ref=e126]:
+              - link "Our Products" [ref=e127] [cursor=pointer]:
+                - /url: /what-we-do/products
+            - listitem [ref=e128]:
+              - link "Our Work" [ref=e129] [cursor=pointer]:
+                - /url: /what-we-do/our-work
+            - listitem [ref=e130]:
+              - link "Our Impact" [ref=e131] [cursor=pointer]:
+                - /url: /what-we-do/our-impact
+        - generic [ref=e132]:
+          - heading "Insights" [level=3] [ref=e133]
+          - list [ref=e134]:
+            - listitem [ref=e135]:
+              - link "Articles & Posts" [ref=e136] [cursor=pointer]:
+                - /url: /insights/articles
+            - listitem [ref=e137]:
+              - link "Webinars" [ref=e138] [cursor=pointer]:
+                - /url: /insights/webinars
+            - listitem [ref=e139]:
+              - link "News & Updates" [ref=e140] [cursor=pointer]:
+                - /url: /insights/news
+        - generic [ref=e141]:
+          - heading "Contact us" [level=3] [ref=e142]
+          - list [ref=e143]:
+            - listitem [ref=e144]:
+              - link "Address 1" [ref=e145] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=e146]:
+              - link "Phone Number" [ref=e147] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=e148]:
+              - link "Email Address" [ref=e149] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e150]:
+          - heading "Follow us" [level=3] [ref=e151]
+          - generic [ref=e152]:
+            - link "Instagram placeholder" [ref=e153] [cursor=pointer]:
+              - /url: "#"
+              - img "Instagram" [ref=e154]
+            - link "LinkedIn placeholder" [ref=e158] [cursor=pointer]:
+              - /url: "#"
+              - img "LinkedIn" [ref=e159]
+            - link "X placeholder" [ref=e163] [cursor=pointer]:
+              - /url: "#"
+              - img "X" [ref=e164]
+            - link "YouTube placeholder" [ref=e166] [cursor=pointer]:
+              - /url: "#"
+              - img "YouTube" [ref=e167]
+            - link "Facebook placeholder" [ref=e170] [cursor=pointer]:
+              - /url: "#"
+              - img "Facebook" [ref=e171]
+            - link "Medium placeholder" [ref=e174] [cursor=pointer]:
+              - /url: "#"
+              - img "Medium" [ref=e175]
+            - link "TikTok placeholder" [ref=e179] [cursor=pointer]:
+              - /url: "#"
+              - img "TikTok" [ref=e180]
+          - link "Let's Talk" [ref=e183] [cursor=pointer]:
+            - /url: /contact
+      - generic [ref=e184]:
+        - generic [ref=e185]:
+          - generic [ref=e186]: Privacy Policy
+          - generic [ref=e187]: Terms & Conditions
+        - img "HYBR" [ref=e188]
+        - generic [ref=e189]: © 2025 HYBR GROUP
+  - button "Open Next.js Dev Tools" [ref=e195] [cursor=pointer]:
+    - img [ref=e196]

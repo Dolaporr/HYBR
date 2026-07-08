@@ -1,0 +1,224 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - link "HYBR" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "HYBR" [ref=e7]
+      - navigation [ref=e8]:
+        - link "Who We Are" [ref=e9] [cursor=pointer]:
+          - /url: /who-we-are
+        - link "What We Do" [ref=e10] [cursor=pointer]:
+          - /url: /what-we-do
+        - link "Insights" [ref=e11] [cursor=pointer]:
+          - /url: /insights
+        - link "Let's Talk" [ref=e12] [cursor=pointer]:
+          - /url: /contact
+    - generic [ref=e13]:
+      - heading "Our Insights" [level=1] [ref=e14]
+      - paragraph [ref=e15]: Understand what's changing, and what to do about it.
+    - complementary "Insights content" [ref=e16]:
+      - generic [ref=e17]: CONTENT
+      - navigation [ref=e18]:
+        - link "Spotlight" [ref=e19] [cursor=pointer]:
+          - /url: "#spotlight"
+        - link "Webinars" [ref=e20] [cursor=pointer]:
+          - /url: "#webinars"
+        - link "Articles" [ref=e21] [cursor=pointer]:
+          - /url: "#articles"
+        - link "News" [ref=e22] [cursor=pointer]:
+          - /url: "#news"
+        - link "Newsletter" [ref=e23] [cursor=pointer]:
+          - /url: "#newsletter"
+    - generic "Insight search and filters" [ref=e24]:
+      - button "Search" [ref=e25]:
+        - img [ref=e26]
+        - generic [ref=e29]: Search
+      - button "Filters" [ref=e30]:
+        - generic [ref=e31]: Filters
+        - img [ref=e33]
+    - region "SPOTLIGHT" [ref=e35]:
+      - paragraph [ref=e36]: SPOTLIGHT
+      - link "WEBINAR 01:40:35 Title of Specific Webinar Jedidiah Akpata & Charles Ojei November 2023" [ref=e37] [cursor=pointer]:
+        - /url: /insights/webinars/specific-webinar
+        - generic [ref=e39]: WEBINAR
+        - generic [ref=e40]: 01:40:35
+        - generic [ref=e41]:
+          - generic [ref=e42]: Title of Specific Webinar
+          - generic [ref=e43]: Jedidiah Akpata & Charles Ojei
+          - generic [ref=e44]: November 2023
+        - img [ref=e46]
+      - link "ARTICLE One Liner For Specific Article Read More" [ref=e48] [cursor=pointer]:
+        - /url: /insights/articles/specific-article
+        - generic [ref=e50]:
+          - generic [ref=e51]: ARTICLE
+          - generic [ref=e52]: One Liner For Specific Article
+        - generic [ref=e53]: Read More
+      - link "NEWS One Liner For Specific News Update A short, captivating statement about what this news update covers. Read More" [ref=e54] [cursor=pointer]:
+        - /url: /insights/news/specific-news
+        - generic [ref=e56]:
+          - generic [ref=e57]: NEWS
+          - generic [ref=e58]: One Liner For Specific News Update
+          - generic [ref=e59]: A short, captivating statement about what this news update covers.
+        - generic [ref=e60]: Read More
+    - region "Webinars" [ref=e61]:
+      - generic [ref=e62]:
+        - paragraph [ref=e63]: WEBINARS
+        - heading "Learn how leaders are navigating today's toughest challenges." [level=2] [ref=e64]
+        - generic [ref=e65]: Understand what's changing, and how leaders are responding live. Join the next session or watch past conversations.
+      - link "WEBINAR 01:40:35 One Liner For Specific Webinar Jedidiah Akpata & Charles Ojei November 2023" [ref=e66] [cursor=pointer]:
+        - /url: /insights/webinars/specific-webinar
+        - generic [ref=e68]: WEBINAR
+        - generic [ref=e69]: 01:40:35
+        - generic [ref=e70]:
+          - generic [ref=e71]: One Liner For Specific Webinar
+          - generic [ref=e72]: Jedidiah Akpata & Charles Ojei
+          - generic [ref=e73]: November 2023
+        - img [ref=e75]
+      - link "WEBINAR 01:40:35 One Liner For Specific Webinar Jedidiah Akpata & Charles Ojei November 2023" [ref=e77] [cursor=pointer]:
+        - /url: /insights/webinars/specific-webinar
+        - generic [ref=e79]: WEBINAR
+        - generic [ref=e80]: 01:40:35
+        - generic [ref=e81]:
+          - generic [ref=e82]: One Liner For Specific Webinar
+          - generic [ref=e83]: Jedidiah Akpata & Charles Ojei
+          - generic [ref=e84]: November 2023
+        - img [ref=e86]
+      - link "View Webinars" [ref=e88] [cursor=pointer]:
+        - /url: /insights/webinars
+    - region "Articles" [ref=e89]:
+      - generic [ref=e90]:
+        - paragraph [ref=e91]: ARTICLE
+        - heading "Learn what works before you decide what's next." [level=2] [ref=e92]
+        - generic [ref=e93]: Still unsure about what's next? Start reading and feel confident in your next move.
+      - link "All Articles" [ref=e94] [cursor=pointer]:
+        - /url: /insights/articles
+      - link "ARTICLE One Liner For Specific Article Read More" [ref=e95] [cursor=pointer]:
+        - /url: /insights/articles/specific-article
+        - generic [ref=e97]:
+          - generic [ref=e98]: ARTICLE
+          - generic [ref=e99]: One Liner For Specific Article
+        - generic [ref=e100]: Read More
+      - link "ARTICLE One Liner For Specific Article Read More" [ref=e101] [cursor=pointer]:
+        - /url: /insights/articles/specific-article
+        - generic [ref=e103]:
+          - generic [ref=e104]: ARTICLE
+          - generic [ref=e105]: One Liner For Specific Article
+        - generic [ref=e106]: Read More
+    - region "News" [ref=e107]:
+      - generic [ref=e108]:
+        - paragraph [ref=e109]: NEWS
+        - heading "Catch up on what matters and stay prepared for what's next." [level=2] [ref=e110]
+        - generic [ref=e111]: Stay updated with innovation news currently shaping the future of business.
+      - link "NEWS One Liner For Specific News Update A short, captivating statement about what this news update covers. Read More" [ref=e112] [cursor=pointer]:
+        - /url: /insights/news/specific-news
+        - generic [ref=e114]:
+          - generic [ref=e115]: NEWS
+          - generic [ref=e116]: One Liner For Specific News Update
+          - generic [ref=e117]: A short, captivating statement about what this news update covers.
+        - generic [ref=e118]: Read More
+      - link "NEWS One Liner For Specific News Update A short, captivating statement about what this news update covers. Read More" [ref=e119] [cursor=pointer]:
+        - /url: /insights/news/specific-news
+        - generic [ref=e121]:
+          - generic [ref=e122]: NEWS
+          - generic [ref=e123]: One Liner For Specific News Update
+          - generic [ref=e124]: A short, captivating statement about what this news update covers.
+        - generic [ref=e125]: Read More
+      - link "All News" [ref=e126] [cursor=pointer]:
+        - /url: /insights/news
+    - region "Unveil more industry secrets." [ref=e127]:
+      - generic [ref=e129]:
+        - heading "Unveil more industry secrets." [level=2] [ref=e130]
+        - paragraph [ref=e131]: Encouragement for user to subscribe to HYBR's newsletter for more perks.
+      - generic [ref=e132]:
+        - textbox "First name" [ref=e133]:
+          - /placeholder: Insert Your First Name
+        - textbox "Last name" [ref=e134]:
+          - /placeholder: Insert Your Last Name
+        - textbox "Email" [ref=e135]:
+          - /placeholder: Insert Your Email
+        - button "Submit" [ref=e136]
+  - generic [ref=e138]:
+    - generic [ref=e139]:
+      - generic [ref=e140]:
+        - heading "Who We Are" [level=3] [ref=e141]
+        - list [ref=e142]:
+          - listitem [ref=e143]:
+            - link "About Us" [ref=e144] [cursor=pointer]:
+              - /url: /who-we-are/about-us
+          - listitem [ref=e145]:
+            - link "Our Team" [ref=e146] [cursor=pointer]:
+              - /url: /who-we-are/our-team
+          - listitem [ref=e147]:
+            - link "Careers" [ref=e148] [cursor=pointer]:
+              - /url: /who-we-are/careers
+      - generic [ref=e149]:
+        - heading "What We Do" [level=3] [ref=e150]
+        - list [ref=e151]:
+          - listitem [ref=e152]:
+            - link "Our Services" [ref=e153] [cursor=pointer]:
+              - /url: /what-we-do/services
+          - listitem [ref=e154]:
+            - link "Our Products" [ref=e155] [cursor=pointer]:
+              - /url: /what-we-do/products
+          - listitem [ref=e156]:
+            - link "Our Work" [ref=e157] [cursor=pointer]:
+              - /url: /what-we-do/our-work
+          - listitem [ref=e158]:
+            - link "Our Impact" [ref=e159] [cursor=pointer]:
+              - /url: /what-we-do/our-impact
+      - generic [ref=e160]:
+        - heading "Insights" [level=3] [ref=e161]
+        - list [ref=e162]:
+          - listitem [ref=e163]:
+            - link "Articles & Posts" [ref=e164] [cursor=pointer]:
+              - /url: /insights/articles
+          - listitem [ref=e165]:
+            - link "Webinars" [ref=e166] [cursor=pointer]:
+              - /url: /insights/webinars
+          - listitem [ref=e167]:
+            - link "News & Updates" [ref=e168] [cursor=pointer]:
+              - /url: /insights/news
+      - generic [ref=e169]:
+        - heading "Contact us" [level=3] [ref=e170]
+        - list [ref=e171]:
+          - listitem [ref=e172]:
+            - link "Address 1" [ref=e173] [cursor=pointer]:
+              - /url: /contact
+          - listitem [ref=e174]:
+            - link "Phone Number" [ref=e175] [cursor=pointer]:
+              - /url: /contact
+          - listitem [ref=e176]:
+            - link "Email Address" [ref=e177] [cursor=pointer]:
+              - /url: /contact
+      - generic [ref=e178]:
+        - heading "Follow us" [level=3] [ref=e179]
+        - generic [ref=e180]:
+          - link "Instagram placeholder" [ref=e181] [cursor=pointer]:
+            - /url: "#"
+            - img "Instagram" [ref=e182]
+          - link "LinkedIn placeholder" [ref=e186] [cursor=pointer]:
+            - /url: "#"
+            - img "LinkedIn" [ref=e187]
+          - link "X placeholder" [ref=e191] [cursor=pointer]:
+            - /url: "#"
+            - img "X" [ref=e192]
+          - link "YouTube placeholder" [ref=e194] [cursor=pointer]:
+            - /url: "#"
+            - img "YouTube" [ref=e195]
+          - link "Facebook placeholder" [ref=e198] [cursor=pointer]:
+            - /url: "#"
+            - img "Facebook" [ref=e199]
+          - link "Medium placeholder" [ref=e202] [cursor=pointer]:
+            - /url: "#"
+            - img "Medium" [ref=e203]
+          - link "TikTok placeholder" [ref=e207] [cursor=pointer]:
+            - /url: "#"
+            - img "TikTok" [ref=e208]
+        - link "Let's Talk" [ref=e211] [cursor=pointer]:
+          - /url: /contact
+    - generic [ref=e212]:
+      - generic [ref=e213]:
+        - generic [ref=e214]: Privacy Policy
+        - generic [ref=e215]: Terms & Conditions
+      - img "HYBR" [ref=e216]
+      - generic [ref=e217]: © 2025 HYBR GROUP

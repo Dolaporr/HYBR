@@ -1,0 +1,64 @@
+[     226ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[    1009ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[    1086ms] [LOG] [HMR] connected @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[    1616ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[    1653ms] [ERROR] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <RenderFromTemplateContext>
+      <ScrollAndMaybeFocusHandler cacheNode={{rsc:{...}, ...}}>
+        <InnerScrollAndFocusHandlerOld focusAndScrollRef={{scrollRef:null, ...}} cacheNode={{rsc:{...}, ...}}>
+          <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+            <LoadingBoundary name="who-we-are/" loading={null}>
+              <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+                <RedirectBoundary>
+                  <RedirectErrorBoundary router={{...}}>
+                    <InnerLayoutRouter url="/who-we-ar..." tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} ...>
+                      <SegmentViewNode type="page" pagePath="who-we-are...">
+                        <SegmentTrieNode>
+                        <WhoWeArePage>
+                          <main className="who-page">
+                            <div className="who-frame">
+                              <header>
+                              <section>
+                              <ContentDrop>
+                                <aside
++                                 className="who-content-drop"
+-                                 className="who-content-drop site-content-drop"
+                                  aria-label="Page contents"
+-                                 data-content-drawer-ready="true"
+-                                 aria-expanded="false"
+-                                 role="button"
+-                                 tabindex="0"
+                                >
+                              ...
+                            ...
+                      ...
+                    ...
+          ...
+ @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[    2218ms] [LOG] [Fast Refresh] done in 713ms @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  203567ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  204635ms] [LOG] [Fast Refresh] done in 1182ms @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  364358ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=BMyz1GG6r-PqtKWEcYtgs' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[  369173ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=BMyz1GG6r-PqtKWEcYtgs' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[  378302ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=BMyz1GG6r-PqtKWEcYtgs' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[  389967ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=BMyz1GG6r-PqtKWEcYtgs' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[  401755ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=BMyz1GG6r-PqtKWEcYtgs' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[  415749ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=BMyz1GG6r-PqtKWEcYtgs' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[  427369ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=BMyz1GG6r-PqtKWEcYtgs' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[  439556ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=BMyz1GG6r-PqtKWEcYtgs' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[  451360ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=BMyz1GG6r-PqtKWEcYtgs' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[  463465ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=BMyz1GG6r-PqtKWEcYtgs' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[  474961ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=BMyz1GG6r-PqtKWEcYtgs' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[  489663ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=BMyz1GG6r-PqtKWEcYtgs' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299

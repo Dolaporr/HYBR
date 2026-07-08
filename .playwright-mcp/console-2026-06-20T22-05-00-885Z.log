@@ -1,0 +1,213 @@
+[    6024ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[    6162ms] [LOG] [HMR] connected @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   27566ms] [ERROR] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <RenderFromTemplateContext>
+      <ScrollAndMaybeFocusHandler cacheNode={{rsc:{...}, ...}}>
+        <InnerScrollAndFocusHandlerOld focusAndScrollRef={{scrollRef:null, ...}} cacheNode={{rsc:{...}, ...}}>
+          <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+            <LoadingBoundary name="who-we-are/" loading={null}>
+              <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+                <RedirectBoundary>
+                  <RedirectErrorBoundary router={{...}}>
+                    <InnerLayoutRouter url="/who-we-ar..." tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} ...>
+                      <SegmentViewNode type="page" pagePath="who-we-are...">
+                        <SegmentTrieNode>
+                        <WhoWeArePage>
+                          <main className="who-page">
+                            <div className="who-frame">
+                              <header>
+                              <section>
+                              <ContentDrop>
+                                <aside
++                                 className="who-content-drop"
+-                                 className="who-content-drop site-content-drop"
+                                  aria-label="Page contents"
+-                                 data-content-drawer-ready="true"
+-                                 aria-expanded="false"
+-                                 role="button"
+-                                 tabindex="0"
+                                >
+                              ...
+                            ...
+                      ...
+                    ...
+          ...
+ @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  201575ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  202098ms] [LOG] [Fast Refresh] done in 644ms @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  202392ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  202574ms] [LOG] [HMR] connected @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  202884ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  202931ms] [ERROR] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <RenderFromTemplateContext>
+      <ScrollAndMaybeFocusHandler cacheNode={{rsc:{...}, ...}}>
+        <InnerScrollAndFocusHandlerOld focusAndScrollRef={{scrollRef:null, ...}} cacheNode={{rsc:{...}, ...}}>
+          <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+            <LoadingBoundary name="services/" loading={null}>
+              <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+                <RedirectBoundary>
+                  <RedirectErrorBoundary router={{...}}>
+                    <InnerLayoutRouter url="/what-we-d..." tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} ...>
+                      <SegmentViewNode type="page" pagePath="what-we-do...">
+                        <SegmentTrieNode>
+                        <ServicesPage>
+                          <main className="page-modul...">
+                            <div className="services-f...">
+                              <header>
+                              <section>
+                              <ContentDrop>
+                                <aside
+                                  aria-label="Our Services page contents"
++                                 className="services-content-drop"
+-                                 className="services-content-drop site-content-drop"
+-                                 data-content-drawer-ready="true"
+-                                 aria-expanded="false"
+-                                 role="button"
+-                                 tabindex="0"
+                                >
+                              ...
+                            ...
+                      ...
+                    ...
+          ...
+ @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  203195ms] [LOG] [Fast Refresh] done in 419ms @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  203418ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  203490ms] [LOG] [HMR] connected @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  204007ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  204112ms] [ERROR] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <RenderFromTemplateContext>
+      <ScrollAndMaybeFocusHandler cacheNode={{rsc:{...}, ...}}>
+        <InnerScrollAndFocusHandlerOld focusAndScrollRef={{scrollRef:null, ...}} cacheNode={{rsc:{...}, ...}}>
+          <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+            <LoadingBoundary name="articles/" loading={null}>
+              <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+                <RedirectBoundary>
+                  <RedirectErrorBoundary router={{...}}>
+                    <InnerLayoutRouter url="/insights/..." tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} ...>
+                      <SegmentViewNode type="page" pagePath="insights/a...">
+                        <SegmentTrieNode>
+                        <ArticlesPage>
+                          <main className="articles-page">
+                            <header>
+                            <section className="articles-f..." aria-labelledby="articles-t...">
+                              <div className="figma-cont...">
+                                <ContentDrop>
+                                  <nav
++                                   className="articles-content-drop"
+-                                   className="articles-content-drop site-content-drop"
+                                    aria-label="Articles page sections"
+-                                   data-content-drawer-ready="true"
+-                                   aria-expanded="false"
+-                                   role="button"
+-                                   tabindex="0"
+-                                   style={{left:"auto",transform:"translateX..."}}
+                                  >
+                                ...
+                            ...
+                      ...
+                    ...
+          ...
+ @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  204684ms] [LOG] [Fast Refresh] done in 886ms @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  204975ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  205250ms] [LOG] [HMR] connected @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  205795ms] [ERROR] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <RenderFromTemplateContext>
+      <ScrollAndMaybeFocusHandler cacheNode={{rsc:{...}, ...}}>
+        <InnerScrollAndFocusHandlerOld focusAndScrollRef={{scrollRef:null, ...}} cacheNode={{rsc:{...}, ...}}>
+          <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+            <LoadingBoundary name="careers/" loading={null}>
+              <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+                <RedirectBoundary>
+                  <RedirectErrorBoundary router={{...}}>
+                    <InnerLayoutRouter url="/who-we-ar..." tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} ...>
+                      <SegmentViewNode type="page" pagePath="who-we-are...">
+                        <SegmentTrieNode>
+                        <CareersPage>
+                          <main className="page-modul...">
+                            <div className="careers-frame">
+                              <header>
+                              <section>
+                              <ContentDrop>
+                                <aside
+                                  aria-label="Careers page contents"
++                                 className="careers-content-drop"
+-                                 className="careers-content-drop site-content-drop"
+-                                 data-content-drawer-ready="true"
+-                                 aria-expanded="false"
+-                                 role="button"
+-                                 tabindex="0"
+                                >
+                              ...
+                            ...
+                      ...
+                    ...
+          ...
+ @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  411551ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  412381ms] [LOG] [Fast Refresh] done in 934ms @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  456880ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  457043ms] [LOG] [Fast Refresh] done in 284ms @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  459673ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  459833ms] [LOG] [Fast Refresh] done in 266ms @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  460022ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  460142ms] [LOG] [Fast Refresh] done in 226ms @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  493417ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  493607ms] [LOG] [Fast Refresh] done in 295ms @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  493911ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  494042ms] [LOG] [Fast Refresh] done in 239ms @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  516927ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  517093ms] [LOG] [Fast Refresh] done in 271ms @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  517319ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  517387ms] [LOG] [Fast Refresh] done in 177ms @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  901013ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  901117ms] [LOG] [Fast Refresh] done in 217ms @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431

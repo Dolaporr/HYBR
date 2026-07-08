@@ -44,30 +44,39 @@ const risks = [
 const services = [
   {
     title: "Discover",
-    first: "Applied Research and Strategy",
-    second: "Market Acceleration",
+    items: [
+      "Customer & Market Intelligence",
+      "Growth Opportunity Discovery",
+      "Innovation Readiness & Strategy",
+    ],
     icon: "bag",
-    tag: "Applied Research and Strategy",
+    tag: "Find The Right Opportunity",
     href: "/what-we-do/services",
     image: "/home/edit-flags/home-service-discover.jpg",
     bgPosition: "center 32%",
   },
   {
     title: "Develop",
-    first: "Prototyping, Product & Service Design",
-    second: "Applied Research and Strategy",
+    items: [
+      "Solution & Venture Design",
+      "AI & Digital Solution Development",
+      "Pilot & Validation",
+    ],
     icon: "palette",
-    tag: "Prototyping, Product & Service Design",
+    tag: "Build The Right Solution",
     href: "/what-we-do/services",
     image: "/home/edit-flags/home-service-develop.jpg",
     bgPosition: "center",
   },
   {
     title: "Deploy",
-    first: "Prototyping, Product & Service Design",
-    second: "Market Acceleration",
+    items: [
+      "Growth & Commercialisation",
+      "Enterprise Transformation",
+      "Scale & Investment",
+    ],
     icon: "trend",
-    tag: "Market Acceleration",
+    tag: "Scale Measurable Growth",
     href: "/what-we-do/services",
     image: "/home/edit-flags/home-service-deploy.jpg",
     bgPosition: "center",
@@ -545,8 +554,11 @@ export default function Home() {
                     <h3 className="font-display text-[32px] font-medium leading-none">
                       {service.title}
                     </h3>
-                    <p>{service.first}</p>
-                    <p>{service.second}</p>
+                    <div className="home-service-back-items">
+                      {service.items.map((item) => (
+                        <p key={item}>{item}</p>
+                      ))}
+                    </div>
                     <a className="home-service-back-link" href={service.href}>
                       Learn More
                     </a>
@@ -832,8 +844,8 @@ export default function Home() {
               Build Innovation that Works, with Us
             </h2>
             <p className="mt-6 max-w-[461px] font-medium text-xl leading-relaxed">
-              Supporting lead generator body text to encourage users to book a strategy
-              call.
+              Book a call to eliminate innovation by guesswork and unlock measurable
+              growth.
             </p>
           </div>
           <form className="home-contact-form space-y-6 bg-black p-6 md:space-y-8 md:p-16">

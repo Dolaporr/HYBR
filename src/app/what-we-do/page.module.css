@@ -1354,6 +1354,129 @@
   }
 }
 
+.whatScope :global(.what-product-heading) {
+  display: block;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 12px;
+}
+
+.whatScope :global(.what-case-copy) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.whatScope :global(.what-case-card.is-feature .what-case-copy) {
+  width: min(250px, calc(100% - 64px));
+}
+
+.whatScope :global(.what-case-card.is-feature .what-case-copy span) {
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.whatScope :global(.what-case-company) {
+  display: block;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  line-height: 1.1;
+  margin-top: 18px;
+}
+
+.whatScope :global(.what-case-company.is-coca-cola) {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: .02em;
+  text-transform: none;
+}
+
+.whatScope :global(.what-case-company.is-alitheia) {
+  font-size: 15px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.whatScope :global(.what-product-card.is-indx) {
+  top: 3095px;
+}
+
+.whatScope :global(.what-product-card.is-flywheel) {
+  top: 3931px;
+}
+
+.whatScope :global(.what-product-card.is-alpha) {
+  top: 4767px;
+}
+
+@media (min-width: 560px) and (max-width: 1023px) {
+  .whatScope :global(.what-product-card.is-indx) {
+    top: 3263px;
+  }
+
+  .whatScope :global(.what-product-card.is-flywheel) {
+    top: 3859px;
+  }
+
+  .whatScope :global(.what-product-card.is-alpha) {
+    top: 4395px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .whatScope :global(.what-product-card.is-indx) {
+    top: 2587px;
+  }
+
+  .whatScope :global(.what-product-card.is-flywheel) {
+    top: 3043px;
+  }
+
+  .whatScope :global(.what-product-card.is-alpha) {
+    top: 3499px;
+  }
+
+  .whatScope :global(.what-case-card.is-feature .what-case-copy) {
+    width: 320px;
+  }
+
+  .whatScope :global(.what-case-card.is-feature .what-case-copy span) {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1360px) {
+  .whatScope :global(.what-frame) {
+    max-width: none;
+  }
+
+  .whatScope :global(.what-product-card.is-indx) {
+    top: 2816px;
+  }
+
+  .whatScope :global(.what-product-card.is-flywheel) {
+    top: 3293px;
+  }
+
+  .whatScope :global(.what-product-card.is-alpha) {
+    top: 3770px;
+  }
+
+  .whatScope :global(.what-case-card.is-feature .what-case-copy) {
+    width: 390px;
+  }
+
+  .whatScope :global(.what-case-card.is-feature .what-case-copy span) {
+    font-size: 16px;
+  }
+}
+
 .whatScope :global(.what-team-image) {
   --hybr-image-card-mask-current: var(--hybr-image-card-team-mask);
   background-position: center 38% !important;

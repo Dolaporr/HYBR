@@ -11,16 +11,49 @@ const contentLinks = [
   { label: "Our Team", href: "#team" },
 ];
 
-const productBody = [
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus dolor id metus auctor tincidunt. Cras et gravida dolor. Morbi auctor nibh lacus. Nulla luctus, risus nec lobortis iaculis, ante est imperdiet augue, id mattis tellus sapien quis purus.",
-  "Nullam faucibus, sapien id condimentum sagittis, justo urna rhoncus lacus, viverra lacinia nibh ex in neque.",
-];
-
 const products = [
-  { key: "flywheel", name: "FLYWHEEL", cta: "Access FLYWHEEL", hasDesktopEmail: true },
-  { key: "indx", name: "INDX", cta: "Access INDX", hasDesktopEmail: true },
-  { key: "alpha", name: "ALPHA", cta: "Access ALPHA", hasDesktopEmail: false },
+  {
+    key: "indx",
+    name: "INDX",
+    heading: "Know where to grow.",
+    body: "INDX is HYBR's innovation assessment platform that helps leaders measure innovation maturity, identify growth opportunities, and uncover execution gaps. Complete the assessment to receive practical insights and your next steps toward measurable growth.",
+    cta: "Join Waiting List",
+    hasDesktopEmail: true,
+  },
+  {
+    key: "flywheel",
+    name: "FLYWHEEL",
+    heading: "Build the capability to grow.",
+    body: "FLYWHEEL is HYBR's innovation development programme that helps teams build the skills, systems, and discipline to consistently discover opportunities, develop solutions, and deploy measurable growth. Turn innovation into a repeatable capability - not a one-time initiative.",
+    cta: "Join Waiting List",
+    hasDesktopEmail: true,
+  },
+  {
+    key: "alpha",
+    name: "ALPHA",
+    heading: "Develop Tomorrow's Innovators. Today.",
+    body: "ALPHA is HYBR's innovation and research programme for ambitious teenagers. Through real-world challenges, expert coaching, and hands-on projects, students develop the curiosity, problem-solving, and leadership skills needed to thrive in high school and beyond.",
+    cta: "Access ALPHA",
+    hasDesktopEmail: false,
+  },
 ] as const;
+
+const caseStudies = {
+  feature: {
+    image: "/home/edit-flags/plastic-waste.jpg",
+    title: "Eliminating Plastic Waste In Nigeria",
+    body: "We delivered a holistic innovation programme to tackle a critical and urgent environmental problem which helps Coca Cola to radically eliminate plastic waste.",
+    company: "Coca-Cola",
+    companyClass: "is-coca-cola",
+  },
+  tall: {
+    image: figmaAssets.ourWorkTall,
+    title: "Operational and technical diagnostics",
+    body: "We conducted - in record time - robust due diligence and scale diagnostics for a female-led food company working towards Series A round funding.",
+    company: "Alitheia Capital",
+    companyClass: "is-alitheia",
+  },
+} as const;
 
 const productIconAssets: Record<(typeof products)[number]["key"], string> = {
   flywheel: "/what/vectors/icon-flywheel.svg",
@@ -101,19 +134,20 @@ function ProcessMap() {
 }
 
 function CaseStudyCard({ kind }: { kind: "feature" | "tall" }) {
-  const image = kind === "feature" ? figmaAssets.ourWorkFeature : figmaAssets.ourWorkTall;
+  const study = caseStudies[kind];
 
   return (
     <article className={`what-case-card is-${kind}`}>
       <span
         aria-hidden="true"
         className="what-case-image"
-        style={{ backgroundImage: `url(${image})` }}
+        style={{ backgroundImage: `url(${study.image})` }}
       />
       <div className="what-case-copy">
         <p>CASE STUDY</p>
-        <h3>One Liner For Specific Case Study</h3>
-        <span>A short, captivating statement about what this case study is about.</span>
+        <h3>{study.title}</h3>
+        <span>{study.body}</span>
+        <strong className={`what-case-company ${study.companyClass}`}>{study.company}</strong>
       </div>
       <ButtonLink className="is-white is-read" href="/case-studies/one-liner">
         Read More
@@ -134,9 +168,8 @@ function ProductCard({ product }: { product: (typeof products)[number] }) {
       </div>
       <div className="what-product-copy">
         <div>
-          {productBody.map((paragraph) => (
-            <p key={`${product.key}-${paragraph}`}>{paragraph}</p>
-          ))}
+          <strong className="what-product-heading">{product.heading}</strong>
+          <p>{product.body}</p>
         </div>
         <form className="what-product-actions">
           <input
@@ -200,10 +233,10 @@ export default function WhatWeDoPage() {
           <CaseStudyCard kind="feature" />
           <div className="what-work-copy">
             <p>OUR WORK</p>
-            <h2>One Liner To Lead User To Case Studies Page</h2>
+            <h2>Real Problems. Measurable Results.</h2>
             <span>
-              A continuation of the one-liner above to drive users to visit
-              &ldquo;Case Studies&rdquo;.
+              See how we&apos;ve helped organizations eliminate innovation by
+              guesswork and turn bold ideas into measurable business impact.
             </span>
             <ButtonLink href="/what-we-do/our-work">View Case Studies</ButtonLink>
           </div>
