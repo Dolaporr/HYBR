@@ -193,7 +193,7 @@ function AboutImageCard() {
     <div className="who-about-image" aria-hidden="true">
       <span
         className="who-about-media"
-        style={{ backgroundImage: `url(${primaryImage})` }}
+        style={{ backgroundImage: `url(${figmaAssets.whoAboutUs})` }}
       />
     </div>
   );
@@ -205,7 +205,7 @@ function ContentDrop() {
       <span
         aria-hidden="true"
         className="who-content-drop-media"
-        style={{ backgroundImage: `url(${primaryImage})` }}
+        style={{ backgroundImage: `url(${figmaAssets.whoContentTab})` }}
       />
       <p>CONTENT</p>
       <nav>
@@ -328,7 +328,7 @@ export default function WhoWeArePage() {
           </FigmaButton>
         </section>
 
-        <ImageSurface className="who-careers-image" />
+        <ImageSurface className="who-careers-image" src={figmaAssets.whoCareers} />
 
         <section className="who-careers-copy" id="careers" aria-labelledby="who-careers-title">
           <SectionLabel>Careers</SectionLabel>

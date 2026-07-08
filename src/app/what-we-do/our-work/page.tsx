@@ -60,7 +60,7 @@ function ContentDrop() {
       <span
         aria-hidden="true"
         className="work-content-drop-media"
-        style={{ backgroundImage: `url(${figmaAssets.figmaBusinessPartners})` }}
+        style={{ backgroundImage: `url(${figmaAssets.workContentTab})` }}
       />
       <p>CONTENT</p>
       <nav>
@@ -135,7 +135,7 @@ function ServicesCta() {
       <span
         aria-hidden="true"
         className="work-services-image"
-        style={{ backgroundImage: `url(${figmaAssets.figmaBusinessPartners})` }}
+        style={{ backgroundImage: `url(${figmaAssets.workServices})` }}
       />
       <div className="work-services-copy">
         <p>OUR SERVICES</p>

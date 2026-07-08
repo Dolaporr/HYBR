@@ -13,7 +13,7 @@ const contentLinks = [
 function ContentDrop() {
   return (
     <aside className="insights-content-drop" aria-label="Insights content">
-      <img alt="" src={figmaAssets.figmaBusinessPartners} />
+      <img alt="" src={figmaAssets.insightsContentTab} />
       <span className="insights-content-drop-label">CONTENT</span>
       <nav>
         {contentLinks.map((item) => (
@@ -145,7 +145,7 @@ function SectionCopy({
 function Newsletter() {
   return (
     <section className="insights-newsletter" id="newsletter" aria-labelledby="insights-newsletter-title">
-      <img alt="" src={figmaAssets.contact} />
+      <img alt="" src={figmaAssets.insightsNewsletter} />
       <span className="insights-newsletter-shade" />
       <div className="insights-newsletter-copy">
         <h2 id="insights-newsletter-title">Unveil more industry secrets.</h2>

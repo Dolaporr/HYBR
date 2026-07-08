@@ -71,7 +71,7 @@ function FilterControls() {
 function ContentDrop() {
   return (
     <nav className="news-content-drop" aria-label="News page sections">
-      <img alt="" src={figmaAssets.figmaBusinessPartners} />
+      <img alt="" src={figmaAssets.newsContentTab} />
       <span className="news-content-drop-label">CONTENT</span>
       <div>
         <a href="#spotlight">Spotlight</a>
@@ -200,7 +200,7 @@ export default function NewsPage() {
 
           <section className="news-what" id="what-we-do" aria-label="What we do">
             <div className="news-what-image">
-              <img alt="" src={figmaAssets.figmaBusinessPartners} />
+              <img alt="" src={figmaAssets.newsWhatWeDo} />
             </div>
             <div className="news-what-copy">
               <p>WHAT WE DO</p>

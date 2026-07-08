@@ -71,7 +71,7 @@ function FilterControls() {
 function ContentDrop() {
   return (
     <nav className="articles-content-drop" aria-label="Articles page sections">
-      <img alt="" src={figmaAssets.figmaBusinessPartners} />
+      <img alt="" src={figmaAssets.articlesContentTab} />
       <span className="articles-content-drop-label">CONTENT</span>
       <div>
         <a href="#spotlight">Spotlight</a>
@@ -197,7 +197,7 @@ export default function ArticlesPage() {
 
           <section className="articles-what" id="what-we-do" aria-label="What we do">
             <div className="articles-what-image">
-              <img alt="" src={figmaAssets.figmaBusinessPartners} />
+              <img alt="" src={figmaAssets.articlesWhatWeDo} />
             </div>
             <div className="articles-what-copy">
               <p>WHAT WE DO</p>

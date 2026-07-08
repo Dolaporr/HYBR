@@ -15102,6 +15102,8 @@ video.home-video-card {
 
 .homepage-live .home-risk-section .home-droplet-right {
   border-radius: 0;
+  background-position: 50% 42% !important;
+  background-size: 175% auto !important;
 }
 
 .homepage-live .home-gain-section .home-droplet-left {
@@ -19908,10 +19910,4 @@ video.home-video-card {
     width: var(--home-testimonial-photo-size) !important;
   }
 
-  .homepage-live .home-testimonial-avatar-image--peter {
-    height: 126px !important;
-    object-position: 50% 44% !important;
-    transform: translateX(-50%) !important;
-    width: 126px !important;
-  }
 }

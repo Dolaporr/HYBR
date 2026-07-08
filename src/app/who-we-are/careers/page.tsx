@@ -87,7 +87,7 @@ function ContentDrop() {
       <span
         aria-hidden="true"
         className="careers-content-drop-media"
-        style={{ backgroundImage: `url(${figmaAssets.figmaBusinessPartners})` }}
+        style={{ backgroundImage: `url(${figmaAssets.careersContentBar})` }}
       />
       <p>CONTENT</p>
       <nav>
@@ -101,12 +101,20 @@ function ContentDrop() {
   );
 }
 
-function ImagePill({ className = "", overlay = false }: { className?: string; overlay?: boolean }) {
+function ImagePill({
+  className = "",
+  overlay = false,
+  src = figmaAssets.figmaBusinessPartners,
+}: {
+  className?: string;
+  overlay?: boolean;
+  src?: string;
+}) {
   return (
     <div
       aria-hidden="true"
       className={`careers-image-pill ${overlay ? "has-overlay" : ""} ${className}`}
-      style={{ backgroundImage: `url(${figmaAssets.figmaBusinessPartners})` }}
+      style={{ backgroundImage: `url(${src})` }}
     />
   );
 }
@@ -216,7 +224,7 @@ function InternshipProgram() {
       aria-labelledby="careers-internship-title"
       className="careers-internship"
       id="internship"
-      style={{ backgroundImage: `url(${figmaAssets.figmaBusinessPartners})` }}
+      style={{ backgroundImage: `url(${figmaAssets.careersAlphaAd})` }}
     >
       <p className="careers-internship-partner">IN PARTNERSHIP WITH 7EDU IMPACT ACADEMY</p>
       <div>
@@ -256,7 +264,7 @@ function NewsletterCard() {
       aria-labelledby="careers-newsletter-title"
       className="careers-newsletter"
       id="newsletter"
-      style={{ backgroundImage: `url(${figmaAssets.figmaBusinessPartners})` }}
+      style={{ backgroundImage: `url(${figmaAssets.careersNewsletter})` }}
     >
       <div className="careers-newsletter-copy">
         <h2 id="careers-newsletter-title">
@@ -290,7 +298,7 @@ export default function CareersPage() {
 
         <ContentDrop />
 
-        <ImagePill className="careers-working-image" />
+        <ImagePill className="careers-working-image" src={figmaAssets.careersWorking} />
         <section aria-labelledby="careers-working-title" className="careers-working" id="working">
           <h2 id="careers-working-title">Working at HYBR</h2>
           <p>
@@ -333,7 +341,7 @@ export default function CareersPage() {
         </section>
         <Benefits />
 
-        <ImagePill className="careers-fellowship-image" />
+        <ImagePill className="careers-fellowship-image" src={figmaAssets.careersFellowship} />
         <section aria-labelledby="careers-fellowship-title" className="careers-fellowship" id="fellowship">
           <p>INNOVATION FELLOWSHIP</p>
           <h2 id="careers-fellowship-title">Accelerating the next generation of Innovation leaders.</h2>

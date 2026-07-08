@@ -9,7 +9,8 @@ const assets = {
   video: figmaAssets.video,
   webinar: figmaAssets.webinar,
   play: figmaAssets.play,
-  riskImage: figmaAssets.risk,
+  riskImage: "/home/edit-flags/home-you-risk.jpg",
+  gainImage: "/home/edit-flags/home-you-gain.jpg",
   whoImage: figmaAssets.people,
   testimonial: figmaAssets.testimonial,
   testimonialRing: figmaAssets.testimonialRing,
@@ -48,6 +49,7 @@ const services = [
     icon: "bag",
     tag: "Applied Research and Strategy",
     href: "/what-we-do/services",
+    image: "/home/edit-flags/home-service-discover.jpg",
     bgPosition: "center 32%",
   },
   {
@@ -57,7 +59,8 @@ const services = [
     icon: "palette",
     tag: "Prototyping, Product & Service Design",
     href: "/what-we-do/services",
-    bgPosition: "center 42%",
+    image: "/home/edit-flags/home-service-develop.jpg",
+    bgPosition: "center",
   },
   {
     title: "Deploy",
@@ -66,7 +69,8 @@ const services = [
     icon: "trend",
     tag: "Market Acceleration",
     href: "/what-we-do/services",
-    bgPosition: "center 52%",
+    image: "/home/edit-flags/home-service-deploy.jpg",
+    bgPosition: "center",
   },
 ] as const;
 
@@ -516,7 +520,7 @@ export default function Home() {
                   role="button"
                   style={{
                     backgroundColor: "rgba(0,0,0,.48)",
-                    backgroundImage: `url(${assets.whoImage})`,
+                    backgroundImage: `url(${service.image})`,
                     backgroundBlendMode: "multiply",
                     backgroundPosition: service.bgPosition,
                     backgroundSize: "cover",
@@ -773,7 +777,7 @@ export default function Home() {
         <div className="home-gain-wrap mx-auto grid gap-10 lg:grid-cols-[384px_1fr] lg:items-center">
           <ImagePanel
             className="home-droplet-left home-gain-image home-static-image h-[260px] sm:h-[336px]"
-            src={assets.whoImage}
+            src={assets.gainImage}
           />
           <div className="home-gain-copy">
             <h2 className="font-display text-[28px] font-medium leading-tight">

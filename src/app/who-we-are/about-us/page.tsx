@@ -7,10 +7,10 @@ const aboutAssets = {
   founder: "/about/founder.jpg",
   history: figmaAssets.figmaBusinessPartners,
   earlyDays: "/about/early-days-optimized.jpg",
-  valuesIntegrity: figmaAssets.figmaBusinessPartners,
-  valuesCreativity: "/about/values-creativity.jpg",
-  valuesEntrepreneurial: figmaAssets.figmaBusinessPartners,
-  valuesTogether: "/about/founder.jpg",
+  valuesIntegrity: figmaAssets.aboutValuePurposefulIntegrity,
+  valuesCreativity: figmaAssets.aboutValueAppliedCreativity,
+  valuesEntrepreneurial: figmaAssets.aboutValueActivelyEntrepreneurial,
+  valuesTogether: figmaAssets.aboutValueWorkWin,
   missionCircular: "/about/mission-circular.svg",
   missionInclusion: "/about/mission-inclusion.svg",
   missionSustainable: "/about/mission-sustainable.svg",
@@ -108,7 +108,7 @@ export default function AboutUsPage() {
         </div>
 
         <aside className="about-content-drop" aria-label="About page contents">
-          <img alt="" src={figmaAssets.figmaBusinessPartners} />
+          <img alt="" src={figmaAssets.aboutContentBar} />
           <p>CONTENT</p>
           <nav>
             {contentLinks.map((item) => (

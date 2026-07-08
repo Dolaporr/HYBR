@@ -50,7 +50,7 @@ function ContentDrop() {
       <span
         aria-hidden="true"
         className="what-content-drop-media"
-        style={{ backgroundImage: `url(${figmaAssets.figmaBusinessPartners})` }}
+        style={{ backgroundImage: `url(${figmaAssets.whatContentTab})` }}
       />
       <p>CONTENT</p>
       <nav>
@@ -265,7 +265,7 @@ export default function WhatWeDoPage() {
             <div
               aria-hidden="true"
               className="what-team-image"
-              style={{ backgroundImage: `url(${figmaAssets.figmaBusinessPartners})` }}
+              style={{ backgroundImage: `url(${figmaAssets.whatOurTeam})` }}
             />
             <div className="what-team-actions">
               <ButtonLink className="is-clear" href="/who-we-are/our-team">

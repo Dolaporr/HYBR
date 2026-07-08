@@ -44,7 +44,7 @@ function ContentDrop() {
       <span
         aria-hidden="true"
         className="impact-content-drop-media"
-        style={{ backgroundImage: `url(${figmaAssets.figmaBusinessPartners})` }}
+        style={{ backgroundImage: `url(${figmaAssets.impactContentTab})` }}
       />
       <p>CONTENT</p>
       <nav>
@@ -142,7 +142,7 @@ export default function OurImpactPage() {
         <span
           aria-hidden="true"
           className="impact-intro-image"
-          style={{ backgroundImage: `url(${figmaAssets.figmaBusinessPartners})` }}
+          style={{ backgroundImage: `url(${figmaAssets.impactHybrImpact})` }}
         />
         <section aria-labelledby="impact-intro-title" className="impact-intro-copy" id="impact">
           <h2 id="impact-intro-title">HYBR&rsquo;s Impact</h2>

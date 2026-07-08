@@ -111,7 +111,7 @@ function ContentDrop() {
       <span
         aria-hidden="true"
         className="services-content-drop-media"
-        style={{ backgroundImage: `url(${figmaAssets.figmaBusinessPartners})` }}
+        style={{ backgroundImage: `url(${figmaAssets.servicesContentTab})` }}
       />
       <p>CONTENT</p>
       <nav>
