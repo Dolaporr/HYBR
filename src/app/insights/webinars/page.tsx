@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Footer, Header } from "../../_components/marketing";
+import { innovationSweetSpotArticle, spctaNewsFeature, systemsMindsetWebinar } from "@/content/insights";
 import { figmaAssets } from "@/content/site";
 
 type WebinarCard = {
@@ -63,14 +64,14 @@ const moreInsights: InsightCard[] = [
     href: "/insights/news/specific-news",
     image: figmaAssets.figmaBuilding,
     kind: "NEWS",
-    text: "A short, captivating statement about what this news update covers.",
-    title: "One Liner For Specific News Update",
+    text: spctaNewsFeature.cardSummary,
+    title: spctaNewsFeature.shortTitle,
   },
   {
     href: "/insights/articles/specific-article",
     image: figmaAssets.figmaBuilding,
     kind: "ARTICLE",
-    title: "One Liner For Specific Article",
+    title: innovationSweetSpotArticle.cardTitle,
   },
 ];
 
@@ -161,9 +162,9 @@ function SpotlightCard() {
       <PlayIcon />
       <span className="webinars-duration">01:40:35</span>
       <span className="webinars-spotlight-copy">
-        <span>Title of Specific Webinar</span>
-        <span>Jedidiah Akpata & Charles Ojei</span>
-        <span>November 2023</span>
+        <span>{systemsMindsetWebinar.title}</span>
+        <span>{systemsMindsetWebinar.speakerOne}</span>
+        <span>{systemsMindsetWebinar.speakerTwo}</span>
       </span>
     </Link>
   );

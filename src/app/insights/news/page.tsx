@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Footer, Header } from "../../_components/marketing";
+import { innovationSweetSpotArticle, spctaNewsFeature, systemsMindsetWebinar } from "@/content/insights";
 import { figmaAssets } from "@/content/site";
 
 const newsHref = "/insights/news/specific-news";
@@ -88,9 +89,9 @@ function NewsCard({ className = "" }: { className?: string }) {
     <Link className={`news-card figma-motion-card ${className}`} href={newsHref}>
       <img alt="" src={figmaAssets.figmaBuilding} />
       <span className="news-card-copy">
-        <span>NEWS</span>
-        <span>One Liner For Specific News Update</span>
-        <span>A short, captivating statement about what this news update covers.</span>
+        <span>{spctaNewsFeature.kind}</span>
+        <span>{spctaNewsFeature.shortTitle}</span>
+        <span>{spctaNewsFeature.compactSummary}</span>
       </span>
       <span className="news-read-button">Read More</span>
     </Link>
@@ -101,8 +102,8 @@ function SpotlightCard() {
   return (
     <Link className="news-spotlight figma-motion-card" href={newsHref} id="spotlight">
       <span className="news-spotlight-copy">
-        <span>Headline for News Update</span>
-        <span>Short summary of what this news update/article covers.</span>
+        <span>{spctaNewsFeature.title}</span>
+        <span>{spctaNewsFeature.cardSummary}</span>
       </span>
       <span className="news-spotlight-image">
         <img alt="" src={figmaAssets.figmaBuilding} />
@@ -120,9 +121,9 @@ function WebinarCard() {
       <PlayIcon />
       <span className="news-webinar-duration">01:40:35</span>
       <span className="news-webinar-copy">
-        <span>One Liner For Specific Webinar</span>
-        <span>Jedidiah Akpata & Charles Ojei</span>
-        <span>November 2023</span>
+        <span>{systemsMindsetWebinar.title}</span>
+        <span>{systemsMindsetWebinar.speakerOne}</span>
+        <span>{systemsMindsetWebinar.speakerTwo}</span>
       </span>
     </Link>
   );
@@ -135,7 +136,7 @@ function ArticleCard() {
       <span className="news-article-button">Read More</span>
       <span className="news-article-copy">
         <span>ARTICLE</span>
-        <span>One Liner For Specific Article</span>
+        <span>{innovationSweetSpotArticle.cardTitle}</span>
       </span>
     </Link>
   );

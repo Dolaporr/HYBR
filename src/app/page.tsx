@@ -1,7 +1,9 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import { figmaAssets, footerGroups, navigation } from "@/content/site";
 import { HeroWordRotator } from "@/components/HeroWordRotator";
 import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
+import { spctaNewsFeature } from "@/content/insights";
 
 const assets = {
   hero: figmaAssets.heroHome,
@@ -16,6 +18,7 @@ const assets = {
   testimonialRing: figmaAssets.testimonialRing,
   news: figmaAssets.news,
   contact: figmaAssets.contact,
+  cocaColaLogo: "/logos/coca-cola-logo.svg",
   caseStudy: "/home/case-study.png",
   caseStudyLogo: "/home/logo-case-study.svg",
   mockVideo: "/home/website-mock-1.mp4",
@@ -171,6 +174,40 @@ function CompanyWordmark({
   className?: string;
 }) {
   const label = kind === "coca-cola" ? "Coca-Cola" : "Alitheia Capital";
+
+  if (kind === "coca-cola") {
+    return (
+      <span className={`home-company-wordmark home-company-wordmark--${kind} ${className}`} aria-label={label}>
+        <Image
+          alt=""
+          aria-hidden="true"
+          className="home-coca-cola-logo-img"
+          height={58}
+          loading="eager"
+          src={assets.cocaColaLogo}
+          unoptimized
+          width={184}
+        />
+      </span>
+    );
+  }
+
+  if (kind === "alitheia") {
+    return (
+      <span className={`home-company-wordmark home-company-wordmark--${kind} ${className}`} aria-label={label}>
+        <Image
+          alt=""
+          aria-hidden="true"
+          className="home-alitheia-logo-img"
+          height={84}
+          loading="eager"
+          src="/logos/alitheia-capital-white.png"
+          unoptimized
+          width={252}
+        />
+      </span>
+    );
+  }
 
   return (
     <span className={`home-company-wordmark home-company-wordmark--${kind} ${className}`} aria-label={label}>
@@ -706,13 +743,11 @@ export default function Home() {
             </div>
             <div className="home-news-card-copy absolute bottom-5 left-5 right-5">
               <SectionLabel>News</SectionLabel>
-              <h3 className="mt-3 text-[22px] font-medium leading-[1.05]">
-                SPCTA Completes IHS Deeptech Accelerator
+              <h3 className="home-news-card-title mt-3 text-[22px] font-medium leading-[1.05]">
+                {spctaNewsFeature.title}
               </h3>
-              <p className="mt-3 max-w-[215px] text-[11px] leading-[1.4]">
-                HYBR Labs-built venture SPCTA joins leading innovators in Ilorin,
-                advancing its mission to scale circular supply chain infrastructure
-                across Africa.
+              <p className="home-news-card-summary mt-3 max-w-[215px] text-[11px] leading-[1.4]">
+                {spctaNewsFeature.summary}
               </p>
             </div>
           </article>
@@ -902,7 +937,7 @@ export default function Home() {
               <span>Terms & Conditions</span>
             </div>
             <img alt="HYBR" className="home-footer-logo h-10 w-[128px] object-contain" src={assets.footerLogo} />
-            <span>&copy; 2025 HYBR GROUP</span>
+            <span>&copy; 2026 HYBR GROUP</span>
           </div>
         </div>
       </footer>

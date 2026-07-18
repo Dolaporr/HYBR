@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Footer, Header } from "../../_components/marketing";
+import { innovationSweetSpotArticle, spctaNewsFeature, systemsMindsetWebinar } from "@/content/insights";
 import { figmaAssets } from "@/content/site";
 
 const articleHref = "/insights/articles/specific-article";
@@ -88,7 +89,7 @@ function ArticleCard({ className = "" }: { className?: string }) {
     <Link className={`articles-card figma-motion-card ${className}`} href={articleHref}>
       <img alt="" src={figmaAssets.figmaBuilding} />
       <span className="articles-card-kind">ARTICLE</span>
-      <span className="articles-card-title">One Liner For Specific Article</span>
+      <span className="articles-card-title">{innovationSweetSpotArticle.cardTitle}</span>
       <span className="articles-read-button">Read More</span>
     </Link>
   );
@@ -101,8 +102,8 @@ function SpotlightCard() {
         <img alt="" src={figmaAssets.figmaBuilding} />
       </span>
       <span className="articles-spotlight-copy">
-        <span>Article Headline</span>
-        <span>Short captivating blurb covering what this article is about.</span>
+        <span>{innovationSweetSpotArticle.title}</span>
+        <span>{innovationSweetSpotArticle.summary}</span>
       </span>
       <span className="articles-spotlight-button">Read More</span>
     </Link>
@@ -117,9 +118,9 @@ function WebinarCard() {
       <PlayIcon />
       <span className="articles-webinar-duration">01:40:35</span>
       <span className="articles-webinar-copy">
-        <span>One Liner For Specific Webinar</span>
-        <span>Jedidiah Akpata & Charles Ojei</span>
-        <span>November 2023</span>
+        <span>{systemsMindsetWebinar.title}</span>
+        <span>{systemsMindsetWebinar.speakerOne}</span>
+        <span>{systemsMindsetWebinar.speakerTwo}</span>
       </span>
     </Link>
   );
@@ -132,8 +133,8 @@ function NewsCard() {
       <span className="articles-news-button">Read More</span>
       <span className="articles-news-copy">
         <span>NEWS</span>
-        <span>One Liner For Specific News Update</span>
-        <span>A short, captivating statement about what this news update covers.</span>
+        <span>{spctaNewsFeature.shortTitle}</span>
+        <span>{spctaNewsFeature.cardSummary}</span>
       </span>
     </Link>
   );

@@ -1,34 +1,23 @@
 import Link from "next/link";
 import { Footer, Header } from "../../../_components/marketing";
+import { innovationSweetSpotArticle } from "@/content/insights";
 import { figmaAssets } from "@/content/site";
-
-const shortParagraphs = [
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel dapibus ipsum, a tristique sem. Ut sed scelerisque sem. Nulla eget gravida quam, eget scelerisque elit.",
-  "Suspendisse ullamcorper condimentum molestie. Pellentesque fringilla tristique purus, vitae euismod tortor tempor eu. In posuere libero sed scelerisque rutrum. Aenean sit amet hendrerit lacus. Duis facilisis ac purus a blandit.",
-  "Integer porttitor sagittis massa in ultricies. Praesent vitae laoreet sem, ac aliquet metus. Curabitur tincidunt sit amet eros eget placerat.",
-];
-
-const mediumParagraphs = [
-  ...shortParagraphs,
-  "Nam id erat id ipsum faucibus accumsan eget ut enim. Praesent pellentesque auctor eros, non condimentum nisi fringilla eget. Donec accumsan mi nec mi scelerisque placerat. Curabitur vitae lacinia lectus, id varius nisi. Duis rutrum massa vel mollis faucibus. Donec dapibus ligula lectus, et pretium augue congue eu.",
-];
-
-const tabletOnlyParagraphs = [
-  ...mediumParagraphs,
-  "Praesent erat tortor, egestas et tempus a, interdum sit amet augue. Nam in rhoncus sem, vel dignissim orci. Vestibulum a faucibus mi.",
-];
 
 function ArticleSection({
   className = "",
+  heading,
+  kicker,
   paragraphs,
 }: {
   className?: string;
+  heading: string;
+  kicker: string;
   paragraphs: string[];
 }) {
   return (
     <section className={`news-detail-article-section ${className}`}>
-      <h2>Header</h2>
-      <p className="news-detail-kicker">ONE-LINER FOR SECTION TO GIVE AN OVERVIEW</p>
+      <h2>{heading}</h2>
+      <p className="news-detail-kicker">{kicker}</p>
       <div className="news-detail-copy">
         {paragraphs.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
@@ -44,7 +33,7 @@ function FeatureImage() {
       <div className="news-detail-feature-img">
         <img alt="" src={figmaAssets.figmaBusinessPartners} />
       </div>
-      <figcaption>IMAGE DESCRIPTION, LOCATION, AND MORE - AS REQUIRED</figcaption>
+      <figcaption>Evidence beats enthusiasm when teams are testing problem-solution fit.</figcaption>
     </figure>
   );
 }
@@ -59,9 +48,9 @@ function WriterProfile() {
           <img alt="" src={figmaAssets.figmaTeamPortrait} />
         </span>
         <span className="news-detail-writer-copy">
-          <strong>FirstName LastName</strong>
-          <span>Title/Role, Company | Location</span>
-          <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dignissim fringilla feugiat. Praesent sed condimentum nulla.</span>
+          <strong>{innovationSweetSpotArticle.author}</strong>
+          <span>Writer, HYBR Insights</span>
+          <span>Charles writes about practical innovation strategy, problem validation, and evidence-led product development.</span>
         </span>
       </article>
     </section>
@@ -74,7 +63,7 @@ function MoreArticleCard({ className = "" }: { className?: string }) {
       <img alt="" src={figmaAssets.figmaBuilding} />
       <span className="news-detail-card-copy">
         <span>ARTICLE</span>
-        <span>One Liner For Specific Article</span>
+        <span>{innovationSweetSpotArticle.cardTitle}</span>
       </span>
       <span className="news-detail-card-button">Read More</span>
     </Link>
@@ -121,37 +110,49 @@ export default function ArticleTemplatePage() {
           <img alt="" src={figmaAssets.figmaBusinessPartners} />
         </div>
         <div className="news-detail-hero-copy">
-          <h1>Header For Specific Article/Write-Up</h1>
+          <h1>{innovationSweetSpotArticle.title}</h1>
           <p className="news-detail-summary news-detail-summary--desktop">
-            A short, captivating statement about what this article addresses.
+            {innovationSweetSpotArticle.subtitle}
           </p>
           <p className="news-detail-summary news-detail-summary--tablet-horizontal">
-            A short, captivating statement about what this article addresses.
+            {innovationSweetSpotArticle.summary}
           </p>
           <p className="news-detail-summary news-detail-summary--tablet-vertical">
-            A captivating statement about what service was offered to the company. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dignissim fringilla feugiat.
+            {innovationSweetSpotArticle.summary}
           </p>
-          <p className="news-detail-author">NAME OF WRITER &bull; 00th Month, Year</p>
+          <p className="news-detail-author">{innovationSweetSpotArticle.author} &bull; {innovationSweetSpotArticle.date}</p>
           <div className="news-detail-topics">
             <p>Topics</p>
-            <span>Industry1, Industry2, Industry3</span>
+            <span>{innovationSweetSpotArticle.topics}</span>
           </div>
         </div>
       </section>
 
       <section className="news-detail-body">
         <div className="figma-container news-detail-shell">
-          <ArticleSection paragraphs={shortParagraphs} />
+          <ArticleSection
+            heading={innovationSweetSpotArticle.subtitle}
+            kicker="Start with the problem before you scale the solution."
+            paragraphs={innovationSweetSpotArticle.intro}
+          />
           <FeatureImage />
-          <div className="news-detail-copy news-detail-copy--standalone">
-            {shortParagraphs.map((paragraph) => (
-              <p key={`article-standalone-${paragraph}`}>{paragraph}</p>
-            ))}
-          </div>
-          <ArticleSection className="news-detail-article-section--main" paragraphs={mediumParagraphs} />
-          <ArticleSection className="news-detail-article-section--tablet" paragraphs={tabletOnlyParagraphs} />
+          {innovationSweetSpotArticle.sections.map((section) => (
+            <ArticleSection
+              className="news-detail-article-section--main"
+              heading={section.heading}
+              key={section.heading}
+              kicker={section.kicker}
+              paragraphs={section.paragraphs}
+            />
+          ))}
+          <ArticleSection
+            className="news-detail-article-section--main"
+            heading="The Bottom Line"
+            kicker="Problem-solution fit is evidence."
+            paragraphs={innovationSweetSpotArticle.bottomLine}
+          />
           <p className="news-detail-disclaimer">
-            A disclaimer of some sort, if necessary. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Over to you: what is the riskiest assumption your team has not tested yet?
           </p>
           <WriterProfile />
           <MoreArticles />

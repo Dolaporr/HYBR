@@ -372,17 +372,21 @@
 }
 
 .whatScope :global(.what-case-card.is-feature .what-case-image) {
-  left: 50%;
-  width: 902px;
-  transform: translateX(-50%);
+  height: 100%;
+  inset: 0;
+  left: 0;
+  top: 0;
+  transform: none;
+  width: 100%;
 }
 
 .whatScope :global(.what-case-card.is-tall .what-case-image) {
-  height: 507px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) rotate(-90deg);
-  width: 902px;
+  height: 100%;
+  inset: 0;
+  left: 0;
+  top: 0;
+  transform: none;
+  width: 100%;
 }
 
 .whatScope :global(.what-case-image::after) {
@@ -1443,18 +1447,40 @@
 }
 
 .whatScope :global(.what-case-company.is-coca-cola) {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 28px;
-  font-style: italic;
-  font-weight: 700;
-  letter-spacing: .02em;
-  text-transform: none;
+  display: inline-flex;
+  height: 26px;
+  width: 104px;
 }
 
 .whatScope :global(.what-case-company.is-alitheia) {
-  font-size: 15px;
-  letter-spacing: .08em;
-  text-transform: uppercase;
+  display: inline-flex;
+  height: 34px;
+  width: 136px;
+}
+
+.whatScope :global(.what-case-company-logo) {
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.whatScope :global(.what-case-company-logo--alitheia) {
+  background-image: url("/logos/alitheia-capital-white.png");
+}
+
+.whatScope :global(.what-case-company-logo--coca-cola) {
+  background-image: url("/logos/coca-cola-logo.svg");
+  filter: brightness(0) invert(1) drop-shadow(0 1px 12px rgba(0, 0, 0, .28));
+}
+
+@media (min-width: 560px) {
+  .whatScope :global(.what-case-company.is-coca-cola) {
+    height: 42px;
+    width: 160px;
+  }
 }
 
 .whatScope :global(.what-product-card.is-indx) {
@@ -1745,12 +1771,12 @@
     width: 1200px;
   }
 
-  .whatScope :global(.what-product-card.is-flywheel) {
+  .whatScope :global(.what-product-card.is-indx) {
     height: 413px;
     top: 2816px;
   }
 
-  .whatScope :global(.what-product-card.is-indx) {
+  .whatScope :global(.what-product-card.is-flywheel) {
     height: 413px;
     top: 3293px;
   }

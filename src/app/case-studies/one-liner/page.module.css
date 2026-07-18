@@ -186,11 +186,11 @@
 
 .caseScope :global(.case-hero-copy p) {
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 500;
-  line-height: 20px;
+  line-height: 17px;
   margin-top: 8px;
-  max-height: 40px;
+  max-height: 51px;
   overflow: hidden;
 }
 
@@ -222,6 +222,21 @@
   line-height: 17px;
   text-transform: uppercase;
   white-space: nowrap;
+}
+
+.caseScope :global(.case-company .case-company-logo--coca-cola),
+.caseScope :global(.case-related-logo--coca-cola) {
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.caseScope :global(.case-company .case-company-logo--coca-cola) {
+  font-size: 22px;
+  line-height: 1;
 }
 
 .caseScope :global(.case-study-label) {
@@ -313,6 +328,16 @@
   line-height: 38px;
 }
 
+.caseScope :global(.case-report-label) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 15px;
+  margin-bottom: 8px !important;
+  text-transform: uppercase;
+}
+
 .caseScope :global(.case-report-intro) {
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
   font-size: 16px;
@@ -331,6 +356,13 @@
 
 .caseScope :global(.case-report-body p + p) {
   margin-top: 16px !important;
+}
+
+.caseScope :global(.case-inline-link) {
+  color: #4fc2f0;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .caseScope :global(.case-related) {
@@ -459,6 +491,18 @@
   top: 40px;
   width: 24px;
   z-index: 2;
+}
+
+.caseScope :global(.case-related-logo) {
+  position: absolute;
+  right: 32px;
+  top: 42px;
+  z-index: 2;
+}
+
+.caseScope :global(.case-related-logo--coca-cola) {
+  font-size: 15px;
+  line-height: 1;
 }
 
 .caseScope :global(.case-button.is-read-more) {
@@ -1637,6 +1681,246 @@
 
   .caseScope :global(.case-button .is-mobile-label) {
     display: none;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 1023px) {
+  .caseScope :global(.case-company .case-company-logo--coca-cola) {
+    font-size: 30px;
+  }
+
+  .caseScope :global(.case-related-logo) {
+    right: 24px;
+    top: 38px;
+  }
+
+  .caseScope :global(.case-related-logo--coca-cola) {
+    font-size: 20px;
+  }
+
+  .caseScope :global(.case-report-label) {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .caseScope :global(.case-company .case-company-logo--coca-cola) {
+    font-size: 30px;
+  }
+
+  .caseScope :global(.case-related-logo) {
+    right: 40px;
+    top: 48px;
+  }
+
+  .caseScope :global(.case-related-logo--coca-cola) {
+    font-size: 20px;
+  }
+
+  .caseScope :global(.case-report-label) {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+@media (min-width: 1360px) {
+  .caseScope :global(.case-company .case-company-logo--coca-cola) {
+    font-size: 38px;
+  }
+
+  .caseScope :global(.case-related-logo) {
+    right: 40px;
+    top: 50px;
+  }
+
+  .caseScope :global(.case-related-logo--coca-cola) {
+    font-size: 24px;
+  }
+
+  .caseScope :global(.case-report-label) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.caseScope :global(.case-section-reader) {
+  display: grid;
+  gap: 56px;
+  left: 24px;
+  position: absolute;
+  top: 805px;
+  width: 342px;
+}
+
+.caseScope :global(.case-section-card) {
+  scroll-margin-top: 24px;
+}
+
+.caseScope :global(.case-section-card h2) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 38px;
+}
+
+.caseScope :global(.case-section-intro) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  margin-top: 8px !important;
+}
+
+.caseScope :global(.case-section-body) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-top: 8px;
+}
+
+.caseScope :global(.case-section-body p + p) {
+  margin-top: 16px !important;
+}
+
+.caseScope :global(.case-frame.is-sections) {
+  height: 4025px;
+}
+
+.caseScope :global(.case-frame.is-sections .case-related) {
+  top: 2225px;
+}
+
+.caseScope :global(.case-frame.is-sections .case-services) {
+  top: 3435px;
+}
+
+@media (max-width: 559px) {
+  .caseScope :global(.case-frame.is-sections .case-hero-copy) {
+    top: 104px;
+  }
+
+  .caseScope :global(.case-frame.is-sections .case-hero-copy p) {
+    font-size: 12px;
+    line-height: 15px;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .caseScope :global(.case-frame.is-sections .case-company) {
+    top: 292px;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 1023px) {
+  .caseScope :global(.case-section-reader) {
+    gap: 72px;
+    left: 80px;
+    top: 1070px;
+    width: 640px;
+  }
+
+  .caseScope :global(.case-section-card h2) {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .caseScope :global(.case-section-intro) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .caseScope :global(.case-section-body) {
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 8px;
+  }
+
+  .caseScope :global(.case-frame.is-sections) {
+    height: 3950px;
+  }
+
+  .caseScope :global(.case-frame.is-sections .case-related) {
+    top: 2250px;
+  }
+
+  .caseScope :global(.case-frame.is-sections .case-services) {
+    top: 3340px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .caseScope :global(.case-section-reader) {
+    gap: 80px;
+    left: 120px;
+    top: 1095px;
+    width: 798px;
+  }
+
+  .caseScope :global(.case-section-card h2) {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .caseScope :global(.case-section-intro) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .caseScope :global(.case-section-body) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .caseScope :global(.case-frame.is-sections) {
+    height: 3825px;
+  }
+
+  .caseScope :global(.case-frame.is-sections .case-related) {
+    top: 2160px;
+  }
+
+  .caseScope :global(.case-frame.is-sections .case-services) {
+    top: 3035px;
+  }
+}
+
+@media (min-width: 1360px) {
+  .caseScope :global(.case-section-reader) {
+    gap: 88px;
+    left: 120px;
+    top: 1185px;
+    width: 894px;
+  }
+
+  .caseScope :global(.case-section-card h2) {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .caseScope :global(.case-section-intro) {
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 15px !important;
+  }
+
+  .caseScope :global(.case-section-body) {
+    font-size: 24px;
+    line-height: 29px;
+    margin-top: 15px;
+  }
+
+  .caseScope :global(.case-frame.is-sections) {
+    height: 4375px;
+  }
+
+  .caseScope :global(.case-frame.is-sections .case-related) {
+    top: 2580px;
+  }
+
+  .caseScope :global(.case-frame.is-sections .case-services) {
+    top: 3650px;
   }
 }
 

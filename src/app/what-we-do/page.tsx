@@ -147,7 +147,16 @@ function CaseStudyCard({ kind }: { kind: "feature" | "tall" }) {
         <p>CASE STUDY</p>
         <h3>{study.title}</h3>
         <span>{study.body}</span>
-        <strong className={`what-case-company ${study.companyClass}`}>{study.company}</strong>
+        <strong aria-label={study.company} className={`what-case-company ${study.companyClass}`}>
+          <span
+            aria-hidden="true"
+            className={`what-case-company-logo ${
+              study.companyClass === "is-alitheia"
+                ? "what-case-company-logo--alitheia"
+                : "what-case-company-logo--coca-cola"
+            }`}
+          />
+        </strong>
       </div>
       <ButtonLink className="is-white is-read" href="/case-studies/one-liner">
         Read More

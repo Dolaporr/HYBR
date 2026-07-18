@@ -8,49 +8,59 @@ import styles from "./page.module.css";
 
 type ViewMode = "sections" | "report";
 
-const sectionNav = ["Cover", "Section 1", "Section 2", "Section 3", "Section 4"] as const;
-
-const reportSections = [
-  {
-    id: "section-1",
-    title: "Section 1",
-    intro: "A short captivating statement about what this section is about.",
-    body: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dignissim fringilla feugiat. Morbi pretium laoreet ultricies. Pellentesque semper libero in neque dignissim, vel ultrices mi egestas.",
-      "Aenean volutpat, nisl eget placerat malesuada, purus metus tempus nibh, sit amet commodo arcu justo sit amet ligula.",
-    ],
-  },
-  {
-    id: "section-2",
-    title: "Section 2",
-    intro: "A short captivating statement about what this section is about.",
-    body: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dignissim fringilla feugiat. Morbi pretium laoreet ultricies. Pellentesque semper libero in neque dignissim, vel ultrices mi egestas.",
-      "Aenean volutpat, nisl eget placerat malesuada, purus metus tempus nibh, sit amet commodo arcu justo sit amet ligula. Vivamus id posuere tellus, a aliquam odio.",
-      "Integer pretium mauris vitae nisi gravida, sed mattis ipsum aliquet.",
-    ],
-  },
-  {
-    id: "section-3",
-    title: "Section 3",
-    intro: "A short captivating statement about what this section is about.",
-    body: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dignissim fringilla feugiat. Morbi pretium laoreet ultricies. Pellentesque semper libero in neque dignissim, vel ultrices mi egestas.",
-      "Aenean volutpat, nisl eget placerat malesuada, purus metus tempus nibh, sit amet commodo arcu justo sit amet ligula. Vivamus id posuere tellus, a aliquam odio.",
-      "Integer pretium mauris vitae nisi gravida, sed mattis ipsum aliquet. Suspendisse potenti. Sed ullamcorper, purus vitae commodo porttitor, felis mi viverra orci, non aliquam mauris lacus non dolor.",
-    ],
-  },
-  {
-    id: "section-4",
-    title: "Section 4",
-    intro: "A short captivating statement about what this section is about.",
-    body: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dignissim fringilla feugiat. Morbi pretium laoreet ultricies. Pellentesque semper libero in neque dignissim, vel ultrices mi egestas.",
-      "Aenean volutpat, nisl eget placerat malesuada, purus metus tempus nibh, sit amet commodo arcu justo sit amet ligula. Vivamus id posuere tellus, a aliquam odio.",
-      "Integer pretium mauris vitae nisi gravida, sed mattis ipsum aliquet. Suspendisse potenti. Sed ullamcorper, purus vitae commodo porttitor, felis mi viverra orci, non aliquam mauris lacus non dolor.",
-    ],
-  },
+const sectionNav = [
+  { href: "#cover", label: "Cover" },
+  { href: "#context", label: "Context" },
+  { href: "#ambition", label: "Ambition" },
+  { href: "#our-work", label: "Our Work" },
+  { href: "#outcome", label: "Outcome" },
 ] as const;
+
+const reportSections: {
+  body: ReactNode[];
+  id: string;
+  intro: string;
+  title: string;
+}[] = [
+  {
+    id: "context",
+    title: "Context",
+    intro: "Plastic waste is a ticking time-bomb with serious social, environmental, and health implications.",
+    body: [
+      "Almost 1.4 trillion plastic bottles, enough to fill 15,000 football fields per year, are generated in Africa, reflecting about 7% of the world's total. 90% of these bottles end up in landfills. This reflects about $12.5 billion lost every year. Coca-Cola, as a major PET bottle contributor, has a vision that imagines a world without plastic waste.",
+    ],
+  },
+  {
+    id: "ambition",
+    title: "The Ambition",
+    intro: "Turn a sustainability goal into an operating system",
+    body: [
+      "Coca-Cola was seeking practical, modular and scalable approaches that could support its wider ambition to reduce plastic waste. The task required more than a public campaign or a single collection project.",
+    ],
+  },
+  {
+    id: "our-work",
+    title: "Our Work",
+    intro: "Discover, Develop and Deploy: build the missing recovery layer",
+    body: [
+      <>
+        HYBR designed the Entrepreneur Plastics Innovation Challenge, or{" "}
+        <Link className="case-inline-link" href="https://www.epicforchange.com/" rel="noopener noreferrer" target="_blank">
+          EPIC
+        </Link>
+        , as a 16-month programme to find, assess and develop business models working across the plastic-recovery chain. In parallel with the external venture programme, HYBR began developing a response to the collection and aggregation bottleneck.
+      </>,
+    ],
+  },
+  {
+    id: "outcome",
+    title: "Outcome",
+    intro: "What the work made possible",
+    body: [
+      "The programme gave Coca-Cola access to proven recycling models, three pilot ventures and a clearer view of the collection bottleneck. It also produced a locally designed infrastructure concept linking sustainability goals with entrepreneurs, operating assets and the wider value chain.",
+    ],
+  },
+];
 
 function CaseButton({
   children,
@@ -75,16 +85,6 @@ function CaseButton({
     <button className={`case-button ${className}`} onClick={onClick} type="button">
       {children}
     </button>
-  );
-}
-
-function HybrMark({ className = "" }: { className?: string }) {
-  return (
-    <svg aria-hidden="true" className={className} fill="none" viewBox="0 0 56 56">
-      <circle cx="28" cy="43.2" r="10.28" stroke="#ffffff" strokeWidth="4.54" />
-      <circle cx="28" cy="35.1" r="18.33" stroke="#4fc2f0" strokeWidth="4.54" />
-      <circle cx="28" cy="27.88" r="25.54" stroke="#8dc540" strokeWidth="4.54" />
-    </svg>
   );
 }
 
@@ -120,7 +120,7 @@ function SearchControl() {
 
 function HeroCard({ mode }: { mode: ViewMode }) {
   return (
-    <section aria-labelledby="case-title" className="case-hero-card">
+    <section aria-labelledby="case-title" className="case-hero-card" id="cover">
       <span
         aria-hidden="true"
         className="case-hero-image"
@@ -130,24 +130,24 @@ function HeroCard({ mode }: { mode: ViewMode }) {
       {mode === "sections" ? (
         <nav aria-label="Case study sections" className="case-cover-nav">
           {sectionNav.map((section) => (
-            <a href={`#${section.toLowerCase().replace(" ", "-")}`} key={section}>
-              {section}
+            <a href={section.href} key={section.href}>
+              {section.label}
             </a>
           ))}
         </nav>
       ) : null}
 
       <div className="case-hero-copy">
-        <h1 id="case-title">One Liner For Specific Case Study</h1>
+        <h1 id="case-title">Towards a World Without Waste</h1>
         <p>
-          A captivating statement about what service was offered to the company.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          How HYBR helped Coca-Cola move from a broad waste-reduction ambition to tested ventures, locally developed waste-to-value innovations.
         </p>
       </div>
 
       <div className="case-company">
-        <HybrMark className="case-company-mark" />
-        <span>Company Name</span>
+        <span className="case-company-logo case-company-logo--coca-cola" aria-label="Coca-Cola">
+          Coca-Cola
+        </span>
       </div>
       <p className="case-study-label">CASE STUDY</p>
 
@@ -169,8 +169,26 @@ function ReportSections() {
           <h2>{section.title}</h2>
           <p className="case-report-intro">{section.intro}</p>
           <div className="case-report-body">
-            {section.body.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
+            {section.body.map((paragraph, paragraphIndex) => (
+              <p key={`${section.id}-${paragraphIndex}`}>{paragraph}</p>
+            ))}
+          </div>
+        </article>
+      ))}
+    </section>
+  );
+}
+
+function SectionReader() {
+  return (
+    <section aria-label="Case study sections" className="case-section-reader">
+      {reportSections.map((section) => (
+        <article className="case-section-card" id={section.id} key={section.id}>
+          <h2>{section.title}</h2>
+          <p className="case-section-intro">{section.intro}</p>
+          <div className="case-section-body">
+            {section.body.map((paragraph, paragraphIndex) => (
+              <p key={`${section.id}-section-${paragraphIndex}`}>{paragraph}</p>
             ))}
           </div>
         </article>
@@ -188,14 +206,14 @@ function RelatedCard({ className = "" }: { className?: string }) {
         style={{ backgroundImage: `url(${figmaAssets.ourWorkCard})` }}
       />
       <p className="case-related-eyebrow">CASE STUDY</p>
-      <h3>One Liner For Specific Case Study</h3>
+      <h3>Towards a World Without Waste</h3>
       <p className="case-related-body">
-        A captivating statement about what service was offered to the company.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dignissim
-        fringilla feugiat.
+        How HYBR helped Coca-Cola move from a broad waste-reduction ambition to tested ventures and locally developed waste-to-value innovations.
       </p>
-      <p className="case-related-company">COMPANY NAME</p>
-      <HybrMark className="case-related-mark" />
+      <p className="case-related-company">Coca-Cola</p>
+      <span aria-label="Coca-Cola" className="case-related-logo case-related-logo--coca-cola">
+        Coca-Cola
+      </span>
       <CaseButton className="is-read-more" href="/case-studies/one-liner">
         Read More
       </CaseButton>
@@ -285,9 +303,12 @@ export default function CaseStudyClient({ initialMode = "sections" }: { initialM
         <HeroCard mode={mode} />
 
         {mode === "sections" ? (
-          <CaseButton className="is-view-report" onClick={() => setViewMode("report")}>
-            View as Single Page Report
-          </CaseButton>
+          <>
+            <CaseButton className="is-view-report" onClick={() => setViewMode("report")}>
+              View as Single Page Report
+            </CaseButton>
+            <SectionReader />
+          </>
         ) : (
           <>
             <CaseButton className="is-read-sections is-top" onClick={() => setViewMode("sections")}>

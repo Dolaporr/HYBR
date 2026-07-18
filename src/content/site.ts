@@ -99,7 +99,7 @@ export const footerGroups = [
 
 export const siteContent = {
   brand: "HYBR",
-  footerCopyright: "\u00A9 2025 HYBR GROUP",
+  footerCopyright: "\u00A9 2026 HYBR GROUP",
   socialLinks: ["Instagram", "Facebook", "TikTok", "LinkedIn", "X", "YouTube", "Medium"],
   wordpressEditable: [
     "Pages and section copy",

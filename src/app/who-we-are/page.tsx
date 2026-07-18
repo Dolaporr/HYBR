@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
 import { figmaAssets } from "@/content/site";
 import { Footer, Header } from "../_components/marketing";
+import { HistoryScrollButton } from "./HistoryScrollButton";
 
 const primaryImage = figmaAssets.figmaBusinessPartners;
 
@@ -193,7 +194,7 @@ function AboutImageCard() {
     <div className="who-about-image" aria-hidden="true">
       <span
         className="who-about-media"
-        style={{ backgroundImage: `url(${figmaAssets.whoAboutUs})` }}
+        style={{ backgroundImage: `url(${primaryImage})` }}
       />
     </div>
   );
@@ -265,13 +266,7 @@ export default function WhoWeArePage() {
           <div className="who-history-head">
             <SectionLabel>Our History</SectionLabel>
           </div>
-          <a className="who-journey-button" href="#careers">
-            <span>See The Whole Journey</span>
-            <svg aria-hidden="true" className="who-journey-icon" fill="none" viewBox="0 0 32 32">
-              <circle cx="16" cy="16" r="13" stroke="currentColor" strokeWidth="2" />
-              <path d="M10 14L16 20L22 14" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
-            </svg>
-          </a>
+          <HistoryScrollButton />
           <h2 id="who-history-title" className="sr-only">
             Our History
           </h2>
@@ -328,7 +323,7 @@ export default function WhoWeArePage() {
           </FigmaButton>
         </section>
 
-        <ImageSurface className="who-careers-image" src={figmaAssets.whoCareers} />
+        <ImageSurface className="who-careers-image" src={primaryImage} />
 
         <section className="who-careers-copy" id="careers" aria-labelledby="who-careers-title">
           <SectionLabel>Careers</SectionLabel>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Footer, Header } from "../_components/marketing";
+import { innovationSweetSpotArticle, spctaNewsFeature, systemsMindsetWebinar } from "@/content/insights";
 import { figmaAssets } from "@/content/site";
 
 const contentLinks = [
@@ -68,11 +69,15 @@ function PlayIcon({ small = false }: { small?: boolean }) {
 function WebinarCard({
   className,
   title,
+  speakerOne = "Jedidiah Akpata & Charles Ojei",
+  speakerTwo = "November 2023",
   imageSrc = figmaAssets.article,
   featured = false,
 }: {
   className: string;
   title: string;
+  speakerOne?: string;
+  speakerTwo?: string;
   imageSrc?: string;
   featured?: boolean;
 }) {
@@ -81,12 +86,12 @@ function WebinarCard({
       <img alt="" src={imageSrc} />
       <span className="insights-card-overlay" />
       <span className="insights-card-kind">WEBINAR</span>
-      <span className="insights-card-time">01:40:35</span>
+      {!featured ? <span className="insights-card-time">01:40:35</span> : null}
       <span className="insights-card-copy">
         <span className="insights-card-mobile-kind">WEBINAR</span>
         <span className="insights-card-title">{title}</span>
-        <span className="insights-card-meta">Jedidiah Akpata &amp; Charles Ojei</span>
-        <span className="insights-card-meta">November 2023</span>
+        <span className="insights-card-meta">{speakerOne}</span>
+        <span className="insights-card-meta">{speakerTwo}</span>
       </span>
       <PlayIcon small={!featured} />
     </Link>
@@ -179,20 +184,23 @@ export default function InsightsPage() {
             className="insights-spotlight-main"
             featured
             imageSrc={figmaAssets.figmaBuilding}
-            title="Title of Specific Webinar"
+            speakerOne={systemsMindsetWebinar.speakerOne}
+            speakerTwo={systemsMindsetWebinar.speakerTwo}
+            title={systemsMindsetWebinar.title}
           />
           <InsightCard
+            body={innovationSweetSpotArticle.subtitle}
             className="insights-spotlight-article"
             href="/insights/articles/specific-article"
             kind="ARTICLE"
-            title="One Liner For Specific Article"
+            title={innovationSweetSpotArticle.cardTitle}
           />
           <InsightCard
-            body="A short, captivating statement about what this news update covers."
+            body={spctaNewsFeature.compactSummary}
             className="insights-spotlight-news"
             href="/insights/news/specific-news"
             kind="NEWS"
-            title="One Liner For Specific News Update"
+            title={spctaNewsFeature.shortTitle}
           />
         </section>
 
@@ -229,24 +237,27 @@ export default function InsightsPage() {
             All Articles
           </Link>
           <InsightCard
+            body={innovationSweetSpotArticle.subtitle}
             className="insights-article-small-a"
             href="/insights/articles/specific-article"
             kind="ARTICLE"
-            title="One Liner For Specific Article"
+            title={innovationSweetSpotArticle.cardTitle}
           />
           <InsightCard
+            body={innovationSweetSpotArticle.subtitle}
             className="insights-article-small-b"
             href="/insights/articles/specific-article"
             imageSrc={figmaAssets.article}
             kind="ARTICLE"
-            title="One Liner For Specific Article"
+            title={innovationSweetSpotArticle.cardTitle}
           />
           <InsightCard
+            body={innovationSweetSpotArticle.subtitle}
             className="insights-article-tall"
             href="/insights/articles/specific-article"
             imageSrc={figmaAssets.figmaBuilding}
             kind="ARTICLE"
-            title="One Liner For Specific Article"
+            title={innovationSweetSpotArticle.cardTitle}
           />
         </section>
 
@@ -258,18 +269,18 @@ export default function InsightsPage() {
             title="Catch up on what matters and stay prepared for what's next."
           />
           <InsightCard
-            body="A short, captivating statement about what this news update covers."
+            body={spctaNewsFeature.compactSummary}
             className="insights-news-a"
             href="/insights/news/specific-news"
             kind="NEWS"
-            title="One Liner For Specific News Update"
+            title={spctaNewsFeature.shortTitle}
           />
           <InsightCard
-            body="A short, captivating statement about what this news update covers."
+            body={spctaNewsFeature.compactSummary}
             className="insights-news-b"
             href="/insights/news/specific-news"
             kind="NEWS"
-            title="One Liner For Specific News Update"
+            title={spctaNewsFeature.shortTitle}
           />
           <Link className="insights-outline-button insights-news-button" href="/insights/news">
             All News
