@@ -1358,6 +1358,28 @@
   }
 }
 
+@media (min-width: 1360px) {
+  .whatScope :global(.what-frame) {
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    max-width: none !important;
+    width: 100vw !important;
+  }
+
+  .whatScope :global(.what-services),
+  .whatScope :global(.what-impact) {
+    left: 0 !important;
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  .whatScope :global(.what-services-bg) {
+    left: 50% !important;
+    min-width: 1440px;
+    width: 100% !important;
+  }
+}
+
 .whatScope :global(.what-product-card.is-indx) {
   top: 3095px;
 }

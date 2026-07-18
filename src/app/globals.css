@@ -20375,6 +20375,37 @@ video.home-video-card {
   width: 100% !important;
 }
 
+@media (min-width: 1360px) {
+  .homepage-live,
+  .who-page,
+  .what-page {
+    max-width: none !important;
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+  .homepage-live .homepage-hero {
+    height: max(804px, 100svh) !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    max-width: none !important;
+    min-height: max(804px, 100svh) !important;
+    width: 100vw !important;
+  }
+
+  .who-page .who-frame {
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    max-width: none !important;
+    width: 100vw !important;
+  }
+
+  .who-page .who-history {
+    left: 0 !important;
+    width: 100% !important;
+  }
+}
+
 @media (max-width: 559px) {
   .who-page .who-frame {
     height: 6894px !important;
