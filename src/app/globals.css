@@ -20622,3 +20622,405 @@ video.home-video-card {
     right: 24px !important;
   }
 }
+
+/* Designer review: keep the shared homepage controls and cards visually stable. */
+.field,
+.home-contact-form .field {
+  border-radius: 28px !important;
+  border-width: 1.5px !important;
+  box-shadow: none !important;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif !important;
+}
+
+.field:focus,
+.field:focus-visible,
+.home-contact-form .field:focus,
+.home-contact-form .field:focus-visible {
+  border-color: #ffffff !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+}
+
+.homepage-live .home-service-glyph,
+.homepage-live .home-service-glyph svg {
+  height: 56px !important;
+  width: 56px !important;
+}
+
+.homepage-live .home-service-pill,
+.homepage-live .home-service-pill:hover,
+.homepage-live .home-service-pill:focus-visible {
+  background: #4fc2f0 !important;
+  border-color: #4fc2f0 !important;
+  color: #07171d !important;
+  transform: translateX(-50%) !important;
+}
+
+.homepage-live .home-case-bg {
+  display: block !important;
+  height: calc(100% + 16px) !important;
+  inset: -8px !important;
+  width: calc(100% + 16px) !important;
+}
+
+.homepage-live .home-news-bg {
+  display: block;
+  height: calc(100% + 8px);
+  inset: -4px;
+  max-width: none;
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  object-position: center 48%;
+  pointer-events: none;
+  position: absolute;
+  transform: scale(1.01);
+  width: calc(100% + 8px);
+  z-index: 0;
+}
+
+.homepage-live .home-news-card-overlay {
+  background: rgba(0, 0, 0, 0.38);
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.homepage-live .home-news-card .home-card-action {
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .homepage-live .home-news-card .home-news-card-copy {
+    bottom: 32px !important;
+    left: 40px !important;
+    right: 40px !important;
+    width: auto !important;
+    z-index: 2;
+  }
+
+  .homepage-live .home-news-card .home-news-card-title,
+  .homepage-live .home-news-card .home-news-card-summary {
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  .homepage-live .home-news-card .home-news-card-title {
+    text-wrap: wrap !important;
+  }
+}
+
+.homepage-live .home-news-card .home-news-card-copy {
+  z-index: 2;
+}
+
+.homepage-live .home-webinar-bg {
+  display: block;
+  filter: brightness(0.72);
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  object-position: center center;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+}
+
+@media (max-width: 767px) {
+  .homepage-live .home-webinar-copy {
+    position: relative;
+  }
+}
+
+.homepage-live .home-case-feature .home-case-bg--feature {
+  height: calc(100% + 24px) !important;
+  inset: -12px !important;
+  max-width: none !important;
+  min-height: 100% !important;
+  min-width: 100% !important;
+  object-fit: cover !important;
+  object-position: center 52% !important;
+  transform: none !important;
+  width: calc(100% + 24px) !important;
+}
+
+.homepage-live .home-case-tall .home-case-bg--tall {
+  height: calc(100% + 24px) !important;
+  inset: -12px !important;
+  max-width: none !important;
+  min-height: 100% !important;
+  min-width: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  transform: none !important;
+  width: calc(100% + 24px) !important;
+}
+
+.homepage-live .home-case-feature:hover,
+.homepage-live .home-case-tall:hover {
+  box-shadow: none !important;
+}
+
+.homepage-live .home-case-feature .home-company-wordmark--coca-cola {
+  height: 40px !important;
+  width: 154px !important;
+}
+
+@media (min-width: 768px) {
+  .homepage-live .home-testimonial-card {
+    border-radius: 172px 344px 0 172px !important;
+  }
+
+  .homepage-live .home-testimonial-avatar > span {
+    border: 4px solid #8dc540 !important;
+  }
+
+  .homepage-live .home-testimonial-avatar-image {
+    bottom: 4px !important;
+    left: 50% !important;
+    top: auto !important;
+    transform: translateX(-50%) !important;
+  }
+}
+
+.homepage-live .home-testimonial-arrow {
+  height: 64px !important;
+  width: 64px !important;
+}
+
+.homepage-live .home-testimonial-arrow:hover svg path {
+  fill: #000 !important;
+}
+
+.homepage-live .home-testimonial-arrow--left {
+  transform: translateX(-32px);
+}
+
+.homepage-live .home-testimonial-preview {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.home-footer-socials svg [stroke] {
+  stroke-width: 1.7px;
+}
+
+.home-footer .hybr-button--white {
+  font-size: 18px !important;
+  min-height: 52px !important;
+  padding: 11px 28px !important;
+}
+
+@media (min-width: 1024px) {
+  .homepage-live .home-work-wrap {
+    column-gap: 40px !important;
+    row-gap: 40px !important;
+  }
+
+  .homepage-live .home-case-feature {
+    padding: 28px !important;
+  }
+
+  .homepage-live .home-case-tall {
+    padding: 24px 24px 32px !important;
+  }
+
+  .homepage-live .home-case-tall-copy {
+    margin-top: auto !important;
+    padding-bottom: 2px !important;
+    top: auto !important;
+  }
+}
+
+@media (max-width: 559px) {
+  .homepage-live .home-case-feature .home-company-wordmark--coca-cola {
+    height: 24px !important;
+    width: 90px !important;
+  }
+}
+
+/* Homepage layout spacing refinements for the final QA pass. */
+.homepage-live .home-insights-section {
+  padding-bottom: 180px !important;
+}
+
+.homepage-live .home-gain-section {
+  padding-bottom: 180px !important;
+}
+
+.homepage-live .home-cta-section {
+  padding-bottom: 220px !important;
+}
+
+/* Use the supplied Figma close mark and retain clear separation in the risk row. */
+.homepage-live .risk-marker {
+  background: transparent !important;
+  height: 28px !important;
+  line-height: 0 !important;
+  width: 28px !important;
+}
+
+.homepage-live .risk-marker svg {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .homepage-live .home-risk-grid > div:nth-child(3) {
+    margin-left: 32px;
+    width: calc(100% - 32px) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .homepage-live .home-case-tall {
+    height: 712px !important;
+    min-height: 712px !important;
+    padding: 0 !important;
+  }
+
+  .homepage-live .home-case-tall-top {
+    display: block !important;
+    position: static !important;
+  }
+
+  .homepage-live .home-case-tall .home-case-mark--small {
+    display: block !important;
+    height: 56px !important;
+    left: 40px !important;
+    margin: 0 !important;
+    position: absolute !important;
+    top: 43px !important;
+    width: 56px !important;
+    z-index: 3 !important;
+  }
+
+  .homepage-live .home-case-tall .home-case-tall-cta {
+    bottom: auto !important;
+    height: 61px !important;
+    left: auto !important;
+    min-height: 61px !important;
+    padding: 0 !important;
+    position: absolute !important;
+    right: 40px !important;
+    top: 40px !important;
+    width: 196px !important;
+    z-index: 3 !important;
+  }
+
+  .homepage-live .home-case-tall-content {
+    bottom: 104px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    height: 195px !important;
+    left: 40px !important;
+    max-width: none !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+    position: absolute !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+    visibility: visible !important;
+    width: calc(100% - 80px) !important;
+    z-index: 3 !important;
+  }
+
+  .homepage-live .home-case-tall-content .home-case-kicker {
+    flex: 0 0 29px !important;
+    height: 29px !important;
+    margin: 0 !important;
+  }
+
+  .homepage-live .home-case-tall-content h3 {
+    flex: 0 0 78px !important;
+    height: 78px !important;
+    margin: 0 !important;
+  }
+
+  .homepage-live .home-case-tall-content p:nth-of-type(2) {
+    flex: 0 0 80px !important;
+    height: 80px !important;
+    margin: 8px 0 0 !important;
+    overflow: hidden !important;
+  }
+
+  .homepage-live .home-case-tall .home-case-tall-company {
+    bottom: 40px !important;
+    display: inline-flex !important;
+    height: 32px !important;
+    left: 40px !important;
+    width: 96px !important;
+  }
+}
+
+.homepage-live .home-case-tall .home-case-tall-company {
+  align-items: center;
+  bottom: 32px;
+  display: inline-flex;
+  height: 32px;
+  left: 32px;
+  margin: 0;
+  position: absolute;
+  width: 96px;
+  z-index: 3;
+}
+
+.homepage-live .home-case-tall .home-case-tall-company .home-alitheia-logo-img {
+  display: block !important;
+  height: 32px !important;
+  max-width: none !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+  width: 96px !important;
+}
+
+.homepage-live .home-case-tall-content {
+  left: 32px;
+  max-width: 278px;
+  position: absolute;
+  top: 40px;
+  z-index: 2;
+}
+
+.homepage-live .home-case-tall-content h3 {
+  color: #ffffff !important;
+  font-size: 32px !important;
+  line-height: 37.568px !important;
+}
+
+.homepage-live .home-case-tall-content p:nth-of-type(2) {
+  color: rgba(255, 255, 255, 0.82) !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 19.504px !important;
+  margin-top: 8px !important;
+}
+
+.homepage-live .home-insights-wrap {
+  gap: 32px !important;
+  align-items: start !important;
+}
+
+.homepage-live .home-gain-wrap {
+  gap: 40px !important;
+}
+
+.homepage-live .home-gain-copy {
+  padding-top: 12px !important;
+}
+
+.homepage-live .home-cta-wrap {
+  padding-inline: 0 !important;
+}
+
+/* Keep the Who We Are contents drawer as a consistent rounded capsule. */
+.who-page .who-content-drop {
+  border-radius: 999px !important;
+  box-shadow: none !important;
+}

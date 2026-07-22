@@ -13,13 +13,6 @@ import {
 const testimonials = [
   {
     quote:
-      "Working with HYBR transformed how our leadership team approaches innovation. We now have the tools and confidence to build what's next.",
-    name: "Placeholder Client",
-    title: "Director of Strategy, Future Group",
-    image: "/home/testimonial.png",
-  },
-  {
-    quote:
       "The curated innovation retreat for AFEX's 40-exco team was truly world class and highly impactful, shaping our strategic plans going forward.",
     name: "Ayo Balogun",
     title:
@@ -57,6 +50,19 @@ type TouchState = {
   startX: number;
   startY: number;
 };
+
+function TestimonialArrowIcon({ direction }: { direction: "left" | "right" }) {
+  const path =
+    direction === "left"
+      ? "M41.415 50.5851C41.6008 50.771 41.7482 50.9916 41.8488 51.2343C41.9494 51.4771 42.0011 51.7373 42.0011 52.0001C42.0011 52.2629 41.9494 52.5231 41.8488 52.7659C41.7482 53.0087 41.6008 53.2293 41.415 53.4151C41.2292 53.601 41.0086 53.7484 40.7658 53.8489C40.523 53.9495 40.2628 54.0013 40 54.0013C39.7372 54.0013 39.477 53.9495 39.2342 53.8489C38.9914 53.7484 38.7708 53.601 38.585 53.4151L18.585 33.4151C18.399 33.2294 18.2515 33.0088 18.1509 32.766C18.0502 32.5232 17.9984 32.263 17.9984 32.0001C17.9984 31.7373 18.0502 31.4771 18.1509 31.2343C18.2515 30.9915 18.399 30.7709 18.585 30.5851L38.585 10.5851C38.9603 10.2099 39.4693 9.99902 40 9.99902C40.5307 9.99902 41.0397 10.2099 41.415 10.5851C41.7903 10.9604 42.0011 11.4694 42.0011 12.0001C42.0011 12.5309 41.7903 13.0399 41.415 13.4151L22.8275 32.0001L41.415 50.5851Z"
+      : "M45.415 33.4151L25.415 53.4151C25.2292 53.601 25.0086 53.7484 24.7658 53.8489C24.523 53.9495 24.2628 54.0013 24 54.0013C23.7372 54.0013 23.477 53.9495 23.2342 53.8489C22.9914 53.7484 22.7708 53.601 22.585 53.4151C22.3992 53.2293 22.2518 53.0087 22.1512 52.7659C22.0507 52.5231 21.9989 52.2629 21.9989 52.0001C21.9989 51.7373 22.0507 51.4771 22.1512 51.2343C22.2518 50.9916 22.3992 50.771 22.585 50.5851L41.1725 32.0001L22.585 13.4151C22.2097 13.0399 21.9989 12.5309 21.9989 12.0001C21.9989 11.4694 22.2097 10.9604 22.585 10.5851C22.9603 10.2099 23.4693 9.99902 24 9.99902C24.5307 9.99902 25.0397 10.2099 25.415 10.5851L45.415 30.5851C45.601 30.7709 45.7485 30.9915 45.8491 31.2343C45.9498 31.4771 46.0016 31.7373 46.0016 32.0001C46.0016 32.263 45.9498 32.5232 45.8491 32.766C45.7485 33.0088 45.601 33.2294 45.415 33.4151Z";
+
+  return (
+    <svg aria-hidden="true" fill="none" height="64" viewBox="0 0 64 64" width="64" xmlns="http://www.w3.org/2000/svg">
+      <path d={path} fill="#8DC540" />
+    </svg>
+  );
+}
 
 function capturePointer(element: HTMLDivElement, pointerId: number) {
   try {
@@ -251,7 +257,7 @@ export function TestimonialsCarousel() {
           onClick={() => go(active - 1)}
           type="button"
         >
-          &#8249;
+          <TestimonialArrowIcon direction="left" />
         </button>
         <div
           className="home-testimonial-stage"
@@ -280,7 +286,7 @@ export function TestimonialsCarousel() {
           onClick={() => go(active + 1)}
           type="button"
         >
-          &#8250;
+          <TestimonialArrowIcon direction="right" />
         </button>
       </div>
       <div className="home-testimonial-dots mt-5">

@@ -16,7 +16,7 @@ const assets = {
   whoImage: figmaAssets.people,
   testimonial: figmaAssets.testimonial,
   testimonialRing: figmaAssets.testimonialRing,
-  news: figmaAssets.news,
+  news: "/home/news-tall.png",
   contact: figmaAssets.contact,
   cocaColaLogo: "/logos/coca-cola-logo.svg",
   caseStudy: "/home/case-study.png",
@@ -166,6 +166,17 @@ function BrandMark({ className = "" }: { className?: string }) {
   );
 }
 
+function RiskCloseIcon() {
+  return (
+    <svg fill="none" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M26 4H6C5.46957 4 4.96086 4.21071 4.58579 4.58579C4.21071 4.96086 4 5.46957 4 6V26C4 26.5304 4.21071 27.0391 4.58579 27.4142C4.96086 27.7893 5.46957 28 6 28H26C26.5304 28 27.0391 27.7893 27.4142 27.4142C27.7893 27.0391 28 26.5304 28 26V6C28 5.46957 27.7893 4.96086 27.4142 4.58579C27.0391 4.21071 26.5304 4 26 4ZM22.7075 21.2925C22.8004 21.3854 22.8741 21.4957 22.9244 21.6171C22.9747 21.7385 23.0006 21.8686 23.0006 22C23.0006 22.1314 22.9747 22.2615 22.9244 22.3829C22.8741 22.5043 22.8004 22.6146 22.7075 22.7075C22.6146 22.8004 22.5043 22.8741 22.3829 22.9244C22.2615 22.9747 22.1314 23.0006 22 23.0006C21.8686 23.0006 21.7385 22.9747 21.6171 22.9244C21.4957 22.8741 21.3854 22.8004 21.2925 22.7075L16 17.4137L10.7075 22.7075C10.5199 22.8951 10.2654 23.0006 10 23.0006C9.73464 23.0006 9.48014 22.8951 9.2925 22.7075C9.10486 22.5199 8.99944 22.2654 8.99944 22C8.99944 21.7346 9.10486 21.4801 9.2925 21.2925L14.5863 16L9.2925 10.7075C9.10486 10.5199 8.99944 10.2654 8.99944 10C8.99944 9.73464 9.10486 9.48014 9.2925 9.2925C9.48014 9.10486 9.73464 8.99944 10 8.99944C10.2654 8.99944 10.5199 9.10486 10.7075 9.2925L16 14.5863L21.2925 9.2925C21.4801 9.10486 21.7346 8.99944 22 8.99944C22.2654 8.99944 22.5199 9.10486 22.7075 9.2925C22.8951 9.48014 23.0006 9.73464 23.0006 10C23.0006 10.2654 22.8951 10.5199 22.7075 10.7075L17.4137 16L22.7075 21.2925Z"
+        fill="#8DC540"
+      />
+    </svg>
+  );
+}
+
 function CompanyWordmark({
   kind,
   className = "",
@@ -232,8 +243,8 @@ function SocialIcon({
   if (kind === "instagram") {
     return (
       <svg aria-hidden="true" className="size-8" fill="none" viewBox="0 0 32 32">
-        <rect x="6" y="6" width="20" height="20" rx="6" stroke="currentColor" strokeWidth="2.4" />
-        <circle cx="16" cy="16" r="5" stroke="currentColor" strokeWidth="2.4" />
+        <rect x="6" y="6" width="20" height="20" rx="6" stroke="currentColor" strokeWidth="1.7" />
+        <circle cx="16" cy="16" r="5" stroke="currentColor" strokeWidth="1.7" />
         <circle cx="22.4" cy="9.6" r="1.6" fill="currentColor" />
       </svg>
     );
@@ -253,9 +264,9 @@ function SocialIcon({
   if (kind === "linkedin") {
     return (
       <svg aria-hidden="true" className="size-8" fill="none" viewBox="0 0 32 32">
-        <rect x="6" y="6" width="20" height="20" rx="3" stroke="currentColor" strokeWidth="2.2" />
-        <path d="M11 14V22" stroke="currentColor" strokeWidth="2.4" />
-        <path d="M16 22V17.5C16 15.8431 17.3431 14.5 19 14.5C20.6569 14.5 22 15.8431 22 17.5V22" stroke="currentColor" strokeWidth="2.4" />
+        <rect x="6" y="6" width="20" height="20" rx="3" stroke="currentColor" strokeWidth="1.7" />
+        <path d="M11 14V22" stroke="currentColor" strokeWidth="1.7" />
+        <path d="M16 22V17.5C16 15.8431 17.3431 14.5 19 14.5C20.6569 14.5 22 15.8431 22 17.5V22" stroke="currentColor" strokeWidth="1.7" />
         <circle cx="11" cy="10.5" r="1.5" fill="currentColor" />
       </svg>
     );
@@ -264,7 +275,7 @@ function SocialIcon({
   if (kind === "youtube") {
     return (
       <svg aria-hidden="true" className="size-8" fill="none" viewBox="0 0 32 32">
-        <rect x="4.5" y="8" width="23" height="16" rx="5" stroke="currentColor" strokeWidth="2.2" />
+        <rect x="4.5" y="8" width="23" height="16" rx="5" stroke="currentColor" strokeWidth="1.7" />
         <path d="M14 12.8L20.4 16L14 19.2V12.8Z" fill="currentColor" />
       </svg>
     );
@@ -273,7 +284,7 @@ function SocialIcon({
   if (kind === "facebook") {
     return (
       <svg aria-hidden="true" className="size-8" fill="none" viewBox="0 0 32 32">
-        <circle cx="16" cy="16" r="10" stroke="currentColor" strokeWidth="2.2" />
+        <circle cx="16" cy="16" r="10" stroke="currentColor" strokeWidth="1.7" />
         <path d="M17.5 26V16.8H20.4L20.9 13.4H17.5V11.2C17.5 10.2 17.8 9.5 19.2 9.5H21V6.5C20.1 6.4 19.4 6.4 18.6 6.4C16.1 6.4 14.4 7.9 14.4 10.7V13.4H11.6V16.8H14.4V26" fill="currentColor" />
       </svg>
     );
@@ -476,7 +487,7 @@ export default function Home() {
               <ul className="mt-8 space-y-5 text-xl md:text-2xl">
                 {risks.map((risk) => (
                   <li key={risk} className="flex gap-4">
-                    <span aria-hidden="true" className="risk-marker">x</span>
+                    <span aria-hidden="true" className="risk-marker"><RiskCloseIcon /></span>
                     <span>{risk}</span>
                   </li>
                 ))}
@@ -539,10 +550,10 @@ export default function Home() {
                 src={assets.whoImage}
               />
               <div className="home-who-actions absolute bottom-4 right-4">
-                <Button className="home-who-button home-who-button--desktop home-arrow-hover" href="/who-we-are/our-team" variant="glass">
+                <Button className="home-who-button home-who-button--desktop" href="/who-we-are/our-team" variant="glass">
                   Meet The Team
                 </Button>
-                <Button className="home-who-button home-who-button--mobile home-arrow-hover" href="/who-we-are/about-us" variant="glass">
+                <Button className="home-who-button home-who-button--mobile" href="/who-we-are/about-us" variant="glass">
                   Learn More
                 </Button>
               </div>
@@ -604,7 +615,7 @@ export default function Home() {
               ))}
             </div>
             <div className="home-services-cta mt-8 text-center">
-              <Button className="home-arrow-hover" href="/what-we-do/services" variant="outline">
+              <Button href="/what-we-do/services" variant="outline">
                 <span className="home-services-cta-full">Explore Our Services</span>
                 <span className="home-services-cta-mobile">Explore Services</span>
               </Button>
@@ -688,7 +699,7 @@ export default function Home() {
                 Read More
               </a>
             </div>
-            <div className="home-case-tall-copy">
+            <div className="home-case-tall-content">
               <p className="home-case-kicker">CASE STUDY</p>
               <h3 className="text-[20px] font-medium leading-[1.12]">
                 Operational and technical diagnostics
@@ -698,8 +709,8 @@ export default function Home() {
                 diagnostics for a female-led food company working towards Series A
                 round funding.
               </p>
-              <CompanyWordmark kind="alitheia" className="home-case-tall-company" />
             </div>
+            <CompanyWordmark kind="alitheia" className="home-case-tall-company" />
           </article>
         </div>
       </section>
@@ -728,14 +739,9 @@ export default function Home() {
         <div className="home-insights-wrap mx-auto grid gap-4 lg:grid-cols-[289px_406px] lg:justify-center">
           <article
             className="home-news-card relative overflow-hidden rounded-[14px] bg-black p-5 text-white"
-            style={{
-              backgroundColor: "rgba(0,0,0,.38)",
-              backgroundImage: `url(${assets.news})`,
-              backgroundBlendMode: "multiply",
-              backgroundPosition: "50% 50%",
-              backgroundSize: "cover",
-            }}
           >
+            <img alt="" aria-hidden="true" className="home-news-bg" src={assets.news} />
+            <span aria-hidden="true" className="home-news-card-overlay" />
             <div className="home-card-action flex justify-end">
               <Button href="/insights/news/specific-news" variant="white">
                 Read More
@@ -758,14 +764,8 @@ export default function Home() {
               href={homeWebinar.url}
               rel="noopener noreferrer"
               target="_blank"
-              style={{
-                backgroundColor: "rgba(0,0,0,.46)",
-                backgroundImage: `url(${assets.webinar})`,
-                backgroundBlendMode: "multiply",
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-              }}
             >
+              <img alt="" aria-hidden="true" className="home-webinar-bg" src={assets.webinar} />
               <img alt="" className="home-webinar-play absolute right-5 top-5 size-8 rotate-90" src={assets.play} />
               <p className="home-webinar-duration absolute bottom-5 right-5 text-[11px] font-semibold">
                 {homeWebinar.duration}
