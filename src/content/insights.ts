@@ -1,64 +1,73 @@
 export const innovationSweetSpotArticle = {
-  title: "The Innovation Sweet Spot",
-  subtitle: "5 Practical Ways to Confirm Problem-Solution Fit",
-  cardTitle: "The Innovation Sweet Spot",
+  title: "The Fastest Way to Waste a Good Idea",
+  subtitle: "How untested assumptions turn innovation speed into expensive mistakes.",
+  cardTitle: "The Fastest Way to Waste a Good Idea",
   summary:
-    "Five practical ways to confirm problem-solution fit before teams invest too much time, budget, or credibility in the wrong idea.",
-  author: "Charles Ojei",
-  date: "September 15, 2025",
-  topics: "Strategy, Product Development, Applied Research",
+    "Speed without evidence does not eliminate delay. It simply moves the delay to a more expensive stage.",
+  author: "HYBR Editorial",
+  date: "July 2026",
+  topics: "Innovation Strategy, Customer Evidence, Venture Building",
   intro: [
-    "Imagine this: you have just launched a new solution inside your company. The dashboards are lighting up with sign-ups, your boss is excited, and the press release is ready to go.",
-    "But three months later, adoption stalls. Customers churn. Budgets shrink. Suddenly, you are left asking: Did we ever solve the right problem?",
-    "This is the brutal truth many innovators face inside corporations, government, and startups alike. In HYBR's recent webinar, The Innovation Sweetspot: Finding and Confirming Problem-Solution Fit, we explored how to avoid that trap.",
-    "Here are five powerful practices from the session, anchored by real cases where they worked or failed. We were delighted to have Emmanuel Oluwatosin, Founder of Startup Court Canada and former Nokia and Microsoft leader, share his experience during the August HYBR Innovation Series webinar.",
+    "Leaders are under pressure to innovate at speed. But when speed is built on untested assumptions, organisations do not reach the market faster. They reach expensive mistakes sooner.",
+    "At 7:12 on Monday morning, a business leader faces competing updates: a CEO wants progress, a product team needs approval, finance is questioning cost, and operations has surfaced complications that were missed when the concept was approved.",
+    "The project looks active from the outside. Meetings are happening, milestones are being reported and a launch date has been announced. But one question has not been properly answered: do customers need this enough to change what they currently do?",
   ],
   sections: [
     {
-      heading: "1. Test Willingness to Pay",
-      kicker: "Praise is cheap. Payment is proof.",
+      heading: "Guesswork rarely looks like guesswork",
+      kicker: "It usually arrives dressed as confidence.",
       paragraphs: [
-        "A B2B founder in the session admitted that they only knew their idea worked after landing 50 paying customers, not just interested leads. Free sign-ups looked good, but they did not keep the lights on.",
-        "Try this: launch a landing page or pilot that requires a deposit. Even a token payment beats empty enthusiasm.",
+        "A senior executive has seen a similar idea work elsewhere. A competitor has launched something new. A trusted customer likes the initial concept. The board wants a visible growth initiative. Soon, a hypothesis becomes a plan, the plan becomes a budget, and the budget becomes a deadline.",
+        "By the time serious questions emerge, the organisation has already invested money, time, reputation and political capital. Asking whether the original idea was right can feel more dangerous than continuing to build it.",
+        "Five friendly customers are not market validation. A prototype that people say they like is not evidence that they will use it, pay for it, switch providers or change a habit. Activity can be reported while evidence remains thin.",
       ],
     },
     {
-      heading: "2. Map and Test Your Riskiest Assumptions",
-      kicker: "Every idea rests on assumptions, but not all assumptions carry equal weight.",
+      heading: "Launching faster is not the same as learning faster",
+      kicker: "Movement is not necessarily progress.",
       paragraphs: [
-        "A government recycling initiative discovered through assumption mapping that its biggest risk was not technical. It was whether citizens would separate waste at home. A quick neighborhood trial showed resistance early and saved months of rework.",
-        "Try this: hold a 60-minute workshop. List your top six assumptions, rank them, and test the riskiest two this week.",
+        "A product can launch on time and still solve the wrong problem. A pilot can attract participants and produce no lasting behaviour change. A technology platform can meet every technical requirement and still be avoided by the people expected to use it.",
+        "The real measure of innovation speed is how quickly an organisation moves from an assumption to credible evidence - and from that evidence to a better decision. The fastest teams are not simply faster at launching. They are faster at learning.",
       ],
     },
     {
-      heading: "3. Run Staged, Rapid Experiments",
-      kicker: "Big bets fail big. Small bets reveal the truth faster, at a lower cost.",
+      heading: "The cost appears after the celebration",
+      kicker: "Speed without evidence moves delay to a more expensive stage.",
       paragraphs: [
-        "Nokia quickly killed weak ideas by testing clickable mock-ups before committing to complete builds. Only concepts that passed each experimental stage moved forward.",
-        "Try this: design a ladder of evidence: landing page, prototype, pilot, rollout. Decide at each stage whether to stop, pivot, or scale.",
+        "Customers may not understand the offer. Sales teams may struggle to explain why it matters. Employees may create workarounds because a new system does not fit how work actually happens. Delivery costs may rise because the original economics were unrealistic.",
+        "The visible cost is the money spent. The deeper cost is the opportunity lost: months consumed, customer trust weakened, employee energy depleted and the credibility of the next innovation effort diminished.",
       ],
     },
     {
-      heading: "4. Track Activation and Retention, Not Just Sign-Ups",
-      kicker: "Launch-day excitement can be misleading.",
+      heading: "Evidence-driven speed",
+      kicker: "Test the uncertainties that matter before they become large commitments.",
       paragraphs: [
-        "A fintech startup celebrated thousands of downloads until 80% of users churned in the first week. Refocusing on seven-day activation and repeat use transformed their roadmap.",
-        "Try this: define three core metrics: activation, retention, and paid conversion. Make them your north star.",
+        "The alternative is not endless research or waiting for perfect information. It is evidence-driven speed: identify the assumptions that matter most and test them before they become large commitments.",
+        "Intuit's Design for Delight, Amazon's Working Backwards process and the United Kingdom Government Service Standard all bring customer learning into the way decisions are made. Their lesson is not to stop teams from moving. It is to help them discover what deserves to move forward.",
       ],
     },
     {
-      heading: "5. Use Local, Low-Tech Fixes Before Heavy Builds",
-      kicker: "Innovation does not always mean more tech.",
+      heading: "The Speed Without Guesswork Review",
+      kicker: "Seven questions before the next major investment.",
       paragraphs: [
-        "Jumia solved unreliable delivery notifications not with a new app, but by sending simple SMS messages. This quick, low-tech solution built customer trust and later scaled with automation.",
-        "Try this: ask, what is the cheapest way to deliver this promise today? Try it with real users before you code.",
+        "What decision are we actually making? What must be true for this idea to work? Which assumption could destroy the opportunity? What evidence do we have? What is the fastest credible test? What result would change our decision? Can the organisation deliver the promise?",
+        "Separate what the organisation knows from what it believes. Customer opinions are useful, but observed behaviour is stronger. A willingness to pay, switch, participate or repeatedly use the solution is stronger still.",
+        "A prototype, simulation, manual service, landing page, field experiment or small operational pilot can create evidence. The test should create learning, not theatre.",
+      ],
+    },
+    {
+      heading: "The missing bridge between insight and action",
+      kicker: "Customer listening must shape the decision, the solution and the execution.",
+      paragraphs: [
+        "Customer insight often becomes trapped in a presentation. The research team learns something important, but the product roadmap has already been agreed. A pilot produces useful lessons, but no one has established how those lessons will influence investment or scale.",
+        "HYBR's 3D Framework creates that bridge. Discover defines the real problem and separates evidence from assumptions. Develop turns insight into propositions, prototypes and business models while the most important risks are still inexpensive to test. Deploy pilots solutions in real conditions and strengthens the systems required to scale what works.",
       ],
     },
   ],
   bottomLine: [
-    "Problem-solution fit is not an idea. It is evidence. These five practices help teams find the sweet spot where customer need, business viability, and delivery capability intersect.",
-    "One-week challenge: run an assumptions workshop with your team, publish a presale landing page and ask for deposits, then track activation and retention in your next pilot.",
-    "The sooner you find fit, the faster you will know whether to pivot or double down.",
+    "Before your next major investment, ask: what is the most important thing we need to learn before we invest further? That question changes the conversation from protecting a launch date to creating credible evidence.",
+    "Take one product, service or programme your organisation plans to launch this quarter and put it through the Speed Without Guesswork Review. Where the answers remain unclear, better evidence is needed.",
+    "The next big thing should not begin with a bigger guess. HYBR helps organisations discover the right opportunities, develop evidence-led solutions and deploy them successfully in the real world.",
   ],
 };
 
@@ -68,79 +77,160 @@ export const systemsMindsetWebinar = {
   speakerTwo: "Soromfe Uzomah, Principal Program Manager, Microsoft",
 };
 
+export const publicPowerWebinar = {
+  title: "Public Power, Private Ingenuity: Innovating with Government for Scalable Impact",
+  speakers: "Chinedu Ugwu-Chinwuba & Ure Utah",
+  date: "May 2025",
+  duration: "1:10:35",
+  href: "/insights/webinars/specific-webinar",
+  youtubeEmbed: "https://www.youtube-nocookie.com/embed/GxIj0bnFzQ4?start=380",
+  summary: "A conversation on practical collaboration between government and innovators to create scalable impact.",
+  topics: ["Government Innovation", "Public-Private Collaboration", "Scalable Impact"],
+};
+
+export const businessModelsWebinar = {
+  title: "Create Business Models That Work",
+  speakers: "Emmanuel Obinne",
+  date: "October 2025",
+  duration: "59:17",
+  href: "/insights/webinars/specific-webinar",
+};
+
 export const spctaNewsFeature = {
   kind: "NEWS",
+  eyebrow: "HYBR LABS FEATURE",
   title: "A Bottle, A Broken Supply Chain, and the Venture Built to Fix It",
   shortTitle: "SPCTA Completes IHS DeepTech Accelerator",
   summary:
-    "After four years of research, field testing and venture building inside HYBR Labs, SPCTA Industrial has stepped into public view with a plan to connect discarded materials, local livelihoods and industrial demand.",
+    "SPCTA steps into public view with a platform for waste recovery and circular supply chains.",
   compactSummary:
     "SPCTA steps into public view with a platform for waste recovery and circular supply chains.",
   cardSummary:
-    "SPCTA Industrial has completed the IHS DeepTech Accelerator and stepped into public view with a platform connecting waste recovery, digital coordination, workforce training and advanced processing.",
+    "After the IHS DeepTech Accelerator, SPCTA is building the physical systems between discarded materials and the factories that need them.",
   author: "HYBR Editorial",
-  date: "July 2026",
-  topics: "HYBR Labs, Venture Building, Circular Supply Chains",
-  readingTime: "9-11 minutes",
+  date: "April 2026",
+  topics: "Deep Technology, Circular Economy, Industrial Infrastructure",
+  readingTime: "8 minutes",
+  heroImage: {
+    src: "/insights/spcta/demo-day.jpg",
+    alt: "Guests on stage at The Convergence Demo Day in Ilorin.",
+    caption:
+      "The Convergence brought founders, industry leaders and ecosystem partners together at the Ilorin Innovation Hub.",
+  },
+  images: {
+    operations: {
+      src: "/home/edit-flags/plastic-waste.jpg",
+      alt: "A worker carrying recovered plastic through a recycling landscape.",
+      caption:
+        "Every industrial supply chain begins with physical work: collecting, separating and preparing material.",
+    },
+    recovery: {
+      src: "/home/our-work-feature-source.png",
+      alt: "A close view of the built environment surrounding recovery and logistics work.",
+      caption:
+        "The work is about creating a dependable route from fragmented recovery to industrial demand.",
+    },
+    partners: {
+      src: "/figma-assets/image-fills/1958cc39abc0ad658a9c5454fb531e80c31f464e-optimized.jpg",
+      alt: "People working together around a table.",
+      caption:
+        "The venture was refined through field learning, technical collaboration and commercial scrutiny.",
+    },
+    material: {
+      src: "/figma-assets/image-fills/d50005e607480723ef80c8b7ba3864acdbcd1a39.png",
+      alt: "A close view of hands working with materials.",
+      caption:
+        "Traceability, handling and consistent quality are part of what turns material into a reliable input.",
+    },
+    cohort: {
+      src: "/home/people.png",
+      alt: "A group of people gathered together.",
+      caption:
+        "The accelerator created room to challenge assumptions, strengthen the market case and prepare for the next stage.",
+    },
+  },
+  facts: [
+    ["Programme", "Ilorin Innovation Hub Accelerator, powered by IHS Nigeria."],
+    ["Launch weekend", "January 15-17, 2026 at Ilorin Innovation Hub, Kwara State."],
+    ["Demo Day", "April 17, 2026, with 19 ventures showcased."],
+    ["Partners", "Kwara State Government, IHS Nigeria, Ilorin Innovation Hub, Future Africa, Accelerate Africa and Co-creation Hub."],
+  ],
+  audiences: [
+    {
+      title: "Investors and strategic partners",
+      copy: "Help finance and deploy recovery sites, processing capacity and the systems that make material supply more dependable.",
+      href: "mailto:sales@hybrgroup.net?subject=SPCTA%20Industrial%20partnership",
+      linkLabel: "Start a conversation",
+    },
+    {
+      title: "Industry, government and development organisations",
+      copy: "Explore stronger circular-material systems that create operational value, local enterprise and more resilient infrastructure.",
+      href: "mailto:sales@hybrgroup.net?subject=SPCTA%20Industrial%20collaboration",
+      linkLabel: "Explore collaboration",
+    },
+    {
+      title: "Leaders working on the next hard problem",
+      copy: "HYBR helps teams turn a real system constraint into a venture and an operating model that can grow.",
+      href: "/what-we-do/services",
+      linkLabel: "Work with HYBR",
+    },
+  ],
   intro: [
-    "On a Friday morning in Ilorin, the SPCTA Industrial team stood before a room of government officials, corporate executives, investors, founders and technical experts.",
-    "They had only a few minutes to explain a problem that had occupied them for years: discarded materials are visible everywhere, but the deeper issue is the supply chain that fails to move reusable material into industry.",
-    "The company was appearing at Demo Day 1.0 - The Convergence - at the Ilorin Innovation Hub after three months in the IHS DeepTech Accelerator Programme. For SPCTA, the stage marked the moment an idea developed inside HYBR Labs began to present itself as an independent industrial company.",
+    "On April 17, 2026, 19 young companies gathered at the Ilorin Innovation Hub in Kwara State to present their businesses before investors, corporate executives, government representatives and potential partners.",
+    "Among the nine accelerator companies was SPCTA Industrial, a venture addressing a stubborn problem in Africa's circular economy: recyclable materials exist in large quantities, but the infrastructure needed to collect, sort, process and move them reliably to industry remains thin.",
+    "SPCTA is building the infrastructure intended to connect informal collectors and small recycling businesses with manufacturers and recyclers that need recovered material of the right quality, in predictable quantities, delivered consistently and at a workable cost.",
   ],
   sections: [
     {
-      heading: "The Bottle That Cannot Reach the Factory",
-      kicker: "Between the waste and the factory lies a broken system.",
+      heading: "What Ilorin Asked SPCTA to Prove",
+      kicker: "A dependable supply network for materials that would otherwise be discarded.",
       paragraphs: [
-        "An empty plastic bottle left outside a shop has potential value. It can be recovered, sorted, compressed, processed and returned to industry as raw material, but only if each link in the chain works.",
-        "Someone must collect it. The material must be separated from food, dirt and other waste. Enough bottles must be gathered to justify transport. Buyers must know what type of plastic they are purchasing and where it came from.",
-        "When one part of that chain fails, the bottle remains waste. A factory cannot plan production around uncertainty; it needs the correct material, in sufficient volume, delivered regularly, at a manageable price and with evidence of how it has been handled.",
+        "Manufacturers and recyclers need recovered materials of the right quality, in predictable quantities, delivered consistently and at a workable cost. Informal collectors and small recycling businesses often lack suitable equipment, aggregation centres, reliable buyers, operating capital and usable data.",
+        "SPCTA's model combines community-based Waste+Energy Banks, larger processing and aggregation facilities, digital traceability, logistics and relationships with industrial buyers. It is less a conventional recycling campaign than an attempt to construct a supply network.",
       ],
     },
     {
-      heading: "The Question That Led to a Company",
-      kicker: "HYBR's work with Coca-Cola exposed the missing recovery layer.",
+      heading: "Building beyond software",
+      kicker: "Deep technology companies must work under real operating conditions.",
       paragraphs: [
-        "HYBR had been engaged by Coca-Cola to develop a systems-based response to plastic waste in Nigeria. The investigation exposed a more precise constraint: Nigeria needed a stronger system for collecting, aggregating and preparing material.",
-        "HYBR designed the 16-month Entrepreneur Plastics Innovation Challenge, or EPIC, to source, assess and support models working across the plastic value chain. The programme tested external businesses, supported pilots and examined how local solutions could connect with established corporate supply chains.",
-        "At the same time, HYBR conceived the Modular Compression Center: a small recovery and processing hub located closer to communities where plastic waste was generated. The centre was locally fabricated, piloted and operationalised to recover plastic, create work, build technical capability and make each location financially sustainable.",
-        "A collection hub alone was not enough. Operators required training, material movements needed recording, industrial buyers needed visibility and larger processing capacity was needed downstream. The solution began to take the shape of a company.",
+        "The accelerator began with a call for applications in November 2025, built around a belief that Africa's industrial future could not be built through software alone. Its founders were working with hardware, engineering, artificial intelligence, connected devices and new commercial models.",
+        "A company installing energy equipment, processing waste or moving physical goods must contend with machinery, maintenance, land, electricity, transport, supply contracts, working capital and the behaviour of people throughout the chain.",
+        "SPCTA sat at the intersection of waste, infrastructure, logistics, industrial demand and the use of operating data to make a fragmented market more dependable.",
       ],
     },
     {
-      heading: "Building the Missing Layer",
-      kicker: "SPCTA connects infrastructure, software, workforce capability and processing.",
+      heading: "From a promising model to a disciplined business",
+      kicker: "The accelerator tested how the model would work in the market.",
       paragraphs: [
-        "SPCTA now presents itself as an infrastructure platform with four connected capabilities: SPCTA WEB, SPCTA FLOW, SPCTA Academy and SPCTA ARC.",
-        "SPCTA WEB creates distributed Waste+Energy Banks close to the source of recyclable material. SPCTA FLOW coordinates collection, pricing, inventory, logistics, payments, quality and traceability. SPCTA Academy trains and certifies collectors, sorters and site operators. SPCTA ARC adds larger Advanced Recycling Centres for industrial-grade processing.",
-        "Together, those capabilities create a path from a waste-generating business to a nearby WEB site, through trained operators and digital records, into consolidated processing and onward to manufacturers that need dependable recycled inputs.",
-        "The ambition is not to make waste collection look more technological. It is to make recycled-material supply more dependable.",
+        "Over three months, SPCTA and the other founders were pressed to examine who would pay, what would be built first, how equipment would be maintained, how revenue would be earned, how margins would be protected and what evidence would persuade a customer or investor to commit.",
+        "The team emerged with sharper thinking, stronger feedback, new relationships and greater clarity about what would be required to scale. Its customer problem became more precise: enabling industrial companies to obtain recycled feedstock with sufficient quality, quantity, consistency and cost control.",
+        "Waste collection is often treated as an environmental or social activity. SPCTA is trying to make it part of a reliable industrial supply chain.",
       ],
     },
     {
-      heading: "SPCTA at a Glance",
-      kicker: "Early execution is now being translated into a larger infrastructure platform.",
+      heading: "The programme at a glance",
+      kicker: "A partnership built around place, infrastructure and serious venture building.",
       paragraphs: [
-        "Problem: fragmented collection, weak traceability, inefficient logistics and inadequate processing prevent reliable industrial supply.",
-        "Platform: distributed clean-energy infrastructure connecting waste sources to industrial buyers through WEB, FLOW, Academy and ARC.",
-        "Execution: SPCTA reports about one million plastic bottles recovered, 305 waste-generating businesses enrolled and a 40% reduction in transport costs.",
-        "Pipeline: the company reports a prospective industrial-demand pipeline of 75,000 metric tonnes per year. This is a demand pipeline, not completed annual supply.",
-        "Next stage: finance and deploy new sites, expand processing capacity, deepen industrial purchasing relationships and extend the model beyond plastics into other recoverable materials.",
+        "The Ilorin Innovation Hub began running programmes in February 2025. IHS Nigeria appointed Future Africa and Co-creation Hub as programme managers, with Future Africa overseeing accelerator, corporate innovation and technical leadership initiatives.",
+        "Accelerate Africa worked with the Africa Deep Tech Community and Trapezion Africa to support the accelerator, while technical experts from the Africa Deep Tech Foundation participated in the launch and mentorship process.",
+        "The programme brought together public infrastructure, corporate support, venture-development expertise and technical mentors around companies solving problems that could not be addressed through software alone.",
+        "SPCTA's future now depends on turning introductions into pilots, supply agreements, industrial off-take relationships and suitable financing.",
+        "Next stage: prove the operating model one facility, one material stream and one customer relationship at a time.",
       ],
     },
     {
-      heading: "The Ilorin Test",
-      kicker: "The accelerator helped SPCTA sharpen the story, the customer and the operating model.",
+      heading: "The applause is over",
+      kicker: "The work that matters starts after Demo Day.",
       paragraphs: [
-        "The IHS DeepTech Accelerator gave SPCTA a setting in which to test its assumptions. Mentors challenged the team to explain who the customer was, what would be sold, how the platform would scale and what proof mattered next.",
-        "The Convergence brought together ventures in water, agriculture, energy and waste. For SPCTA, the strongest story was not aspiration alone; it was the path from system investigation to physical pilots, field learning, redesigned infrastructure and a venture built around the constraint.",
-        "For manufacturers, the promise is reliable recycled material. For governments, it is cleaner communities, local enterprise and jobs. For investors, it is productive infrastructure around a real supply constraint. SPCTA is building what happens next.",
+        "A Demo Day can create visibility. It cannot prove that a company can operate at scale. SPCTA must show that its Waste+Energy Banks can collect and process dependable volumes, that material quality can meet industrial standards, that equipment can remain operational and that each site can eventually support itself financially.",
+        "The company also needs credible traceability, so companies buying recycled materials can understand where those materials came from, how they were processed and what environmental results were achieved.",
+        "SPCTA is working on an unfashionable but consequential part of the circular economy: the physical systems between discarded materials and the factories that need them. Ilorin gave the company a stage, mentors and a sharper argument. What matters now is whether it can turn that argument into infrastructure that moves materials every day.",
       ],
     },
   ],
   pullQuotes: [
-    "Between the waste and the factory lies a broken system.",
-    "The ambition is not to make waste collection look more technological. It is to make recycled-material supply more dependable.",
-    "SPCTA is building what happens next.",
+    "SPCTA is building the physical systems between discarded materials and the factories that need them.",
+    "Waste collection is often treated as an environmental or social activity. SPCTA is trying to make it part of a reliable industrial supply chain.",
+    "What matters now is whether SPCTA can turn that argument into infrastructure that moves materials every day.",
   ],
 };

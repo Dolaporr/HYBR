@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Footer, Header } from "../../_components/marketing";
-import { innovationSweetSpotArticle, spctaNewsFeature, systemsMindsetWebinar } from "@/content/insights";
+import { innovationSweetSpotArticle, publicPowerWebinar, spctaNewsFeature } from "@/content/insights";
 import { figmaAssets } from "@/content/site";
 
 const articleHref = "/insights/articles/specific-article";
@@ -116,11 +116,11 @@ function WebinarCard() {
       <img alt="" src={figmaAssets.figmaBusinessPartners} />
       <span className="articles-webinar-kind">WEBINAR</span>
       <PlayIcon />
-      <span className="articles-webinar-duration">01:40:35</span>
+      <span className="articles-webinar-duration">{publicPowerWebinar.duration}</span>
       <span className="articles-webinar-copy">
-        <span>{systemsMindsetWebinar.title}</span>
-        <span>{systemsMindsetWebinar.speakerOne}</span>
-        <span>{systemsMindsetWebinar.speakerTwo}</span>
+        <span>{publicPowerWebinar.title}</span>
+        <span>{publicPowerWebinar.speakers}</span>
+        <span>{publicPowerWebinar.date}</span>
       </span>
     </Link>
   );
@@ -133,7 +133,7 @@ function NewsCard() {
       <span className="articles-news-button">Read More</span>
       <span className="articles-news-copy">
         <span>NEWS</span>
-        <span>{spctaNewsFeature.shortTitle}</span>
+        <span>{spctaNewsFeature.title}</span>
         <span>{spctaNewsFeature.cardSummary}</span>
       </span>
     </Link>

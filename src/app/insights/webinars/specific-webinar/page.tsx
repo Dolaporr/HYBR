@@ -1,30 +1,13 @@
 import Link from "next/link";
 import { Footer, Header } from "../../../_components/marketing";
+import { businessModelsWebinar, publicPowerWebinar } from "@/content/insights";
 import { figmaAssets } from "@/content/site";
 
-const topics = ["Topic 1", "Topic 2", "Topic 3"];
+const topics = publicPowerWebinar.topics;
 
-const latestWebinars = Array.from({ length: 5 }, () => ({
-  title: "Title of Specific Webinar",
-  speakers: "Speaker1 & Speaker2",
-  date: "Date/Period Added",
-  duration: "01:40:35",
-}));
+const latestWebinars = [businessModelsWebinar];
 
-const speakers = [
-  {
-    name: "FirstName LastName",
-    role: "Title/Role, Company",
-    location: "Location",
-    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dignissim fringilla feugiat. Praesent sed condimentum nulla.",
-  },
-  {
-    name: "FirstName LastName",
-    role: "Title/Role, Company",
-    location: "Location",
-    bio: "Suspendisse ullamcorper condimentum molestie. Pellentesque fringilla tristique purus, vitae euismod tortor tempor eu.",
-  },
-];
+const speakers = publicPowerWebinar.speakers.split(" & ").map((name) => ({ name }));
 
 function SearchControl() {
   return (
@@ -55,11 +38,25 @@ function WebinarVideo({
   compact?: boolean;
   imageSrc?: string;
 }) {
+  if (!compact) {
+    return (
+      <div className="webinar-video webinar-video--embed">
+        <iframe
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+          className="webinar-video-embed"
+          src={publicPowerWebinar.youtubeEmbed}
+          title={publicPowerWebinar.title}
+        />
+      </div>
+    );
+  }
+
   return (
-    <div className={compact ? "webinar-video webinar-video--compact" : "webinar-video"}>
+    <div className="webinar-video webinar-video--compact">
       <img alt="" src={imageSrc} />
       <PlayIcon />
-      <span className="webinar-duration">01:40:35</span>
+      <span className="webinar-duration">{businessModelsWebinar.duration}</span>
     </div>
   );
 }
@@ -94,7 +91,7 @@ function DetailAction({ type, label }: { type: "like" | "share"; label: string }
 function RelatedWebinarRow({
   webinar,
 }: {
-  webinar: { title: string; speakers: string; date: string; duration: string };
+  webinar: typeof businessModelsWebinar;
 }) {
   return (
     <Link className="related-webinar-row" href="/insights/webinars/specific-webinar">
@@ -102,7 +99,9 @@ function RelatedWebinarRow({
       <div>
         <h3>{webinar.title}</h3>
         <p>{webinar.speakers}</p>
-        <p>{webinar.date}</p>
+        <p>
+          {webinar.date} | {webinar.duration}
+        </p>
       </div>
     </Link>
   );
@@ -140,8 +139,7 @@ function SpeakerCard({ speaker }: { speaker: (typeof speakers)[number] }) {
           </span>
           <div>
             <h3>{speaker.name}</h3>
-            <p>{speaker.role}</p>
-            <p>{speaker.location}</p>
+            <p>Webinar speaker</p>
           </div>
         </div>
         <span className="webinar-speaker-more">
@@ -151,7 +149,6 @@ function SpeakerCard({ speaker }: { speaker: (typeof speakers)[number] }) {
           </svg>
         </span>
       </summary>
-      <p className="webinar-speaker-bio">{speaker.bio}</p>
     </details>
   );
 }
@@ -170,8 +167,10 @@ export default function SpecificWebinarPage() {
               <WebinarVideo />
 
               <div className="webinar-title-block">
-                <h1>Title of Specific Webinar, Long or Short</h1>
-                <p>1.5K Views | Jedidiah Akpata &amp; Charles Ojei | 5th November, 2023</p>
+                <h1>{publicPowerWebinar.title}</h1>
+                <p>
+                  {publicPowerWebinar.speakers} | {publicPowerWebinar.date} | {publicPowerWebinar.duration}
+                </p>
               </div>
 
               <div className="webinar-detail-actions">
@@ -185,17 +184,8 @@ export default function SpecificWebinarPage() {
               </div>
 
               <div className="webinar-body-copy" id="transcript">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel
-                  dapibus ipsum, a tristique sem. Ut sed scelerisque sem. Nulla eget
-                  gravida quam, eget scelerisque elit.
-                </p>
-                <p>
-                  Suspendisse ullamcorper condimentum molestie. Pellentesque fringilla
-                  tristique purus, vitae euismod tortor tempor eu. In posuere libero sed
-                  scelerisque rutrum. Aenean sit amet hendrerit lacus. Duis facilisis ac
-                  purus a blandit.
-                </p>
+                <p>{publicPowerWebinar.summary}</p>
+                <p>Watch the full conversation for practical lessons on building public-private partnerships that can move from promising ideas to durable results.</p>
               </div>
 
               <RelatedTopics className="webinar-topics--mobile" />
@@ -206,7 +196,7 @@ export default function SpecificWebinarPage() {
                 </div>
                 <div className="webinar-speaker-list">
                   {speakers.map((speaker, index) => (
-                    <SpeakerCard key={`${speaker.name}-${speaker.role}-${index}`} speaker={speaker} />
+                    <SpeakerCard key={`${speaker.name}-${index}`} speaker={speaker} />
                   ))}
                 </div>
               </section>

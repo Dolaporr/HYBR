@@ -3,22 +3,41 @@ import { Footer, Header } from "../../../_components/marketing";
 import { spctaNewsFeature } from "@/content/insights";
 import { figmaAssets } from "@/content/site";
 
-function ArticleSection({
+type EditorialImage = {
+  src: string;
+  alt: string;
+  caption: string;
+};
+
+function EditorialFigure({
+  image,
   className = "",
+}: {
+  image: EditorialImage;
+  className?: string;
+}) {
+  return (
+    <figure className={`spcta-editorial-figure ${className}`}>
+      <img alt={image.alt} src={image.src} />
+      <figcaption>{image.caption}</figcaption>
+    </figure>
+  );
+}
+
+function EditorialSection({
   heading,
   kicker,
   paragraphs,
 }: {
-  className?: string;
   heading: string;
   kicker: string;
   paragraphs: string[];
 }) {
   return (
-    <section className={`news-detail-article-section ${className}`}>
+    <section className="spcta-editorial-section">
+      <p className="spcta-editorial-section-kicker">{kicker}</p>
       <h2>{heading}</h2>
-      <p className="news-detail-kicker">{kicker}</p>
-      <div className="news-detail-copy">
+      <div className="spcta-editorial-copy">
         {paragraphs.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}
@@ -27,14 +46,34 @@ function ArticleSection({
   );
 }
 
-function FeatureImage() {
+function PullQuote({ quote }: { quote: string }) {
   return (
-    <figure className="news-detail-feature">
-      <div className="news-detail-feature-img">
-        <img alt="" src={figmaAssets.figmaBusinessPartners} />
+    <blockquote className="spcta-editorial-quote">
+      <span aria-hidden="true">“</span>
+      <p>{quote}</p>
+    </blockquote>
+  );
+}
+
+function FactsPanel({ nextStage }: { nextStage: string }) {
+  return (
+    <section className="spcta-editorial-facts" aria-labelledby="spcta-facts-title">
+      <div className="spcta-editorial-facts-heading">
+        <p>SPCTA AT A GLANCE</p>
+        <h2>Early execution, built into a larger infrastructure platform.</h2>
       </div>
-      <figcaption>SPCTA is building the infrastructure layer between recovered material and industrial demand.</figcaption>
-    </figure>
+      <dl>
+        {spctaNewsFeature.facts.map(([term, detail]) => (
+          <div key={term}>
+            <dt>{term}</dt>
+            <dd>{detail}</dd>
+          </div>
+        ))}
+      </dl>
+      <p className="spcta-editorial-facts-next">
+        <strong>Next stage:</strong> {nextStage}
+      </p>
+    </section>
   );
 }
 
@@ -63,7 +102,7 @@ function MoreNewsCard({ className = "", compact = false }: { className?: string;
       <img alt="" src={figmaAssets.figmaBuilding} />
       <span className="news-detail-card-copy">
         <span>{spctaNewsFeature.kind}</span>
-        <span>{compact ? spctaNewsFeature.shortTitle : spctaNewsFeature.title}</span>
+        <span>{spctaNewsFeature.title}</span>
         <span>{compact ? spctaNewsFeature.compactSummary : spctaNewsFeature.summary}</span>
       </span>
       <span className="news-detail-card-button">Read More</span>
@@ -90,63 +129,79 @@ function MoreNews() {
   );
 }
 
-function ServicesCta() {
+function AudienceCtas() {
   return (
-    <section className="news-detail-services" aria-label="Services">
-      <h2>Built to attain your goals - find the service that fits your next step.</h2>
-      <Link className="news-detail-outline-button" href="/what-we-do/services">
-        Our Services
-      </Link>
+    <section className="spcta-editorial-audiences" aria-labelledby="spcta-audiences-title">
+      <div className="spcta-editorial-audiences-heading">
+        <p>WHERE SPCTA GOES NEXT</p>
+        <h2>Building the recovery layer takes aligned partners.</h2>
+      </div>
+      <div className="spcta-editorial-audiences-grid">
+        {spctaNewsFeature.audiences.map((audience) => (
+          <article key={audience.title}>
+            <h3>{audience.title}</h3>
+            <p>{audience.copy}</p>
+            <Link href={audience.href}>{audience.linkLabel}</Link>
+          </article>
+        ))}
+      </div>
     </section>
   );
 }
 
 export default function NewsTemplatePage() {
+  const [bottleSection, companySection, platformSection, glanceSection, ilorinSection] = spctaNewsFeature.sections;
+
   return (
     <main className="news-detail-page news-detail-page--spcta">
-      <section className="news-detail-hero">
+      <section className="spcta-editorial-hero">
         <Header active="insights" tone="dark" />
-        <div className="news-detail-hero-image">
-          <img alt="" src={figmaAssets.figmaBusinessPartners} />
-        </div>
-        <div className="news-detail-hero-copy">
+        <img alt={spctaNewsFeature.heroImage.alt} className="spcta-editorial-hero-image" src={spctaNewsFeature.heroImage.src} />
+        <div className="spcta-editorial-hero-shade" />
+        <div className="figma-container spcta-editorial-hero-copy">
+          <p>{spctaNewsFeature.eyebrow}</p>
           <h1>{spctaNewsFeature.title}</h1>
-          <p className="news-detail-summary news-detail-summary--desktop">{spctaNewsFeature.summary}</p>
-          <p className="news-detail-summary news-detail-summary--tablet-horizontal">{spctaNewsFeature.summary}</p>
-          <p className="news-detail-summary news-detail-summary--tablet-vertical">{spctaNewsFeature.summary}</p>
-          <p className="news-detail-author">
-            {spctaNewsFeature.author} &bull; {spctaNewsFeature.date}
-          </p>
-          <div className="news-detail-topics">
-            <p>Topics</p>
-            <span>{spctaNewsFeature.topics}</span>
+          <p className="spcta-editorial-hero-summary">{spctaNewsFeature.summary}</p>
+          <div>
+            <span>{spctaNewsFeature.author}</span>
+            <span>{spctaNewsFeature.date}</span>
+            <span>{spctaNewsFeature.readingTime} read</span>
           </div>
         </div>
       </section>
 
-      <section className="news-detail-body">
-        <div className="figma-container news-detail-shell">
-          <ArticleSection
-            heading="From HYBR Labs to Public View"
-            kicker="A venture built around a broken material supply chain."
-            paragraphs={spctaNewsFeature.intro}
-          />
-          <FeatureImage />
-          {spctaNewsFeature.sections.map((section) => (
-            <ArticleSection
-              className="news-detail-article-section--main"
-              heading={section.heading}
-              key={section.heading}
-              kicker={section.kicker}
-              paragraphs={section.paragraphs}
-            />
-          ))}
-          <p className="news-detail-disclaimer">{spctaNewsFeature.pullQuotes[2]}</p>
+      <article className="spcta-editorial-story">
+        <div className="figma-container spcta-editorial-shell">
+          <section className="spcta-editorial-intro">
+            <p>FEATURE ARTICLE</p>
+            {spctaNewsFeature.intro.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </section>
+
+          <EditorialSection {...bottleSection} />
+          <PullQuote quote={spctaNewsFeature.pullQuotes[0]} />
+          <EditorialFigure image={spctaNewsFeature.images.operations} className="spcta-editorial-figure--inset" />
+
+          <EditorialSection {...companySection} />
+          <EditorialFigure image={spctaNewsFeature.images.recovery} className="spcta-editorial-figure--split" />
+
+          <EditorialSection {...platformSection} />
+          <PullQuote quote={spctaNewsFeature.pullQuotes[1]} />
+          <EditorialFigure image={spctaNewsFeature.images.partners} className="spcta-editorial-figure--wide" />
+
+          <FactsPanel nextStage={glanceSection.paragraphs[4].replace(/^Next stage:\s*/, "")} />
+          <EditorialFigure image={spctaNewsFeature.images.material} className="spcta-editorial-figure--inset spcta-editorial-figure--material" />
+
+          <EditorialSection {...ilorinSection} />
+          <EditorialFigure image={spctaNewsFeature.images.cohort} className="spcta-editorial-figure--wide spcta-editorial-figure--cohort" />
+          <PullQuote quote={spctaNewsFeature.pullQuotes[2]} />
+
+          <AudienceCtas />
           <WriterProfile />
           <MoreNews />
-          <ServicesCta />
         </div>
-      </section>
+      </article>
 
       <Footer />
     </main>

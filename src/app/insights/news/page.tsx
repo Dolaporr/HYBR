@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Footer, Header } from "../../_components/marketing";
-import { innovationSweetSpotArticle, spctaNewsFeature, systemsMindsetWebinar } from "@/content/insights";
+import { innovationSweetSpotArticle, publicPowerWebinar, spctaNewsFeature } from "@/content/insights";
 import { figmaAssets } from "@/content/site";
 
 const newsHref = "/insights/news/specific-news";
@@ -90,7 +90,7 @@ function NewsCard({ className = "" }: { className?: string }) {
       <img alt="" src={figmaAssets.figmaBuilding} />
       <span className="news-card-copy">
         <span>{spctaNewsFeature.kind}</span>
-        <span>{spctaNewsFeature.shortTitle}</span>
+        <span>{spctaNewsFeature.title}</span>
         <span>{spctaNewsFeature.compactSummary}</span>
       </span>
       <span className="news-read-button">Read More</span>
@@ -119,11 +119,11 @@ function WebinarCard() {
       <img alt="" src={figmaAssets.figmaBusinessPartners} />
       <span className="news-webinar-kind">WEBINAR</span>
       <PlayIcon />
-      <span className="news-webinar-duration">01:40:35</span>
+      <span className="news-webinar-duration">{publicPowerWebinar.duration}</span>
       <span className="news-webinar-copy">
-        <span>{systemsMindsetWebinar.title}</span>
-        <span>{systemsMindsetWebinar.speakerOne}</span>
-        <span>{systemsMindsetWebinar.speakerTwo}</span>
+        <span>{publicPowerWebinar.title}</span>
+        <span>{publicPowerWebinar.speakers}</span>
+        <span>{publicPowerWebinar.date}</span>
       </span>
     </Link>
   );

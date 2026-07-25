@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Footer, Header } from "../_components/marketing";
-import { innovationSweetSpotArticle, spctaNewsFeature, systemsMindsetWebinar } from "@/content/insights";
+import { businessModelsWebinar, innovationSweetSpotArticle, publicPowerWebinar, spctaNewsFeature } from "@/content/insights";
 import { figmaAssets } from "@/content/site";
 
 const contentLinks = [
@@ -71,6 +71,7 @@ function WebinarCard({
   title,
   speakerOne = "Jedidiah Akpata & Charles Ojei",
   speakerTwo = "November 2023",
+  duration = "01:40:35",
   imageSrc = figmaAssets.article,
   featured = false,
 }: {
@@ -78,6 +79,7 @@ function WebinarCard({
   title: string;
   speakerOne?: string;
   speakerTwo?: string;
+  duration?: string;
   imageSrc?: string;
   featured?: boolean;
 }) {
@@ -86,7 +88,7 @@ function WebinarCard({
       <img alt="" src={imageSrc} />
       <span className="insights-card-overlay" />
       <span className="insights-card-kind">WEBINAR</span>
-      {!featured ? <span className="insights-card-time">01:40:35</span> : null}
+      <span className="insights-card-time">{duration}</span>
       <span className="insights-card-copy">
         <span className="insights-card-mobile-kind">WEBINAR</span>
         <span className="insights-card-title">{title}</span>
@@ -184,9 +186,10 @@ export default function InsightsPage() {
             className="insights-spotlight-main"
             featured
             imageSrc={figmaAssets.figmaBuilding}
-            speakerOne={systemsMindsetWebinar.speakerOne}
-            speakerTwo={systemsMindsetWebinar.speakerTwo}
-            title={systemsMindsetWebinar.title}
+            speakerOne={publicPowerWebinar.speakers}
+            speakerTwo={publicPowerWebinar.date}
+            duration={publicPowerWebinar.duration}
+            title={publicPowerWebinar.title}
           />
           <InsightCard
             body={innovationSweetSpotArticle.subtitle}
@@ -200,7 +203,7 @@ export default function InsightsPage() {
             className="insights-spotlight-news"
             href="/insights/news/specific-news"
             kind="NEWS"
-            title={spctaNewsFeature.shortTitle}
+            title={spctaNewsFeature.title}
           />
         </section>
 
@@ -214,12 +217,18 @@ export default function InsightsPage() {
           <WebinarCard
             className="insights-webinar-a"
             imageSrc={figmaAssets.webinar}
-            title="One Liner For Specific Webinar"
+            speakerOne={publicPowerWebinar.speakers}
+            speakerTwo={publicPowerWebinar.date}
+            duration={publicPowerWebinar.duration}
+            title={publicPowerWebinar.title}
           />
           <WebinarCard
             className="insights-webinar-b"
             imageSrc={figmaAssets.figmaBusinessPartners}
-            title="One Liner For Specific Webinar"
+            speakerOne={businessModelsWebinar.speakers}
+            speakerTwo={businessModelsWebinar.date}
+            duration={businessModelsWebinar.duration}
+            title={businessModelsWebinar.title}
           />
           <Link className="insights-outline-button insights-webinars-button" href="/insights/webinars">
             View Webinars
@@ -273,14 +282,14 @@ export default function InsightsPage() {
             className="insights-news-a"
             href="/insights/news/specific-news"
             kind="NEWS"
-            title={spctaNewsFeature.shortTitle}
+            title={spctaNewsFeature.title}
           />
           <InsightCard
             body={spctaNewsFeature.compactSummary}
             className="insights-news-b"
             href="/insights/news/specific-news"
             kind="NEWS"
-            title={spctaNewsFeature.shortTitle}
+            title={spctaNewsFeature.title}
           />
           <Link className="insights-outline-button insights-news-button" href="/insights/news">
             All News

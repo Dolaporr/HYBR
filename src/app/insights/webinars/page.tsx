@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { Footer, Header } from "../../_components/marketing";
-import { innovationSweetSpotArticle, spctaNewsFeature, systemsMindsetWebinar } from "@/content/insights";
+import { businessModelsWebinar, innovationSweetSpotArticle, publicPowerWebinar, spctaNewsFeature } from "@/content/insights";
 import { figmaAssets } from "@/content/site";
 
 type WebinarCard = {
   id: string;
   image: string;
   speakers: string;
+  date: string;
+  duration: string;
   title: string;
 };
 
@@ -22,40 +24,20 @@ const webinarHref = "/insights/webinars/specific-webinar";
 
 const webinars: WebinarCard[] = [
   {
-    id: "recent-1",
+    id: "public-power-private-ingenuity",
     image: figmaAssets.figmaBusinessPartners,
-    speakers: "Speaker 1 & Speaker 2",
-    title: "Title of Specific Webinar",
+    speakers: publicPowerWebinar.speakers,
+    date: publicPowerWebinar.date,
+    duration: publicPowerWebinar.duration,
+    title: publicPowerWebinar.title,
   },
   {
-    id: "recent-2",
+    id: "business-models-that-work",
     image: figmaAssets.figmaBuilding,
-    speakers: "Speaker 1 & Speaker 2",
-    title: "Title of Specific Webinar",
-  },
-  {
-    id: "recent-3",
-    image: figmaAssets.figmaFieldHero,
-    speakers: "Speaker 1 & Speaker 2",
-    title: "Title of Specific Webinar",
-  },
-  {
-    id: "recent-4",
-    image: figmaAssets.figmaBuilding,
-    speakers: "Speaker 1 & Speaker 2",
-    title: "Title of Specific Webinar",
-  },
-  {
-    id: "recent-5",
-    image: figmaAssets.figmaFieldHero,
-    speakers: "Speaker 1 & Speaker 2",
-    title: "Title of Specific Webinar",
-  },
-  {
-    id: "recent-6",
-    image: figmaAssets.figmaBusinessPartners,
-    speakers: "Speaker 1 & Speaker 2",
-    title: "Title of Specific Webinar",
+    speakers: businessModelsWebinar.speakers,
+    date: businessModelsWebinar.date,
+    duration: businessModelsWebinar.duration,
+    title: businessModelsWebinar.title,
   },
 ];
 
@@ -65,7 +47,7 @@ const moreInsights: InsightCard[] = [
     image: figmaAssets.figmaBuilding,
     kind: "NEWS",
     text: spctaNewsFeature.cardSummary,
-    title: spctaNewsFeature.shortTitle,
+    title: spctaNewsFeature.title,
   },
   {
     href: "/insights/articles/specific-article",
@@ -160,11 +142,11 @@ function SpotlightCard() {
       <img alt="" src={figmaAssets.figmaBuilding} />
       <span className="webinars-card-kicker">WEBINAR</span>
       <PlayIcon />
-      <span className="webinars-duration">01:40:35</span>
+      <span className="webinars-duration">{publicPowerWebinar.duration}</span>
       <span className="webinars-spotlight-copy">
-        <span>{systemsMindsetWebinar.title}</span>
-        <span>{systemsMindsetWebinar.speakerOne}</span>
-        <span>{systemsMindsetWebinar.speakerTwo}</span>
+        <span>{publicPowerWebinar.title}</span>
+        <span>{publicPowerWebinar.speakers}</span>
+        <span>{publicPowerWebinar.date}</span>
       </span>
     </Link>
   );
@@ -177,12 +159,12 @@ function WebinarListingCard({ card }: { card: WebinarCard }) {
         <img alt="" src={card.image} />
         <span className="webinars-card-kicker">WEBINAR</span>
         <PlayIcon compact />
-        <span className="webinars-card-duration">01:40:35</span>
+        <span className="webinars-card-duration">{card.duration}</span>
       </span>
       <span className="webinars-card-copy">
         <span>{card.title}</span>
         <span>{card.speakers}</span>
-        <span>Date/Period Added</span>
+        <span>{card.date}</span>
       </span>
     </Link>
   );
