@@ -1,6 +1,15 @@
 import Link from "next/link";
 import { Footer, Header } from "../_components/marketing";
-import { businessModelsWebinar, innovationSweetSpotArticle, publicPowerWebinar, spctaNewsFeature } from "@/content/insights";
+import {
+  businessModelsWebinar,
+  fastestWayToWasteIdeaArticle,
+  fromGuessingToKnowingArticle,
+  innovationFellowshipNews,
+  innovationSweetSpotArticle,
+  publicPowerWebinar,
+  spctaNewsFeature,
+  systemsMindsetWebinar,
+} from "@/content/insights";
 import { figmaAssets } from "@/content/site";
 
 const contentLinks = [
@@ -74,6 +83,7 @@ function WebinarCard({
   duration = "01:40:35",
   imageSrc = figmaAssets.article,
   featured = false,
+  href = "/insights/webinars",
 }: {
   className: string;
   title: string;
@@ -82,9 +92,10 @@ function WebinarCard({
   duration?: string;
   imageSrc?: string;
   featured?: boolean;
+  href?: string;
 }) {
   return (
-    <Link className={`insights-card insights-webinar-card ${className}`} href="/insights/webinars/specific-webinar">
+    <Link className={`insights-card insights-webinar-card ${className}`} href={href} rel={href.startsWith("http") ? "noreferrer" : undefined} target={href.startsWith("http") ? "_blank" : undefined}>
       <img alt="" src={imageSrc} />
       <span className="insights-card-overlay" />
       <span className="insights-card-kind">WEBINAR</span>
@@ -156,7 +167,7 @@ function Newsletter() {
       <span className="insights-newsletter-shade" />
       <div className="insights-newsletter-copy">
         <h2 id="insights-newsletter-title">Unveil more industry secrets.</h2>
-        <p>Encouragement for user to subscribe to HYBR&apos;s newsletter for more perks.</p>
+        <p>Stay ahead with curated insights, useful tools and exclusive access to what HYBR is building next.</p>
       </div>
       <form className="insights-newsletter-form">
         <input aria-label="First name" placeholder="Insert Your First Name" />
@@ -185,11 +196,11 @@ export default function InsightsPage() {
           <WebinarCard
             className="insights-spotlight-main"
             featured
-            imageSrc={figmaAssets.figmaBuilding}
-            speakerOne={publicPowerWebinar.speakers}
-            speakerTwo={publicPowerWebinar.date}
-            duration={publicPowerWebinar.duration}
-            title={publicPowerWebinar.title}
+            href={systemsMindsetWebinar.href}
+            imageSrc={figmaAssets.figmaBusinessPartners}
+            speakerOne={systemsMindsetWebinar.speakerOne}
+            speakerTwo={systemsMindsetWebinar.speakerTwo}
+            title={systemsMindsetWebinar.title}
           />
           <InsightCard
             body={innovationSweetSpotArticle.subtitle}
@@ -199,11 +210,11 @@ export default function InsightsPage() {
             title={innovationSweetSpotArticle.cardTitle}
           />
           <InsightCard
-            body={spctaNewsFeature.compactSummary}
+            body={innovationFellowshipNews.compactSummary}
             className="insights-spotlight-news"
-            href="/insights/news/specific-news"
+            href={innovationFellowshipNews.href}
             kind="NEWS"
-            title={spctaNewsFeature.title}
+            title={innovationFellowshipNews.title}
           />
         </section>
 
@@ -217,6 +228,7 @@ export default function InsightsPage() {
           <WebinarCard
             className="insights-webinar-a"
             imageSrc={figmaAssets.webinar}
+            href={publicPowerWebinar.href}
             speakerOne={publicPowerWebinar.speakers}
             speakerTwo={publicPowerWebinar.date}
             duration={publicPowerWebinar.duration}
@@ -225,6 +237,7 @@ export default function InsightsPage() {
           <WebinarCard
             className="insights-webinar-b"
             imageSrc={figmaAssets.figmaBusinessPartners}
+            href={businessModelsWebinar.href}
             speakerOne={businessModelsWebinar.speakers}
             speakerTwo={businessModelsWebinar.date}
             duration={businessModelsWebinar.duration}
@@ -246,11 +259,11 @@ export default function InsightsPage() {
             All Articles
           </Link>
           <InsightCard
-            body={innovationSweetSpotArticle.subtitle}
+            body={fromGuessingToKnowingArticle.subtitle}
             className="insights-article-small-a"
-            href="/insights/articles/specific-article"
+            href="/insights/articles/from-guessing-to-knowing"
             kind="ARTICLE"
-            title={innovationSweetSpotArticle.cardTitle}
+            title={fromGuessingToKnowingArticle.cardTitle}
           />
           <InsightCard
             body={innovationSweetSpotArticle.subtitle}
@@ -261,12 +274,12 @@ export default function InsightsPage() {
             title={innovationSweetSpotArticle.cardTitle}
           />
           <InsightCard
-            body={innovationSweetSpotArticle.subtitle}
+            body={fastestWayToWasteIdeaArticle.subtitle}
             className="insights-article-tall"
-            href="/insights/articles/specific-article"
+            href="/insights/articles/fastest-way-to-waste-a-good-idea"
             imageSrc={figmaAssets.figmaBuilding}
             kind="ARTICLE"
-            title={innovationSweetSpotArticle.cardTitle}
+            title={fastestWayToWasteIdeaArticle.cardTitle}
           />
         </section>
 
@@ -278,11 +291,11 @@ export default function InsightsPage() {
             title="Catch up on what matters and stay prepared for what's next."
           />
           <InsightCard
-            body={spctaNewsFeature.compactSummary}
+            body={innovationFellowshipNews.compactSummary}
             className="insights-news-a"
-            href="/insights/news/specific-news"
+            href={innovationFellowshipNews.href}
             kind="NEWS"
-            title={spctaNewsFeature.title}
+            title={innovationFellowshipNews.title}
           />
           <InsightCard
             body={spctaNewsFeature.compactSummary}

@@ -1,5 +1,12 @@
 import { Footer, Header } from "../_components/marketing";
+import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 import { figmaAssets } from "@/content/site";
+
+const contactDetails = [
+  ["Address", "6th Floor, Landmark Towers, 5 Water Corporation Drive, Victoria Island, Lagos, Nigeria"],
+  ["Phone", "+234 201 236 6363"],
+  ["Email", "sales@hybrgroup.net"],
+] as const;
 
 export default function ContactPage() {
   return (
@@ -22,7 +29,7 @@ export default function ContactPage() {
               <p className="provisional-kicker">Build Innovation that Works, with Us</p>
               <h2>Book a strategy call or send us a note.</h2>
               <p>
-                Supporting lead generator body text to encourage users to book a strategy call.
+                Have a challenge, idea or growth opportunity? Let&apos;s unpack it together.
               </p>
               <div className="provisional-media contact-media">
                 <img alt="" src={figmaAssets.figmaBusinessPartners} />
@@ -43,12 +50,22 @@ export default function ContactPage() {
 
       <section className="contact-details-section">
         <div className="provisional-shell contact-detail-grid">
-          {["Address 1", "Phone Number", "Email Address"].map((item) => (
-            <article className="contact-detail-card" key={item}>
-              <p>{item}</p>
-              <span>Details to be managed in WordPress.</span>
+          {contactDetails.map(([label, detail]) => (
+            <article className="contact-detail-card" key={label}>
+              <p>{label}</p>
+              <span>{detail}</span>
             </article>
           ))}
+        </div>
+      </section>
+      <section className="contact-testimonials-section" aria-labelledby="contact-testimonials-title">
+        <div className="provisional-shell">
+          <div className="contact-testimonials-copy">
+            <p>TESTIMONIALS</p>
+            <h2 id="contact-testimonials-title">What our clients say about working with us.</h2>
+            <span>The relationships behind the work, in their own words.</span>
+          </div>
+          <TestimonialsCarousel />
         </div>
       </section>
       <Footer />

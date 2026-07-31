@@ -1,49 +1,186 @@
-export const innovationSweetSpotArticle = {
+export type InsightArticle = {
+  title: string;
+  subtitle: string;
+  cardTitle: string;
+  summary: string;
+  author: string;
+  date: string;
+  topics: string;
+  intro: string[];
+  sections: Array<{
+    heading: string;
+    kicker: string;
+    paragraphs: string[];
+  }>;
+  bottomLine: string[];
+};
+
+export const innovationSweetSpotArticle: InsightArticle = {
+  title: "The Innovation Sweet Spot: 5 Practical Ways to Confirm Problem-Solution Fit",
+  subtitle: "How leaders can replace promising assumptions with evidence before they commit to scale.",
+  cardTitle: "The Innovation Sweet Spot",
+  summary: "Five practical ways to confirm problem-solution fit before a good idea becomes an expensive detour.",
+  author: "Charles Ojei",
+  date: "September 15, 2025",
+  topics: "Strategy, Product Development, Applied Research",
+  intro: [
+    "Imagine this: you have just launched a new solution inside your company. The pitch was strong, the prototype looked good and the early response was encouraging. Three months later, adoption stalls, customers churn and budgets shrink. The difficult question arrives too late: did we ever solve the right problem?",
+    "Problem-solution fit is the point where a real customer problem, a viable business model and a delivery capability meet. HYBR's Innovation Series webinar explored how leaders can find that evidence earlier, when decisions are still inexpensive to change.",
+  ],
+  sections: [
+    {
+      heading: "1. Test willingness to pay",
+      kicker: "Praise is cheap. Payment is proof.",
+      paragraphs: [
+        "Positive feedback can be useful, but it is not the same as a commitment. One B2B founder only understood the difference after securing 50 paying customers, not after collecting a long list of interested leads.",
+        "Try a pre-sale, a deposit-backed landing page or a paid pilot. A small financial commitment is often the clearest signal that the problem matters enough to change behaviour.",
+      ],
+    },
+    {
+      heading: "2. Map and test your riskiest assumptions",
+      kicker: "Not every unknown can break the opportunity.",
+      paragraphs: [
+        "List the assumptions behind an initiative and identify the two that would do the most damage if they were wrong. A government recycling programme, for example, might look operationally sound until a local test reveals that households will not separate waste at home.",
+        "Run a short workshop, surface six assumptions and rank them by impact and uncertainty. Then design the fastest credible test for the assumptions at the top of the list.",
+      ],
+    },
+    {
+      heading: "3. Run staged, rapid experiments",
+      kicker: "Small bets reveal the truth faster and at a lower cost.",
+      paragraphs: [
+        "Big bets fail big. A sequence of small experiments lets a team see what customers actually do before committing major resources. Use an evidence ladder: landing page, prototype, pilot, then rollout.",
+        "At every stage, decide whether to stop, pivot or scale. The purpose is not to create activity; it is to create enough evidence for the next decision.",
+      ],
+    },
+    {
+      heading: "4. Track activation and retention, not just sign-ups",
+      kicker: "Attention is not adoption.",
+      paragraphs: [
+        "A fintech product can attract thousands of downloads and still lose most users in its first week. Sign-ups alone conceal whether people reach the moment of value and return to it.",
+        "Track activation, retention and paid conversion. These measures reveal whether a solution is becoming part of a customer's real workflow, not simply earning a first click.",
+      ],
+    },
+    {
+      heading: "5. Use local, low-tech fixes before heavy builds",
+      kicker: "Innovation does not always mean more technology.",
+      paragraphs: [
+        "The quickest route to a better service may be a simple change to communication, process or delivery. Jumia's SMS delivery notifications are a useful reminder that practical, local interventions can remove friction before a large technology build is needed.",
+        "Ask: what is the cheapest way to deliver this promise today? Test it with real users before writing code or buying more infrastructure.",
+      ],
+    },
+  ],
+  bottomLine: [
+    "Problem-solution fit is evidence, not enthusiasm. It appears where customer need, business viability and delivery capability meet.",
+    "Before the next major investment, identify the riskiest assumption, design a small test and measure whether people actually activate, return or pay. That is how a good idea earns the right to scale.",
+  ],
+};
+
+export const fromGuessingToKnowingArticle: InsightArticle = {
+  title: "From Guessing to Knowing",
+  subtitle: "Exploring how leaders can use disciplined discovery, development, and deployment to reduce risk before major investments are made.",
+  cardTitle: "From Guessing to Knowing",
+  summary: "How leaders can replace confidence that has not been tested with evidence that can guide a major decision.",
+  author: "HYBR Group",
+  date: "May 12, 2026",
+  topics: "Innovation Strategy, Discovery, Evidence-Led Growth",
+  intro: [
+    "A CEO sits at the head of a boardroom table. The slides are polished, the market opportunity is attractive, the financial model is confident and the product roadmap is ambitious. Everyone wants the decision to be yes. But beneath the confidence sits a quieter truth.",
+    "No one has spoken to enough customers. No one has tested the riskiest assumption. No one has proven that the market behaves the way the spreadsheet suggests. Adoption may still fail because of price, trust, habit, workflow, regulation, distribution or internal capability.",
+    "This is how expensive decisions begin - not with recklessness, but with confidence that has not yet earned the right to be called evidence.",
+  ],
+  sections: [
+    {
+      heading: "The Problem Is Not Uncertainty. The Problem Is Pretending We Have Solved It.",
+      kicker: "Leadership always requires judgment under uncertainty.",
+      paragraphs: [
+        "Markets move, customers change, competitors surprise, technology advances and regulation shifts. The issue is not that leaders must decide before everything is clear. That is the job.",
+        "The issue is that many organisations do not know the difference between what they know, what they assume, what they hope is true and what they have not tested at all. That gap is where innovation by guesswork lives.",
+        "They build before they understand. They scale before they validate. They launch before they learn. They measure activity and mistake it for progress. This is not a failure of effort. It is a failure of system.",
+      ],
+    },
+    {
+      heading: "Why the Cost of Guesswork Is Rising",
+      kicker: "The environment around leaders is becoming less forgiving.",
+      paragraphs: [
+        "Digital transformation, AI investment, startup growth and public-sector execution all expose the same danger: weak evidence can become an expensive commitment when strategy, execution, people, process and adoption are not aligned.",
+        "The pattern is consistent across sectors. Organisations do not fail only because they lack ideas. They fail because they do not learn fast enough before committing too much.",
+      ],
+    },
+    {
+      heading: "The Leaders Who Move from Guessing to Knowing",
+      kicker: "Knowing is designed through observation, experimentation and feedback.",
+      paragraphs: [
+        "The most effective innovators are not those who predict the future with perfect accuracy. They build disciplined systems for reducing uncertainty: from assumption to discovery, from discovery to evidence, from evidence to decision and from execution back to learning.",
+        "Methods such as Intuit's Follow Me Home and Amazon's Working Backwards begin with the real customer experience rather than an internal desire to launch. The lesson is not to copy another organisation. It is to design the way your own organisation learns.",
+      ],
+    },
+    {
+      heading: "The Leadership Shift: From Heroic Instinct to Disciplined Learning",
+      kicker: "Instinct still matters. Evidence makes it more useful.",
+      paragraphs: [
+        "Old leadership says, 'I believe this will work.' Better leadership asks, 'What would have to be true for this to work?' Old leadership says, 'Let us launch.' Better leadership asks, 'What have we tested, what did we learn and what still scares us?'",
+        "Great leaders do not eliminate uncertainty. They eliminate unnecessary guessing by making learning a deliberate part of the operating system.",
+      ],
+    },
+    {
+      heading: "HYBR's 3D Framework: Discover, Develop, Deploy",
+      kicker: "A practical operating logic for evidence-led innovation.",
+      paragraphs: [
+        "Discover identifies what leaders do not yet know: the real customer need, the hidden market barrier, the operational constraint, the adoption risk and the assumption nobody has said out loud. Discovery replaces expensive assumptions with usable truth.",
+        "Develop shapes, tests and improves ideas before major investment. Teams prototype, test value propositions, validate demand, stress-test business models and build minimum viable evidence. A weak idea exposed early is avoided waste, not failure.",
+        "Deploy moves validated solutions into execution, adoption, measurement and scale. It is the difference between innovation theatre and measurable progress, requiring alignment, partner coordination, performance tracking and feedback loops.",
+      ],
+    },
+    {
+      heading: "What Leaders Can Do This Week",
+      kicker: "The move from guessing to knowing can begin in the next meeting.",
+      paragraphs: [
+        "Separate facts from assumptions. Identify the riskiest assumption in the initiative. Talk to the people closest to the problem. Test the behaviour that needs to be true before committing significant capital.",
+        "Build learning loops into execution and measure evidence rather than activity. Before approving the next major investment, ask: what would have to be true for this to work - and how can we test that quickly?",
+      ],
+    },
+  ],
+  bottomLine: [
+    "Most organisations do not need another innovation slogan. They need a clear diagnosis of where guesswork is entering the system and what it may already be costing them.",
+    "The future belongs to leaders who learn faster: leaders who do not confuse movement with progress, confidence with truth or a beautiful presentation with market evidence.",
+  ],
+};
+
+export const fastestWayToWasteIdeaArticle: InsightArticle = {
   title: "The Fastest Way to Waste a Good Idea",
-  subtitle: "How untested assumptions turn innovation speed into expensive mistakes.",
+  subtitle: "Why speed built on untested assumptions sends organisations towards expensive mistakes sooner.",
   cardTitle: "The Fastest Way to Waste a Good Idea",
-  summary:
-    "Speed without evidence does not eliminate delay. It simply moves the delay to a more expensive stage.",
-  author: "HYBR Editorial",
+  summary: "A practical guide to moving quickly with evidence instead of racing ahead on assumptions.",
+  author: "HYBR Group",
   date: "July 2026",
-  topics: "Innovation Strategy, Customer Evidence, Venture Building",
+  topics: "Innovation Strategy, Customer Evidence, Product Development",
   intro: [
     "Leaders are under pressure to innovate at speed. But when speed is built on untested assumptions, organisations do not reach the market faster. They reach expensive mistakes sooner.",
-    "At 7:12 on Monday morning, a business leader faces competing updates: a CEO wants progress, a product team needs approval, finance is questioning cost, and operations has surfaced complications that were missed when the concept was approved.",
-    "The project looks active from the outside. Meetings are happening, milestones are being reported and a launch date has been announced. But one question has not been properly answered: do customers need this enough to change what they currently do?",
+    "A project can look like progress while the most important question remains unanswered: do customers need this enough to change what they currently do? When that answer is missing, teams can be moving fast without being sure they are moving in the right direction.",
   ],
   sections: [
     {
       heading: "Guesswork rarely looks like guesswork",
-      kicker: "It usually arrives dressed as confidence.",
+      kicker: "It arrives dressed as confidence.",
       paragraphs: [
-        "A senior executive has seen a similar idea work elsewhere. A competitor has launched something new. A trusted customer likes the initial concept. The board wants a visible growth initiative. Soon, a hypothesis becomes a plan, the plan becomes a budget, and the budget becomes a deadline.",
-        "By the time serious questions emerge, the organisation has already invested money, time, reputation and political capital. Asking whether the original idea was right can feel more dangerous than continuing to build it.",
-        "Five friendly customers are not market validation. A prototype that people say they like is not evidence that they will use it, pay for it, switch providers or change a habit. Activity can be reported while evidence remains thin.",
+        "A leader has seen a similar idea succeed elsewhere. A competitor has launched something new. A trusted customer likes the initial concept. Soon, a hypothesis becomes a plan, the plan becomes a budget and the budget becomes a deadline.",
+        "Five friendly customers are not market validation. A pilot designed to impress stakeholders is not proof that a solution will work. Activity can be reported while evidence remains thin.",
       ],
     },
     {
       heading: "Launching faster is not the same as learning faster",
       kicker: "Movement is not necessarily progress.",
       paragraphs: [
-        "A product can launch on time and still solve the wrong problem. A pilot can attract participants and produce no lasting behaviour change. A technology platform can meet every technical requirement and still be avoided by the people expected to use it.",
-        "The real measure of innovation speed is how quickly an organisation moves from an assumption to credible evidence - and from that evidence to a better decision. The fastest teams are not simply faster at launching. They are faster at learning.",
-      ],
-    },
-    {
-      heading: "The cost appears after the celebration",
-      kicker: "Speed without evidence moves delay to a more expensive stage.",
-      paragraphs: [
-        "Customers may not understand the offer. Sales teams may struggle to explain why it matters. Employees may create workarounds because a new system does not fit how work actually happens. Delivery costs may rise because the original economics were unrealistic.",
-        "The visible cost is the money spent. The deeper cost is the opportunity lost: months consumed, customer trust weakened, employee energy depleted and the credibility of the next innovation effort diminished.",
+        "A product can launch on time and still solve the wrong problem. A pilot can attract participants and create no lasting behaviour change. A platform can meet every technical requirement and still be avoided by the people expected to use it.",
+        "The real measure of innovation speed is how quickly an organisation moves from an assumption to credible evidence, and from that evidence to a better decision.",
       ],
     },
     {
       heading: "Evidence-driven speed",
       kicker: "Test the uncertainties that matter before they become large commitments.",
       paragraphs: [
-        "The alternative is not endless research or waiting for perfect information. It is evidence-driven speed: identify the assumptions that matter most and test them before they become large commitments.",
-        "Intuit's Design for Delight, Amazon's Working Backwards process and the United Kingdom Government Service Standard all bring customer learning into the way decisions are made. Their lesson is not to stop teams from moving. It is to help them discover what deserves to move forward.",
+        "Evidence-driven speed does not mean endless research or waiting for perfect information. It means identifying the assumptions that matter most and testing them with customers before they become expensive commitments.",
+        "Intuit's Design for Delight, Amazon's Working Backwards and the United Kingdom Government Service Standard each demonstrate the same principle: customer learning needs to be built into how decisions are made.",
       ],
     },
     {
@@ -51,23 +188,21 @@ export const innovationSweetSpotArticle = {
       kicker: "Seven questions before the next major investment.",
       paragraphs: [
         "What decision are we actually making? What must be true for this idea to work? Which assumption could destroy the opportunity? What evidence do we have? What is the fastest credible test? What result would change our decision? Can the organisation deliver the promise?",
-        "Separate what the organisation knows from what it believes. Customer opinions are useful, but observed behaviour is stronger. A willingness to pay, switch, participate or repeatedly use the solution is stronger still.",
-        "A prototype, simulation, manual service, landing page, field experiment or small operational pilot can create evidence. The test should create learning, not theatre.",
+        "These questions do not slow innovation. They prevent teams from spending months answering the wrong question beautifully.",
       ],
     },
     {
       heading: "The missing bridge between insight and action",
-      kicker: "Customer listening must shape the decision, the solution and the execution.",
+      kicker: "Customer insight only matters when it changes the next decision.",
       paragraphs: [
-        "Customer insight often becomes trapped in a presentation. The research team learns something important, but the product roadmap has already been agreed. A pilot produces useful lessons, but no one has established how those lessons will influence investment or scale.",
-        "HYBR's 3D Framework creates that bridge. Discover defines the real problem and separates evidence from assumptions. Develop turns insight into propositions, prototypes and business models while the most important risks are still inexpensive to test. Deploy pilots solutions in real conditions and strengthens the systems required to scale what works.",
+        "Many organisations already collect feedback, commission studies and speak with customers. The missing capability is moving systematically from insight to decision, decision to solution and solution to real-world execution.",
+        "HYBR's 3D Framework provides that bridge: Discover the real problem and distinguish evidence from assumptions; Develop propositions and prototypes while risks are inexpensive; Deploy in real conditions, then measure and strengthen what works.",
       ],
     },
   ],
   bottomLine: [
-    "Before your next major investment, ask: what is the most important thing we need to learn before we invest further? That question changes the conversation from protecting a launch date to creating credible evidence.",
-    "Take one product, service or programme your organisation plans to launch this quarter and put it through the Speed Without Guesswork Review. Where the answers remain unclear, better evidence is needed.",
-    "The next big thing should not begin with a bigger guess. HYBR helps organisations discover the right opportunities, develop evidence-led solutions and deploy them successfully in the real world.",
+    "In uncertain times, leaders cannot afford to move slowly. But they can afford guesswork even less.",
+    "The organisations that shape what comes next will learn faster, decide smarter and turn customer insight into confident action.",
   ],
 };
 
@@ -75,6 +210,7 @@ export const systemsMindsetWebinar = {
   title: "The Systems Mindset: A Smarter Way To Solve Complex Problems",
   speakerOne: "Adeyinka Aderombi, Chief Information Officer, Rex Insurance",
   speakerTwo: "Soromfe Uzomah, Principal Program Manager, Microsoft",
+  href: "/insights/webinars",
 };
 
 export const publicPowerWebinar = {
@@ -82,7 +218,7 @@ export const publicPowerWebinar = {
   speakers: "Chinedu Ugwu-Chinwuba & Ure Utah",
   date: "May 2025",
   duration: "1:10:35",
-  href: "/insights/webinars/specific-webinar",
+  href: "https://www.youtube.com/watch?v=GxIj0bnFzQ4&t=380s",
   youtubeEmbed: "https://www.youtube-nocookie.com/embed/GxIj0bnFzQ4?start=380",
   summary: "A conversation on practical collaboration between government and innovators to create scalable impact.",
   topics: ["Government Innovation", "Public-Private Collaboration", "Scalable Impact"],
@@ -94,6 +230,19 @@ export const businessModelsWebinar = {
   date: "October 2025",
   duration: "59:17",
   href: "/insights/webinars/specific-webinar",
+};
+
+export const innovationFellowshipNews = {
+  kind: "NEWS",
+  title: "What Can You Become in a Year?",
+  shortTitle: "What Can You Become in a Year?",
+  summary:
+    "Inside HYBR's Innovation Fellowship, young graduates are given difficult problems, real responsibility and the support to discover abilities they may not yet know they have.",
+  compactSummary:
+    "Inside HYBR's Innovation Fellowship, young graduates are given difficult problems, real responsibility and support to discover new abilities.",
+  cardSummary:
+    "Inside HYBR's Innovation Fellowship, young graduates are given difficult problems, real responsibility and the support to discover abilities they may not yet know they have.",
+  href: "/insights/news/fellowship",
 };
 
 export const spctaNewsFeature = {

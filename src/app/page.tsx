@@ -528,18 +528,18 @@ export default function Home() {
                 <h3 className="font-display text-2xl font-medium md:text-[30px]">
                   With HYBR, you get:
                 </h3>
-                <ul className="mt-5 space-y-3 text-[15px] leading-[1.4] md:text-[20px]">
+                <ul className="home-benefit-list mt-5 space-y-3 text-[15px] leading-[1.4] md:text-[20px]">
                   <li>
-                    <span className="mr-2 text-[#8dc540]">&#10003;</span>
-                    A trusted guide who understands your innovation challenges
+                    <span aria-hidden="true" className="text-[#8dc540]">&#10003;</span>
+                    <span>A trusted guide who understands your innovation challenges</span>
                   </li>
                   <li>
-                    <span className="mr-2 text-[#8dc540]">&#10003;</span>
-                    A partner who brings clarity, discipline, and purpose
+                    <span aria-hidden="true" className="text-[#8dc540]">&#10003;</span>
+                    <span>A partner who brings clarity, discipline, and purpose</span>
                   </li>
                   <li>
-                    <span className="mr-2 text-[#8dc540]">&#10003;</span>
-                    A proven system to cut through the noise and deliver results faster
+                    <span aria-hidden="true" className="text-[#8dc540]">&#10003;</span>
+                    <span>A proven system to cut through the noise and deliver results faster</span>
                   </li>
                 </ul>
               </div>

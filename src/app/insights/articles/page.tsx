@@ -1,9 +1,7 @@
 import Link from "next/link";
 import { Footer, Header } from "../../_components/marketing";
-import { innovationSweetSpotArticle, publicPowerWebinar, spctaNewsFeature } from "@/content/insights";
+import { fastestWayToWasteIdeaArticle, fromGuessingToKnowingArticle, innovationFellowshipNews, innovationSweetSpotArticle, publicPowerWebinar } from "@/content/insights";
 import { figmaAssets } from "@/content/site";
-
-const articleHref = "/insights/articles/specific-article";
 
 function SearchIcon() {
   return (
@@ -84,26 +82,34 @@ function ContentDrop() {
   );
 }
 
-function ArticleCard({ className = "" }: { className?: string }) {
+function ArticleCard({
+  article,
+  className = "",
+  href,
+}: {
+  article: typeof innovationSweetSpotArticle;
+  className?: string;
+  href: string;
+}) {
   return (
-    <Link className={`articles-card figma-motion-card ${className}`} href={articleHref}>
+    <Link className={`articles-card figma-motion-card ${className}`} href={href}>
       <img alt="" src={figmaAssets.figmaBuilding} />
       <span className="articles-card-kind">ARTICLE</span>
-      <span className="articles-card-title">{innovationSweetSpotArticle.cardTitle}</span>
+      <span className="articles-card-title">{article.cardTitle}</span>
       <span className="articles-read-button">Read More</span>
     </Link>
   );
 }
 
-function SpotlightCard() {
+function SpotlightCard({ article, href }: { article: typeof innovationSweetSpotArticle; href: string }) {
   return (
-    <Link className="articles-spotlight figma-motion-card" href={articleHref} id="spotlight">
+    <Link className="articles-spotlight figma-motion-card" href={href} id="spotlight">
       <span className="articles-spotlight-image">
         <img alt="" src={figmaAssets.figmaBuilding} />
       </span>
       <span className="articles-spotlight-copy">
-        <span>{innovationSweetSpotArticle.title}</span>
-        <span>{innovationSweetSpotArticle.summary}</span>
+        <span>{article.title}</span>
+        <span>{article.summary}</span>
       </span>
       <span className="articles-spotlight-button">Read More</span>
     </Link>
@@ -112,7 +118,7 @@ function SpotlightCard() {
 
 function WebinarCard() {
   return (
-    <Link className="articles-webinar-card figma-motion-card" href="/insights/webinars/specific-webinar">
+    <Link className="articles-webinar-card figma-motion-card" href={publicPowerWebinar.href} rel="noreferrer" target="_blank">
       <img alt="" src={figmaAssets.figmaBusinessPartners} />
       <span className="articles-webinar-kind">WEBINAR</span>
       <PlayIcon />
@@ -128,13 +134,13 @@ function WebinarCard() {
 
 function NewsCard() {
   return (
-    <Link className="articles-news-card figma-motion-card" href="/insights/news/specific-news">
+    <Link className="articles-news-card figma-motion-card" href={innovationFellowshipNews.href}>
       <img alt="" src={figmaAssets.figmaBuilding} />
       <span className="articles-news-button">Read More</span>
       <span className="articles-news-copy">
         <span>NEWS</span>
-        <span>{spctaNewsFeature.title}</span>
-        <span>{spctaNewsFeature.cardSummary}</span>
+        <span>{innovationFellowshipNews.title}</span>
+        <span>{innovationFellowshipNews.cardSummary}</span>
       </span>
     </Link>
   );
@@ -160,7 +166,7 @@ export default function ArticlesPage() {
           </button>
 
           <p className="articles-section-label articles-section-label--spotlight">SPOTLIGHT</p>
-          <SpotlightCard />
+          <SpotlightCard article={innovationSweetSpotArticle} href="/insights/articles/specific-article" />
 
           <FilterControls />
 
@@ -169,10 +175,9 @@ export default function ArticlesPage() {
               RECENT ARTICLES
             </p>
             <div className="articles-grid">
-              <ArticleCard className="articles-card--a" />
-              <ArticleCard className="articles-card--b" />
-              <ArticleCard className="articles-card--c" />
-              <ArticleCard className="articles-card--d" />
+              <ArticleCard article={fromGuessingToKnowingArticle} className="articles-card--a" href="/insights/articles/from-guessing-to-knowing" />
+              <ArticleCard article={innovationSweetSpotArticle} className="articles-card--b" href="/insights/articles/specific-article" />
+              <ArticleCard article={fastestWayToWasteIdeaArticle} className="articles-card--c" href="/insights/articles/fastest-way-to-waste-a-good-idea" />
             </div>
             <div className="articles-view-all">
               <Link className="articles-pill-button" href="/insights/articles">

@@ -59,7 +59,7 @@ function TestimonialArrowIcon({ direction }: { direction: "left" | "right" }) {
 
   return (
     <svg aria-hidden="true" fill="none" height="64" viewBox="0 0 64 64" width="64" xmlns="http://www.w3.org/2000/svg">
-      <path d={path} fill="#8DC540" />
+      <path d={path} fill="currentColor" />
     </svg>
   );
 }
@@ -83,24 +83,19 @@ function releasePointer(element: HTMLDivElement, pointerId: number) {
 }
 
 function TestimonialCard({
-  ariaHidden = false,
   className,
   testimonial,
 }: {
-  ariaHidden?: boolean;
   className?: string;
   testimonial: HomeTestimonial;
 }) {
   return (
-    <div
-      aria-hidden={ariaHidden}
-      className={`home-testimonial-card grid gap-10 text-left text-white md:grid-cols-[116px_1fr] ${className ?? ""}`}
-    >
+    <div className={`home-testimonial-card grid gap-10 text-left text-white md:grid-cols-[116px_1fr] ${className ?? ""}`}>
       <div className="home-testimonial-avatar relative flex size-[116px] items-center justify-center rounded-full">
-        <span className="absolute inset-0 rounded-full border-[1.5px] border-[#8dc540] opacity-60" />
+        <span className="absolute inset-0 rounded-full border-4 border-[#8dc540]" />
         <img
-          alt={ariaHidden ? "" : testimonial.name}
-          className="home-testimonial-avatar-image size-[88px] rounded-full border-[3px] border-[#8dc540] object-cover"
+          alt={testimonial.name}
+          className="home-testimonial-avatar-image absolute bottom-1 left-1/2 size-[88px] rounded-full border-[3px] border-[#8dc540] object-cover"
           draggable={false}
           src={testimonial.image}
         />
@@ -245,7 +240,6 @@ export function TestimonialsCarousel() {
   );
 
   const t = testimonials[active];
-  const next = testimonials[(active + 1) % testimonials.length];
   const activeDot = active % DOT_COUNT;
 
   return (
@@ -272,12 +266,6 @@ export function TestimonialsCarousel() {
             className="home-testimonial-animate is-active"
             key={active}
             testimonial={t}
-          />
-          <TestimonialCard
-            ariaHidden
-            className="home-testimonial-preview"
-            key={`preview-${active}`}
-            testimonial={next}
           />
         </div>
         <button

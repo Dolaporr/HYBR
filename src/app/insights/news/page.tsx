@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Footer, Header } from "../../_components/marketing";
-import { innovationSweetSpotArticle, publicPowerWebinar, spctaNewsFeature } from "@/content/insights";
+import { innovationFellowshipNews, innovationSweetSpotArticle, publicPowerWebinar, spctaNewsFeature } from "@/content/insights";
 import { figmaAssets } from "@/content/site";
 
 const newsHref = "/insights/news/specific-news";
@@ -84,14 +84,20 @@ function ContentDrop() {
   );
 }
 
-function NewsCard({ className = "" }: { className?: string }) {
+function NewsCard({
+  className = "",
+  news,
+}: {
+  className?: string;
+  news: typeof spctaNewsFeature | typeof innovationFellowshipNews;
+}) {
   return (
-    <Link className={`news-card figma-motion-card ${className}`} href={newsHref}>
+    <Link className={`news-card figma-motion-card ${className}`} href={"href" in news ? news.href : newsHref}>
       <img alt="" src={figmaAssets.figmaBuilding} />
       <span className="news-card-copy">
-        <span>{spctaNewsFeature.kind}</span>
-        <span>{spctaNewsFeature.title}</span>
-        <span>{spctaNewsFeature.compactSummary}</span>
+        <span>{news.kind}</span>
+        <span>{news.title}</span>
+        <span>{news.compactSummary}</span>
       </span>
       <span className="news-read-button">Read More</span>
     </Link>
@@ -115,7 +121,7 @@ function SpotlightCard() {
 
 function WebinarCard() {
   return (
-    <Link className="news-webinar-card figma-motion-card" href="/insights/webinars/specific-webinar">
+    <Link className="news-webinar-card figma-motion-card" href={publicPowerWebinar.href} rel="noreferrer" target="_blank">
       <img alt="" src={figmaAssets.figmaBusinessPartners} />
       <span className="news-webinar-kind">WEBINAR</span>
       <PlayIcon />
@@ -171,10 +177,10 @@ export default function NewsPage() {
               LATEST UPDATES
             </p>
             <div className="news-grid">
-              <NewsCard className="news-card--a" />
-              <NewsCard className="news-card--b" />
-              <NewsCard className="news-card--c" />
-              <NewsCard className="news-card--d" />
+              <NewsCard className="news-card--a" news={innovationFellowshipNews} />
+              <NewsCard className="news-card--b" news={spctaNewsFeature} />
+              <NewsCard className="news-card--c" news={innovationFellowshipNews} />
+              <NewsCard className="news-card--d" news={spctaNewsFeature} />
             </div>
             <div className="news-view-all">
               <Link className="news-pill-button" href="/insights/news">

@@ -932,6 +932,60 @@ a {
   overflow-wrap: anywhere;
 }
 
+.contact-testimonials-section {
+  padding: 0 0 112px;
+}
+
+.contact-testimonials-copy {
+  margin: 0 auto;
+  max-width: 760px;
+  text-align: center;
+}
+
+.contact-testimonials-copy p {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.contact-testimonials-copy h2 {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.08;
+  margin: 0;
+}
+
+.contact-testimonials-copy span {
+  display: block;
+  font-size: 18px;
+  line-height: 1.4;
+  margin-top: 12px;
+}
+
+.contact-testimonials-section .home-testimonial-preview {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .contact-testimonials-section {
+    padding-bottom: 80px;
+  }
+
+  .contact-testimonials-copy h2 {
+    font-size: 32px;
+  }
+
+  .contact-testimonials-section .home-testimonial-shell {
+    grid-template-columns: 20px minmax(0, 1fr) 20px;
+  }
+
+  .contact-testimonials-section .home-testimonial-card {
+    border-radius: 72px 160px 0 72px;
+    padding: 32px 28px;
+  }
+}
+
 .resource-hero {
   padding: 232px 0 112px;
 }
@@ -20318,30 +20372,38 @@ video.home-video-card {
   .homepage-live .trusted-marquee {
     margin-left: 0 !important;
     margin-right: 0 !important;
-    overflow: visible;
+    overflow: hidden;
     width: min(1200px, calc(100vw - 160px)) !important;
   }
 
   .trusted-by-block .trusted-marquee-track,
   .homepage-live .trusted-marquee-track {
-    animation: none !important;
-    width: 100%;
+    animation: trusted-logo-scroll 38s linear infinite !important;
+    width: max-content;
+    will-change: transform;
   }
 
   .trusted-by-block .trusted-logo-strip,
   .homepage-live .trusted-logo-strip {
-    height: auto !important;
-    margin-right: 0 !important;
-    max-width: 100%;
+    height: 35px !important;
+    margin-right: var(--trusted-loop-gap) !important;
+    max-width: none;
     object-fit: contain;
     object-position: center;
-    width: 100% !important;
+    width: 1510px !important;
   }
 
   .trusted-by-block .trusted-logo-strip:not(:first-child),
   .homepage-live .trusted-logo-strip:not(:first-child) {
-    display: none !important;
+    display: block !important;
   }
+}
+
+.home-benefit-list li {
+  align-items: start;
+  column-gap: 0.5rem;
+  display: grid;
+  grid-template-columns: 1em minmax(0, 1fr);
 }
 
 @media (min-width: 560px) and (max-width: 1023px) {
@@ -21552,4 +21614,74 @@ video.home-video-card {
   .news-detail-page--spcta .news-detail-more {
     margin-top: 96px;
   }
+}
+
+/* Final shared-component overrides: these pages import legacy desktop rules above. */
+@media (min-width: 768px) {
+  .home-testimonial-card,
+  .homepage-live .home-testimonial-card,
+  .contact-testimonials-section .home-testimonial-card {
+    border-radius: 172px 344px 0 172px !important;
+    height: 344px !important;
+    min-height: 344px !important;
+    overflow: hidden !important;
+  }
+
+  .home-testimonial-card {
+    gap: 40px !important;
+    grid-template-columns: 190px minmax(0, 1fr) !important;
+    padding: 78px 56px !important;
+  }
+
+  .home-testimonial-avatar,
+  .homepage-live .home-testimonial-avatar {
+    height: 190px !important;
+    position: relative !important;
+    width: 190px !important;
+  }
+
+  .home-testimonial-avatar > span,
+  .homepage-live .home-testimonial-avatar > span {
+    border: 4px solid #8dc540 !important;
+  }
+
+  .home-testimonial-avatar-image,
+  .homepage-live .home-testimonial-avatar-image {
+    bottom: 4px !important;
+    height: 141px !important;
+    left: 50% !important;
+    margin: 0 !important;
+    right: auto !important;
+    top: auto !important;
+    transform: translateX(-50%) !important;
+    translate: none !important;
+    width: 141px !important;
+  }
+
+  .article-detail-page .news-detail-hero {
+    height: 820px;
+  }
+
+  .article-detail-page .news-detail-hero-copy {
+    top: 160px !important;
+  }
+
+  /* Keep every shared carousel on the same 64px SVG arrow treatment as home. */
+  .home-testimonial-arrow {
+    height: 64px !important;
+    width: 64px !important;
+  }
+
+  .home-testimonial-arrow--left {
+    transform: translateX(-32px);
+  }
+
+  .contact-testimonials-section .provisional-shell {
+    max-width: 1200px;
+    width: calc(100% - 80px);
+  }
+}
+
+.home-testimonial-arrow:hover {
+  color: #000000;
 }

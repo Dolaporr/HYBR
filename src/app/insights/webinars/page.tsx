@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { Footer, Header } from "../../_components/marketing";
-import { businessModelsWebinar, innovationSweetSpotArticle, publicPowerWebinar, spctaNewsFeature } from "@/content/insights";
+import { businessModelsWebinar, fromGuessingToKnowingArticle, innovationFellowshipNews, publicPowerWebinar } from "@/content/insights";
 import { figmaAssets } from "@/content/site";
 
 type WebinarCard = {
+  href: string;
   id: string;
   image: string;
   speakers: string;
@@ -20,10 +21,9 @@ type InsightCard = {
   title: string;
 };
 
-const webinarHref = "/insights/webinars/specific-webinar";
-
 const webinars: WebinarCard[] = [
   {
+    href: publicPowerWebinar.href,
     id: "public-power-private-ingenuity",
     image: figmaAssets.figmaBusinessPartners,
     speakers: publicPowerWebinar.speakers,
@@ -32,6 +32,7 @@ const webinars: WebinarCard[] = [
     title: publicPowerWebinar.title,
   },
   {
+    href: businessModelsWebinar.href,
     id: "business-models-that-work",
     image: figmaAssets.figmaBuilding,
     speakers: businessModelsWebinar.speakers,
@@ -43,17 +44,17 @@ const webinars: WebinarCard[] = [
 
 const moreInsights: InsightCard[] = [
   {
-    href: "/insights/news/specific-news",
+    href: innovationFellowshipNews.href,
     image: figmaAssets.figmaBuilding,
     kind: "NEWS",
-    text: spctaNewsFeature.cardSummary,
-    title: spctaNewsFeature.title,
+    text: innovationFellowshipNews.cardSummary,
+    title: innovationFellowshipNews.title,
   },
   {
-    href: "/insights/articles/specific-article",
+    href: "/insights/articles/from-guessing-to-knowing",
     image: figmaAssets.figmaBuilding,
     kind: "ARTICLE",
-    title: innovationSweetSpotArticle.cardTitle,
+    title: fromGuessingToKnowingArticle.cardTitle,
   },
 ];
 
@@ -138,7 +139,7 @@ function ContentDrop() {
 
 function SpotlightCard() {
   return (
-    <Link className="webinars-spotlight-card figma-motion-card" href={webinarHref} id="spotlight">
+    <Link className="webinars-spotlight-card figma-motion-card" href={publicPowerWebinar.href} id="spotlight" rel="noreferrer" target="_blank">
       <img alt="" src={figmaAssets.figmaBuilding} />
       <span className="webinars-card-kicker">WEBINAR</span>
       <PlayIcon />
@@ -154,7 +155,7 @@ function SpotlightCard() {
 
 function WebinarListingCard({ card }: { card: WebinarCard }) {
   return (
-    <Link className="webinars-card figma-motion-card" href={webinarHref}>
+    <Link className="webinars-card figma-motion-card" href={card.href} rel={card.href.startsWith("http") ? "noreferrer" : undefined} target={card.href.startsWith("http") ? "_blank" : undefined}>
       <span className="webinars-card-media">
         <img alt="" src={card.image} />
         <span className="webinars-card-kicker">WEBINAR</span>

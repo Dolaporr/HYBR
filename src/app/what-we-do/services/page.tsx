@@ -1,9 +1,15 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
+import {
+  absaDiscoveryCaseStudy,
+  alitheiaCaseStudy,
+  cocaColaCaseStudy,
+  type CaseStudyListing,
+} from "@/content/caseStudies";
 import { figmaAssets } from "@/content/site";
 import { Footer, Header } from "../../_components/marketing";
 import styles from "./page.module.css";
-import { ServicesTestimonials, type ServiceTestimonial } from "./ServicesTestimonials";
 
 const contentLinks = [
   { label: "HYBR's Impact", href: "/what-we-do/our-impact" },
@@ -24,6 +30,7 @@ const services = [
       "Innovation Sourcing",
       "Data & Analytics",
     ],
+    caseStudy: absaDiscoveryCaseStudy,
   },
   {
     key: "develop",
@@ -35,6 +42,7 @@ const services = [
       "Rapid Prototyping",
       "Pilot & Field Experiments",
     ],
+    caseStudy: cocaColaCaseStudy,
   },
   {
     key: "deploy",
@@ -46,38 +54,9 @@ const services = [
       "Market Execution and Scaling",
       "Impact Assessment",
     ],
+    caseStudy: alitheiaCaseStudy,
   },
 ] as const;
-
-const serviceTestimonials: ServiceTestimonial[] = [
-  {
-    id: "first",
-    avatar: figmaAssets.servicesTestimonialAvatar,
-    background: figmaAssets.servicesTestimonialBg,
-    name: "FirstName LastName",
-    quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dignissim fringilla feugiat. Praesent sed condimentum nulla. Praesent lacinia eleifend turpis, sit amet dignissim massa accumsan in.",
-    role: "Title/Role | Location",
-  },
-  {
-    id: "second",
-    avatar: figmaAssets.servicesTestimonialAvatar,
-    background: figmaAssets.servicesTestimonialBg,
-    name: "SecondName LastName",
-    quote:
-      "HYBR helped our team move from scattered ideas to a focused innovation roadmap, giving us the confidence to test, learn, and scale with clearer direction.",
-    role: "Title/Role | Location",
-  },
-  {
-    id: "third",
-    avatar: figmaAssets.servicesTestimonialAvatar,
-    background: figmaAssets.servicesTestimonialBg,
-    name: "ThirdName LastName",
-    quote:
-      "The collaboration gave us practical structure, stronger decisions, and a sharper path from discovery to deployment across the work that mattered most.",
-    role: "Title/Role | Location",
-  },
-];
 
 function ButtonLink({
   children,
@@ -92,16 +71,6 @@ function ButtonLink({
     <Link className={`services-button ${className}`} href={href}>
       {children}
     </Link>
-  );
-}
-
-function HybrMark({ className = "" }: { className?: string }) {
-  return (
-    <svg aria-hidden="true" className={className} fill="none" viewBox="0 0 56 56">
-      <circle cx="28" cy="43.2" r="10.28" stroke="#ffffff" strokeWidth="4.54" />
-      <circle cx="28" cy="35.1" r="18.33" stroke="#4fc2f0" strokeWidth="4.54" />
-      <circle cx="28" cy="27.88" r="25.54" stroke="#8dc540" strokeWidth="4.54" />
-    </svg>
   );
 }
 
@@ -155,25 +124,29 @@ function ProcessMap() {
   );
 }
 
-function CaseStudyCard() {
+function CaseStudyCard({ caseStudy }: { caseStudy: CaseStudyListing }) {
   return (
     <article className="services-case-card">
       <span
         aria-hidden="true"
         className="services-case-image"
-        style={{ backgroundImage: `url(${figmaAssets.servicesCaseStudy})` }}
+        style={{
+          backgroundImage: `url(${caseStudy.image})`,
+          backgroundPosition: caseStudy.imagePosition,
+        }}
       />
       <div className="services-case-company">
-        <HybrMark className="services-case-mark" />
-        <h3>COMPANY NAME</h3>
+        {caseStudy.companyLogo ? (
+          <img alt={caseStudy.company} className="services-case-company-logo" src={caseStudy.companyLogo} />
+        ) : (
+          <h3>{caseStudy.company}</h3>
+        )}
       </div>
       <p className="services-case-statement">
-        A captivating statement about what service was offered to the company.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-        dignissim fringilla feugiat.
+        {caseStudy.shortBody}
       </p>
       <p className="services-case-label">CASE STUDY</p>
-      <ButtonLink className="is-read" href="/case-studies/one-liner">
+      <ButtonLink className="is-read" href={caseStudy.href}>
         Read More
       </ButtonLink>
     </article>
@@ -192,7 +165,7 @@ function ServiceSection({ service }: { service: (typeof services)[number] }) {
           <span key={`${service.key}-${tag}`}>{tag}</span>
         ))}
       </div>
-      <CaseStudyCard />
+      <CaseStudyCard caseStudy={service.caseStudy} />
     </section>
   );
 }
@@ -233,7 +206,9 @@ export default function ServicesPage() {
           <span>These testimonials reflect the trust and confidence that come from our partnerships.</span>
         </section>
 
-        <ServicesTestimonials testimonials={serviceTestimonials} />
+        <section aria-label="Client testimonials" className="services-shared-testimonials">
+          <TestimonialsCarousel />
+        </section>
 
         <ButtonLink className="services-talk-button" href="/contact">
           Let&apos;s Talk

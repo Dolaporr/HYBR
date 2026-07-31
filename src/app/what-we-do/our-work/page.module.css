@@ -252,14 +252,18 @@
 
 .workScope :global(.work-card-image) {
   background-position: center;
-  background-size: 100% 100%;
+  background-size: cover !important;
   display: block;
-  height: 400px;
-  left: -179px;
+  height: 100% !important;
+  left: 0 !important;
   pointer-events: none;
   position: absolute;
-  top: -7px;
-  width: 710px;
+  top: 0 !important;
+  width: 100% !important;
+}
+
+.workScope :global(.work-card.is-spotlight .work-card-image::after) {
+  background: rgba(0, 26, 34, .68);
 }
 
 .workScope :global(.work-card-eyebrow) {
@@ -313,6 +317,14 @@
   text-transform: uppercase;
   top: 258px;
   z-index: 2;
+}
+
+.workScope :global(.work-card-company-logo) {
+  display: block;
+  height: 24px;
+  object-fit: contain;
+  object-position: left center;
+  width: auto;
 }
 
 .workScope :global(.work-card-mark) {
@@ -1356,5 +1368,54 @@
 
   .workScope :global(.work-button .is-mobile-label) {
     display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .workScope :global(.work-card h2),
+  .workScope :global(.work-card-eyebrow),
+  .workScope :global(.work-card-body),
+  .workScope :global(.work-card-company) {
+    margin: 0 !important;
+  }
+
+  .workScope :global(.work-card-eyebrow) {
+    width: auto !important;
+  }
+
+  .workScope :global(.work-card.is-spotlight h2) {
+    top: 86px !important;
+  }
+
+  .workScope :global(.work-card.is-spotlight .work-card-body.is-long) {
+    top: 178px !important;
+  }
+
+  .workScope :global(.work-card.is-spotlight .work-card-company) {
+    bottom: 32px !important;
+    top: auto !important;
+  }
+
+  .workScope :global(.work-card.is-spotlight .work-button.is-read) {
+    bottom: 40px !important;
+    top: auto !important;
+  }
+
+  .workScope :global(.work-card.is-recent h2) {
+    top: 86px !important;
+  }
+
+  .workScope :global(.work-card.is-recent .work-card-body.is-long) {
+    top: 176px !important;
+  }
+
+  .workScope :global(.work-card.is-recent .work-card-company) {
+    bottom: 32px !important;
+    top: auto !important;
+  }
+
+  .workScope :global(.work-card.is-recent .work-button.is-read) {
+    bottom: 32px !important;
+    top: auto !important;
   }
 }

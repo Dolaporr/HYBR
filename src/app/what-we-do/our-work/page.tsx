@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { absaDiscoveryCaseStudy, alitheiaCaseStudy, cocaColaCaseStudy, type CaseStudyListing } from "@/content/caseStudies";
 import { figmaAssets } from "@/content/site";
 import { Footer, Header } from "../../_components/marketing";
 import styles from "./page.module.css";
@@ -102,27 +103,27 @@ function FilterControls() {
   );
 }
 
-function CaseStudyCard({ className = "" }: { className?: string }) {
+function CaseStudyCard({ caseStudy, className = "" }: { caseStudy: CaseStudyListing; className?: string }) {
   return (
     <article className={`work-card ${className}`}>
       <span
         aria-hidden="true"
         className="work-card-image"
-        style={{ backgroundImage: `url(${figmaAssets.ourWorkCard})` }}
+        style={{ backgroundImage: `url(${caseStudy.image})`, backgroundPosition: caseStudy.imagePosition }}
       />
       <p className="work-card-eyebrow">CASE STUDY</p>
-      <h2>One Liner For Specific Case Study</h2>
+      <h2>{caseStudy.title}</h2>
       <p className="work-card-body is-long">
-        A captivating statement about what service was offered to the company.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dignissim
-        fringilla feugiat.
+        {caseStudy.body}
       </p>
       <p className="work-card-body is-short">
-        A short captivating statement about what this case study is about.
+        {caseStudy.shortBody}
       </p>
-      <p className="work-card-company">COMPANY NAME</p>
+      <p className="work-card-company">
+        {caseStudy.companyLogo ? <img alt={caseStudy.company} className="work-card-company-logo" src={caseStudy.companyLogo} /> : caseStudy.company}
+      </p>
       <HybrMark className="work-card-mark" />
-      <WorkButton className="is-read" href="/case-studies/one-liner">
+      <WorkButton className="is-read" href={caseStudy.href}>
         Read More
       </WorkButton>
     </article>
@@ -166,7 +167,7 @@ export default function OurWorkPage() {
 
         <p className="work-section-label is-spotlight-label">SPOTLIGHT</p>
         <section aria-label="Spotlight case study" className="work-spotlight" id="spotlight">
-          <CaseStudyCard className="is-spotlight" />
+          <CaseStudyCard caseStudy={cocaColaCaseStudy} className="is-spotlight" />
         </section>
 
         <section aria-labelledby="case-studies-title" id="recent">
@@ -174,8 +175,8 @@ export default function OurWorkPage() {
             CASE STUDIES
           </p>
           <div className="work-recent-grid">
-            <CaseStudyCard className="is-recent is-first" />
-            <CaseStudyCard className="is-recent is-second" />
+            <CaseStudyCard caseStudy={absaDiscoveryCaseStudy} className="is-recent is-first" />
+            <CaseStudyCard caseStudy={alitheiaCaseStudy} className="is-recent is-second" />
           </div>
           <WorkButton className="is-view-all" href="/case-studies/one-liner">
             View All Case Studies
