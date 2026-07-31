@@ -1480,6 +1480,13 @@
   width: 136px;
 }
 
+/* Hide Alitheia on small screens to avoid bad placement in mobile view */
+@media (max-width: 559px) {
+  .whatScope :global(.what-case-company.is-alitheia) {
+    display: none !important;
+  }
+}
+
 .whatScope :global(.what-case-company-logo) {
   background-position: left center;
   background-repeat: no-repeat;

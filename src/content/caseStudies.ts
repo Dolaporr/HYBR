@@ -39,7 +39,7 @@ export const alitheiaCaseStudy: CaseStudyListing = {
   shortBody: "Operational and technical diagnostics for a growth-stage food company.",
   company: "Alitheia Capital",
   companyLogo: "/logos/alitheia-capital-white.png",
-  href: "/case-studies/one-liner",
+  href: "/case-studies/alitheia",
 };
 
 export const absaDiscoveryEditorial = {
