@@ -1470,14 +1470,24 @@
 
 .whatScope :global(.what-case-company.is-coca-cola) {
   display: inline-flex;
-  height: 26px;
-  width: 104px;
+  /* Match Alitheia so both wordmarks appear visually the same size */
+  height: 34px;
+  width: 136px;
 }
 
 .whatScope :global(.what-case-company.is-alitheia) {
   display: inline-flex;
   height: 34px;
   width: 136px;
+}
+
+/* Ensure at tablet/desktop breakpoints both logos scale together */
+@media (min-width: 560px) {
+  .whatScope :global(.what-case-company.is-coca-cola),
+  .whatScope :global(.what-case-company.is-alitheia) {
+    height: 42px;
+    width: 160px;
+  }
 }
 
 .whatScope :global(.what-case-company-logo) {
