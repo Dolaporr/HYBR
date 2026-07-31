@@ -20839,7 +20839,7 @@ video.home-video-card {
 
 .homepage-live .home-case-feature .home-company-wordmark--coca-cola {
   height: 40px !important;
-  width: 154px !important;
+  width: 128px !important;
 }
 
 @media (min-width: 768px) {
@@ -21026,9 +21026,9 @@ video.home-video-card {
   .homepage-live .home-case-tall .home-case-tall-company {
     bottom: 40px !important;
     display: inline-flex !important;
-    height: 32px !important;
+    height: 42px !important;
     left: 40px !important;
-    width: 96px !important;
+    width: 128px !important;
   }
 }
 
@@ -21036,21 +21036,21 @@ video.home-video-card {
   align-items: center;
   bottom: 32px;
   display: inline-flex;
-  height: 32px;
+  height: 42px;
   left: 32px;
   margin: 0;
   position: absolute;
-  width: 96px;
+  width: 128px;
   z-index: 3;
 }
 
 .homepage-live .home-case-tall .home-case-tall-company .home-alitheia-logo-img {
   display: block !important;
-  height: 32px !important;
+  height: 42px !important;
   max-width: none !important;
   object-fit: contain !important;
   object-position: left center !important;
-  width: 96px !important;
+  width: 128px !important;
 }
 
 .homepage-live .home-case-tall-content {

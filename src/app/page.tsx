@@ -702,7 +702,7 @@ export default function Home() {
             <div className="home-case-tall-content">
               <p className="home-case-kicker">CASE STUDY</p>
               <h3 className="text-[20px] font-medium leading-[1.12]">
-                Operational and technical diagnostics
+                Operational and Technical Diagnostics
               </h3>
               <p className="mt-3 max-w-[315px] text-[11px] font-semibold leading-[1.4] text-white/82">
                 We conducted - in record time - robust due diligence and scale
