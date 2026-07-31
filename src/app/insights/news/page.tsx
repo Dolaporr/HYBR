@@ -141,7 +141,7 @@ function ArticleCard() {
       <img alt="" src={figmaAssets.figmaBuilding} />
       <span className="news-article-button">Read More</span>
       <span className="news-article-copy">
-        <span>Article</span>
+        <span>ARTICLE</span>
         <span>{innovationSweetSpotArticle.cardTitle}</span>
       </span>
     </Link>
