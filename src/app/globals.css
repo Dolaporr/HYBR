@@ -20370,10 +20370,10 @@ video.home-video-card {
 @media (min-width: 768px) {
   .trusted-by-block .trusted-marquee,
   .homepage-live .trusted-marquee {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    margin-left: calc((min(100vw, var(--figma-desktop)) - min(1200px, min(100vw, var(--figma-desktop)) - 48px)) / -2) !important;
+    margin-right: calc((min(100vw, var(--figma-desktop)) - min(1200px, min(100vw, var(--figma-desktop)) - 48px)) / -2) !important;
     overflow: hidden;
-    width: min(1200px, calc(100vw - 160px)) !important;
+    width: min(100vw, var(--figma-desktop)) !important;
   }
 
   .trusted-by-block .trusted-marquee-track,
