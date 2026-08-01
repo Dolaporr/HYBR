@@ -1,44 +1,53 @@
+import Link from "next/link";
 import { Footer, Header } from "@/app/_components/marketing";
-import { alitheiaCaseStudy } from "@/content/caseStudies";
+import { alitheiaCaseStudy, alitheiaEditorial } from "@/content/caseStudies";
+import styles from "../absa/page.module.css";
 
 export default function AlitheiaCaseStudyPage() {
   return (
-    <main className="case-page">
-      <div className="case-frame">
-        <Header active="what" />
+    <main className={styles.page}>
+      <section className={styles.hero}>
+        <Header active="what" tone="dark" />
+        <img alt="" className={styles.heroImage} src={alitheiaCaseStudy.image} />
+        <div className={styles.heroShade} />
+        <div className={styles.heroContent}>
+          <p>CLIENT CASE STUDY / DISCOVER</p>
+          <h1>{alitheiaEditorial.title}</h1>
+          <span>{alitheiaEditorial.subtitle}</span>
+        </div>
+      </section>
 
-        <section className="case-hero-card" id="cover" style={{ padding: 40 }}>
-          <div
-            aria-hidden="true"
-            className="case-hero-image"
-            style={{ backgroundImage: `url(${alitheiaCaseStudy.image})`, backgroundPosition: alitheiaCaseStudy.imagePosition }}
-          />
-
-          <div className="case-hero-copy">
-            <h1 id="case-title">{alitheiaCaseStudy.title}</h1>
-            <p>{alitheiaCaseStudy.body}</p>
-            <p style={{ marginTop: 12 }}>{alitheiaCaseStudy.shortBody}</p>
+      <section className={styles.facts} aria-label="Case study details">
+        {alitheiaEditorial.facts.map(([label, value]) => (
+          <div key={label}>
+            <span>{label}</span>
+            <strong>{value}</strong>
           </div>
+        ))}
+      </section>
 
-          <div className="case-company">
-            <span className="case-company-logo case-company-logo--alitheia" aria-label={alitheiaCaseStudy.company}>
-              {alitheiaCaseStudy.company}
-            </span>
-          </div>
+      <article className={styles.article}>
+        <p className={styles.intro}>{alitheiaEditorial.intro}</p>
+        {alitheiaEditorial.sections.map((section, index) => (
+          <section className={styles.section} key={section.title}>
+            <span>0{index + 1}</span>
+            <div>
+              <h2>{section.title}</h2>
+              {section.copy.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          </section>
+        ))}
+      </article>
 
-          <p className="case-study-label">CASE STUDY</p>
-        </section>
-
-        <section style={{ padding: 24 }}>
-          <h2>About this case study</h2>
-          <p>{alitheiaCaseStudy.body}</p>
-          <a href={alitheiaCaseStudy.href} className="case-download-link">
-            Download PDF
-          </a>
-        </section>
-
-        <Footer />
-      </div>
+      <section className={styles.cta}>
+        <p>MAKE BETTER INVESTMENT DECISIONS</p>
+        <h2>See what lies beyond the numbers.</h2>
+        <span>HYBR helps investors and leaders turn operational evidence into clearer decisions about growth, readiness and scale.</span>
+        <Link href="/contact">Book a Discovery Conversation</Link>
+      </section>
+      <Footer />
     </main>
   );
 }

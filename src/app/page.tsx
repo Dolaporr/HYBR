@@ -3,7 +3,7 @@ import Image from "next/image";
 import { figmaAssets, footerGroups, navigation } from "@/content/site";
 import { HeroWordRotator } from "@/components/HeroWordRotator";
 import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
-import { spctaNewsFeature } from "@/content/insights";
+import { innovationSweetSpotArticle, spctaNewsFeature } from "@/content/insights";
 
 const assets = {
   hero: figmaAssets.heroHome,
@@ -32,7 +32,7 @@ const assets = {
 const trustedLogoStrip = "/logos/sliding-animation.svg";
 const homeWebinar = {
   duration: "01:40:35",
-  url: "https://www.youtube.com/watch?v=jEJqt1T-G50&themeRefresh=1",
+  url: "https://www.youtube.com/watch?v=GxIj0bnFzQ4&t=380s",
 };
 
 const rotatingWords = ["ideas", "products", "services", "markets", "teams"];
@@ -694,20 +694,18 @@ export default function Home() {
           >
             <img alt="" aria-hidden="true" className="home-case-bg home-case-bg--tall" src={assets.ourWorkTall} />
             <div className="home-case-tall-top">
-              <BrandMark className="home-case-mark home-case-mark--small" />
-              <a className="home-inline-cta home-inline-cta--light home-case-tall-cta" href="/case-studies/one-liner">
+              <a className="home-inline-cta home-inline-cta--light home-case-tall-cta" href="/case-studies/alitheia">
                 Read More
               </a>
             </div>
             <div className="home-case-tall-content">
               <p className="home-case-kicker">CASE STUDY</p>
               <h3 className="text-[20px] font-medium leading-[1.12]">
-                Operational and Technical Diagnostics
+                Beyond the Numbers
               </h3>
               <p className="mt-3 max-w-[315px] text-[11px] font-semibold leading-[1.4] text-white/82">
-                We conducted - in record time - robust due diligence and scale
-                diagnostics for a female-led food company working towards Series A
-                round funding.
+                How HYBR helped Alitheia Capital assess the operational and
+                technical readiness of a prospective investment before it scaled.
               </p>
             </div>
             <CompanyWordmark kind="alitheia" className="home-case-tall-company" />
@@ -771,7 +769,7 @@ export default function Home() {
                 {homeWebinar.duration}
               </p>
               <div className="home-webinar-copy">
-                <SectionLabel className="home-webinar-label">Webinar</SectionLabel>
+                <SectionLabel className="home-webinar-label">Masterclass</SectionLabel>
                 <h3 className="home-webinar-title mt-18 max-w-[300px] text-[22px] font-medium leading-[1.06]">
                   The Systems Mindset: A Smarter Way To Solve Complex Problems
                 </h3>
@@ -801,8 +799,11 @@ export default function Home() {
               <div className="home-article-card-copy absolute bottom-5 left-5 right-5">
                 <SectionLabel>Article</SectionLabel>
                 <h3 className="mt-3 text-[22px] font-medium leading-[1.05]">
-                  One Liner For Specific Article
+                  {innovationSweetSpotArticle.cardTitle}
                 </h3>
+                <p className="home-article-card-summary mt-3 max-w-[215px] text-[11px] leading-[1.4]">
+                  {innovationSweetSpotArticle.summary}
+                </p>
               </div>
             </article>
             <div className="home-insights-copy">

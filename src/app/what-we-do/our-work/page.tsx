@@ -122,7 +122,7 @@ function CaseStudyCard({ caseStudy, className = "" }: { caseStudy: CaseStudyList
       <p className="work-card-company">
         {caseStudy.companyLogo ? <img alt={caseStudy.company} className="work-card-company-logo" src={caseStudy.companyLogo} /> : caseStudy.company}
       </p>
-      <HybrMark className="work-card-mark" />
+      {caseStudy.company !== "Alitheia Capital" ? <HybrMark className="work-card-mark" /> : null}
       <WorkButton className="is-read" href={caseStudy.href}>
         Read More
       </WorkButton>
