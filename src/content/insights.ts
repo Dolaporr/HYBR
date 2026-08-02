@@ -229,7 +229,7 @@ export const businessModelsWebinar = {
   speakers: "Emmanuel Obinne",
   date: "October 2025",
   duration: "59:17",
-  href: "/insights/webinars/specific-webinar",
+  href: "https://www.youtube.com/watch?v=AhNm_PdrzC4&t=7s",
 };
 
 export const innovationFellowshipNews = {

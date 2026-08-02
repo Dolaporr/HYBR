@@ -21928,3 +21928,20 @@ video.home-video-card {
 
   .careers-why-card { align-items: flex-start !important; justify-content: flex-start !important; }
 }
+
+/* Keep Contact's shared testimonial portrait centered on the ring and seated at its base. */
+@media (max-width: 767px) {
+  .contact-testimonials-section .home-testimonial-avatar {
+    position: relative !important;
+  }
+
+  .contact-testimonials-section .home-testimonial-avatar-image {
+    bottom: 4px !important;
+    left: 50% !important;
+    margin: 0 !important;
+    right: auto !important;
+    top: auto !important;
+    transform: translateX(-50%) !important;
+    translate: none !important;
+  }
+}
