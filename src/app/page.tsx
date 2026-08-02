@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import Image from "next/image";
 import { figmaAssets, footerGroups, navigation } from "@/content/site";
 import { HeroWordRotator } from "@/components/HeroWordRotator";
 import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
@@ -174,56 +173,6 @@ function RiskCloseIcon() {
         fill="#8DC540"
       />
     </svg>
-  );
-}
-
-function CompanyWordmark({
-  kind,
-  className = "",
-}: {
-  kind: "coca-cola" | "alitheia";
-  className?: string;
-}) {
-  const label = kind === "coca-cola" ? "Coca-Cola" : "Alitheia Capital";
-
-  if (kind === "coca-cola") {
-    return (
-      <span className={`home-company-wordmark home-company-wordmark--${kind} ${className}`} aria-label={label}>
-        <Image
-          alt=""
-          aria-hidden="true"
-          className="home-coca-cola-logo-img"
-          height={58}
-          loading="eager"
-          src={assets.cocaColaLogo}
-          unoptimized
-          width={184}
-        />
-      </span>
-    );
-  }
-
-  if (kind === "alitheia") {
-    return (
-      <span className={`home-company-wordmark home-company-wordmark--${kind} ${className}`} aria-label={label}>
-        <Image
-          alt=""
-          aria-hidden="true"
-          className="home-alitheia-logo-img"
-          height={84}
-          loading="eager"
-          src="/logos/alitheia-capital-white.png"
-          unoptimized
-          width={252}
-        />
-      </span>
-    );
-  }
-
-  return (
-    <span className={`home-company-wordmark home-company-wordmark--${kind} ${className}`} aria-label={label}>
-      {label}
-    </span>
   );
 }
 
@@ -670,7 +619,6 @@ export default function Home() {
             className="home-case-feature overflow-hidden rounded-[14px] text-white"
           >
             <img alt="" aria-hidden="true" className="home-case-bg home-case-bg--feature" src={assets.plasticWaste} />
-            <BrandMark className="home-case-mark" />
             <div className="home-case-content">
               <p className="home-case-kicker">CASE STUDY</p>
               <h3 className="text-[21px] font-medium leading-[1.1]">
@@ -681,8 +629,7 @@ export default function Home() {
                 and urgent environmental problem which helps Coca Cola to
                 radically eliminate plastic waste.
               </p>
-              <div className="mt-5 flex items-end justify-between gap-4">
-                <CompanyWordmark kind="coca-cola" />
+              <div className="mt-5 flex items-end justify-end gap-4">
                 <a className="home-inline-cta home-case-feature-cta" href="/case-studies/one-liner">
                   Read More
                 </a>
@@ -694,7 +641,7 @@ export default function Home() {
           >
             <img alt="" aria-hidden="true" className="home-case-bg home-case-bg--tall" src={assets.ourWorkTall} />
             <div className="home-case-tall-top">
-              <a className="home-inline-cta home-inline-cta--light home-case-tall-cta" href="/case-studies/alitheia">
+              <a className="home-inline-cta home-inline-cta--light home-case-tall-cta" href="/case-studies/one-liner?case=alitheia">
                 Read More
               </a>
             </div>
@@ -708,7 +655,6 @@ export default function Home() {
                 technical readiness of a prospective investment before it scaled.
               </p>
             </div>
-            <CompanyWordmark kind="alitheia" className="home-case-tall-company" />
           </article>
         </div>
       </section>

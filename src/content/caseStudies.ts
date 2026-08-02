@@ -39,7 +39,7 @@ export const alitheiaCaseStudy: CaseStudyListing = {
   shortBody: "An independent view of the operating realities behind a prospective investment.",
   company: "Alitheia Capital",
   companyLogo: "/logos/alitheia-capital-white.png",
-  href: "/case-studies/alitheia",
+  href: "/case-studies/one-liner?case=alitheia",
 };
 
 export const absaDiscoveryEditorial = {

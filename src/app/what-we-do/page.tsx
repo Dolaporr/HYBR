@@ -147,18 +147,8 @@ function CaseStudyCard({ kind }: { kind: "feature" | "tall" }) {
         <p>CASE STUDY</p>
         <h3>{study.title}</h3>
         <span>{study.body}</span>
-        <strong aria-label={study.company} className={`what-case-company ${study.companyClass}`}>
-          <span
-            aria-hidden="true"
-            className={`what-case-company-logo ${
-              study.companyClass === "is-alitheia"
-                ? "what-case-company-logo--alitheia"
-                : "what-case-company-logo--coca-cola"
-            }`}
-          />
-        </strong>
       </div>
-      <ButtonLink className="is-white is-read" href="/case-studies/one-liner">
+      <ButtonLink className="is-white is-read" href={study.companyClass === "is-alitheia" ? "/case-studies/one-liner?case=alitheia" : "/case-studies/one-liner"}>
         Read More
       </ButtonLink>
     </article>
@@ -304,11 +294,24 @@ export default function WhatWeDoPage() {
                 more about the team you could be a part of.
               </span>
             </div>
-            <div
-              aria-hidden="true"
-              className="what-team-image"
-              style={{ backgroundImage: `url(${figmaAssets.whatOurTeam})` }}
-            />
+            <div aria-hidden="true" className="what-team-image">
+              <svg viewBox="0 0 278 124" preserveAspectRatio="none" role="presentation">
+                <defs>
+                  <clipPath id="what-team-image-clip">
+                    <path d="M0 0 H154 C222.483 0 278 55.5167 278 124 H124 C55.5167 124 0 68.4833 0 0 Z" />
+                  </clipPath>
+                </defs>
+                <image
+                  clipPath="url(#what-team-image-clip)"
+                  height="124"
+                  href={figmaAssets.whatOurTeam}
+                  preserveAspectRatio="xMidYMid slice"
+                  width="278"
+                  x="0"
+                  y="0"
+                />
+              </svg>
+            </div>
             <div className="what-team-actions">
               <ButtonLink className="is-clear" href="/who-we-are/our-team">
                 Our Team

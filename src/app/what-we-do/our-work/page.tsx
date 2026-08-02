@@ -28,16 +28,6 @@ function WorkButton({
   );
 }
 
-function HybrMark({ className = "" }: { className?: string }) {
-  return (
-    <svg aria-hidden="true" className={className} fill="none" viewBox="0 0 56 56">
-      <circle cx="28" cy="43.2" r="10.28" stroke="#ffffff" strokeWidth="4.54" />
-      <circle cx="28" cy="35.1" r="18.33" stroke="#4fc2f0" strokeWidth="4.54" />
-      <circle cx="28" cy="27.88" r="25.54" stroke="#8dc540" strokeWidth="4.54" />
-    </svg>
-  );
-}
-
 function SearchIcon() {
   return (
     <svg aria-hidden="true" className="work-filter-icon" fill="none" viewBox="0 0 24 24">
@@ -119,10 +109,6 @@ function CaseStudyCard({ caseStudy, className = "" }: { caseStudy: CaseStudyList
       <p className="work-card-body is-short">
         {caseStudy.shortBody}
       </p>
-      <p className="work-card-company">
-        {caseStudy.companyLogo ? <img alt={caseStudy.company} className="work-card-company-logo" src={caseStudy.companyLogo} /> : caseStudy.company}
-      </p>
-      {caseStudy.company !== "Alitheia Capital" ? <HybrMark className="work-card-mark" /> : null}
       <WorkButton className="is-read" href={caseStudy.href}>
         Read More
       </WorkButton>

@@ -135,13 +135,6 @@ function CaseStudyCard({ caseStudy }: { caseStudy: CaseStudyListing }) {
           backgroundPosition: caseStudy.imagePosition,
         }}
       />
-      <div className="services-case-company">
-        {caseStudy.companyLogo ? (
-          <img alt={caseStudy.company} className="services-case-company-logo" src={caseStudy.companyLogo} />
-        ) : (
-          <h3>{caseStudy.company}</h3>
-        )}
-      </div>
       <p className="services-case-statement">
         {caseStudy.shortBody}
       </p>

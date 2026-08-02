@@ -1321,7 +1321,7 @@
   }
 
   .caseScope :global(.case-frame.is-report) {
-    height: 5343px;
+    height: 4500px;
   }
 
   .caseScope :global(.case-search) {
@@ -1472,7 +1472,7 @@
 
   .caseScope :global(.case-button.is-read-sections.is-bottom) {
     left: 120px;
-    top: 3610px;
+    top: 3300px;
   }
 
   .caseScope :global(.case-report-section) {
@@ -1524,7 +1524,7 @@
   }
 
   .caseScope :global(.case-frame.is-report .case-related) {
-    top: 3826px;
+    top: 3450px;
   }
 
   .caseScope :global(.case-related-intro) {
@@ -1638,7 +1638,7 @@
   }
 
   .caseScope :global(.case-frame.is-report .case-services) {
-    top: 4727px;
+    top: 4140px;
   }
 
   .caseScope :global(.case-services-image) {

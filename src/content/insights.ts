@@ -261,21 +261,21 @@ export const spctaNewsFeature = {
   topics: "Deep Technology, Circular Economy, Industrial Infrastructure",
   readingTime: "8 minutes",
   heroImage: {
-    src: "/insights/spcta/demo-day.jpg",
-    alt: "Guests on stage at The Convergence Demo Day in Ilorin.",
+    src: "/insights/spcta/bottle-news-page.jpg",
+    alt: "Materials and activity inside a recycling and recovery operation.",
     caption:
       "The Convergence brought founders, industry leaders and ecosystem partners together at the Ilorin Innovation Hub.",
   },
   images: {
     operations: {
-      src: "/home/edit-flags/plastic-waste.jpg",
-      alt: "A worker carrying recovered plastic through a recycling landscape.",
+      src: "/insights/spcta/traceability.png",
+      alt: "Materials being handled within a recovery operation.",
       caption:
         "Every industrial supply chain begins with physical work: collecting, separating and preparing material.",
     },
     recovery: {
-      src: "/home/our-work-feature-source.png",
-      alt: "A close view of the built environment surrounding recovery and logistics work.",
+      src: "/insights/spcta/accelerator-room.jpg",
+      alt: "The IHS DeepTech Accelerator creating room for new industrial ventures.",
       caption:
         "The work is about creating a dependable route from fragmented recovery to industrial demand.",
     },

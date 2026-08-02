@@ -16104,9 +16104,9 @@ video.home-video-card {
   }
 
   .homepage-live .home-article-card {
-    height: 280px !important;
+    height: 312px !important;
     margin-bottom: 16px;
-    min-height: 280px !important;
+    min-height: 312px !important;
     order: 3;
   }
 
@@ -19897,8 +19897,9 @@ video.home-video-card {
   }
 
   .homepage-live .home-news-card .home-card-action {
-    bottom: 32px !important;
+    bottom: auto !important;
     right: 32px !important;
+    top: 32px !important;
     z-index: 3 !important;
   }
 
@@ -20837,12 +20838,12 @@ video.home-video-card {
   box-shadow: none !important;
 }
 
-/* Keep the insight card action clear of the text while anchoring it at the bottom. */
+/* Keep the home news action aligned with the other card actions. */
 .homepage-live .home-news-card .home-card-action {
-  bottom: 32px !important;
+  bottom: auto !important;
   position: absolute !important;
   right: 32px !important;
-  top: auto !important;
+  top: 32px !important;
   z-index: 3 !important;
 }
 
@@ -20855,15 +20856,35 @@ video.home-video-card {
 
 @media (max-width: 767px) {
   .homepage-live .home-news-card .home-card-action {
-    bottom: 40px !important;
+    bottom: auto !important;
     right: 32px !important;
+    top: 32px !important;
+  }
+
+  .homepage-live .home-article-card .home-article-card-copy {
+    bottom: 112px !important;
+    top: auto !important;
+  }
+
+  .homepage-live .home-article-card h3 {
+    font-size: 22px !important;
+    line-height: 1.1 !important;
+  }
+
+  .homepage-live .home-article-card .home-article-card-summary {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
   }
 
   .homepage-live .home-news-card .home-news-card-copy {
     bottom: auto !important;
     left: 32px !important;
     right: auto !important;
-    top: 40px !important;
+    top: 136px !important;
     width: 278px !important;
   }
 }

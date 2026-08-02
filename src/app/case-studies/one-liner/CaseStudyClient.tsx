@@ -2,11 +2,19 @@
 
 import Link from "next/link";
 import { useEffect, useState, type ReactNode } from "react";
+import { alitheiaCaseStudy, alitheiaEditorial } from "@/content/caseStudies";
 import { figmaAssets } from "@/content/site";
 import { Footer, Header } from "../../_components/marketing";
 import styles from "./page.module.css";
 
 type ViewMode = "sections" | "report";
+type CaseStudyId = "coca-cola" | "alitheia";
+type ReportSection = {
+  body: ReactNode[];
+  id: string;
+  intro: string;
+  title: string;
+};
 
 const sectionNav = [
   { href: "#cover", label: "Cover" },
@@ -16,12 +24,7 @@ const sectionNav = [
   { href: "#outcome", label: "Outcome" },
 ] as const;
 
-const reportSections: {
-  body: ReactNode[];
-  id: string;
-  intro: string;
-  title: string;
-}[] = [
+const cocaColaReportSections: ReportSection[] = [
   {
     id: "context",
     title: "Context",
@@ -61,6 +64,41 @@ const reportSections: {
     ],
   },
 ];
+
+const alitheiaReportSections: ReportSection[] = alitheiaEditorial.sections.map((section, index) => ({
+  body: section.copy,
+  id: ["context", "ambition", "our-work", "outcome"][index],
+  intro:
+    index === 0
+      ? "Looking beyond financial performance"
+      : index === 1
+        ? "Know what it takes to scale before putting capital to work"
+        : index === 2
+          ? "Bring the right expertise to the table - fast"
+          : "What the work made possible",
+  title: ["Context", "The Ambition", "Our Work", "Outcome"][index],
+}));
+
+function getStudyContent(caseId: CaseStudyId) {
+  if (caseId === "alitheia") {
+    return {
+      image: alitheiaCaseStudy.image,
+      imagePosition: alitheiaCaseStudy.imagePosition,
+      reportSections: alitheiaReportSections,
+      subtitle: alitheiaEditorial.subtitle,
+      title: alitheiaEditorial.title,
+    };
+  }
+
+  return {
+    image: figmaAssets.ourWorkCard,
+    imagePosition: "center center",
+    reportSections: cocaColaReportSections,
+    subtitle:
+      "How HYBR helped Coca-Cola move from a broad waste-reduction ambition to tested ventures, locally developed waste-to-value innovations.",
+    title: "Towards a World Without Waste",
+  };
+}
 
 function CaseButton({
   children,
@@ -118,13 +156,15 @@ function SearchControl() {
   );
 }
 
-function HeroCard({ mode }: { mode: ViewMode }) {
+function HeroCard({ caseId, mode }: { caseId: CaseStudyId; mode: ViewMode }) {
+  const study = getStudyContent(caseId);
+
   return (
     <section aria-labelledby="case-title" className="case-hero-card" id="cover">
       <span
         aria-hidden="true"
         className="case-hero-image"
-        style={{ backgroundImage: `url(${figmaAssets.ourWorkCard})` }}
+        style={{ backgroundImage: `url(${study.image})`, backgroundPosition: study.imagePosition }}
       />
 
       {mode === "sections" ? (
@@ -138,16 +178,8 @@ function HeroCard({ mode }: { mode: ViewMode }) {
       ) : null}
 
       <div className="case-hero-copy">
-        <h1 id="case-title">Towards a World Without Waste</h1>
-        <p>
-          How HYBR helped Coca-Cola move from a broad waste-reduction ambition to tested ventures, locally developed waste-to-value innovations.
-        </p>
-      </div>
-
-      <div className="case-company">
-        <span className="case-company-logo case-company-logo--coca-cola" aria-label="Coca-Cola">
-          Coca-Cola
-        </span>
+        <h1 id="case-title">{study.title}</h1>
+        <p>{study.subtitle}</p>
       </div>
       <p className="case-study-label">CASE STUDY</p>
 
@@ -161,7 +193,7 @@ function HeroCard({ mode }: { mode: ViewMode }) {
   );
 }
 
-function ReportSections() {
+function ReportSections({ reportSections }: { reportSections: ReportSection[] }) {
   return (
     <section aria-label="Case study report" className="case-report-sections">
       {reportSections.map((section, index) => (
@@ -179,7 +211,7 @@ function ReportSections() {
   );
 }
 
-function SectionReader() {
+function SectionReader({ reportSections }: { reportSections: ReportSection[] }) {
   return (
     <section aria-label="Case study sections" className="case-section-reader">
       {reportSections.map((section) => (
@@ -197,31 +229,27 @@ function SectionReader() {
   );
 }
 
-function RelatedCard({ className = "" }: { className?: string }) {
+function RelatedCard({ caseId, className = "" }: { caseId: CaseStudyId; className?: string }) {
+  const study = getStudyContent(caseId);
+
   return (
     <article className={`case-related-card ${className}`}>
       <span
         aria-hidden="true"
         className="case-related-image"
-        style={{ backgroundImage: `url(${figmaAssets.ourWorkCard})` }}
+        style={{ backgroundImage: `url(${study.image})`, backgroundPosition: study.imagePosition }}
       />
       <p className="case-related-eyebrow">CASE STUDY</p>
-      <h3>Towards a World Without Waste</h3>
-      <p className="case-related-body">
-        How HYBR helped Coca-Cola move from a broad waste-reduction ambition to tested ventures and locally developed waste-to-value innovations.
-      </p>
-      <p className="case-related-company">Coca-Cola</p>
-      <span aria-label="Coca-Cola" className="case-related-logo case-related-logo--coca-cola">
-        Coca-Cola
-      </span>
-      <CaseButton className="is-read-more" href="/case-studies/one-liner">
+      <h3>{study.title}</h3>
+      <p className="case-related-body">{study.subtitle}</p>
+      <CaseButton className="is-read-more" href={caseId === "alitheia" ? "/case-studies/one-liner?case=alitheia" : "/case-studies/one-liner"}>
         Read More
       </CaseButton>
     </article>
   );
 }
 
-function RelatedWork() {
+function RelatedWork({ caseId }: { caseId: CaseStudyId }) {
   return (
     <section aria-labelledby="related-title" className="case-related" id="related">
       <div className="case-related-intro">
@@ -229,8 +257,8 @@ function RelatedWork() {
         <h2 id="related-title">Related Case Studies</h2>
         <span>Work that reflects how we think, collaborate, and deliver.</span>
       </div>
-      <RelatedCard className="is-first" />
-      <RelatedCard className="is-second" />
+      <RelatedCard caseId={caseId} className="is-first" />
+      <RelatedCard caseId={caseId} className="is-second" />
       <CaseButton className="is-view-all" href="/what-we-do/our-work">
         View All Case Studies
       </CaseButton>
@@ -259,8 +287,15 @@ function ServicesCta() {
   );
 }
 
-export default function CaseStudyClient({ initialMode = "sections" }: { initialMode?: ViewMode }) {
+export default function CaseStudyClient({
+  caseId = "coca-cola",
+  initialMode = "sections",
+}: {
+  caseId?: CaseStudyId;
+  initialMode?: ViewMode;
+}) {
   const [mode, setMode] = useState<ViewMode>(initialMode);
+  const study = getStudyContent(caseId);
 
   useEffect(() => {
     const syncLocationMode = () => {
@@ -300,28 +335,28 @@ export default function CaseStudyClient({ initialMode = "sections" }: { initialM
         <Header active="what" tone={mode === "report" ? "dark" : "default"} />
 
         {mode === "sections" ? <SearchControl /> : null}
-        <HeroCard mode={mode} />
+        <HeroCard caseId={caseId} mode={mode} />
 
         {mode === "sections" ? (
           <>
             <CaseButton className="is-view-report" onClick={() => setViewMode("report")}>
               View as Single Page Report
             </CaseButton>
-            <SectionReader />
+            <SectionReader reportSections={study.reportSections} />
           </>
         ) : (
           <>
             <CaseButton className="is-read-sections is-top" onClick={() => setViewMode("sections")}>
               Read in Sections
             </CaseButton>
-            <ReportSections />
+            <ReportSections reportSections={study.reportSections} />
             <CaseButton className="is-read-sections is-bottom" onClick={() => setViewMode("sections")}>
               Read in Sections
             </CaseButton>
           </>
         )}
 
-        <RelatedWork />
+        <RelatedWork caseId={caseId} />
         <ServicesCta />
       </div>
 
