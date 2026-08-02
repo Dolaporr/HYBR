@@ -976,14 +976,6 @@ a {
     font-size: 32px;
   }
 
-  .contact-testimonials-section .home-testimonial-shell {
-    grid-template-columns: 20px minmax(0, 1fr) 20px;
-  }
-
-  .contact-testimonials-section .home-testimonial-card {
-    border-radius: 72px 160px 0 72px;
-    padding: 32px 28px;
-  }
 }
 
 .resource-hero {
@@ -20838,54 +20830,20 @@ video.home-video-card {
   box-shadow: none !important;
 }
 
-/* Keep the Contact page on the shared homepage testimonial layout at phone widths. */
+/* The news card is a stable editorial card, not a hover animation surface. */
+.homepage-live .home-news-card,
+.homepage-live .home-news-card:hover {
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.homepage-live .home-news-card::after,
+.homepage-live .home-news-card:hover::after {
+  opacity: 0 !important;
+  transform: none !important;
+}
+
 @media (max-width: 767px) {
-  .contact-testimonials-section .contact-testimonials-carousel.home-testimonial-shell {
-    column-gap: 8px !important;
-    grid-template-columns: 32px minmax(0, 1fr) 32px !important;
-  }
-
-  .contact-testimonials-section .home-testimonial-stage {
-    min-height: 0 !important;
-    overflow: hidden !important;
-  }
-
-  .contact-testimonials-section .home-testimonial-card {
-    display: grid !important;
-    gap: 20px !important;
-    grid-template-columns: 1fr !important;
-    min-height: 392px !important;
-    padding: 36px 28px !important;
-  }
-
-  .contact-testimonials-section .home-testimonial-avatar {
-    height: 116px !important;
-    width: 116px !important;
-  }
-
-  .contact-testimonials-section .home-testimonial-avatar-image {
-    bottom: 4px !important;
-    height: 88px !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: 88px !important;
-  }
-
-  .contact-testimonials-section .home-testimonial-quote {
-    font-size: 18px !important;
-    line-height: 1.22 !important;
-  }
-
-  .contact-testimonials-section .home-testimonial-card p.mt-8 {
-    font-size: 14px !important;
-    margin-top: 18px !important;
-  }
-
-  .contact-testimonials-section .home-testimonial-card p:not(.mt-8) {
-    font-size: 13px !important;
-    line-height: 1.3 !important;
-  }
-
   .articles-page .articles-spotlight-copy {
     bottom: 78px !important;
   }
@@ -20903,6 +20861,56 @@ video.home-video-card {
 
   .articles-page .articles-news-copy {
     bottom: 62px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .articles-page .articles-spotlight {
+    height: 224px !important;
+  }
+
+  .articles-page .articles-spotlight-image {
+    height: 100% !important;
+    width: 100% !important;
+  }
+
+  .articles-page .articles-spotlight-copy {
+    bottom: 48px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    left: 14px !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    right: 14px !important;
+    top: 30px !important;
+    width: auto !important;
+  }
+
+  .articles-page .articles-spotlight-copy span:first-child {
+    display: -webkit-box !important;
+    font-size: 16px !important;
+    line-height: 1.1 !important;
+    overflow: hidden !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-line-clamp: 3 !important;
+  }
+
+  .articles-page .articles-spotlight-copy span:last-child {
+    display: -webkit-box !important;
+    font-size: 10px !important;
+    line-height: 1.25 !important;
+    overflow: hidden !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-line-clamp: 2 !important;
+  }
+
+  .articles-page .articles-spotlight-button {
+    bottom: 12px !important;
+    left: auto !important;
+    right: 14px !important;
+    top: auto !important;
+    z-index: 4 !important;
   }
 }
 
@@ -21913,47 +21921,6 @@ video.home-video-card {
   .articles-page .articles-webinar-copy span:first-child { font-size: 18px !important; line-height: 1.08 !important; }
   .articles-page .articles-webinar-copy span:not(:first-child) { font-size: 10px !important; line-height: 1.2 !important; }
   .articles-page .articles-play { top: 36px !important; right: 16px !important; width: 18px !important; height: 18px !important; }
-
-  .contact-testimonials-section .home-testimonial-shell {
-    display: grid !important;
-    width: 100% !important;
-    grid-template-columns: 32px minmax(0, 1fr) 32px !important;
-    align-items: center !important;
-    gap: 4px !important;
-  }
-
-  .contact-testimonials-section .home-testimonial-stage {
-    display: block !important;
-    position: relative !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    overflow: visible !important;
-  }
-
-  .contact-testimonials-section .home-testimonial-card {
-    display: grid !important;
-    position: relative !important;
-    width: 100% !important;
-    min-height: 220px !important;
-    height: auto !important;
-    grid-template-columns: 72px minmax(0, 1fr) !important;
-    gap: 14px !important;
-    padding: 28px 20px !important;
-    overflow: hidden !important;
-    border-radius: 110px 220px 0 110px !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-  }
-
-  .contact-testimonials-section .home-testimonial-avatar { width: 72px !important; height: 72px !important; }
-  .contact-testimonials-section .home-testimonial-avatar-image { width: 54px !important; height: 54px !important; }
-  .contact-testimonials-section .home-testimonial-quote { font-size: 16px !important; line-height: 1.2 !important; }
-  .contact-testimonials-section .home-testimonial-card p.mt-8 { margin-top: 14px !important; font-size: 11px !important; }
-  .contact-testimonials-section .home-testimonial-card p:not(.mt-8) { font-size: 10px !important; line-height: 1.2 !important; }
-  .contact-testimonials-section .home-testimonial-arrow { display: flex !important; width: 32px !important; height: 32px !important; }
-  .contact-testimonials-section .home-testimonial-arrow svg { width: 32px !important; height: 32px !important; }
 
   .careers-why-card,
   .careers-why-card h3,

@@ -1872,6 +1872,24 @@
   -webkit-mask-size: 100% 100% !important;
 }
 
+/* Preserve the supplied Figma SVGs at their intended card size. */
+.careersScope :global(.careers-card-icon) {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 32px;
+  min-height: 32px;
+  min-width: 32px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.careersScope :global(.careers-vector-icon img) {
+  display: block !important;
+  height: 32px !important;
+  max-width: none;
+  width: 32px !important;
+}
+
 .careersScope :global(.careers-fellowship-image) {
   --hybr-image-card-mask-current: var(--hybr-image-card-mask-mirror);
   border-radius: 0 !important;
