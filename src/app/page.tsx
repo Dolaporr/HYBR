@@ -31,7 +31,7 @@ const assets = {
 const trustedLogoStrip = "/logos/sliding-animation.svg";
 const homeWebinar = {
   duration: "01:40:35",
-  url: "https://www.youtube.com/watch?v=GxIj0bnFzQ4&t=380s",
+  url: "/insights/webinars/specific-webinar",
 };
 
 const rotatingWords = ["ideas", "products", "services", "markets", "teams"];
@@ -703,11 +703,9 @@ export default function Home() {
           </article>
           <div className="home-insights-stack">
             <a
-              aria-label="Watch The Systems Mindset webinar on YouTube"
+              aria-label="View The Systems Mindset Masterclass"
               className="home-webinar-card relative block overflow-hidden rounded-[14px] bg-black p-5 text-white"
               href={homeWebinar.url}
-              rel="noopener noreferrer"
-              target="_blank"
             >
               <img alt="" aria-hidden="true" className="home-webinar-bg" src={assets.webinar} />
               <img alt="" className="home-webinar-play absolute right-5 top-5 size-8 rotate-90" src={assets.play} />

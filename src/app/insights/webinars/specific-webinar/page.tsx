@@ -3,11 +3,11 @@ import { Footer, Header } from "../../../_components/marketing";
 import { businessModelsWebinar, publicPowerWebinar } from "@/content/insights";
 import { figmaAssets } from "@/content/site";
 
-const topics = publicPowerWebinar.topics;
+type Masterclass = typeof publicPowerWebinar | typeof businessModelsWebinar;
 
-const latestWebinars = [businessModelsWebinar];
-
-const speakers = publicPowerWebinar.speakers.split(" & ").map((name) => ({ name }));
+type SpecificWebinarPageProps = {
+  searchParams: Promise<{ masterclass?: string }>;
+};
 
 function SearchControl() {
   return (
@@ -32,9 +32,11 @@ function PlayIcon({ className = "" }: { className?: string }) {
 }
 
 function WebinarVideo({
+  webinar,
   compact = false,
   imageSrc = figmaAssets.figmaBuilding,
 }: {
+  webinar: Masterclass;
   compact?: boolean;
   imageSrc?: string;
 }) {
@@ -45,8 +47,8 @@ function WebinarVideo({
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
           className="webinar-video-embed"
-          src={publicPowerWebinar.youtubeEmbed}
-          title={publicPowerWebinar.title}
+          src={webinar.youtubeEmbed}
+          title={webinar.title}
         />
       </div>
     );
@@ -56,7 +58,7 @@ function WebinarVideo({
     <div className="webinar-video webinar-video--compact">
       <img alt="" src={imageSrc} />
       <PlayIcon />
-      <span className="webinar-duration">{businessModelsWebinar.duration}</span>
+      <span className="webinar-duration">{webinar.duration}</span>
     </div>
   );
 }
@@ -91,11 +93,11 @@ function DetailAction({ type, label }: { type: "like" | "share"; label: string }
 function RelatedWebinarRow({
   webinar,
 }: {
-  webinar: typeof businessModelsWebinar;
+  webinar: Masterclass;
 }) {
   return (
-    <Link className="related-webinar-row" href="/insights/webinars/specific-webinar">
-      <WebinarVideo compact imageSrc={figmaAssets.figmaBusinessPartners} />
+    <Link className="related-webinar-row" href={webinar.href}>
+      <WebinarVideo webinar={webinar} compact imageSrc={figmaAssets.figmaBusinessPartners} />
       <div>
         <h3>{webinar.title}</h3>
         <p>{webinar.speakers}</p>
@@ -107,7 +109,7 @@ function RelatedWebinarRow({
   );
 }
 
-function RelatedTopics({ className = "" }: { className?: string }) {
+function RelatedTopics({ topics, className = "" }: { topics: string[]; className?: string }) {
   return (
     <section className={`webinar-topics ${className}`.trim()}>
       <h2>Related Topics</h2>
@@ -122,7 +124,7 @@ function RelatedTopics({ className = "" }: { className?: string }) {
   );
 }
 
-function SpeakerCard({ speaker }: { speaker: (typeof speakers)[number] }) {
+function SpeakerCard({ speaker }: { speaker: { name: string } }) {
   return (
     <details
       className="webinar-speaker-card"
@@ -153,7 +155,12 @@ function SpeakerCard({ speaker }: { speaker: (typeof speakers)[number] }) {
   );
 }
 
-export default function SpecificWebinarPage() {
+export default async function SpecificWebinarPage({ searchParams }: SpecificWebinarPageProps) {
+  const { masterclass } = await searchParams;
+  const webinar = masterclass === "business-models" ? businessModelsWebinar : publicPowerWebinar;
+  const speakers = webinar.speakers.split(" & ").map((name) => ({ name }));
+  const latestWebinars = webinar === publicPowerWebinar ? [businessModelsWebinar] : [publicPowerWebinar];
+
   return (
     <main className="webinar-detail-page bg-white text-black">
       <Header active="insights" />
@@ -164,12 +171,12 @@ export default function SpecificWebinarPage() {
 
           <div className="webinar-detail-grid">
             <article className="webinar-detail-main">
-              <WebinarVideo />
+              <WebinarVideo webinar={webinar} />
 
               <div className="webinar-title-block">
-                <h1>{publicPowerWebinar.title}</h1>
+                <h1>{webinar.title}</h1>
                 <p>
-                  {publicPowerWebinar.speakers} | {publicPowerWebinar.date} | {publicPowerWebinar.duration}
+                  {webinar.speakers} | {webinar.date} | {webinar.duration}
                 </p>
               </div>
 
@@ -184,11 +191,11 @@ export default function SpecificWebinarPage() {
               </div>
 
               <div className="webinar-body-copy" id="transcript">
-                <p>{publicPowerWebinar.summary}</p>
+                <p>{webinar.summary}</p>
                 <p>Watch the full conversation for practical lessons on building public-private partnerships that can move from promising ideas to durable results.</p>
               </div>
 
-              <RelatedTopics className="webinar-topics--mobile" />
+              <RelatedTopics className="webinar-topics--mobile" topics={webinar.topics} />
 
               <section className="webinar-speakers">
                 <div className="webinar-speakers-head">
@@ -214,7 +221,7 @@ export default function SpecificWebinarPage() {
                 HYBR Ad
               </div>
 
-              <RelatedTopics />
+              <RelatedTopics topics={webinar.topics} />
 
               <section className="webinar-latest">
                 <h2>Latest Masterclasses</h2>

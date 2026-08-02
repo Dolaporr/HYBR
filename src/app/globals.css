@@ -21931,8 +21931,46 @@ video.home-video-card {
 
 /* Keep Contact's shared testimonial portrait centered on the ring and seated at its base. */
 @media (max-width: 767px) {
+  .news-webinar-kind {
+    left: 20px;
+    top: 20px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .news-play {
+    right: 20px;
+    top: 20px;
+  }
+
+  .news-webinar-duration {
+    left: auto;
+    right: 54px;
+    top: 20px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .news-webinar-copy {
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    width: auto;
+  }
+
+  .news-webinar-copy span:first-child {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .news-webinar-copy span:not(:first-child) {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
   .contact-testimonials-section .home-testimonial-avatar {
     position: relative !important;
+    overflow: hidden !important;
   }
 
   .contact-testimonials-section .home-testimonial-avatar-image {
@@ -21943,5 +21981,11 @@ video.home-video-card {
     top: auto !important;
     transform: translateX(-50%) !important;
     translate: none !important;
+    z-index: 1 !important;
+  }
+
+  .contact-testimonials-section .home-testimonial-avatar > span {
+    z-index: 2 !important;
+    pointer-events: none;
   }
 }

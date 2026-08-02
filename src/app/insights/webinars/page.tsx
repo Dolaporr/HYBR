@@ -139,7 +139,7 @@ function ContentDrop() {
 
 function SpotlightCard() {
   return (
-    <Link className="webinars-spotlight-card figma-motion-card" href={publicPowerWebinar.href} id="spotlight" rel="noreferrer" target="_blank">
+    <Link className="webinars-spotlight-card figma-motion-card" href={publicPowerWebinar.href} id="spotlight">
       <img alt="" src={figmaAssets.figmaBuilding} />
       <span className="webinars-card-kicker">MASTERCLASS</span>
       <PlayIcon />

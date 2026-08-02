@@ -121,7 +121,7 @@ function SpotlightCard() {
 
 function WebinarCard() {
   return (
-    <Link className="news-webinar-card figma-motion-card" href={publicPowerWebinar.href} rel="noreferrer" target="_blank">
+    <Link className="news-webinar-card figma-motion-card" href={publicPowerWebinar.href}>
       <img alt="" src={figmaAssets.figmaBusinessPartners} />
       <span className="news-webinar-kind">MASTERCLASS</span>
       <PlayIcon />

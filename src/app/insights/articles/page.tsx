@@ -118,7 +118,7 @@ function SpotlightCard({ article, href }: { article: typeof innovationSweetSpotA
 
 function WebinarCard() {
   return (
-    <Link className="articles-webinar-card figma-motion-card" href={publicPowerWebinar.href} rel="noreferrer" target="_blank">
+    <Link className="articles-webinar-card figma-motion-card" href={publicPowerWebinar.href}>
       <img alt="" src={figmaAssets.figmaBusinessPartners} />
       <span className="articles-webinar-kind">MASTERCLASS</span>
       <PlayIcon />

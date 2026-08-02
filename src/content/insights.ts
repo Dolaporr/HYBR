@@ -218,7 +218,7 @@ export const publicPowerWebinar = {
   speakers: "Chinedu Ugwu-Chinwuba & Ure Utah",
   date: "May 2025",
   duration: "1:10:35",
-  href: "https://www.youtube.com/watch?v=GxIj0bnFzQ4&t=380s",
+  href: "/insights/webinars/specific-webinar",
   youtubeEmbed: "https://www.youtube-nocookie.com/embed/GxIj0bnFzQ4?start=380",
   summary: "A conversation on practical collaboration between government and innovators to create scalable impact.",
   topics: ["Government Innovation", "Public-Private Collaboration", "Scalable Impact"],
@@ -229,7 +229,10 @@ export const businessModelsWebinar = {
   speakers: "Emmanuel Obinne",
   date: "October 2025",
   duration: "59:17",
-  href: "https://www.youtube.com/watch?v=AhNm_PdrzC4&t=7s",
+  href: "/insights/webinars/specific-webinar?masterclass=business-models",
+  youtubeEmbed: "https://www.youtube-nocookie.com/embed/AhNm_PdrzC4?start=7",
+  summary: "Learn how to design and validate business models before you scale.",
+  topics: ["Business Models", "Validation", "Growth Strategy"],
 };
 
 export const innovationFellowshipNews = {
