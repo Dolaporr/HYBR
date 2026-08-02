@@ -37,7 +37,7 @@ const whyCards = [
   {
     className: "is-boring",
     icon: "mask",
-    title: "Never Boring",
+    title: "We're Definitely not Boring.",
     body: "We work hard, laugh often, and support one another. You'll join a team that values empathy, openness, and genuine human connection - a team where your voice matters and your contributions are valued.",
   },
 ];

@@ -20838,6 +20838,74 @@ video.home-video-card {
   box-shadow: none !important;
 }
 
+/* Keep the Contact page on the shared homepage testimonial layout at phone widths. */
+@media (max-width: 767px) {
+  .contact-testimonials-section .contact-testimonials-carousel.home-testimonial-shell {
+    column-gap: 8px !important;
+    grid-template-columns: 32px minmax(0, 1fr) 32px !important;
+  }
+
+  .contact-testimonials-section .home-testimonial-stage {
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .contact-testimonials-section .home-testimonial-card {
+    display: grid !important;
+    gap: 20px !important;
+    grid-template-columns: 1fr !important;
+    min-height: 392px !important;
+    padding: 36px 28px !important;
+  }
+
+  .contact-testimonials-section .home-testimonial-avatar {
+    height: 116px !important;
+    width: 116px !important;
+  }
+
+  .contact-testimonials-section .home-testimonial-avatar-image {
+    bottom: 4px !important;
+    height: 88px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 88px !important;
+  }
+
+  .contact-testimonials-section .home-testimonial-quote {
+    font-size: 18px !important;
+    line-height: 1.22 !important;
+  }
+
+  .contact-testimonials-section .home-testimonial-card p.mt-8 {
+    font-size: 14px !important;
+    margin-top: 18px !important;
+  }
+
+  .contact-testimonials-section .home-testimonial-card p:not(.mt-8) {
+    font-size: 13px !important;
+    line-height: 1.3 !important;
+  }
+
+  .articles-page .articles-spotlight-copy {
+    bottom: 78px !important;
+  }
+
+  .articles-page .articles-spotlight-button,
+  .articles-page .articles-news-button,
+  .articles-page .articles-read-button {
+    bottom: 14px !important;
+    z-index: 3 !important;
+  }
+
+  .articles-page .articles-card-title {
+    bottom: 58px !important;
+  }
+
+  .articles-page .articles-news-copy {
+    bottom: 62px !important;
+  }
+}
+
 /* Keep the home news action aligned with the other card actions. */
 .homepage-live .home-news-card .home-card-action {
   bottom: auto !important;

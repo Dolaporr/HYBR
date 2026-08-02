@@ -397,6 +397,18 @@
   z-index: 2;
 }
 
+.impactScope :global(.impact-case-company-logo) {
+  bottom: 32px;
+  left: 32px;
+  max-height: 28px;
+  max-width: 150px;
+  object-fit: contain;
+  object-position: left center;
+  position: absolute;
+  width: auto;
+  z-index: 2;
+}
+
 .impactScope :global(.impact-case-mark) {
   height: 24px;
   position: absolute;
@@ -1233,5 +1245,12 @@
 @media (min-width: 1024px) {
   .impactScope :global(.impact-intro-image) {
     border-radius: 0 !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .impactScope :global(.impact-case-company-logo) {
+    bottom: 62px;
+    left: 32px;
   }
 }

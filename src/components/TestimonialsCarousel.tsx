@@ -115,7 +115,13 @@ function TestimonialCard({
   );
 }
 
-export function TestimonialsCarousel() {
+export function TestimonialsCarousel({
+  className = "",
+  variant = "black",
+}: {
+  className?: string;
+  variant?: "black";
+}) {
   const [active, setActive] = useState(0);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastSwipeAtRef = useRef(0);
@@ -244,7 +250,7 @@ export function TestimonialsCarousel() {
 
   return (
     <>
-      <div className="home-testimonial-shell mt-10">
+      <div className={`home-testimonial-shell home-testimonial-shell--${variant} mt-10 ${className}`}>
         <button
           aria-label="Previous testimonial"
           className="home-testimonial-arrow home-testimonial-arrow--left"

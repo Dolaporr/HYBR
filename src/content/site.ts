@@ -85,7 +85,7 @@ export const footerGroups = [
     title: "Insights",
     links: [
       { label: "Articles & Posts", href: "/insights/articles" },
-      { label: "Webinars", href: "/insights/webinars" },
+      { label: "Masterclasses", href: "/insights/webinars" },
       { label: "News & Updates", href: "/insights/news" },
     ],
   },

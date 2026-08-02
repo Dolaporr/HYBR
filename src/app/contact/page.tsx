@@ -65,7 +65,7 @@ export default function ContactPage() {
             <h2 id="contact-testimonials-title">What our clients say about working with us.</h2>
             <span>The relationships behind the work, in their own words.</span>
           </div>
-          <TestimonialsCarousel />
+          <TestimonialsCarousel className="contact-testimonials-carousel" />
         </div>
       </section>
       <Footer />

@@ -1,5 +1,11 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import {
+  absaDiscoveryCaseStudy,
+  alitheiaCaseStudy,
+  cocaColaCaseStudy,
+  type CaseStudyListing,
+} from "@/content/caseStudies";
 import { figmaAssets } from "@/content/site";
 import { Footer, Header } from "../../_components/marketing";
 import styles from "./impact.module.css";
@@ -25,16 +31,6 @@ function ImpactButton({
     <Link className={`impact-button ${className}`} href={href}>
       {children}
     </Link>
-  );
-}
-
-function HybrMark({ className = "" }: { className?: string }) {
-  return (
-    <svg aria-hidden="true" className={className} fill="none" viewBox="0 0 56 56">
-      <circle cx="28" cy="43.2" r="10.28" stroke="#ffffff" strokeWidth="4.54" />
-      <circle cx="28" cy="35.1" r="18.33" stroke="#4fc2f0" strokeWidth="4.54" />
-      <circle cx="28" cy="27.88" r="25.54" stroke="#8dc540" strokeWidth="4.54" />
-    </svg>
   );
 }
 
@@ -99,27 +95,37 @@ function TrustedGrid() {
   );
 }
 
-function CaseStudyCard({ className = "" }: { className?: string }) {
+function CaseStudyCard({
+  caseStudy,
+  className = "",
+}: {
+  caseStudy: CaseStudyListing;
+  className?: string;
+}) {
   return (
     <article className={`impact-case-card ${className}`}>
       <span
         aria-hidden="true"
         className="impact-case-image"
-        style={{ backgroundImage: `url(${figmaAssets.ourWorkCard})` }}
+        style={{
+          backgroundImage: `url(${caseStudy.image})`,
+          backgroundPosition: caseStudy.imagePosition,
+        }}
       />
       <p className="impact-case-label">CASE STUDY</p>
-      <h3>One Liner For Specific Case Study</h3>
+      <h3>{caseStudy.title}</h3>
       <p className="impact-case-body is-long">
-        A captivating statement about what service was offered to the company.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-        dignissim fringilla feugiat.
+        {caseStudy.shortBody}
       </p>
       <p className="impact-case-body is-short">
-        A short, captivating statement about what this case study is about.
+        {caseStudy.shortBody}
       </p>
-      <p className="impact-case-company">COMPANY NAME</p>
-      <HybrMark className="impact-case-mark" />
-      <ImpactButton className="is-read" href="/case-studies/one-liner">
+      {caseStudy.companyLogo ? (
+        <img alt={caseStudy.company} className="impact-case-company-logo" src={caseStudy.companyLogo} />
+      ) : (
+        <p className="impact-case-company">{caseStudy.company}</p>
+      )}
+      <ImpactButton className="is-read" href={caseStudy.href}>
         Read More
       </ImpactButton>
     </article>
@@ -185,11 +191,11 @@ export default function OurImpactPage() {
           value="300K+"
         />
 
-        <CaseStudyCard className="is-feature" />
+        <CaseStudyCard caseStudy={cocaColaCaseStudy} className="is-feature" />
 
         <Metric
           body="We help businesses turn good ideas into great results."
-          button="View Our Reach"
+          button="View Our Work"
           className="is-ventures"
           id="ventures"
           label="VENTURES IMPACTED"
@@ -202,8 +208,8 @@ export default function OurImpactPage() {
           <span>See how we&rsquo;re working with people like you to change the world.</span>
         </section>
 
-        <CaseStudyCard className="is-work-one" />
-        <CaseStudyCard className="is-work-two" />
+        <CaseStudyCard caseStudy={absaDiscoveryCaseStudy} className="is-work-one" />
+        <CaseStudyCard caseStudy={alitheiaCaseStudy} className="is-work-two" />
         <ImpactButton className="is-all" href="/what-we-do/our-work">
           All Case Studies
         </ImpactButton>
