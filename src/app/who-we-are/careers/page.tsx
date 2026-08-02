@@ -25,19 +25,19 @@ const whyCards = [
   {
     className: "is-curiosity",
     icon: "palette",
-    title: "A Culture Built on Curiosity & Creativity",
+    title: "Stay Curious",
     body: "We believe in experimentation, questioning assumptions, and exploring new ways to solve problems.",
   },
   {
     className: "is-growth",
     icon: "trend",
-    title: "Grow Faster Than You Thought Possible",
+    title: "Grow Faster",
     body: "Evolve as a creator and professional. You'll work on challenges that accelerate your growth, from ambitious projects to cross-collaboration.",
   },
   {
     className: "is-boring",
     icon: "mask",
-    title: "We're Definitely not Boring",
+    title: "Never Boring",
     body: "We work hard, laugh often, and support one another. You'll join a team that values empathy, openness, and genuine human connection - a team where your voice matters and your contributions are valued.",
   },
 ];
@@ -237,7 +237,6 @@ function InternshipProgram() {
         </p>
         <ButtonLink className="is-white" href="/contact">Learn More</ButtonLink>
       </div>
-      <p className="careers-internship-alpha">ALPHA</p>
     </section>
   );
 }

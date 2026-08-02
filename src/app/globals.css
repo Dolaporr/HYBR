@@ -21737,3 +21737,159 @@ video.home-video-card {
 .home-testimonial-arrow:hover {
   color: #000000;
 }
+
+/* Keep compact insight cards readable while reserving a separate action area. */
+@media (max-width: 767px) {
+  .insights-hub-page .insights-card-kind {
+    left: 16px !important;
+    top: 16px !important;
+    max-width: calc(100% - 76px) !important;
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+  }
+
+  .insights-hub-page .insights-card-mobile-kind { display: none !important; }
+
+  .insights-hub-page .insights-card-time {
+    top: 16px !important;
+    right: 16px !important;
+    bottom: auto !important;
+    left: auto !important;
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+  }
+
+  .insights-hub-page .insights-card-copy {
+    top: 48px !important;
+    right: 16px !important;
+    bottom: auto !important;
+    left: 16px !important;
+    width: auto !important;
+    gap: 4px !important;
+  }
+
+  .insights-hub-page .insights-card-title { font-size: 18px !important; line-height: 1.06 !important; }
+  .insights-hub-page .insights-card-meta { font-size: 10px !important; line-height: 1.25 !important; }
+  .insights-hub-page .insights-play--small { top: 36px !important; right: 16px !important; }
+
+  .insights-hub-page .insights-story-copy {
+    top: 16px !important;
+    right: 16px !important;
+    left: 16px !important;
+    width: auto !important;
+    padding-bottom: 48px !important;
+  }
+
+  .insights-hub-page .insights-story-copy span:nth-child(2) { font-size: 18px !important; line-height: 1.08 !important; }
+  .insights-hub-page .insights-story-copy span:nth-child(3) { font-size: 10px !important; line-height: 1.25 !important; }
+
+  .insights-hub-page .insights-read-button {
+    right: 16px !important;
+    bottom: 14px !important;
+    min-height: 28px !important;
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+  }
+
+  .articles-page .articles-card-kind { top: 14px !important; left: 14px !important; font-size: 10px !important; }
+
+  .articles-page .articles-card-title {
+    top: 44px !important;
+    right: 14px !important;
+    bottom: 52px !important;
+    left: 14px !important;
+    display: -webkit-box !important;
+    width: auto !important;
+    overflow: hidden !important;
+    font-size: 15px !important;
+    line-height: 1.07 !important;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+  }
+
+  .articles-page .articles-read-button {
+    right: 14px !important;
+    bottom: 12px !important;
+    min-height: 27px !important;
+    padding: 5px 10px !important;
+    font-size: 10px !important;
+  }
+
+  .articles-page .articles-webinar-kind {
+    top: 16px !important;
+    left: 16px !important;
+    max-width: calc(100% - 84px) !important;
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+  }
+
+  .articles-page .articles-webinar-duration {
+    top: 16px !important;
+    right: 16px !important;
+    bottom: auto !important;
+    left: auto !important;
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+  }
+
+  .articles-page .articles-webinar-copy {
+    right: 16px !important;
+    bottom: 16px !important;
+    left: 16px !important;
+    width: auto !important;
+    gap: 4px !important;
+  }
+
+  .articles-page .articles-webinar-copy span:first-child { font-size: 18px !important; line-height: 1.08 !important; }
+  .articles-page .articles-webinar-copy span:not(:first-child) { font-size: 10px !important; line-height: 1.2 !important; }
+  .articles-page .articles-play { top: 36px !important; right: 16px !important; width: 18px !important; height: 18px !important; }
+
+  .contact-testimonials-section .home-testimonial-shell {
+    display: grid !important;
+    width: 100% !important;
+    grid-template-columns: 32px minmax(0, 1fr) 32px !important;
+    align-items: center !important;
+    gap: 4px !important;
+  }
+
+  .contact-testimonials-section .home-testimonial-stage {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  .contact-testimonials-section .home-testimonial-card {
+    display: grid !important;
+    position: relative !important;
+    width: 100% !important;
+    min-height: 220px !important;
+    height: auto !important;
+    grid-template-columns: 72px minmax(0, 1fr) !important;
+    gap: 14px !important;
+    padding: 28px 20px !important;
+    overflow: hidden !important;
+    border-radius: 110px 220px 0 110px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+
+  .contact-testimonials-section .home-testimonial-avatar { width: 72px !important; height: 72px !important; }
+  .contact-testimonials-section .home-testimonial-avatar-image { width: 54px !important; height: 54px !important; }
+  .contact-testimonials-section .home-testimonial-quote { font-size: 16px !important; line-height: 1.2 !important; }
+  .contact-testimonials-section .home-testimonial-card p.mt-8 { margin-top: 14px !important; font-size: 11px !important; }
+  .contact-testimonials-section .home-testimonial-card p:not(.mt-8) { font-size: 10px !important; line-height: 1.2 !important; }
+  .contact-testimonials-section .home-testimonial-arrow { display: flex !important; width: 32px !important; height: 32px !important; }
+  .contact-testimonials-section .home-testimonial-arrow svg { width: 32px !important; height: 32px !important; }
+
+  .careers-why-card,
+  .careers-why-card h3,
+  .careers-why-card p { text-align: left !important; }
+
+  .careers-why-card { align-items: flex-start !important; justify-content: flex-start !important; }
+}

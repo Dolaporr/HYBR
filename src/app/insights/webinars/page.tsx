@@ -97,7 +97,7 @@ function PlayIcon({ compact = false }: { compact?: boolean }) {
 
 function ListingControls() {
   return (
-    <div className="webinars-controls" aria-label="Webinar filters">
+    <div className="webinars-controls" aria-label="Masterclass filters">
       <button className="webinars-control webinars-control--search" type="button">
         <SearchIcon />
         <span>Search</span>
@@ -124,12 +124,12 @@ function ListingControls() {
 
 function ContentDrop() {
   return (
-    <nav className="webinars-content-drop" aria-label="Webinars page sections">
+    <nav className="webinars-content-drop" aria-label="Masterclasses page sections">
       <img alt="" src={figmaAssets.figmaBusinessPartners} />
       <span className="webinars-content-drop-label">CONTENT</span>
       <div>
         <a href="#spotlight">Spotlight</a>
-        <a href="#recent">Newest Webinars</a>
+        <a href="#recent">Newest Masterclasses</a>
         <a href="#more">More Insights</a>
         <Link href="/what-we-do">What We Do</Link>
       </div>
@@ -141,7 +141,7 @@ function SpotlightCard() {
   return (
     <Link className="webinars-spotlight-card figma-motion-card" href={publicPowerWebinar.href} id="spotlight" rel="noreferrer" target="_blank">
       <img alt="" src={figmaAssets.figmaBuilding} />
-      <span className="webinars-card-kicker">WEBINAR</span>
+      <span className="webinars-card-kicker">MASTERCLASS</span>
       <PlayIcon />
       <span className="webinars-duration">{publicPowerWebinar.duration}</span>
       <span className="webinars-spotlight-copy">
@@ -158,7 +158,7 @@ function WebinarListingCard({ card }: { card: WebinarCard }) {
     <Link className="webinars-card figma-motion-card" href={card.href} rel={card.href.startsWith("http") ? "noreferrer" : undefined} target={card.href.startsWith("http") ? "_blank" : undefined}>
       <span className="webinars-card-media">
         <img alt="" src={card.image} />
-        <span className="webinars-card-kicker">WEBINAR</span>
+        <span className="webinars-card-kicker">MASTERCLASS</span>
         <PlayIcon compact />
         <span className="webinars-card-duration">{card.duration}</span>
       </span>
@@ -195,7 +195,7 @@ export default function WebinarsPage() {
           <ContentDrop />
 
           <header className="webinars-hero">
-            <h1 id="webinars-title">Webinars</h1>
+            <h1 id="webinars-title">Masterclasses</h1>
             <p>Learn how leaders are navigating today&apos;s toughest challenges.</p>
           </header>
 
@@ -206,7 +206,7 @@ export default function WebinarsPage() {
 
           <section className="webinars-recent" id="recent" aria-labelledby="recent-webinars-title">
             <p className="webinars-section-label" id="recent-webinars-title">
-              RECENT WEBINARS
+              RECENT MASTERCLASSES
             </p>
             <div className="webinars-grid">
               {webinars.map((card) => (
@@ -215,7 +215,7 @@ export default function WebinarsPage() {
             </div>
             <div className="webinars-view-all">
               <Link className="webinars-pill-button" href="/insights/webinars">
-                View All Webinars
+                View All Masterclasses
               </Link>
             </div>
           </section>

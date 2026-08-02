@@ -120,7 +120,7 @@ function WebinarCard() {
   return (
     <Link className="articles-webinar-card figma-motion-card" href={publicPowerWebinar.href} rel="noreferrer" target="_blank">
       <img alt="" src={figmaAssets.figmaBusinessPartners} />
-      <span className="articles-webinar-kind">WEBINAR</span>
+      <span className="articles-webinar-kind">MASTERCLASS</span>
       <PlayIcon />
       <span className="articles-webinar-duration">{publicPowerWebinar.duration}</span>
       <span className="articles-webinar-copy">
@@ -197,7 +197,7 @@ export default function ArticlesPage() {
             <WebinarCard />
             <NewsCard />
             <Link className="articles-pill-button articles-more-mobile-action" href="/insights/webinars">
-              View Webinars
+              View Masterclasses
             </Link>
           </section>
 

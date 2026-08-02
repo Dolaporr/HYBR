@@ -14,7 +14,7 @@ import { figmaAssets } from "@/content/site";
 
 const contentLinks = [
   { label: "Spotlight", href: "#spotlight" },
-  { label: "Webinars", href: "#webinars" },
+  { label: "Masterclasses", href: "#webinars" },
   { label: "Articles", href: "#articles" },
   { label: "News", href: "#news" },
   { label: "Newsletter", href: "#newsletter" },
@@ -98,10 +98,9 @@ function WebinarCard({
     <Link className={`insights-card insights-webinar-card ${className}`} href={href} rel={href.startsWith("http") ? "noreferrer" : undefined} target={href.startsWith("http") ? "_blank" : undefined}>
       <img alt="" src={imageSrc} />
       <span className="insights-card-overlay" />
-      <span className="insights-card-kind">WEBINAR</span>
+      <span className="insights-card-kind">MASTERCLASS</span>
       <span className="insights-card-time">{duration}</span>
       <span className="insights-card-copy">
-        <span className="insights-card-mobile-kind">WEBINAR</span>
         <span className="insights-card-title">{title}</span>
         <span className="insights-card-meta">{speakerOne}</span>
         <span className="insights-card-meta">{speakerTwo}</span>
@@ -218,11 +217,11 @@ export default function InsightsPage() {
           />
         </section>
 
-        <section className="insights-webinars" id="webinars" aria-label="Webinars">
+        <section className="insights-webinars" id="webinars" aria-label="Masterclasses">
           <SectionCopy
             body="Understand what's changing, and how leaders are responding live. Join the next session or watch past conversations."
             className="insights-webinars-copy"
-            kicker="WEBINARS"
+            kicker="MASTERCLASSES"
             title="Learn how leaders are navigating today's toughest challenges."
           />
           <WebinarCard
@@ -244,7 +243,7 @@ export default function InsightsPage() {
             title={businessModelsWebinar.title}
           />
           <Link className="insights-outline-button insights-webinars-button" href="/insights/webinars">
-            View Webinars
+            View Masterclasses
           </Link>
         </section>
 

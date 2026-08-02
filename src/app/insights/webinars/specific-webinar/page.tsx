@@ -139,7 +139,7 @@ function SpeakerCard({ speaker }: { speaker: (typeof speakers)[number] }) {
           </span>
           <div>
             <h3>{speaker.name}</h3>
-            <p>Webinar speaker</p>
+            <p>Masterclass speaker</p>
           </div>
         </div>
         <span className="webinar-speaker-more">
@@ -217,14 +217,14 @@ export default function SpecificWebinarPage() {
               <RelatedTopics />
 
               <section className="webinar-latest">
-                <h2>Latest Webinars</h2>
+                <h2>Latest Masterclasses</h2>
                 <div className="webinar-latest-list">
                   {latestWebinars.map((webinar, index) => (
                     <RelatedWebinarRow key={`${webinar.title}-${index}`} webinar={webinar} />
                   ))}
                 </div>
                 <Link className="news-detail-outline-button webinar-all-button" href="/insights/webinars">
-                  All Webinars
+                  All Masterclasses
                 </Link>
               </section>
             </aside>
